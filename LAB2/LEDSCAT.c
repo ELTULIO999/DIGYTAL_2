@@ -1,5 +1,6 @@
 #include "LEDSCAT.h"
 void TABLA_L (uint8_t n){
+    //los distintos bits que hacen los numeros en el 7seg
         switch (n) {
         case 0:
             PORTC = 0b11000000;

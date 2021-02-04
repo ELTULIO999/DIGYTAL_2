@@ -2642,6 +2642,7 @@ void TABLA_L (uint8_t n);
 # 1 "LEDSCAT.c" 2
 
 void TABLA_L (uint8_t n){
+
         switch (n) {
         case 0:
             PORTC = 0b11000000;

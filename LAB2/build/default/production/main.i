@@ -2692,12 +2692,11 @@ void ADC_CHS_CLKS (uint8_t C, uint8_t S);
 # 30 "main.c" 2
 # 40 "main.c"
 void Setup (void);
-void delay (char n);
+void pull (void);
 void push_0 (void);
 void push_1 (void);
-void pull(void);
-uint8_t W,w,Q,H,h,L;
-
+void ADCG (void);
+uint8_t W,w,Q,H,h,L,ADCGO;
 
 
 
@@ -2706,7 +2705,9 @@ void __attribute__((picinterrupt(("")))) isr(void){
     if (INTCONbits.TMR0IF==1){
         TMR0=236;
         INTCONbits.TMR0IF=0;
-        pull();}
+        pull();
+        ADCGO++;
+    }
     if (RBIF==1){
          push_0 ();
          push_1 ();
@@ -2715,7 +2716,6 @@ void __attribute__((picinterrupt(("")))) isr(void){
         L=ADRESH;
         PIR1bits.ADIF=0;
         ADCON0bits.GO=1;}
-
 }
 
 
@@ -2726,8 +2726,10 @@ void main(void) {
 
 
     while(1){
-
-
+     ADCG();
+     if (PORTD <= L){
+         PORTEbits.RE2=1;}
+     else {PORTEbits.RE2=0;}
     }
 }
 
@@ -2748,9 +2750,8 @@ void Setup(void){
     TRISB = 0B00000011;
     TRISC = 0B00000000;
     TRISD = 0B00000000;
-    TRISE = 0B00000000;
+    TRISE = 0 ;
 
-    ANSEL = 0B00000000;
     ANSEL = 0B00000001;
     ANSELH = 0B00000000;
 
@@ -2763,7 +2764,7 @@ void Setup(void){
 
     INTCONbits.RBIE=1;
     IOCB=3;
-
+    (INTCONbits.GIE = 1);
 
     OPTION_REGbits.T0CS=0;
     OPTION_REGbits.T0SE=0;
@@ -2773,8 +2774,7 @@ void Setup(void){
     OPTION_REGbits.PS1=1;
     OPTION_REGbits.PS2=1;
 
-
-
+    PIR1bits.ADIF=0;
 }
 
 
@@ -2813,6 +2813,12 @@ void pull(void){
         PORTEbits.RE0 = 0;
         h =(L&0b00001111) ;
          TABLA_L (h);
-
         }
+}
+
+void ADCG(void){
+    if(ADCGO > 20){
+        ADCGO = 0;
+        ADCON0bits.GO_nDONE = 1;
+    }
 }

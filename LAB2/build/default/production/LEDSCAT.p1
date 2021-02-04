@@ -243,156 +243,156 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _TABLA_L ]
 [v _n `uc ~T0 @X0 1 r1 ]
 [f ]
-"3
-[; ;LEDSCAT.c: 3:         switch (n) {
+"4
+[; ;LEDSCAT.c: 4:         switch (n) {
 [e $U 140  ]
 {
-"4
-[; ;LEDSCAT.c: 4:         case 0:
-[e :U 141 ]
 "5
-[; ;LEDSCAT.c: 5:             PORTC = 0b11000000;
-[e = _PORTC -> -> 192 `i `uc ]
+[; ;LEDSCAT.c: 5:         case 0:
+[e :U 141 ]
 "6
-[; ;LEDSCAT.c: 6:             break;
-[e $U 139  ]
+[; ;LEDSCAT.c: 6:             PORTC = 0b11000000;
+[e = _PORTC -> -> 192 `i `uc ]
 "7
-[; ;LEDSCAT.c: 7:         case 1:
-[e :U 142 ]
+[; ;LEDSCAT.c: 7:             break;
+[e $U 139  ]
 "8
-[; ;LEDSCAT.c: 8:             PORTC = 0b11111001;
-[e = _PORTC -> -> 249 `i `uc ]
+[; ;LEDSCAT.c: 8:         case 1:
+[e :U 142 ]
 "9
-[; ;LEDSCAT.c: 9:             break;
-[e $U 139  ]
+[; ;LEDSCAT.c: 9:             PORTC = 0b11111001;
+[e = _PORTC -> -> 249 `i `uc ]
 "10
-[; ;LEDSCAT.c: 10:         case 2:
-[e :U 143 ]
+[; ;LEDSCAT.c: 10:             break;
+[e $U 139  ]
 "11
-[; ;LEDSCAT.c: 11:             PORTC = 0b10100100;
-[e = _PORTC -> -> 164 `i `uc ]
+[; ;LEDSCAT.c: 11:         case 2:
+[e :U 143 ]
 "12
-[; ;LEDSCAT.c: 12:             break;
-[e $U 139  ]
+[; ;LEDSCAT.c: 12:             PORTC = 0b10100100;
+[e = _PORTC -> -> 164 `i `uc ]
 "13
-[; ;LEDSCAT.c: 13:         case 3:
-[e :U 144 ]
+[; ;LEDSCAT.c: 13:             break;
+[e $U 139  ]
 "14
-[; ;LEDSCAT.c: 14:             PORTC = 0b10110000;
-[e = _PORTC -> -> 176 `i `uc ]
+[; ;LEDSCAT.c: 14:         case 3:
+[e :U 144 ]
 "15
-[; ;LEDSCAT.c: 15:             break;
-[e $U 139  ]
+[; ;LEDSCAT.c: 15:             PORTC = 0b10110000;
+[e = _PORTC -> -> 176 `i `uc ]
 "16
-[; ;LEDSCAT.c: 16:         case 4:
-[e :U 145 ]
+[; ;LEDSCAT.c: 16:             break;
+[e $U 139  ]
 "17
-[; ;LEDSCAT.c: 17:             PORTC = 0b10011001;
-[e = _PORTC -> -> 153 `i `uc ]
+[; ;LEDSCAT.c: 17:         case 4:
+[e :U 145 ]
 "18
-[; ;LEDSCAT.c: 18:             break;
-[e $U 139  ]
+[; ;LEDSCAT.c: 18:             PORTC = 0b10011001;
+[e = _PORTC -> -> 153 `i `uc ]
 "19
-[; ;LEDSCAT.c: 19:         case 5:
-[e :U 146 ]
+[; ;LEDSCAT.c: 19:             break;
+[e $U 139  ]
 "20
-[; ;LEDSCAT.c: 20:             PORTC = 0b10010010;
-[e = _PORTC -> -> 146 `i `uc ]
+[; ;LEDSCAT.c: 20:         case 5:
+[e :U 146 ]
 "21
-[; ;LEDSCAT.c: 21:             break;
-[e $U 139  ]
+[; ;LEDSCAT.c: 21:             PORTC = 0b10010010;
+[e = _PORTC -> -> 146 `i `uc ]
 "22
-[; ;LEDSCAT.c: 22:         case 6:
-[e :U 147 ]
+[; ;LEDSCAT.c: 22:             break;
+[e $U 139  ]
 "23
-[; ;LEDSCAT.c: 23:             PORTC = 0b10000010;
-[e = _PORTC -> -> 130 `i `uc ]
+[; ;LEDSCAT.c: 23:         case 6:
+[e :U 147 ]
 "24
-[; ;LEDSCAT.c: 24:             break;
-[e $U 139  ]
+[; ;LEDSCAT.c: 24:             PORTC = 0b10000010;
+[e = _PORTC -> -> 130 `i `uc ]
 "25
-[; ;LEDSCAT.c: 25:         case 7:
-[e :U 148 ]
+[; ;LEDSCAT.c: 25:             break;
+[e $U 139  ]
 "26
-[; ;LEDSCAT.c: 26:             PORTC = 0b11111000;
-[e = _PORTC -> -> 248 `i `uc ]
+[; ;LEDSCAT.c: 26:         case 7:
+[e :U 148 ]
 "27
-[; ;LEDSCAT.c: 27:             break;
-[e $U 139  ]
+[; ;LEDSCAT.c: 27:             PORTC = 0b11111000;
+[e = _PORTC -> -> 248 `i `uc ]
 "28
-[; ;LEDSCAT.c: 28:         case 8:
-[e :U 149 ]
+[; ;LEDSCAT.c: 28:             break;
+[e $U 139  ]
 "29
-[; ;LEDSCAT.c: 29:             PORTC = 0b10000000;
-[e = _PORTC -> -> 128 `i `uc ]
+[; ;LEDSCAT.c: 29:         case 8:
+[e :U 149 ]
 "30
-[; ;LEDSCAT.c: 30:             break;
-[e $U 139  ]
+[; ;LEDSCAT.c: 30:             PORTC = 0b10000000;
+[e = _PORTC -> -> 128 `i `uc ]
 "31
-[; ;LEDSCAT.c: 31:         case 9:
-[e :U 150 ]
+[; ;LEDSCAT.c: 31:             break;
+[e $U 139  ]
 "32
-[; ;LEDSCAT.c: 32:             PORTC = 0b10010000;
-[e = _PORTC -> -> 144 `i `uc ]
+[; ;LEDSCAT.c: 32:         case 9:
+[e :U 150 ]
 "33
-[; ;LEDSCAT.c: 33:             break;
-[e $U 139  ]
+[; ;LEDSCAT.c: 33:             PORTC = 0b10010000;
+[e = _PORTC -> -> 144 `i `uc ]
 "34
-[; ;LEDSCAT.c: 34:         case 10:
-[e :U 151 ]
+[; ;LEDSCAT.c: 34:             break;
+[e $U 139  ]
 "35
-[; ;LEDSCAT.c: 35:             PORTC = 0b10001000;
-[e = _PORTC -> -> 136 `i `uc ]
+[; ;LEDSCAT.c: 35:         case 10:
+[e :U 151 ]
 "36
-[; ;LEDSCAT.c: 36:             break;
-[e $U 139  ]
+[; ;LEDSCAT.c: 36:             PORTC = 0b10001000;
+[e = _PORTC -> -> 136 `i `uc ]
 "37
-[; ;LEDSCAT.c: 37:         case 11:
-[e :U 152 ]
+[; ;LEDSCAT.c: 37:             break;
+[e $U 139  ]
 "38
-[; ;LEDSCAT.c: 38:             PORTC = 0b10000011;
-[e = _PORTC -> -> 131 `i `uc ]
+[; ;LEDSCAT.c: 38:         case 11:
+[e :U 152 ]
 "39
-[; ;LEDSCAT.c: 39:             break;
-[e $U 139  ]
+[; ;LEDSCAT.c: 39:             PORTC = 0b10000011;
+[e = _PORTC -> -> 131 `i `uc ]
 "40
-[; ;LEDSCAT.c: 40:         case 12:
-[e :U 153 ]
+[; ;LEDSCAT.c: 40:             break;
+[e $U 139  ]
 "41
-[; ;LEDSCAT.c: 41:             PORTC = 0b11000110;
-[e = _PORTC -> -> 198 `i `uc ]
+[; ;LEDSCAT.c: 41:         case 12:
+[e :U 153 ]
 "42
-[; ;LEDSCAT.c: 42:             break;
-[e $U 139  ]
+[; ;LEDSCAT.c: 42:             PORTC = 0b11000110;
+[e = _PORTC -> -> 198 `i `uc ]
 "43
-[; ;LEDSCAT.c: 43:         case 13:
-[e :U 154 ]
+[; ;LEDSCAT.c: 43:             break;
+[e $U 139  ]
 "44
-[; ;LEDSCAT.c: 44:             PORTC = 0b10100001;
-[e = _PORTC -> -> 161 `i `uc ]
+[; ;LEDSCAT.c: 44:         case 13:
+[e :U 154 ]
 "45
-[; ;LEDSCAT.c: 45:             break;
-[e $U 139  ]
+[; ;LEDSCAT.c: 45:             PORTC = 0b10100001;
+[e = _PORTC -> -> 161 `i `uc ]
 "46
-[; ;LEDSCAT.c: 46:         case 14:
-[e :U 155 ]
+[; ;LEDSCAT.c: 46:             break;
+[e $U 139  ]
 "47
-[; ;LEDSCAT.c: 47:             PORTC = 0b10000110;
-[e = _PORTC -> -> 134 `i `uc ]
+[; ;LEDSCAT.c: 47:         case 14:
+[e :U 155 ]
 "48
-[; ;LEDSCAT.c: 48:             break;
-[e $U 139  ]
+[; ;LEDSCAT.c: 48:             PORTC = 0b10000110;
+[e = _PORTC -> -> 134 `i `uc ]
 "49
-[; ;LEDSCAT.c: 49:         case 15:
-[e :U 156 ]
-"50
-[; ;LEDSCAT.c: 50:             PORTC = 0b10001110;
-[e = _PORTC -> -> 142 `i `uc ]
-"51
-[; ;LEDSCAT.c: 51:             break;
+[; ;LEDSCAT.c: 49:             break;
 [e $U 139  ]
+"50
+[; ;LEDSCAT.c: 50:         case 15:
+[e :U 156 ]
+"51
+[; ;LEDSCAT.c: 51:             PORTC = 0b10001110;
+[e = _PORTC -> -> 142 `i `uc ]
 "52
-[; ;LEDSCAT.c: 52: }
+[; ;LEDSCAT.c: 52:             break;
+[e $U 139  ]
+"53
+[; ;LEDSCAT.c: 53: }
 }
 [e $U 139  ]
 [e :U 140 ]
@@ -414,7 +414,7 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 15 `i 156
  139 ]
 [e :U 139 ]
-"53
-[; ;LEDSCAT.c: 53: }
+"54
+[; ;LEDSCAT.c: 54: }
 [e :UE 138 ]
 }

@@ -1,4 +1,4 @@
-# 1 "ADC.c"
+# 1 "newmain.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,31 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "ADC.c" 2
-# 1 "./ADC.h" 1
+# 1 "newmain.c" 2
+
+
+
+
+
+
+
+#pragma config FOSC = INTRC_NOCLKOUT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = OFF
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config LVP = OFF
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+
+
+
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\xc.h" 1 3
@@ -2632,32 +2655,88 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\xc.h" 2 3
-# 3 "./ADC.h" 2
+# 26 "newmain.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 27 "newmain.c" 2
+
+# 1 "./ADC.h" 1
+
+
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 4 "./ADC.h" 2
 
 void ADC_CHS_CLKS (uint8_t C, uint8_t S);
-# 1 "ADC.c" 2
-
-void ADC_CHS_CLKS (uint8_t C, uint8_t S){
-
-
-
-                ADCON0bits.CHS3=0;
-                ADCON0bits.CHS2=0;
-                ADCON0bits.CHS1=0;
-                ADCON0bits.CHS0=0;
-# 112 "ADC.c"
-                ADCON0bits.ADCS1=1;
-                ADCON0bits.ADCS0=0;
+# 28 "newmain.c" 2
 
 
 
 
 
 
-     ADCON0bits.ADON=1;
-     ADCON0bits.GO=1;
-     ADCON1=0;
+
+
+void Setup (void);
+void pull (void);
+void push_0 (void);
+void push_1 (void);
+void ADCG (void);
+uint8_t W,w,Q,H,h,L,ADCGO;
+
+
+
+
+void __attribute__((picinterrupt(("")))) isr(void){
+    if (ADIF==1){
+        PORTD=ADRESH;
+        PIR1bits.ADIF=0;
+        ADCON0bits.GO=1;}
+}
+
+
+
+void main(void) {
+    Setup();
+
+
+
+    while(1){
+
     }
+}
+
+
+
+void Setup(void){
+    ADC_CHS_CLKS (0,2);
+    PIE1bits.ADIE=1;
+
+    PORTA = 0;
+    PORTD = 0;
+
+    TRISA = 0B00000001;
+    TRISD = 0B00000000;
+
+    ANSEL = 0B00000001;
+
+
+    INTCONbits.GIE=1;
+    INTCONbits.PEIE=1;
+
+
+
+
+
+    PIR1bits.ADIF=0;
+}
+
+
+
+
+void ADCG(void){
+    if(ADCGO > 20){
+        ADCGO = 0;
+        ADCON0bits.GO_nDONE = 1;
+    }
+}
