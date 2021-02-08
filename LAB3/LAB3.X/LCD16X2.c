@@ -54,6 +54,7 @@ void CONVET_cont (void);
 void __interrupt ( ) isr(void){
     if (ADIF==1){ //revisamos la bandera del adc
         PIR1bits.ADIF=0;} // //reset la bandera
+    
     if (PIR1bits.RCIF==1){ 
         GET=RCREG;}
         
@@ -74,14 +75,14 @@ void __interrupt ( ) isr(void){
 //******************************************************************************
 
 void main(void) {
-    Setup();
-    SET_RXT();
-    SET_TXR();
-    LCD_IN();
-    LCD_CL();
+    Setup(); // general set up
+    SET_RXT(); //set up to send data 
+    SET_TXR(); //set up to recive  
+    LCD_IN(); //start up of lcd
+    LCD_CL();// start up of lcd
     LCD_POINT(0,1,"ADC1 ADC2 CONT");//Mensaje inicia    
-    LCDVAL1 (1, 16);
-    LCDVAL1 (6, 16);
+    LCDVAL1 (1, 16); //esto es para poner los puntos entre los voltajes 
+    LCDVAL1 (6, 16); //esto es para poner los puntos entre los voltajes
 
     
     //**************************************************************************
@@ -90,12 +91,12 @@ void main(void) {
     while(1){
     L_ADC ();
     pull();
-    LCDVAL1 (0,POT1_U);
-    LCDVAL1 (2,POT1_T);
-    LCDVAL1 (3,POT1_H);
-    LCDVAL1 (5,POT2_U); //envio de nibbles para LCD
-    LCDVAL1 (7,POT2_T);    
-    LCDVAL1 (8,POT2_H); 
+    LCDVAL1 (0,POT1_U);// sets the 1st variable in the fisrt bit of the displau 
+    LCDVAL1 (2,POT1_T);// sets the 2nd variable in the fisrt bit of the displau
+    LCDVAL1 (3,POT1_H);// sets the 3rd variable in the fisrt bit of the displau
+    LCDVAL1 (5,POT2_U);// sets the 4rd variable in the fisrt bit of the displau
+    LCDVAL1 (7,POT2_T);// sets the 5th variable in the fisrt bit of the displau    
+    LCDVAL1 (8,POT2_H);// sets the 6st variable in the fisrt bit of the displau 
     push();
     CONVET_cont();
     LCDVAL1 (10,cont_1);
@@ -106,7 +107,7 @@ void main(void) {
     }   
 }
 void Setup(void){
-    initOsc(6);
+    initOsc(6); //reloj interno 
     INTCONbits.PEIE = 1;
     PIE1bits.ADIE = 1;
     PIR1bits.ADIF = 0;
@@ -145,20 +146,18 @@ void pull(void){
 void L_ADC (void){
     if (r > 20){
         r=0;
-        ADCON0bits.GO_nDONE=1;
-    }        
-    }
+        ADCON0bits.GO_nDONE=1;}}
 void CONVET (void){
-    L=tem1;
+    L=tem1;//cambio temporal para mapeo 
     l=tem2;
-    POT1_U=(L/51);
-    POT1_T=((L*100/51)-(POT1_U*100))/10;
-    POT1_H=((L*100/51)-(POT1_U*100)-(POT1_T*10));   
+    POT1_U=(L/51);//mapeo de primera var
+    POT1_T=((L*100/51)-(POT1_U*100))/10;//mapeo de segunda var
+    POT1_H=((L*100/51)-(POT1_U*100)-(POT1_T*10));//mapeo de tersero  var
     POT2_U=(l/51);
     POT2_T=(((l*100)/51)-(POT2_U*100))/10;
     POT2_H=(((l*100)/51)-(POT2_U*100)-(POT2_T*10));
     
-    //ascci
+    //cambio para asscci
     POT1_Uas=(POT1_U+0x30);
     POT1_Tas=(POT1_T+0x30);
     POT1_Has=(POT1_H+0x30);
@@ -202,21 +201,23 @@ void send (void){
              TXREG = 0x0D;
              z=0;
             break;
+ /*sending of data 
+  its can only send 8bits therefor we have a switch that incremente on each 
+  change of the interuption */
     }
 }
 void push ( void ){ 
-    if(GET==43){
+    if(GET==43){//we wait to get the asscci + that is 43
         W=1;}
-    if(GET==13 && W==1 ){
+    if(GET==13 && W==1 ){//we wait for the enter and the flag w
             W=0;
             cont++;}
-    if (GET==45){
+    if (GET==45){//we wait to get the asscci + that is 45
         w=1;}
-    if(GET==13 && w==1){
+    if(GET==13 && w==1){//we wait for the enter and the flag w
             W=0;
             cont--;}
 }
-
 void CONVET_cont (void){
     cont_1=(cont/100);
     cont_2=((cont)-(cont_1*100))/10;

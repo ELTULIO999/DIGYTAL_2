@@ -25,21 +25,21 @@
 [v _SET_RXT SET_RXT `(v  1 e 1 0 ]
 "54 C:\Users\julit\Desktop\sem7\digi\DIGYTAL_2\LAB3\LAB3.X\LCD16X2.c
 [v _isr isr `II(v  1 e 1 0 ]
-"76
+"77
 [v _main main `(v  1 e 1 0 ]
-"108
+"109
 [v _Setup Setup `(v  1 e 1 0 ]
-"133
+"134
 [v _pull pull `(v  1 e 1 0 ]
-"145
+"146
 [v _L_ADC L_ADC `(v  1 e 1 0 ]
-"151
+"150
 [v _CONVET CONVET `(v  1 e 1 0 ]
-"169
+"168
 [v _send send `(v  1 e 1 0 ]
-"207
+"209
 [v _push push `(v  1 e 1 0 ]
-"220
+"221
 [v _CONVET_cont CONVET_cont `(v  1 e 1 0 ]
 "6 C:\Users\julit\Desktop\sem7\digi\DIGYTAL_2\LAB3\LAB3.X\Oscilador.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
@@ -281,25 +281,25 @@
 [v _cont_1 cont_1 `uc  1 e 1 0 ]
 [v _cont_2 cont_2 `uc  1 e 1 0 ]
 [v _cont_3 cont_3 `uc  1 e 1 0 ]
-"76
+"77
 [v _main main `(v  1 e 1 0 ]
 {
-"107
+"108
 } 0
-"207
+"209
 [v _push push `(v  1 e 1 0 ]
 {
-"218
+"220
 } 0
-"133
+"134
 [v _pull pull `(v  1 e 1 0 ]
 {
-"144
+"145
 } 0
-"151
+"150
 [v _CONVET CONVET `(v  1 e 1 0 ]
 {
-"168
+"167
 } 0
 "3 C:\Users\julit\Desktop\sem7\digi\DIGYTAL_2\LAB3\LAB3.X\ADC.c
 [v _ADC_CHS_CLKS ADC_CHS_CLKS `(v  1 e 1 0 ]
@@ -310,10 +310,10 @@
 [v ADC_CHS_CLKS@C C `uc  1 a 1 3 ]
 "168
 } 0
-"108 C:\Users\julit\Desktop\sem7\digi\DIGYTAL_2\LAB3\LAB3.X\LCD16X2.c
+"109 C:\Users\julit\Desktop\sem7\digi\DIGYTAL_2\LAB3\LAB3.X\LCD16X2.c
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"132
+"133
 } 0
 "6 C:\Users\julit\Desktop\sem7\digi\DIGYTAL_2\LAB3\LAB3.X\Oscilador.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
@@ -333,10 +333,10 @@
 {
 "19
 } 0
-"145 C:\Users\julit\Desktop\sem7\digi\DIGYTAL_2\LAB3\LAB3.X\LCD16X2.c
+"146 C:\Users\julit\Desktop\sem7\digi\DIGYTAL_2\LAB3\LAB3.X\LCD16X2.c
 [v _L_ADC L_ADC `(v  1 e 1 0 ]
 {
-"150
+"149
 } 0
 "6 C:\Users\julit\Desktop\sem7\digi\DIGYTAL_2\LAB3\LAB3.X\SETLCD.c
 [v _LCD_IN LCD_IN `(v  1 e 1 0 ]
@@ -395,10 +395,10 @@
 {
 "29
 } 0
-"220 C:\Users\julit\Desktop\sem7\digi\DIGYTAL_2\LAB3\LAB3.X\LCD16X2.c
+"221 C:\Users\julit\Desktop\sem7\digi\DIGYTAL_2\LAB3\LAB3.X\LCD16X2.c
 [v _CONVET_cont CONVET_cont `(v  1 e 1 0 ]
 {
-"224
+"225
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -439,10 +439,10 @@
 "54 C:\Users\julit\Desktop\sem7\digi\DIGYTAL_2\LAB3\LAB3.X\LCD16X2.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"73
+"74
 } 0
-"169
+"168
 [v _send send `(v  1 e 1 0 ]
 {
-"206
+"208
 } 0

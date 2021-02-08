@@ -2727,6 +2727,7 @@ void CONVET_cont (void);
 void __attribute__((picinterrupt(("")))) isr(void){
     if (ADIF==1){
         PIR1bits.ADIF=0;}
+
     if (PIR1bits.RCIF==1){
         GET=RCREG;}
 
@@ -2818,9 +2819,7 @@ void pull(void){
 void L_ADC (void){
     if (r > 20){
         r=0;
-        ADCON0bits.GO_nDONE=1;
-    }
-    }
+        ADCON0bits.GO_nDONE=1;}}
 void CONVET (void){
     L=tem1;
     l=tem2;
@@ -2875,6 +2874,9 @@ void send (void){
              TXREG = 0x0D;
              z=0;
             break;
+
+
+
     }
 }
 void push ( void ){
@@ -2889,7 +2891,6 @@ void push ( void ){
             W=0;
             cont--;}
 }
-
 void CONVET_cont (void){
     cont_1=(cont/100);
     cont_2=((cont)-(cont_1*100))/10;
