@@ -23,7 +23,7 @@ cstackBANK0 BANK0 1 20 20 2 1
 intentry CODE 0 4 4 8 2
 bssCOMMON COMMON 1 70 70 7 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\julit\AppData\Local\Temp\sdt0.o
+$C:\Users\julit\AppData\Local\Temp\souc.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -73,18 +73,18 @@ STRING 115-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\slave1.X.production.o
-F cinit CODE >610:C:\Users\julit\AppData\Local\Temp\sdt0.s
-F cinit CODE >613:C:\Users\julit\AppData\Local\Temp\sdt0.s
-F cinit CODE >642:C:\Users\julit\AppData\Local\Temp\sdt0.s
-10 cinit CODE >643:C:\Users\julit\AppData\Local\Temp\sdt0.s
-11 cinit CODE >644:C:\Users\julit\AppData\Local\Temp\sdt0.s
-12 cinit CODE >645:C:\Users\julit\AppData\Local\Temp\sdt0.s
-13 cinit CODE >646:C:\Users\julit\AppData\Local\Temp\sdt0.s
-14 cinit CODE >647:C:\Users\julit\AppData\Local\Temp\sdt0.s
-15 cinit CODE >648:C:\Users\julit\AppData\Local\Temp\sdt0.s
-16 cinit CODE >654:C:\Users\julit\AppData\Local\Temp\sdt0.s
-16 cinit CODE >656:C:\Users\julit\AppData\Local\Temp\sdt0.s
-17 cinit CODE >657:C:\Users\julit\AppData\Local\Temp\sdt0.s
+F cinit CODE >778:C:\Users\julit\AppData\Local\Temp\souc.s
+F cinit CODE >781:C:\Users\julit\AppData\Local\Temp\souc.s
+F cinit CODE >810:C:\Users\julit\AppData\Local\Temp\souc.s
+10 cinit CODE >811:C:\Users\julit\AppData\Local\Temp\souc.s
+11 cinit CODE >812:C:\Users\julit\AppData\Local\Temp\souc.s
+12 cinit CODE >813:C:\Users\julit\AppData\Local\Temp\souc.s
+13 cinit CODE >814:C:\Users\julit\AppData\Local\Temp\souc.s
+14 cinit CODE >815:C:\Users\julit\AppData\Local\Temp\souc.s
+15 cinit CODE >816:C:\Users\julit\AppData\Local\Temp\souc.s
+16 cinit CODE >822:C:\Users\julit\AppData\Local\Temp\souc.s
+16 cinit CODE >824:C:\Users\julit\AppData\Local\Temp\souc.s
+17 cinit CODE >825:C:\Users\julit\AppData\Local\Temp\souc.s
 4 intentry CODE >46:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave1.X\slave1.c
 EB text4 CODE >46:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave1.X\slave1.c
 EB text4 CODE >47:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave1.X\slave1.c
@@ -251,22 +251,22 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _ADCG 214 0 CODE 0 text3 dist/default/production\slave1.X.production.o
 _ADIF 66 0 ABS 0 - dist/default/production\slave1.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\sdt0.o
+___sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\souc.o
 _main 1F8 0 CODE 0 maintext dist/default/production\slave1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\slave1.X.production.o
-start 18 0 CODE 0 init C:\Users\julit\AppData\Local\Temp\sdt0.o
+start 18 0 CODE 0 init C:\Users\julit\AppData\Local\Temp\souc.o
 __size_of_ADCG 0 0 ABS 0 - dist/default/production\slave1.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\slave1.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 ADC_CHS_CLKS@C 20 0 BANK0 1 cstackBANK0 dist/default/production\slave1.X.production.o
 ADC_CHS_CLKS@S 79 0 COMMON 1 cstackCOMMON dist/default/production\slave1.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sdt0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sdt0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sdt0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sdt0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sdt0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sdt0.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\souc.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\souc.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\souc.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\souc.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\souc.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\souc.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\slave1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -274,14 +274,18 @@ __Hclrtext 0 0 ABS 0 clrtext -
 _ADCON1 9F 0 ABS 0 - dist/default/production\slave1.X.production.o
 _ADRESH 1E 0 ABS 0 - dist/default/production\slave1.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\sdt0.o
-___stacklo 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\sdt0.o
+___stackhi 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\souc.o
+___stacklo 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\souc.o
 _ADC_CHS_CLKS 34 0 CODE 0 text2 dist/default/production\slave1.X.production.o
 __size_of_Setup 0 0 ABS 0 - dist/default/production\slave1.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\slave1.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\slave1.X.production.o
+_SSPBUF 13 0 ABS 0 - dist/default/production\slave1.X.production.o
+_SSPCON 14 0 ABS 0 - dist/default/production\slave1.X.production.o
+_TRISC3 43B 0 ABS 0 - dist/default/production\slave1.X.production.o
+_TRISC5 43D 0 ABS 0 - dist/default/production\slave1.X.production.o
 __size_of_ADC_CHS_CLKS 0 0 ABS 0 - dist/default/production\slave1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\sdt0.o
+___int_sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\souc.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -325,7 +329,7 @@ _isr 1D6 0 CODE 0 text4 dist/default/production\slave1.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\slave1.X.production.o
 __end_of_isr 1F8 0 CODE 0 text4 dist/default/production\slave1.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\julit\AppData\Local\Temp\sdt0.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\julit\AppData\Local\Temp\souc.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\slave1.X.production.o
 __pmaintext 1F8 0 CODE 0 maintext dist/default/production\slave1.X.production.o
 __Lcommon 0 0 ABS 0 common -
@@ -356,6 +360,7 @@ __end_of__initialization 2C 0 CODE 0 cinit dist/default/production\slave1.X.prod
 __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 77 0 COMMON 1 cstackCOMMON dist/default/production\slave1.X.production.o
+_SSPSTAT 94 0 ABS 0 - dist/default/production\slave1.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
 __end_of_ADCG 22A 0 CODE 0 text3 dist/default/production\slave1.X.production.o
 __end_of_main 214 0 CODE 0 maintext dist/default/production\slave1.X.production.o
@@ -370,6 +375,7 @@ _TRISD 88 0 ABS 0 - dist/default/production\slave1.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\slave1.X.production.o
+_SSPSTATbits 94 0 ABS 0 - dist/default/production\slave1.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\slave1.X.production.o
 __size_of_isr 0 0 ABS 0 - dist/default/production\slave1.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\slave1.X.production.o

@@ -19,7 +19,8 @@
 
 #include <xc.h>
 #include <stdint.h>
-//#include "Oscilador.h" // 
+#include "SSSPI.h"
+#include "Oscilador.h" // 
 
 
 //******************************************************************************
@@ -33,36 +34,43 @@
 void Setup   (void);
 void push_0  (void);
 void push_1  (void);
-uint8_t W,w,Q,H,h,L,ADCGO;
+uint8_t W,w,Q,H,h,L;
 //******************************************************************************
 //******************************************************************************
 //                            interuption 
 //******************************************************************************
 void __interrupt ( ) isr(void){
-// la funcion del toggle para los 7seg
     if (RBIF==1){ //revisamos la bandera del ioc 
          push_0 ();// pushbutton de suma 
          push_1 ();// pushbutton de resta
          RBIF=0;} //reset la bandera
+     if(SSPIF == 1){
+       
+      spiWrite(PORTD);
+      SSPIF = 0;
+    }
 }
+
 //******************************************************************************
 // Ciclo principal
 //******************************************************************************
 void main(void) { 
     Setup();
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+
+ 
     //**************************************************************************
     // Loop principal
     //**************************************************************************
     while(1){
-        
-    }
-
-}
+     if(SSPIF == 1){
+        spiWrite(PORTD);
+        SSPIF = 0;   
+     }}}  
 //******************************************************************************
 // Configuración
 //******************************************************************************
 void Setup(void){
-
 //puertos on clear 
     PORTA =  0; //PORTA EN 0
     PORTB =  0; //PORTB EN 0
@@ -72,22 +80,22 @@ void Setup(void){
 // inputs y otputs
     TRISA =  0B00000000; //INPUT EN porta
     TRISB =  0B00000011; //INPUT EN portb
-    TRISC =  0B00000000; //INPUT EN portc
+    TRISC =  0B00011000; //INPUT EN portc
     TRISD =  0B00000000; //INPUT EN portd
-    TRISE = 0 ; //INPUT EN porte
+    TRISE =  0B0000; //INPUT EN porte
 // analog inputs 
     ANSEL =  0B00000000; // solo estamos usando el RA0 como analogico 
     ANSELH = 0B00000000;
 // portB modo pullup
-    OPTION_REGbits.nRBPU=0;
+    OPTION_REG =0B01010111 ;
 // Configuración de timer0------------------------------------------------------
     INTCONbits.GIE=1; //on todas las interrupts global 
     INTCONbits.PEIE=1;//on periferal
-
-// CONFIG INT ON CHANGE 
     INTCONbits.RBIE=1; //PORTB Change Interrupt Enable bit
-    IOCB=3;
-    ei();}
+    INTCONbits.RBIF=0; //PORTB Change Interrupt Enable bit
+    WPUB =0B00000011;
+    IOCB = 0B00000011;
+}
 
 //******************************************************************************
 // funciones 
@@ -98,7 +106,7 @@ void push_0 (void) {
     else {
         if(W==1){ //when is not press and it was press in the past it will check the flag 
         W=0;
-        PORTA++;//adds 1 to the porta 
+        PORTD++;//adds 1 to the porta 
         }
         }
 } //antirebote 
@@ -108,7 +116,7 @@ void push_1 (void) {
     else {
         if(w==1){ //when is not press and it was press in the past it will check the flag
         w=0;
-        PORTA--;//subtracts 1 to the porta 
+        PORTD--;//subtracts 1 to the porta 
         }
         }
 }//antirebote 

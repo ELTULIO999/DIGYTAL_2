@@ -2643,40 +2643,97 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 # 21 "salve2.c" 2
-# 33 "salve2.c"
+
+# 1 "./SSSPI.h" 1
+
+
+
+
+typedef enum
+{
+    SPI_MASTER_OSC_DIV4 = 0b00100000,
+    SPI_MASTER_OSC_DIV16 = 0b00100001,
+    SPI_MASTER_OSC_DIV64 = 0b00100010,
+    SPI_MASTER_TMR2 = 0b00100011,
+    SPI_SLAVE_SS_EN = 0b00100100,
+    SPI_SLAVE_SS_DIS = 0b00100101
+}Spi_Type;
+
+typedef enum
+{
+    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
+    SPI_DATA_SAMPLE_END = 0b10000000
+}Spi_Data_Sample;
+
+typedef enum
+{
+    SPI_CLOCK_IDLE_HIGH = 0b00010000,
+    SPI_CLOCK_IDLE_LOW = 0b00000000
+}Spi_Clock_Idle;
+
+typedef enum
+{
+    SPI_IDLE_2_ACTIVE = 0b00000000,
+    SPI_ACTIVE_2_IDLE = 0b01000000
+}Spi_Transmit_Edge;
+
+
+void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
+void spiWrite(char);
+unsigned spiDataReady();
+char spiRead();
+# 22 "salve2.c" 2
+
+# 1 "./Oscilador.h" 1
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 4 "./Oscilador.h" 2
+
+void initOsc (uint8_t IRCF);
+# 23 "salve2.c" 2
+# 34 "salve2.c"
 void Setup (void);
 void push_0 (void);
 void push_1 (void);
-uint8_t W,w,Q,H,h,L,ADCGO;
+uint8_t W,w,Q,H,h,L;
 
 
 
 
 void __attribute__((picinterrupt(("")))) isr(void){
-
     if (RBIF==1){
          push_0 ();
          push_1 ();
          RBIF=0;}
+     if(SSPIF == 1){
+
+      spiWrite(PORTD);
+      SSPIF = 0;
+    }
 }
+
 
 
 
 void main(void) {
     Setup();
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+
+
 
 
 
     while(1){
-
-    }
-
-}
+     if(SSPIF == 1){
+        spiWrite(PORTD);
+        SSPIF = 0;
+     }}}
 
 
 
 void Setup(void){
-
 
     PORTA = 0;
     PORTB = 0;
@@ -2686,22 +2743,22 @@ void Setup(void){
 
     TRISA = 0B00000000;
     TRISB = 0B00000011;
-    TRISC = 0B00000000;
+    TRISC = 0B00011000;
     TRISD = 0B00000000;
-    TRISE = 0 ;
+    TRISE = 0B0000;
 
     ANSEL = 0B00000000;
     ANSELH = 0B00000000;
 
-    OPTION_REGbits.nRBPU=0;
+    OPTION_REG =0B01010111 ;
 
     INTCONbits.GIE=1;
     INTCONbits.PEIE=1;
-
-
     INTCONbits.RBIE=1;
-    IOCB=3;
-    (INTCONbits.GIE = 1);}
+    INTCONbits.RBIF=0;
+    WPUB =0B00000011;
+    IOCB = 0B00000011;
+}
 
 
 
@@ -2712,7 +2769,7 @@ void push_0 (void) {
     else {
         if(W==1){
         W=0;
-        PORTA++;
+        PORTD++;
         }
         }
 }
@@ -2722,7 +2779,7 @@ void push_1 (void) {
     else {
         if(w==1){
         w=0;
-        PORTA--;
+        PORTD--;
         }
         }
 }

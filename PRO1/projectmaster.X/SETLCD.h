@@ -23,5 +23,5 @@ void LCD_POINT (int x, int y, char *D);
 void LCDVAL1 (int x, int Z);
 
 
-#endif	/* XC_HEADER_TEMPLATE_H */
+#endif	/* SETLCD_H */
 

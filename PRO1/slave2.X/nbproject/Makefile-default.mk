@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=salve2.c
+SOURCEFILES_QUOTED_IF_SPACED=salve2.c SSSPI.c Oscilador.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/salve2.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/salve2.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/salve2.p1 ${OBJECTDIR}/SSSPI.p1 ${OBJECTDIR}/Oscilador.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/salve2.p1.d ${OBJECTDIR}/SSSPI.p1.d ${OBJECTDIR}/Oscilador.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/salve2.p1
+OBJECTFILES=${OBJECTDIR}/salve2.p1 ${OBJECTDIR}/SSSPI.p1 ${OBJECTDIR}/Oscilador.p1
 
 # Source Files
-SOURCEFILES=salve2.c
+SOURCEFILES=salve2.c SSSPI.c Oscilador.c
 
 
 
@@ -102,6 +102,22 @@ ${OBJECTDIR}/salve2.p1: salve2.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/salve2.d ${OBJECTDIR}/salve2.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/salve2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/SSSPI.p1: SSSPI.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/SSSPI.p1.d 
+	@${RM} ${OBJECTDIR}/SSSPI.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/SSSPI.p1 SSSPI.c 
+	@-${MV} ${OBJECTDIR}/SSSPI.d ${OBJECTDIR}/SSSPI.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/SSSPI.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Oscilador.p1: Oscilador.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Oscilador.p1.d 
+	@${RM} ${OBJECTDIR}/Oscilador.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/Oscilador.p1 Oscilador.c 
+	@-${MV} ${OBJECTDIR}/Oscilador.d ${OBJECTDIR}/Oscilador.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Oscilador.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/salve2.p1: salve2.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -110,6 +126,22 @@ ${OBJECTDIR}/salve2.p1: salve2.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/salve2.p1 salve2.c 
 	@-${MV} ${OBJECTDIR}/salve2.d ${OBJECTDIR}/salve2.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/salve2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/SSSPI.p1: SSSPI.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/SSSPI.p1.d 
+	@${RM} ${OBJECTDIR}/SSSPI.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/SSSPI.p1 SSSPI.c 
+	@-${MV} ${OBJECTDIR}/SSSPI.d ${OBJECTDIR}/SSSPI.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/SSSPI.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Oscilador.p1: Oscilador.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Oscilador.p1.d 
+	@${RM} ${OBJECTDIR}/Oscilador.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/Oscilador.p1 Oscilador.c 
+	@-${MV} ${OBJECTDIR}/Oscilador.d ${OBJECTDIR}/Oscilador.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Oscilador.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

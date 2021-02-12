@@ -1,0 +1,403 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"49 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+[e E1310 . `uc
+SPI_MASTER_OSC_DIV4 32
+SPI_MASTER_OSC_DIV16 33
+SPI_MASTER_OSC_DIV64 34
+SPI_MASTER_TMR2 35
+SPI_SLAVE_SS_EN 36
+SPI_SLAVE_SS_DIS 37
+]
+[e E1318 . `uc
+SPI_DATA_SAMPLE_MIDDLE 0
+SPI_DATA_SAMPLE_END 128
+]
+[e E1322 . `uc
+SPI_CLOCK_IDLE_HIGH 16
+SPI_CLOCK_IDLE_LOW 0
+]
+[e E1326 . `uc
+SPI_IDLE_2_ACTIVE 0
+SPI_ACTIVE_2_IDLE 64
+]
+"6 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+[e E1264 . `uc
+SPI_MASTER_OSC_DIV4 32
+SPI_MASTER_OSC_DIV16 33
+SPI_MASTER_OSC_DIV64 34
+SPI_MASTER_TMR2 35
+SPI_SLAVE_SS_EN 36
+SPI_SLAVE_SS_DIS 37
+]
+[e E1272 . `uc
+SPI_DATA_SAMPLE_MIDDLE 0
+SPI_DATA_SAMPLE_END 128
+]
+[e E1276 . `uc
+SPI_CLOCK_IDLE_HIGH 16
+SPI_CLOCK_IDLE_LOW 0
+]
+[e E1280 . `uc
+SPI_IDLE_2_ACTIVE 0
+SPI_ACTIVE_2_IDLE 64
+]
+"2 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SSSPI.c
+[e E1264 . `uc
+SPI_MASTER_OSC_DIV4 32
+SPI_MASTER_OSC_DIV16 33
+SPI_MASTER_OSC_DIV64 34
+SPI_MASTER_TMR2 35
+SPI_SLAVE_SS_EN 36
+SPI_SLAVE_SS_DIS 37
+]
+[e E1272 . `uc
+SPI_DATA_SAMPLE_MIDDLE 0
+SPI_DATA_SAMPLE_END 128
+]
+[e E1276 . `uc
+SPI_CLOCK_IDLE_HIGH 16
+SPI_CLOCK_IDLE_LOW 0
+]
+[e E1280 . `uc
+SPI_IDLE_2_ACTIVE 0
+SPI_ACTIVE_2_IDLE 64
+]
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"48 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+[v _main main `(v  1 e 1 0 ]
+"92
+[v _Setup Setup `(v  1 e 1 0 ]
+"6 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+[v _spiInit spiInit `(v  1 e 1 0 ]
+"23
+[v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
+"28
+[v _spiWrite spiWrite `(v  1 e 1 0 ]
+"4 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+[v _LCD_IN LCD_IN `(v  1 e 1 0 ]
+"17
+[v _LCD_ON LCD_ON `(v  1 e 1 0 ]
+"23
+[v _LCD_TIM LCD_TIM `(v  1 e 1 0 ]
+"28
+[v _LCD_PLAY LCD_PLAY `(v  1 e 1 0 ]
+"34
+[v _LCD_CL LCD_CL `(v  1 e 1 0 ]
+"37
+[v _LCD_P LCD_P `(v  1 e 1 0 ]
+"43
+[v _LCD_POINT LCD_POINT `(v  1 e 1 0 ]
+"59
+[v _LCDVAL1 LCDVAL1 `(v  1 e 1 0 ]
+"19 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SSSPI.c
+[v _spiReceiveWait@SSSPI$F482 spiReceiveWait `(v  1 s 1 spiReceiveWait ]
+"166 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"228
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S318 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"369
+[u S327 . 1 `S318 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES327  1 e 1 @8 ]
+"414
+[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+[s S65 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+`uc 1 RE3 1 0 :1:3 
+]
+"427
+[u S70 . 1 `S65 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES70  1 e 1 @9 ]
+[s S101 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"482
+[s S110 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S115 . 1 `S101 1 . 1 0 `S110 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES115  1 e 1 @11 ]
+"843
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"850
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+[s S547 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"1068
+[s S556 . 1 `uc 1 RCD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S560 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 nRC8 1 0 :1:6 
+]
+[s S563 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[u S566 . 1 `S547 1 . 1 0 `S556 1 . 1 0 `S560 1 . 1 0 `S563 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES566  1 e 1 @24 ]
+"1416
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+[s S296 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"1619
+[u S305 . 1 `S296 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES305  1 e 1 @136 ]
+"1664
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+[s S591 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1718
+[u S599 . 1 `S591 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES599  1 e 1 @140 ]
+"2177
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
+[s S187 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"2231
+[s S196 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S201 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DATA 1 0 :1:5 
+]
+[s S207 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S212 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S217 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S222 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[u S227 . 1 `S187 1 . 1 0 `S196 1 . 1 0 `S201 1 . 1 0 `S207 1 . 1 0 `S212 1 . 1 0 `S217 1 . 1 0 `S222 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES227  1 e 1 @148 ]
+[s S488 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"2582
+[s S497 . 1 `uc 1 TXD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 nTX8 1 0 :1:6 
+]
+[s S501 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[u S504 . 1 `S488 1 . 1 0 `S497 1 . 1 0 `S501 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES504  1 e 1 @152 ]
+"2642
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+[s S525 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"3352
+[u S534 . 1 `S525 1 . 1 0 ]
+[v _BAUDCTLbits BAUDCTLbits `VES534  1 e 1 @391 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"4457
+[v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
+"4463
+[v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
+"35 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+[v _Z Z `uc  1 e 1 0 ]
+"36
+[v _POT1_U POT1_U `uc  1 e 1 0 ]
+[v _POT1_H POT1_H `uc  1 e 1 0 ]
+[v _POT1_T POT1_T `uc  1 e 1 0 ]
+"37
+[v _TEM_U TEM_U `uc  1 e 1 0 ]
+[v _TEM_T TEM_T `uc  1 e 1 0 ]
+"38
+[v _cont_1 cont_1 `uc  1 e 1 0 ]
+[v _cont_2 cont_2 `uc  1 e 1 0 ]
+[v _cont_3 cont_3 `uc  1 e 1 0 ]
+"48
+[v _main main `(v  1 e 1 0 ]
+{
+"88
+} 0
+"28 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+[v _spiWrite spiWrite `(v  1 e 1 0 ]
+{
+[v spiWrite@dat dat `uc  1 a 1 wreg ]
+[v spiWrite@dat dat `uc  1 a 1 wreg ]
+"30
+[v spiWrite@dat dat `uc  1 a 1 0 ]
+"31
+} 0
+"6
+[v _spiInit spiInit `(v  1 e 1 0 ]
+{
+[v spiInit@sType sType `E1264  1 a 1 wreg ]
+[v spiInit@sType sType `E1264  1 a 1 wreg ]
+[v spiInit@sDataSample sDataSample `E1272  1 p 1 0 ]
+[v spiInit@sClockIdle sClockIdle `E1276  1 p 1 1 ]
+[v spiInit@sTransmitEdge sTransmitEdge `E1280  1 p 1 2 ]
+"8
+[v spiInit@sType sType `E1264  1 a 1 3 ]
+"21
+} 0
+"92 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+[v _Setup Setup `(v  1 e 1 0 ]
+{
+"114
+} 0
+"4 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+[v _LCD_IN LCD_IN `(v  1 e 1 0 ]
+{
+"16
+} 0
+"34
+[v _LCD_CL LCD_CL `(v  1 e 1 0 ]
+{
+"36
+} 0
+"59
+[v _LCDVAL1 LCDVAL1 `(v  1 e 1 0 ]
+{
+[v LCDVAL1@x x `i  1 p 2 0 ]
+[v LCDVAL1@Z Z `i  1 p 2 2 ]
+"113
+} 0
+"43
+[v _LCD_POINT LCD_POINT `(v  1 e 1 0 ]
+{
+"44
+[v LCD_POINT@LOC LOC `uc  1 a 1 10 ]
+"43
+[v LCD_POINT@x x `i  1 p 2 4 ]
+[v LCD_POINT@y y `i  1 p 2 6 ]
+[v LCD_POINT@D D `*.24uc  1 p 1 8 ]
+"58
+} 0
+"37
+[v _LCD_P LCD_P `(v  1 e 1 0 ]
+{
+[v LCD_P@D D `*.24uc  1 a 1 wreg ]
+[v LCD_P@D D `*.24uc  1 a 1 wreg ]
+[v LCD_P@D D `*.24uc  1 a 1 3 ]
+"42
+} 0
+"28
+[v _LCD_PLAY LCD_PLAY `(v  1 e 1 0 ]
+{
+[v LCD_PLAY@D D `uc  1 a 1 wreg ]
+[v LCD_PLAY@D D `uc  1 a 1 wreg ]
+[v LCD_PLAY@D D `uc  1 a 1 1 ]
+"33
+} 0
+"17
+[v _LCD_ON LCD_ON `(v  1 e 1 0 ]
+{
+[v LCD_ON@C C `uc  1 a 1 wreg ]
+[v LCD_ON@C C `uc  1 a 1 wreg ]
+[v LCD_ON@C C `uc  1 a 1 2 ]
+"22
+} 0
+"23
+[v _LCD_TIM LCD_TIM `(v  1 e 1 0 ]
+{
+"27
+} 0

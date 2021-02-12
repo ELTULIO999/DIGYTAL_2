@@ -78,6 +78,7 @@ void main(void) {
     Setup(); // general set up
     SET_RXT(); //set up to send data 
     SET_TXR(); //set up to recive  
+    
     LCD_IN(); //start up of lcd
     LCD_CL();// start up of lcd
     LCD_POINT(0,1,"ADC1 ADC2 CONT");//Mensaje inicia    
