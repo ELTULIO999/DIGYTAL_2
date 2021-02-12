@@ -8,12 +8,6 @@
 # 2 "<built-in>" 2
 # 1 "slave1.c" 2
 
-
-
-
-
-
-
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2513,7 +2507,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 26 "slave1.c" 2
+# 20 "slave1.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2648,7 +2642,47 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 27 "slave1.c" 2
+# 21 "slave1.c" 2
+
+# 1 "./SSSP.h" 1
+
+
+
+
+typedef enum
+{
+    SPI_MASTER_OSC_DIV4 = 0b00100000,
+    SPI_MASTER_OSC_DIV16 = 0b00100001,
+    SPI_MASTER_OSC_DIV64 = 0b00100010,
+    SPI_MASTER_TMR2 = 0b00100011,
+    SPI_SLAVE_SS_EN = 0b00100100,
+    SPI_SLAVE_SS_DIS = 0b00100101
+}Spi_Type;
+
+typedef enum
+{
+    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
+    SPI_DATA_SAMPLE_END = 0b10000000
+}Spi_Data_Sample;
+
+typedef enum
+{
+    SPI_CLOCK_IDLE_HIGH = 0b00010000,
+    SPI_CLOCK_IDLE_LOW = 0b00000000
+}Spi_Clock_Idle;
+
+typedef enum
+{
+    SPI_IDLE_2_ACTIVE = 0b00000000,
+    SPI_ACTIVE_2_IDLE = 0b01000000
+}Spi_Transmit_Edge;
+
+
+void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
+void spiWrite(char);
+unsigned spiDataReady();
+char spiRead();
+# 22 "slave1.c" 2
 
 # 1 "./ADC.h" 1
 
@@ -2658,7 +2692,7 @@ typedef uint16_t uintptr_t;
 # 4 "./ADC.h" 2
 
 void ADC_CHS_CLKS (uint8_t C, uint8_t S);
-# 28 "slave1.c" 2
+# 23 "slave1.c" 2
 
 
 
@@ -2668,25 +2702,27 @@ void ADC_CHS_CLKS (uint8_t C, uint8_t S);
 
 
 void Setup (void);
-void pull (void);
-void push_0 (void);
-void push_1 (void);
 void ADCG (void);
-uint8_t W,w,Q,H,h,L,ADCGO;
+uint8_t ADCGO;
 
 
 
 
 void __attribute__((picinterrupt(("")))) isr(void){
     if (ADIF==1){
-        PORTA=ADRESH;
+        PORTB=ADRESH;
         PIR1bits.ADIF=0;
         ADCON0bits.GO=1;}
+    if(SSPIF == 1){
+        spiWrite(PORTB);
+        SSPIF = 0;
+        }
 }
 
 
 
 void main(void) {
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     Setup();
 
 
@@ -2703,10 +2739,16 @@ void Setup(void){
     PIE1bits.ADIE=1;
 
     PORTA = 0;
+    PORTB = 0;
+    PORTC = 0;
     PORTD = 0;
+    PORTE = 0;
 
     TRISA = 0B00000001;
+    TRISB = 0B00000000;
+    TRISC = 0B00011000;
     TRISD = 0B00000000;
+    TRISE = 0B0000;
 
     ANSEL = 0B00000001;
 

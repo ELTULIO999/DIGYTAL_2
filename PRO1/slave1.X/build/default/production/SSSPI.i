@@ -2695,10 +2695,11 @@ void spiWrite(char dat)
 
 unsigned spiDataReady()
 {
-    if(SSPSTATbits.BF)
-        return 1;
-    else
+    if(SSPSTATbits.BF){
+        return 1;}
+    else{
         return 0;
+}
 }
 
 char spiRead()

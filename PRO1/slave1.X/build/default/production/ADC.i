@@ -2631,6 +2631,7 @@ void ADC_CHS_CLKS (uint8_t C, uint8_t S);
 # 1 "ADC.c" 2
 
 
+
 void ADC_CHS_CLKS(uint8_t C, uint8_t S) {
 switch (C) {
 

@@ -12,25 +12,32 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production\projectmaster.X.production.o
-cinit CODE 0 7EE 7EE 12 2
-text1 CODE 0 516 516 6 2
-text2 CODE 0 556 556 16 2
-text3 CODE 0 56C 56C 18 2
-text4 CODE 0 5CA 5CA 2C 2
-text5 CODE 0 51C 51C 7 2
-text6 CODE 0 681 681 16D 2
-text7 CODE 0 5A3 5A3 27 2
-text8 CODE 0 584 584 1F 2
-text9 CODE 0 530 530 11 2
-text10 CODE 0 541 541 15 2
-text11 CODE 0 523 523 D 2
-maintext CODE 0 5F6 5F6 8B 2
+cinit CODE 0 7F3 7F3 D 2
+text1 CODE 0 3F4 3F4 6 2
+text2 CODE 0 410 410 9 2
+text3 CODE 0 401 401 7 2
+text4 CODE 0 461 461 16 2
+text5 CODE 0 477 477 18 2
+text6 CODE 0 4FA 4FA 2C 2
+text7 CODE 0 3FA 3FA 7 2
+text8 CODE 0 686 686 16D 2
+text9 CODE 0 4D3 4D3 27 2
+text10 CODE 0 48F 48F 1F 2
+text11 CODE 0 426 426 11 2
+text12 CODE 0 44C 44C 15 2
+text13 CODE 0 419 419 D 2
+text14 CODE 0 526 526 5F 2
+text15 CODE 0 4AE 4AE 25 2
+text16 CODE 0 437 437 15 2
+text17 CODE 0 585 585 69 2
+maintext CODE 0 5EE 5EE 98 2
 cstackCOMMON COMMON 1 70 70 E 1
-cstackBANK0 BANK0 1 2C 2C 4 1
-bssBANK0 BANK0 1 20 20 C 1
+cstackBANK0 BANK0 1 35 35 8 1
+bssBANK0 BANK0 1 20 20 15 1
 strings STRING 0 3 3 36 2
+clrtext CODE 0 408 408 8 2
 config CONFIG 4 2007 2007 2 2
-$C:\Users\julit\AppData\Local\Temp\svfg.o
+$C:\Users\julit\AppData\Local\Temp\sq5c.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
@@ -39,30 +46,30 @@ config CONFIG 4 2007 2007 2 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 30-6F 1
+RAM 3D-6F 1
 RAM A0-EF 1
 RAM 110-16F 1
 RAM 190-1EF 1
-BANK0 30-6F 1
+BANK0 3D-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 39-515 2
+CONST 39-3F3 2
 CONST 800-1FFF 2
-ENTRY 39-515 2
+ENTRY 39-3F3 2
 ENTRY 800-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
-CODE 39-515 2
+CODE 39-3F3 2
 CODE 800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
 EEDATA 2100-21FF 2
-STRCODE 39-515 2
+STRCODE 39-3F3 2
 STRCODE 800-1FFF 2
-STRING 39-515 2
+STRING 39-3F3 2
 STRING 800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -78,171 +85,229 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\projectmaster.X.production.o
-7EE cinit CODE >1246:C:\Users\julit\AppData\Local\Temp\svfg.s
-7EE cinit CODE >1249:C:\Users\julit\AppData\Local\Temp\svfg.s
-7EE cinit CODE >1293:C:\Users\julit\AppData\Local\Temp\svfg.s
-7EF cinit CODE >1294:C:\Users\julit\AppData\Local\Temp\svfg.s
-7F0 cinit CODE >1295:C:\Users\julit\AppData\Local\Temp\svfg.s
-7F1 cinit CODE >1296:C:\Users\julit\AppData\Local\Temp\svfg.s
-7F2 cinit CODE >1297:C:\Users\julit\AppData\Local\Temp\svfg.s
-7F3 cinit CODE >1298:C:\Users\julit\AppData\Local\Temp\svfg.s
-7F4 cinit CODE >1299:C:\Users\julit\AppData\Local\Temp\svfg.s
-7F5 cinit CODE >1300:C:\Users\julit\AppData\Local\Temp\svfg.s
-7F6 cinit CODE >1301:C:\Users\julit\AppData\Local\Temp\svfg.s
-7F7 cinit CODE >1302:C:\Users\julit\AppData\Local\Temp\svfg.s
-7F8 cinit CODE >1303:C:\Users\julit\AppData\Local\Temp\svfg.s
-7F9 cinit CODE >1304:C:\Users\julit\AppData\Local\Temp\svfg.s
-7FA cinit CODE >1305:C:\Users\julit\AppData\Local\Temp\svfg.s
-7FB cinit CODE >1306:C:\Users\julit\AppData\Local\Temp\svfg.s
-7FC cinit CODE >1312:C:\Users\julit\AppData\Local\Temp\svfg.s
-7FC cinit CODE >1314:C:\Users\julit\AppData\Local\Temp\svfg.s
-7FD cinit CODE >1315:C:\Users\julit\AppData\Local\Temp\svfg.s
-523 text11 CODE >23:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-523 text11 CODE >24:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-526 text11 CODE >25:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-529 text11 CODE >26:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-52C text11 CODE >27:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-541 text10 CODE >17:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-542 text10 CODE >18:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-545 text10 CODE >19:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-547 text10 CODE >20:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-54C text10 CODE >21:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-555 text10 CODE >22:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-530 text9 CODE >28:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-531 text9 CODE >29:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-534 text9 CODE >30:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-536 text9 CODE >31:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-53B text9 CODE >32:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-540 text9 CODE >33:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-584 text8 CODE >37:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-585 text8 CODE >38:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-586 text8 CODE >39:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-592 text8 CODE >40:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-596 text8 CODE >38:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5A2 text8 CODE >42:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5A3 text7 CODE >43:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5A3 text7 CODE >45:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5A4 text7 CODE >47:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5A9 text7 CODE >48:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5AA text7 CODE >50:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5AF text7 CODE >51:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5B0 text7 CODE >55:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5BD text7 CODE >56:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5C3 text7 CODE >57:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5C9 text7 CODE >58:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-681 text6 CODE >59:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-681 text6 CODE >60:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-682 text6 CODE >62:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-693 text6 CODE >63:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-694 text6 CODE >65:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-6A5 text6 CODE >66:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-6A6 text6 CODE >68:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-6B7 text6 CODE >69:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-6B8 text6 CODE >71:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-6C9 text6 CODE >72:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-6CA text6 CODE >74:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-6DB text6 CODE >75:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-6DC text6 CODE >77:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-6ED text6 CODE >78:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-6EE text6 CODE >80:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-6FF text6 CODE >81:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-700 text6 CODE >83:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-711 text6 CODE >84:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-712 text6 CODE >86:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-723 text6 CODE >87:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-724 text6 CODE >89:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-735 text6 CODE >90:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-736 text6 CODE >92:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-747 text6 CODE >93:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-748 text6 CODE >95:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-759 text6 CODE >96:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-75A text6 CODE >98:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-76B text6 CODE >99:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-76C text6 CODE >101:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-77D text6 CODE >102:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-77E text6 CODE >104:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-78F text6 CODE >105:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-790 text6 CODE >107:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-7A1 text6 CODE >108:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-7A2 text6 CODE >110:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-7B3 text6 CODE >111:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-7B4 text6 CODE >112:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-7ED text6 CODE >113:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-51C text5 CODE >34:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-51C text5 CODE >35:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-522 text5 CODE >36:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5CA text4 CODE >4:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5CA text4 CODE >5:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5CD text4 CODE >6:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5CE text4 CODE >7:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5CF text4 CODE >8:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5D2 text4 CODE >9:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5D3 text4 CODE >10:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5D4 text4 CODE >11:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5DD text4 CODE >12:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5E3 text4 CODE >13:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5E9 text4 CODE >14:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5EF text4 CODE >15:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-5F5 text4 CODE >16:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
-56C text3 CODE >92:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-56C text3 CODE >94:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-56F text3 CODE >95:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-570 text3 CODE >96:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-571 text3 CODE >97:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-572 text3 CODE >98:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-573 text3 CODE >100:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-576 text3 CODE >101:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-577 text3 CODE >102:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-579 text3 CODE >103:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-57A text3 CODE >104:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-57C text3 CODE >106:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-57F text3 CODE >107:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-580 text3 CODE >110:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-581 text3 CODE >111:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-582 text3 CODE >112:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-583 text3 CODE >114:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-556 text2 CODE >6:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
-557 text2 CODE >8:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
-55A text2 CODE >9:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
-55E text2 CODE >11:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
-560 text2 CODE >12:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
-561 text2 CODE >13:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
-562 text2 CODE >16:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
-565 text2 CODE >17:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
-566 text2 CODE >18:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
-566 text2 CODE >20:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
-56B text2 CODE >21:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
-516 text1 CODE >28:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
-517 text1 CODE >30:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
-51B text1 CODE >31:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
-5F6 maintext CODE >48:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-5F6 maintext CODE >49:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-5FF maintext CODE >50:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-604 maintext CODE >51:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-609 maintext CODE >52:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-60E maintext CODE >53:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-61E maintext CODE >54:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-622 maintext CODE >61:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-622 maintext CODE >62:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-623 maintext CODE >63:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-624 maintext CODE >64:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-625 maintext CODE >65:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-62B maintext CODE >66:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-62E maintext CODE >67:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-62F maintext CODE >68:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-62F maintext CODE >69:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-630 maintext CODE >70:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-631 maintext CODE >71:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-632 maintext CODE >72:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-633 maintext CODE >73:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-633 maintext CODE >74:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-634 maintext CODE >75:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-635 maintext CODE >76:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-636 maintext CODE >77:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-637 maintext CODE >78:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-649 maintext CODE >79:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-659 maintext CODE >80:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
-66B maintext CODE >81:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+7F3 cinit CODE >1108:C:\Users\julit\AppData\Local\Temp\sq5c.s
+7F3 cinit CODE >1111:C:\Users\julit\AppData\Local\Temp\sq5c.s
+7F3 cinit CODE >1197:C:\Users\julit\AppData\Local\Temp\sq5c.s
+7F4 cinit CODE >1198:C:\Users\julit\AppData\Local\Temp\sq5c.s
+7F5 cinit CODE >1199:C:\Users\julit\AppData\Local\Temp\sq5c.s
+7F6 cinit CODE >1200:C:\Users\julit\AppData\Local\Temp\sq5c.s
+7F7 cinit CODE >1201:C:\Users\julit\AppData\Local\Temp\sq5c.s
+7FC cinit CODE >1207:C:\Users\julit\AppData\Local\Temp\sq5c.s
+7FC cinit CODE >1209:C:\Users\julit\AppData\Local\Temp\sq5c.s
+7FD cinit CODE >1210:C:\Users\julit\AppData\Local\Temp\sq5c.s
+585 text17 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+585 text17 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+588 text17 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+58C text17 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+591 text17 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+593 text17 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+597 text17 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+59C text17 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5A0 text17 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5A2 text17 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5A8 text17 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5AA text17 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5AB text17 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5B2 text17 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5B6 text17 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5BA text17 CODE >30:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5C1 text17 CODE >31:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5CB text17 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5D1 text17 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5D2 text17 CODE >35:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5D9 text17 CODE >36:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5DF text17 CODE >38:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5E4 text17 CODE >39:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5E9 text17 CODE >40:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+5ED text17 CODE >41:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+437 text16 CODE >4:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+438 text16 CODE >6:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+439 text16 CODE >43:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+43D text16 CODE >44:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+441 text16 CODE >45:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+443 text16 CODE >46:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+445 text16 CODE >47:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+44A text16 CODE >50:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+44B text16 CODE >51:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+4AE text15 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+4AE text15 CODE >43:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+4B0 text15 CODE >45:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+4B4 text15 CODE >46:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+4BA text15 CODE >47:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+4C1 text15 CODE >48:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+4C8 text15 CODE >49:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+4CE text15 CODE >52:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+4D2 text15 CODE >53:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+526 text14 CODE >134:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+526 text14 CODE >135:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+53E text14 CODE >136:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+566 text14 CODE >137:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+584 text14 CODE >138:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+419 text13 CODE >23:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+419 text13 CODE >24:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+41C text13 CODE >25:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+41F text13 CODE >26:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+422 text13 CODE >27:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+44C text12 CODE >17:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+44D text12 CODE >18:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+450 text12 CODE >19:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+452 text12 CODE >20:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+457 text12 CODE >21:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+460 text12 CODE >22:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+426 text11 CODE >28:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+427 text11 CODE >29:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+42A text11 CODE >30:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+42C text11 CODE >31:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+431 text11 CODE >32:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+436 text11 CODE >33:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+48F text10 CODE >37:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+490 text10 CODE >38:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+491 text10 CODE >39:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+49D text10 CODE >40:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4A1 text10 CODE >38:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4AD text10 CODE >42:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4D3 text9 CODE >43:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4D3 text9 CODE >45:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4D4 text9 CODE >47:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4D9 text9 CODE >48:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4DA text9 CODE >50:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4DF text9 CODE >51:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4E0 text9 CODE >55:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4ED text9 CODE >56:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4F3 text9 CODE >57:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4F9 text9 CODE >58:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+686 text8 CODE >59:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+686 text8 CODE >60:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+687 text8 CODE >62:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+698 text8 CODE >63:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+699 text8 CODE >65:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+6AA text8 CODE >66:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+6AB text8 CODE >68:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+6BC text8 CODE >69:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+6BD text8 CODE >71:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+6CE text8 CODE >72:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+6CF text8 CODE >74:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+6E0 text8 CODE >75:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+6E1 text8 CODE >77:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+6F2 text8 CODE >78:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+6F3 text8 CODE >80:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+704 text8 CODE >81:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+705 text8 CODE >83:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+716 text8 CODE >84:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+717 text8 CODE >86:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+728 text8 CODE >87:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+729 text8 CODE >89:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+73A text8 CODE >90:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+73B text8 CODE >92:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+74C text8 CODE >93:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+74D text8 CODE >95:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+75E text8 CODE >96:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+75F text8 CODE >98:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+770 text8 CODE >99:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+771 text8 CODE >101:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+782 text8 CODE >102:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+783 text8 CODE >104:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+794 text8 CODE >105:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+795 text8 CODE >107:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+7A6 text8 CODE >108:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+7A7 text8 CODE >110:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+7B8 text8 CODE >111:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+7B9 text8 CODE >112:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+7F2 text8 CODE >113:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+3FA text7 CODE >34:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+3FA text7 CODE >35:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+400 text7 CODE >36:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4FA text6 CODE >4:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4FA text6 CODE >5:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4FD text6 CODE >6:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4FE text6 CODE >7:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+4FF text6 CODE >8:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+502 text6 CODE >9:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+503 text6 CODE >10:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+504 text6 CODE >11:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+50D text6 CODE >12:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+513 text6 CODE >13:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+519 text6 CODE >14:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+51F text6 CODE >15:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+525 text6 CODE >16:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\SETLCD.c
+477 text5 CODE >97:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+477 text5 CODE >99:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+47A text5 CODE >100:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+47B text5 CODE >101:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+47C text5 CODE >102:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+47D text5 CODE >103:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+47E text5 CODE >105:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+481 text5 CODE >106:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+482 text5 CODE >107:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+484 text5 CODE >108:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+485 text5 CODE >109:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+487 text5 CODE >111:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+48A text5 CODE >112:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+48B text5 CODE >115:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+48C text5 CODE >116:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+48D text5 CODE >117:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+48E text5 CODE >119:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+461 text4 CODE >6:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+462 text4 CODE >8:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+465 text4 CODE >9:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+469 text4 CODE >11:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+46B text4 CODE >12:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+46C text4 CODE >13:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+46D text4 CODE >16:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+470 text4 CODE >17:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+471 text4 CODE >18:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+471 text4 CODE >20:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+476 text4 CODE >21:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+401 text3 CODE >23:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+401 text3 CODE >25:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+407 text3 CODE >26:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+410 text2 CODE >41:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+410 text2 CODE >43:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+415 text2 CODE >44:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+418 text2 CODE >45:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+3F4 text1 CODE >28:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+3F5 text1 CODE >30:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+3F9 text1 CODE >31:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
+5EE maintext CODE >55:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+5EE maintext CODE >56:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+5F7 maintext CODE >57:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+5FC maintext CODE >58:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+601 maintext CODE >59:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+606 maintext CODE >60:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+616 maintext CODE >61:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+619 maintext CODE >67:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+62B maintext CODE >68:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+63D maintext CODE >69:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+64F maintext CODE >70:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+650 maintext CODE >71:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+650 maintext CODE >72:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+651 maintext CODE >73:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+652 maintext CODE >74:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+653 maintext CODE >76:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+659 maintext CODE >77:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+663 maintext CODE >78:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+668 maintext CODE >80:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+669 maintext CODE >81:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+669 maintext CODE >82:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+66A maintext CODE >83:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+66B maintext CODE >84:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+66C maintext CODE >85:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+66D maintext CODE >86:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+66D maintext CODE >87:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+66E maintext CODE >88:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+66F maintext CODE >89:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+670 maintext CODE >90:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+671 maintext CODE >91:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+408 clrtext CODE >1184:C:\Users\julit\AppData\Local\Temp\sq5c.s
+408 clrtext CODE >1185:C:\Users\julit\AppData\Local\Temp\sq5c.s
+409 clrtext CODE >1186:C:\Users\julit\AppData\Local\Temp\sq5c.s
+409 clrtext CODE >1187:C:\Users\julit\AppData\Local\Temp\sq5c.s
+40A clrtext CODE >1188:C:\Users\julit\AppData\Local\Temp\sq5c.s
+40B clrtext CODE >1189:C:\Users\julit\AppData\Local\Temp\sq5c.s
+40C clrtext CODE >1190:C:\Users\julit\AppData\Local\Temp\sq5c.s
+40D clrtext CODE >1191:C:\Users\julit\AppData\Local\Temp\sq5c.s
+40E clrtext CODE >1192:C:\Users\julit\AppData\Local\Temp\sq5c.s
+40F clrtext CODE >1193:C:\Users\julit\AppData\Local\Temp\sq5c.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -255,8 +320,10 @@ $dist/default/production\projectmaster.X.production.o
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-_Z 29 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_Z 32 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_z 31 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
 ___latbits 2 0 ABS 0 - dist/default/production\projectmaster.X.production.o
+___awdiv@counter 35 0 BANK0 1 cstackBANK0 dist/default/production\projectmaster.X.production.o
 __Hspace_0 800 0 ABS 0 - -
 __Hspace_1 7E 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
@@ -264,49 +331,66 @@ __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 spiInit@sTransmitEdge 72 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-__end_of_LCD_CL A46 0 CODE 0 text5 dist/default/production\projectmaster.X.production.o
-__end_of_LCD_IN BEC 0 CODE 0 text4 dist/default/production\projectmaster.X.production.o
-__end_of_LCD_ON AAC 0 CODE 0 text10 dist/default/production\projectmaster.X.production.o
+__end_of_LCD_CL 802 0 CODE 0 text7 dist/default/production\projectmaster.X.production.o
+__end_of_LCD_IN A4C 0 CODE 0 text6 dist/default/production\projectmaster.X.production.o
+__end_of_LCD_ON 8C2 0 CODE 0 text12 dist/default/production\projectmaster.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\svfg.o
-_main BEC 0 CODE 0 maintext dist/default/production\projectmaster.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\sq5c.o
+_cont 26 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_main BDC 0 CODE 0 maintext dist/default/production\projectmaster.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\projectmaster.X.production.o
-start 0 0 CODE 0 init C:\Users\julit\AppData\Local\Temp\svfg.o
+_CONVET_cont A4C 0 CODE 0 text14 dist/default/production\projectmaster.X.production.o
+start 0 0 CODE 0 init C:\Users\julit\AppData\Local\Temp\sq5c.o
+_TEM_TAS 2A 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_TEM_UAS 2B 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+__size_of___awdiv 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
+?___wmul 70 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
 __size_of_LCDVAL1 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 __size_of_LCD_TIM 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
-_LCD_PLAY A60 0 CODE 0 text9 dist/default/production\projectmaster.X.production.o
+_LCD_PLAY 84C 0 CODE 0 text11 dist/default/production\projectmaster.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\svfg.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\svfg.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\svfg.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\svfg.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\svfg.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\svfg.o
-__end_of_LCD_PLAY A82 0 CODE 0 text9 dist/default/production\projectmaster.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sq5c.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sq5c.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sq5c.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sq5c.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sq5c.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sq5c.o
+__end_of_LCD_PLAY 86E 0 CODE 0 text11 dist/default/production\projectmaster.X.production.o
+___bmul@multiplicand 70 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
+___awdiv@sign 36 0 BANK0 1 cstackBANK0 dist/default/production\projectmaster.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
+___wmul@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\projectmaster.X.production.o
+___awdiv@dividend 78 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
+__end_of___bmul 898 0 CODE 0 text16 dist/default/production\projectmaster.X.production.o
+__end_of___wmul 9A6 0 CODE 0 text15 dist/default/production\projectmaster.X.production.o
 __size_of_spiInit 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
+__size_of_spiRead 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\svfg.o
-___stacklo 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\svfg.o
-__end_of_LCDVAL1 FDC 0 CODE 0 text6 dist/default/production\projectmaster.X.production.o
-__end_of_LCD_TIM A60 0 CODE 0 text11 dist/default/production\projectmaster.X.production.o
+___bmul@multiplier 73 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
+___awdiv@divisor 76 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
+__end_of___awdiv BDC 0 CODE 0 text17 dist/default/production\projectmaster.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\sq5c.o
+___stacklo 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\sq5c.o
+__end_of_LCDVAL1 FE6 0 CODE 0 text8 dist/default/production\projectmaster.X.production.o
+__end_of_LCD_TIM 84C 0 CODE 0 text13 dist/default/production\projectmaster.X.production.o
 __size_of_LCD_P 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 __size_of_Setup 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
-_LCD_CL A38 0 CODE 0 text5 dist/default/production\projectmaster.X.production.o
-_LCD_IN B94 0 CODE 0 text4 dist/default/production\projectmaster.X.production.o
-_LCD_ON A82 0 CODE 0 text10 dist/default/production\projectmaster.X.production.o
+_LCD_CL 7F4 0 CODE 0 text7 dist/default/production\projectmaster.X.production.o
+_LCD_IN 9F4 0 CODE 0 text6 dist/default/production\projectmaster.X.production.o
+_LCD_ON 898 0 CODE 0 text12 dist/default/production\projectmaster.X.production.o
 spiInit@sDataSample 70 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
-start_initialization FDC 0 CODE 0 cinit dist/default/production\projectmaster.X.production.o
-_POT1_H 27 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
-_POT1_T 26 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
-_POT1_U 28 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+start_initialization FE6 0 CODE 0 cinit dist/default/production\projectmaster.X.production.o
+_POT1_H 2F 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_POT1_T 2E 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_POT1_U 30 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
 _TRISDbits 88 0 ABS 0 - dist/default/production\projectmaster.X.production.o
-__pcstackBANK0 2C 0 BANK0 1 cstackBANK0 dist/default/production\projectmaster.X.production.o
+clear_ram0 810 0 CODE 0 clrtext dist/default/production\projectmaster.X.production.o
+__pcstackBANK0 35 0 BANK0 1 cstackBANK0 dist/default/production\projectmaster.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\projectmaster.X.production.o
@@ -314,28 +398,31 @@ _TRISC5 43D 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 __size_of_LCD_CL 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 __size_of_LCD_IN 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 __size_of_LCD_ON 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\svfg.o
-__end_of_LCD_POINT B94 0 CODE 0 text7 dist/default/production\projectmaster.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\sq5c.o
+__end_of_LCD_POINT 9F4 0 CODE 0 text9 dist/default/production\projectmaster.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
 __Hcinit 1000 0 CODE 0 cinit -
+__size_of_spiReceiveWait 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 __Hstack 0 0 STACK 2 stack -
 __stringbase 10 0 STRING 0 strings dist/default/production\projectmaster.X.production.o
 __size_of_LCD_POINT 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 LCD_ON@C 72 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
 __Hmaintext 0 0 ABS 0 maintext -
-__end_of_spiInit AD8 0 CODE 0 text2 dist/default/production\projectmaster.X.production.o
+__end_of_spiInit 8EE 0 CODE 0 text4 dist/default/production\projectmaster.X.production.o
+__end_of_spiRead 832 0 CODE 0 text2 dist/default/production\projectmaster.X.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
-__Lcinit FDC 0 CODE 0 cinit -
+__Lcinit FE6 0 CODE 0 cinit -
 __Lstack 0 0 STACK 2 stack -
-_LCD_POINT B46 0 CODE 0 text7 dist/default/production\projectmaster.X.production.o
+_LCD_POINT 9A6 0 CODE 0 text9 dist/default/production\projectmaster.X.production.o
+__end_of_CONVET_cont B0A 0 CODE 0 text14 dist/default/production\projectmaster.X.production.o
 _PORTDbits 8 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _PORTEbits 9 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _INTCONbits B 0 ABS 0 - dist/default/production\projectmaster.X.production.o
@@ -355,6 +442,8 @@ __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
+___bmul 86E 0 CODE 0 text16 dist/default/production\projectmaster.X.production.o
+___wmul 95C 0 CODE 0 text15 dist/default/production\projectmaster.X.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __S0 800 0 ABS 0 - -
@@ -362,24 +451,37 @@ __S1 7E 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 LCD_P@D 73 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
-_cont_1 23 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
-_cont_2 22 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
-_cont_3 21 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_cont_1 29 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_cont_2 28 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_cont_3 27 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_POT1_Has 21 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_POT1_Tas 20 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_POT1_Uas 22 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
 __stringtab 6 0 STRING 0 strings dist/default/production\projectmaster.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\julit\AppData\Local\Temp\svfg.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\julit\AppData\Local\Temp\sq5c.o
+__size_of___bmul 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
+__size_of___wmul 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 _RCSTAbits 18 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\projectmaster.X.production.o
-LCDVAL1@Z 2E 0 BANK0 1 cstackBANK0 dist/default/production\projectmaster.X.production.o
-LCDVAL1@x 2C 0 BANK0 1 cstackBANK0 dist/default/production\projectmaster.X.production.o
-__ptext10 A82 0 CODE 0 text10 dist/default/production\projectmaster.X.production.o
-__ptext11 A46 0 CODE 0 text11 dist/default/production\projectmaster.X.production.o
-__pmaintext BEC 0 CODE 0 maintext dist/default/production\projectmaster.X.production.o
+LCDVAL1@Z 37 0 BANK0 1 cstackBANK0 dist/default/production\projectmaster.X.production.o
+LCDVAL1@x 35 0 BANK0 1 cstackBANK0 dist/default/production\projectmaster.X.production.o
+__ptext10 91E 0 CODE 0 text10 dist/default/production\projectmaster.X.production.o
+__ptext11 84C 0 CODE 0 text11 dist/default/production\projectmaster.X.production.o
+__ptext12 898 0 CODE 0 text12 dist/default/production\projectmaster.X.production.o
+__ptext13 832 0 CODE 0 text13 dist/default/production\projectmaster.X.production.o
+__ptext14 A4C 0 CODE 0 text14 dist/default/production\projectmaster.X.production.o
+__ptext15 95C 0 CODE 0 text15 dist/default/production\projectmaster.X.production.o
+__ptext16 86E 0 CODE 0 text16 dist/default/production\projectmaster.X.production.o
+__ptext17 B0A 0 CODE 0 text17 dist/default/production\projectmaster.X.production.o
+___awdiv B0A 0 CODE 0 text17 dist/default/production\projectmaster.X.production.o
+__pmaintext BDC 0 CODE 0 maintext dist/default/production\projectmaster.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-_LCDVAL1 D02 0 CODE 0 text6 dist/default/production\projectmaster.X.production.o
-_LCD_TIM A46 0 CODE 0 text11 dist/default/production\projectmaster.X.production.o
+_LCDVAL1 D0C 0 CODE 0 text8 dist/default/production\projectmaster.X.production.o
+_LCD_TIM 832 0 CODE 0 text13 dist/default/production\projectmaster.X.production.o
+___wmul@multiplier 70 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
 __end_of__stringtab 12 0 STRING 0 strings dist/default/production\projectmaster.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
@@ -391,20 +493,24 @@ __Lend_init 0 0 CODE 0 end_init -
 LCD_POINT@LOC 7A 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization FF8 0 CODE 0 cinit dist/default/production\projectmaster.X.production.o
+__size_of_CONVET_cont 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 __Hintentry 0 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
+___awdiv@quotient 37 0 BANK0 1 cstackBANK0 dist/default/production\projectmaster.X.production.o
+?___awdiv 76 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
 __Hreset_vec 0 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__ptext1 A2C 0 CODE 0 text1 dist/default/production\projectmaster.X.production.o
-__ptext2 AAC 0 CODE 0 text2 dist/default/production\projectmaster.X.production.o
-__ptext3 AD8 0 CODE 0 text3 dist/default/production\projectmaster.X.production.o
-__ptext4 B94 0 CODE 0 text4 dist/default/production\projectmaster.X.production.o
-__ptext5 A38 0 CODE 0 text5 dist/default/production\projectmaster.X.production.o
-__ptext6 D02 0 CODE 0 text6 dist/default/production\projectmaster.X.production.o
-__ptext7 B46 0 CODE 0 text7 dist/default/production\projectmaster.X.production.o
-__ptext8 B08 0 CODE 0 text8 dist/default/production\projectmaster.X.production.o
-__ptext9 A60 0 CODE 0 text9 dist/default/production\projectmaster.X.production.o
-_spiInit AAC 0 CODE 0 text2 dist/default/production\projectmaster.X.production.o
+__ptext1 7E8 0 CODE 0 text1 dist/default/production\projectmaster.X.production.o
+__ptext2 820 0 CODE 0 text2 dist/default/production\projectmaster.X.production.o
+__ptext3 802 0 CODE 0 text3 dist/default/production\projectmaster.X.production.o
+__ptext4 8C2 0 CODE 0 text4 dist/default/production\projectmaster.X.production.o
+__ptext5 8EE 0 CODE 0 text5 dist/default/production\projectmaster.X.production.o
+__ptext6 9F4 0 CODE 0 text6 dist/default/production\projectmaster.X.production.o
+__ptext7 7F4 0 CODE 0 text7 dist/default/production\projectmaster.X.production.o
+__ptext8 D0C 0 CODE 0 text8 dist/default/production\projectmaster.X.production.o
+__ptext9 9A6 0 CODE 0 text9 dist/default/production\projectmaster.X.production.o
+_spiInit 8C2 0 CODE 0 text4 dist/default/production\projectmaster.X.production.o
+_spiRead 820 0 CODE 0 text2 dist/default/production\projectmaster.X.production.o
 spiWrite@dat 70 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 spiInit@sType 73 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
@@ -413,44 +519,52 @@ __Lreset_vec 0 0 CODE 0 reset_vec -
 __end_of__initialization FF8 0 CODE 0 cinit dist/default/production\projectmaster.X.production.o
 __size_of_spiWrite 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
+_spiReceiveWait 802 0 CODE 0 text3 dist/default/production\projectmaster.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
 _TXSTAbits 98 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 __Hend_init 6 0 CODE 0 end_init -
-__end_of_main D02 0 CODE 0 maintext dist/default/production\projectmaster.X.production.o
-__end_of_LCD_P B46 0 CODE 0 text8 dist/default/production\projectmaster.X.production.o
-__end_of_Setup B08 0 CODE 0 text3 dist/default/production\projectmaster.X.production.o
+__end_of_main D0C 0 CODE 0 maintext dist/default/production\projectmaster.X.production.o
+__end_of_LCD_P 95C 0 CODE 0 text10 dist/default/production\projectmaster.X.production.o
+__end_of_Setup 91E 0 CODE 0 text5 dist/default/production\projectmaster.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\projectmaster.X.production.o
-_LCD_P B08 0 CODE 0 text8 dist/default/production\projectmaster.X.production.o
+_LCD_P 91E 0 CODE 0 text10 dist/default/production\projectmaster.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _PORTC 7 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _PORTD 8 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _PORTE 9 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _SPBRG 99 0 ABS 0 - dist/default/production\projectmaster.X.production.o
-_TEM_T 24 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
-_TEM_U 25 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
-_Setup AD8 0 CODE 0 text3 dist/default/production\projectmaster.X.production.o
+_TEM_T 2C 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_TEM_U 2D 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_Setup 8EE 0 CODE 0 text5 dist/default/production\projectmaster.X.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 _TRISE 89 0 ABS 0 - dist/default/production\projectmaster.X.production.o
+_TXREG 19 0 ABS 0 - dist/default/production\projectmaster.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 _SSPSTATbits 94 0 ABS 0 - dist/default/production\projectmaster.X.production.o
+_cont_1AS 25 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_cont_2AS 24 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
+_cont_3AS 23 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
 spiInit@sClockIdle 71 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
-__initialization FDC 0 CODE 0 cinit dist/default/production\projectmaster.X.production.o
+__initialization FE6 0 CODE 0 cinit dist/default/production\projectmaster.X.production.o
+___bmul@product 72 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\projectmaster.X.production.o
-_spiWrite A2C 0 CODE 0 text1 dist/default/production\projectmaster.X.production.o
+_spiWrite 7E8 0 CODE 0 text1 dist/default/production\projectmaster.X.production.o
 LCD_PLAY@D 71 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
 __pstrings 6 0 STRING 0 strings dist/default/production\projectmaster.X.production.o
+___wmul@product 74 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
+__end_of_spiReceiveWait 810 0 CODE 0 text3 dist/default/production\projectmaster.X.production.o
 LCD_POINT@D 78 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
 LCD_POINT@x 74 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
 LCD_POINT@y 76 0 COMMON 1 cstackCOMMON dist/default/production\projectmaster.X.production.o
 __size_of_LCD_PLAY 0 0 ABS 0 - dist/default/production\projectmaster.X.production.o
-__end_of_spiWrite A38 0 CODE 0 text1 dist/default/production\projectmaster.X.production.o
+__end_of_spiWrite 7F4 0 CODE 0 text1 dist/default/production\projectmaster.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -476,23 +590,30 @@ __end_of_spiWrite A38 0 CODE 0 text1 dist/default/production\projectmaster.X.pro
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7EE FDC 12 2
-text1 0 516 A2C 6 2
-text2 0 556 AAC 16 2
-text3 0 56C AD8 18 2
-text4 0 5CA B94 2C 2
-text5 0 51C A38 7 2
-text6 0 681 D02 16D 2
-text7 0 5A3 B46 27 2
-text8 0 584 B08 1F 2
-text9 0 530 A60 11 2
-text10 0 541 A82 15 2
-text11 0 523 A46 D 2
-maintext 0 5F6 BEC 8B 2
+cinit 0 7F3 FE6 D 2
+text1 0 3F4 7E8 6 2
+text2 0 410 820 9 2
+text3 0 401 802 7 2
+text4 0 461 8C2 16 2
+text5 0 477 8EE 18 2
+text6 0 4FA 9F4 2C 2
+text7 0 3FA 7F4 7 2
+text8 0 686 D0C 16D 2
+text9 0 4D3 9A6 27 2
+text10 0 48F 91E 1F 2
+text11 0 426 84C 11 2
+text12 0 44C 898 15 2
+text13 0 419 832 D 2
+text14 0 526 A4C 5F 2
+text15 0 4AE 95C 25 2
+text16 0 437 86E 15 2
+text17 0 585 B0A 69 2
+maintext 0 5EE BDC 98 2
 cstackCOMMON 1 70 70 E 1
 reset_vec 0 0 0 3 2
-bssBANK0 1 20 20 10 1
+bssBANK0 1 20 20 1D 1
 strings 0 3 6 36 2
+clrtext 0 408 810 8 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

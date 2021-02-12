@@ -45,10 +45,9 @@ void __interrupt ( ) isr(void){
          push_1 ();// pushbutton de resta
          RBIF=0;} //reset la bandera
      if(SSPIF == 1){
-       
-      spiWrite(PORTD);
+         spiWrite(PORTD);
       SSPIF = 0;
-    }
+}
 }
 
 //******************************************************************************
@@ -57,16 +56,11 @@ void __interrupt ( ) isr(void){
 void main(void) { 
     Setup();
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-
- 
     //**************************************************************************
     // Loop principal
     //**************************************************************************
     while(1){
-     if(SSPIF == 1){
-        spiWrite(PORTD);
-        SSPIF = 0;   
-     }}}  
+       }}  
 //******************************************************************************
 // Configuración
 //******************************************************************************
@@ -93,6 +87,9 @@ void Setup(void){
     INTCONbits.PEIE=1;//on periferal
     INTCONbits.RBIE=1; //PORTB Change Interrupt Enable bit
     INTCONbits.RBIF=0; //PORTB Change Interrupt Enable bit
+    PIR1bits.SSPIF = 0;         // Borramos bandera interrupción MSSP
+    PIE1bits.SSPIE = 1;         // Habilitamos interrupción MSSP
+    TRISAbits.TRISA5 = 1;       // Slave Select
     WPUB =0B00000011;
     IOCB = 0B00000011;
 }

@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"59 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+"58 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -55,13 +55,13 @@ SPI_ACTIVE_2_IDLE 64
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "42 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
 [v _isr isr `II(v  1 e 1 0 ]
-"57
+"56
 [v _main main `(v  1 e 1 0 ]
-"73
+"67
 [v _Setup Setup `(v  1 e 1 0 ]
-"103
+"100
 [v _push_0 push_0 `(v  1 e 1 0 ]
-"113
+"110
 [v _push_1 push_1 `(v  1 e 1 0 ]
 "5 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\SSSPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -69,12 +69,11 @@ SPI_ACTIVE_2_IDLE 64
 [v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
 "27
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
-[v i1_spiWrite spiWrite `(v  1 e 1 0 ]
 "166 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S112 . 1 `uc 1 RB0 1 0 :1:0 
+[s S171 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -84,8 +83,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S121 . 1 `S112 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES121  1 e 1 @6 ]
+[u S180 . 1 `S171 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES180  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "352
@@ -109,6 +108,17 @@ SPI_ACTIVE_2_IDLE 64
 ]
 [u S92 . 1 `S78 1 . 1 0 `S87 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES92  1 e 1 @11 ]
+[s S110 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"553
+[u S118 . 1 `S110 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES118  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
@@ -117,6 +127,18 @@ SPI_ACTIVE_2_IDLE 64
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
+[s S148 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"1433
+[u S157 . 1 `S148 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES157  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1540
@@ -125,23 +147,34 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S297 . 1 `uc 1 SCS 1 0 :1:0 
+[s S129 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1718
+[u S137 . 1 `S129 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES137  1 e 1 @140 ]
+[s S378 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S303 . 1 `uc 1 . 1 0 :4:0 
+[s S384 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S308 . 1 `S297 1 . 1 0 `S303 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES308  1 e 1 @143 ]
+[u S389 . 1 `S378 1 . 1 0 `S384 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES389  1 e 1 @143 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S188 . 1 `uc 1 BF 1 0 :1:0 
+[s S269 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -151,39 +184,39 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S197 . 1 `uc 1 . 1 0 :2:0 
+[s S278 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S202 . 1 `uc 1 . 1 0 :2:0 
+[s S283 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S208 . 1 `uc 1 . 1 0 :2:0 
+[s S289 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S213 . 1 `uc 1 . 1 0 :2:0 
+[s S294 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S218 . 1 `uc 1 . 1 0 :2:0 
+[s S299 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S223 . 1 `uc 1 . 1 0 :2:0 
+[s S304 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S228 . 1 `S188 1 . 1 0 `S197 1 . 1 0 `S202 1 . 1 0 `S208 1 . 1 0 `S213 1 . 1 0 `S218 1 . 1 0 `S223 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES228  1 e 1 @148 ]
+[u S309 . 1 `S269 1 . 1 0 `S278 1 . 1 0 `S283 1 . 1 0 `S289 1 . 1 0 `S294 1 . 1 0 `S299 1 . 1 0 `S304 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES309  1 e 1 @148 ]
 "2346
 [v _WPUB WPUB `VEuc  1 e 1 @149 ]
 "2416
@@ -203,21 +236,12 @@ SPI_ACTIVE_2_IDLE 64
 "37 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
 [v _W W `uc  1 e 1 0 ]
 [v _w w `uc  1 e 1 0 ]
-"57
+"56
 [v _main main `(v  1 e 1 0 ]
 {
-"69
+"63
 } 0
-"27 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\SSSPI.c
-[v _spiWrite spiWrite `(v  1 e 1 0 ]
-{
-[v spiWrite@dat dat `uc  1 a 1 wreg ]
-[v spiWrite@dat dat `uc  1 a 1 wreg ]
-"29
-[v spiWrite@dat dat `uc  1 a 1 3 ]
-"30
-} 0
-"5
+"5 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\SSSPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
 {
 [v spiInit@sType sType `E1264  1 a 1 wreg ]
@@ -229,32 +253,32 @@ SPI_ACTIVE_2_IDLE 64
 [v spiInit@sType sType `E1264  1 a 1 3 ]
 "20
 } 0
-"73 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+"67 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"98
+"95
 } 0
 "42
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"52
+"51
 } 0
 "27 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\SSSPI.c
-[v i1_spiWrite spiWrite `(v  1 e 1 0 ]
+[v _spiWrite spiWrite `(v  1 e 1 0 ]
 {
-[v i1spiWrite@dat dat `uc  1 a 1 wreg ]
-[v i1spiWrite@dat dat `uc  1 a 1 wreg ]
+[v spiWrite@dat dat `uc  1 a 1 wreg ]
+[v spiWrite@dat dat `uc  1 a 1 wreg ]
 "29
-[v i1spiWrite@dat dat `uc  1 a 1 0 ]
+[v spiWrite@dat dat `uc  1 a 1 0 ]
 "30
 } 0
-"113 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+"110 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
 [v _push_1 push_1 `(v  1 e 1 0 ]
 {
-"122
+"119
 } 0
-"103
+"100
 [v _push_0 push_0 `(v  1 e 1 0 ]
 {
-"112
+"109
 } 0

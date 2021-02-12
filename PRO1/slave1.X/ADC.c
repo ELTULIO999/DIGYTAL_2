@@ -1,5 +1,6 @@
 #include "ADC.h"
 
+
 void ADC_CHS_CLKS(uint8_t C, uint8_t S) {
 switch (C) {
     

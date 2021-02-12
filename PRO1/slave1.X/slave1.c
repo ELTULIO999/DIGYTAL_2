@@ -1,9 +1,3 @@
-/*
- * File:   Interrupciones y Librerías.c
- * Author: juli0
- *
- * Created on January 27, 2021, 12:57 PM
- */
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
@@ -25,6 +19,7 @@
 
 #include <xc.h>
 #include <stdint.h>
+#include "SSSP.h"
 #include "ADC.h"      
 
 //******************************************************************************
@@ -34,25 +29,27 @@
 // Prototipos de funciones
 //******************************************************************************
 void Setup   (void);
-void pull    (void);
-void push_0  (void);
-void push_1  (void);
 void ADCG    (void);
-uint8_t W,w,Q,H,h,L,ADCGO;
+uint8_t ADCGO;
 //******************************************************************************
 //******************************************************************************
 //                            interuption 
 //******************************************************************************
 void __interrupt ( ) isr(void){
     if (ADIF==1){ //revisamos la bandera del adc
-        PORTA=ADRESH; // pasamos el contenido de adresh a unavariable 
+        PORTB=ADRESH; // pasamos el contenido de adresh a unavariable 
         PIR1bits.ADIF=0; // //reset la bandera
-        ADCON0bits.GO=1;} //  ponemos esta en on para que vuelva a 
+        ADCON0bits.GO=1;} //  ponemos esta en on para que vuelva a
+    if(SSPIF == 1){
+        spiWrite(PORTB);
+        SSPIF = 0;
+        }
 }
 //******************************************************************************
 // Ciclo principal
 //******************************************************************************
 void main(void) { 
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     Setup();
     //**************************************************************************
     // Loop principal
@@ -69,10 +66,16 @@ void Setup(void){
     PIE1bits.ADIE=1;
  //puertos on clear 
     PORTA =  0; //PORTA EN 0
-    PORTD =  0; //PORTA EN 0
+    PORTB =  0; //PORTB EN 0
+    PORTC =  0; //PORTC EN 0
+    PORTD =  0; //PORTD EN 0
+    PORTE =  0; //PORTE EN 0
 // inputs y otputs
     TRISA =  0B00000001; //INPUT EN porta
+    TRISB =  0B00000000; //INPUT EN portb
+    TRISC =  0B00011000; //INPUT EN portc
     TRISD =  0B00000000; //INPUT EN portd
+    TRISE =  0B0000; //INPUT EN porte
 // analog inputs 
     ANSEL =  0B00000001; // solo estamos usando el RA0 como analogico 
 

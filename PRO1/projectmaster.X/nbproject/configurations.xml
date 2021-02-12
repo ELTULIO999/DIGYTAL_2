@@ -6,7 +6,6 @@
                    projectFiles="true">
       <itemPath>MSSP.h</itemPath>
       <itemPath>SETLCD.h</itemPath>
-      <itemPath>SSSPI.h</itemPath>
       <itemPath>EUSART.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -19,7 +18,6 @@
       <itemPath>master.c</itemPath>
       <itemPath>MSSP.c</itemPath>
       <itemPath>SETLCD.c</itemPath>
-      <itemPath>SSSPI.c</itemPath>
       <itemPath>EUSART.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"

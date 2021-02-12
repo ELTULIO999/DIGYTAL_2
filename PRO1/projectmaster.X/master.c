@@ -32,16 +32,23 @@
 void Setup(void);
 void CONV (void);
 void CONT (void);
-uint8_t L,l,Z ;
+void CONVET_cont(void);
+void send (void);
+void CONV_AS (void);
+
+uint8_t L,l,Z,z;
 uint8_t POT1_U,POT1_H, POT1_T;
 uint8_t TEM_U,TEM_T;
-uint8_t cont_1,cont_2,cont_3,cont;
+uint8_t TEM_UAS,TEM_TAS;
+char cont_1,cont_2,cont_3,cont;
+uint8_t cont_1AS,cont_2AS,cont_3AS;
+uint8_t POT1_Uas,POT1_Has, POT1_Tas;
 
 //******************************************************************************
 //******************************************************************************
 //                            interuption 
 //******************************************************************************
-
+        
 //******************************************************************************
 // Ciclo principal
 //******************************************************************************
@@ -50,20 +57,26 @@ void main(void) {
     Setup(); // general set up
     LCD_IN(); //start up of lcd
     LCD_CL();// start up of lcd
-    LCD_POINT(0,1,"ADC CONT TEMP");//Mensaje inicia
+    LCD_POINT(0,1,"ADC TEMP CONT");//Mensaje inicia
     Z=0;
     
     //**************************************************************************
     // Loop principal
     //**************************************************************************
     while (1){
+    LCDVAL1 (10,cont_1);
+    LCDVAL1 (11,cont_2);
+    LCDVAL1 (12,cont_3);
         switch (Z){
             case 0:
                 PORTEbits.RE0=0;
                 PORTEbits.RE1=1;
                 PORTEbits.RE2=1;
-                spiWrite(cont);
-                PORTA=cont;
+                
+                spiWrite(0x00);
+                cont=spiRead();
+                CONVET_cont();
+                //Z++;
                 break;
             case 1:
                 PORTEbits.RE0=1;
@@ -76,15 +89,7 @@ void main(void) {
                 PORTEbits.RE2=0;
                 break;
         }
-    LCDVAL1 (10,cont_1);
-    LCDVAL1 (11,cont_2);
-    LCDVAL1 (12,cont_3);
     }
-        
-
-        
-    
-
 }
 //******************************************************************************
 // Configuración
@@ -110,7 +115,7 @@ void Setup(void){
     INTCONbits.GIE=1; //on todas las interrupts global 
     INTCONbits.PEIE=1;//on periferal
     INTCONbits.RBIE=1; //PORTB Change Interrupt Enable bit
-    
+
 }
 //******************************************************************************
 // funciones 
@@ -131,5 +136,56 @@ void CONVET_cont (void){
     cont_2=((cont)-(cont_1*100))/10;
     cont_3=((cont)-(cont_1*100)-(cont_2*10));   
     }
-   
-
+void CONV_AS (void){
+    POT1_Uas=(POT1_U+0x30);
+    POT1_Tas=(POT1_T+0x30);
+    POT1_Has=(POT1_H+0x30);  
+    cont_1AS=(cont_1+0X30);
+    cont_2AS=(cont_2+0X30);
+    cont_3AS=(cont_3+0X30);
+    TEM_UAS=(TEM_U+0X30);
+    TEM_TAS=(TEM_T+0X30);
+    }
+void send (void){
+    switch (z){
+        case 0:
+            TXREG = POT1_Uas;
+            break;
+        case 1:
+            TXREG = POT1_Uas;
+            break;
+        case 2:
+            TXREG = 0x2E;
+            break;
+        case 3:
+            TXREG = POT1_Tas;
+            break;
+        case 4:
+            TXREG = POT1_Has;
+            break;
+        case 5:
+            TXREG = 0x20;
+            break;
+        case 6:
+            TXREG = cont_1AS;
+            break;
+        case 7:
+            TXREG = cont_2AS;
+            break;
+        case 8:
+            TXREG = cont_3AS;
+            break;
+        case 9:
+            TXREG = 0x20;
+            break;
+        case 10:
+            TXREG = TEM_UAS;
+            break;
+        case 11:
+            TXREG = TEM_TAS;
+            break;
+        default:
+             TXREG = 0x0D;
+             z=0;
+            break;
+    }}

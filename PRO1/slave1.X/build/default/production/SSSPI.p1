@@ -399,41 +399,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _spiDataReady ]
 [f ]
 "35
-[; ;SSSPI.c: 35:     if(SSPSTATbits.BF)
+[; ;SSSPI.c: 35:     if(SSPSTATbits.BF){
 [e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 147  ]
+{
 "36
-[; ;SSSPI.c: 36:         return 1;
+[; ;SSSPI.c: 36:         return 1;}
 [e ) -> -> 1 `i `ui ]
 [e $UE 146  ]
+}
 [e $U 148  ]
 "37
-[; ;SSSPI.c: 37:     else
+[; ;SSSPI.c: 37:     else{
 [e :U 147 ]
+{
 "38
 [; ;SSSPI.c: 38:         return 0;
 [e ) -> -> 0 `i `ui ]
 [e $UE 146  ]
-[e :U 148 ]
 "39
 [; ;SSSPI.c: 39: }
+}
+[e :U 148 ]
+"40
+[; ;SSSPI.c: 40: }
 [e :UE 146 ]
 }
-"41
-[; ;SSSPI.c: 41: char spiRead()
-[v _spiRead `(uc ~T0 @X0 1 ef ]
 "42
-[; ;SSSPI.c: 42: {
+[; ;SSSPI.c: 42: char spiRead()
+[v _spiRead `(uc ~T0 @X0 1 ef ]
+"43
+[; ;SSSPI.c: 43: {
 {
 [e :U _spiRead ]
 [f ]
-"43
-[; ;SSSPI.c: 43:     spiReceiveWait();
-[e ( _spiReceiveWait ..  ]
 "44
-[; ;SSSPI.c: 44:     return(SSPBUF);
+[; ;SSSPI.c: 44:     spiReceiveWait();
+[e ( _spiReceiveWait ..  ]
+"45
+[; ;SSSPI.c: 45:     return(SSPBUF);
 [e ) -> _SSPBUF `uc ]
 [e $UE 149  ]
-"45
-[; ;SSSPI.c: 45: }
+"46
+[; ;SSSPI.c: 46: }
 [e :UE 149 ]
 }
