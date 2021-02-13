@@ -30,18 +30,19 @@
 //******************************************************************************
 void Setup   (void);
 void ADCG    (void);
-uint8_t ADCGO;
+uint8_t ADCGO,L;
 //******************************************************************************
 //******************************************************************************
 //                            interuption 
 //******************************************************************************
 void __interrupt ( ) isr(void){
     if (ADIF==1){ //revisamos la bandera del adc
-        PORTB=ADRESH; // pasamos el contenido de adresh a unavariable 
+        L=ADRESH; // pasamos el contenido de adresh a unavariable 
         PIR1bits.ADIF=0; // //reset la bandera
         ADCON0bits.GO=1;} //  ponemos esta en on para que vuelva a
     if(SSPIF == 1){
-        spiWrite(PORTB);
+        PORTB=L;
+        spiWrite(L);
         SSPIF = 0;
         }
 }
@@ -49,7 +50,7 @@ void __interrupt ( ) isr(void){
 // Ciclo principal
 //******************************************************************************
 void main(void) { 
-    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_END, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     Setup();
     //**************************************************************************
     // Loop principal
@@ -71,9 +72,8 @@ void Setup(void){
     PORTD =  0; //PORTD EN 0
     PORTE =  0; //PORTE EN 0
 // inputs y otputs
-    TRISA =  0B00000001; //INPUT EN porta
+    TRISA =  0B00100001; //INPUT EN porta
     TRISB =  0B00000000; //INPUT EN portb
-    TRISC =  0B00011000; //INPUT EN portc
     TRISD =  0B00000000; //INPUT EN portd
     TRISE =  0B0000; //INPUT EN porte
 // analog inputs 
@@ -82,7 +82,10 @@ void Setup(void){
 // Configuración de timer0------------------------------------------------------
     INTCONbits.GIE=1; //on todas las interrupts global 
     INTCONbits.PEIE=1;//on periferal
+     PIR1bits.ADIF=0; // //reset la bandera
     PIR1bits.ADIF=0; // //reset la bandera
+    PIR1bits.SSPIF = 0;// Borramos bandera interrupción MSSP
+    PIE1bits.SSPIE = 1;// Habilitamos interrupción MSSP
 }
 //******************************************************************************
 // funciones 

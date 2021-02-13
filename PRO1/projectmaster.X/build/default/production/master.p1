@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
 "56 master.c
-[; ;master.c: 56:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+[; ;master.c: 56:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_END, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1310 32 33 34 35 36 37 .. ]
 [n E1310 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1318 0 128 .. ]
@@ -25,9 +25,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22
 [; ;./SETLCD.h: 22: void LCD_POINT (int x, int y, char *D);
 [v _LCD_POINT `(v ~T0 @X0 0 ef3`i`i`*uc ]
-"23
-[; ;./SETLCD.h: 23: void LCDVAL1 (int x, int Z);
-[v _LCDVAL1 `(v ~T0 @X0 0 ef2`i`i ]
 "420 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 420:     struct {
 [s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -42,16 +39,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36 ./MSSP.h
 [; ;./MSSP.h: 36: void spiWrite(char);
 [v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
-"38
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"38 ./MSSP.h
 [; ;./MSSP.h: 38: char spiRead();
 [v _spiRead `(uc ~T0 @X0 0 e? ]
 "35 master.c
 [; ;master.c: 35: void CONVET_cont(void);
 [v _CONVET_cont `(v ~T0 @X0 0 ef ]
+"23 ./SETLCD.h
+[; ;./SETLCD.h: 23: void LCDVAL1 (int x, int Z);
+[v _LCDVAL1 `(v ~T0 @X0 0 ef2`i`i ]
 "166 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
-"228
+"33 master.c
+[; ;master.c: 33: void CONV (void);
+[v _CONV `(v ~T0 @X0 0 ef ]
+"228 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "290
@@ -69,9 +76,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1478
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
-"1540
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1540: extern volatile unsigned char TRISC __attribute__((address(0x087)));
-[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
 "1602
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
@@ -382,7 +386,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _TEM_UAS `uc ~T0 @X0 1 e ]
 [v _TEM_TAS `uc ~T0 @X0 1 e ]
 "43
-[; ;master.c: 43: char cont_1,cont_2,cont_3,cont;
+[; ;master.c: 43: uint8_t cont_1,cont_2,cont_3,cont;
 [v _cont_1 `uc ~T0 @X0 1 e ]
 [v _cont_2 `uc ~T0 @X0 1 e ]
 [v _cont_3 `uc ~T0 @X0 1 e ]
@@ -405,8 +409,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _main ]
 [f ]
 "56
-[; ;master.c: 56:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-[e ( _spiInit (4 , , , . `E1310 0 . `E1318 0 . `E1322 1 . `E1326 0 ]
+[; ;master.c: 56:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_END, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+[e ( _spiInit (4 , , , . `E1310 0 . `E1318 1 . `E1322 1 . `E1326 0 ]
 "57
 [; ;master.c: 57:     Setup();
 [e ( _Setup ..  ]
@@ -426,75 +430,117 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;master.c: 66:     while (1){
 [e :U 140 ]
 {
-"67
-[; ;master.c: 67:     LCDVAL1 (10,cont_1);
-[e ( _LCDVAL1 (2 , -> 10 `i -> _cont_1 `i ]
 "68
-[; ;master.c: 68:     LCDVAL1 (11,cont_2);
-[e ( _LCDVAL1 (2 , -> 11 `i -> _cont_2 `i ]
-"69
-[; ;master.c: 69:     LCDVAL1 (12,cont_3);
-[e ( _LCDVAL1 (2 , -> 12 `i -> _cont_3 `i ]
-"70
-[; ;master.c: 70:         switch (Z){
+[; ;master.c: 68:         switch (Z){
 [e $U 143  ]
 {
-"71
-[; ;master.c: 71:             case 0:
+"69
+[; ;master.c: 69:             case 0:
 [e :U 144 ]
-"72
-[; ;master.c: 72:                 PORTEbits.RE0=0;
+"70
+[; ;master.c: 70:                 PORTEbits.RE0=0;
 [e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
-"73
-[; ;master.c: 73:                 PORTEbits.RE1=1;
+"71
+[; ;master.c: 71:                 PORTEbits.RE1=1;
 [e = . . _PORTEbits 0 1 -> -> 1 `i `uc ]
+"72
+[; ;master.c: 72:                 PORTEbits.RE2=1;
+[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
 "74
-[; ;master.c: 74:                 PORTEbits.RE2=1;
-[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
-"76
-[; ;master.c: 76:                 spiWrite(0x00);
+[; ;master.c: 74:                 spiWrite(0x00);
 [e ( _spiWrite (1 -> -> 0 `i `uc ]
+"75
+[; ;master.c: 75:                 _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"76
+[; ;master.c: 76:                 cont=spiRead();
+[e = _cont -> ( _spiRead ..  `uc ]
 "77
-[; ;master.c: 77:                 cont=spiRead();
-[e = _cont ( _spiRead ..  ]
-"78
-[; ;master.c: 78:                 CONVET_cont();
+[; ;master.c: 77:                 CONVET_cont();
 [e ( _CONVET_cont ..  ]
+"78
+[; ;master.c: 78:                 _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "80
-[; ;master.c: 80:                 break;
-[e $U 142  ]
+[; ;master.c: 80:                 LCDVAL1 (10,cont_1);
+[e ( _LCDVAL1 (2 , -> 10 `i -> _cont_1 `i ]
 "81
-[; ;master.c: 81:             case 1:
-[e :U 145 ]
+[; ;master.c: 81:                 LCDVAL1 (11,cont_2);
+[e ( _LCDVAL1 (2 , -> 11 `i -> _cont_2 `i ]
 "82
-[; ;master.c: 82:                 PORTEbits.RE0=1;
-[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
+[; ;master.c: 82:                 LCDVAL1 (12,cont_3);
+[e ( _LCDVAL1 (2 , -> 12 `i -> _cont_3 `i ]
 "83
-[; ;master.c: 83:                 PORTEbits.RE1=0;
-[e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
+[; ;master.c: 83:                 Z++;
+[e ++ _Z -> -> 1 `i `uc ]
 "84
-[; ;master.c: 84:                 PORTEbits.RE2=1;
-[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
+[; ;master.c: 84:                 break;
+[e $U 142  ]
 "85
-[; ;master.c: 85:                 break;
-[e $U 142  ]
+[; ;master.c: 85:             case 1:
+[e :U 145 ]
 "86
-[; ;master.c: 86:             default:
-[e :U 146 ]
-"87
-[; ;master.c: 87:                 PORTEbits.RE0=1;
+[; ;master.c: 86:                 PORTEbits.RE0=1;
 [e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
+"87
+[; ;master.c: 87:                 PORTEbits.RE1=0;
+[e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
 "88
-[; ;master.c: 88:                 PORTEbits.RE1=1;
-[e = . . _PORTEbits 0 1 -> -> 1 `i `uc ]
-"89
-[; ;master.c: 89:                 PORTEbits.RE2=0;
-[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
+[; ;master.c: 88:                 PORTEbits.RE2=1;
+[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
 "90
-[; ;master.c: 90:                 break;
-[e $U 142  ]
+[; ;master.c: 90:                 spiWrite(0x00);
+[e ( _spiWrite (1 -> -> 0 `i `uc ]
 "91
-[; ;master.c: 91:         }
+[; ;master.c: 91:                 _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"92
+[; ;master.c: 92:                 L=spiRead();
+[e = _L -> ( _spiRead ..  `uc ]
+"93
+[; ;master.c: 93:                 PORTA=L;
+[e = _PORTA _L ]
+"94
+[; ;master.c: 94:                 CONV();
+[e ( _CONV ..  ]
+"95
+[; ;master.c: 95:                 _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"97
+[; ;master.c: 97:                 LCDVAL1 (2,POT1_U);
+[e ( _LCDVAL1 (2 , -> 2 `i -> _POT1_U `i ]
+"98
+[; ;master.c: 98:                 LCDVAL1 (3,16);
+[e ( _LCDVAL1 (2 , -> 3 `i -> 16 `i ]
+"99
+[; ;master.c: 99:                 LCDVAL1 (4,POT1_T);
+[e ( _LCDVAL1 (2 , -> 4 `i -> _POT1_T `i ]
+"100
+[; ;master.c: 100:                 LCDVAL1 (5,POT1_H);
+[e ( _LCDVAL1 (2 , -> 5 `i -> _POT1_H `i ]
+"103
+[; ;master.c: 103:                 Z=0;
+[e = _Z -> -> 0 `i `uc ]
+"104
+[; ;master.c: 104:                 break;
+[e $U 142  ]
+"105
+[; ;master.c: 105:             default:
+[e :U 146 ]
+"106
+[; ;master.c: 106:                 PORTEbits.RE0=1;
+[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
+"107
+[; ;master.c: 107:                 PORTEbits.RE1=1;
+[e = . . _PORTEbits 0 1 -> -> 1 `i `uc ]
+"108
+[; ;master.c: 108:                 PORTEbits.RE2=0;
+[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
+"109
+[; ;master.c: 109:                 break;
+[e $U 142  ]
+"110
+[; ;master.c: 110:         }
 }
 [e $U 142  ]
 [e :U 143 ]
@@ -502,291 +548,288 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 1 `i 145
  146 ]
 [e :U 142 ]
-"92
-[; ;master.c: 92:     }
+"111
+[; ;master.c: 111:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"93
-[; ;master.c: 93: }
+"112
+[; ;master.c: 112: }
 [e :UE 138 ]
 }
-"97
-[; ;master.c: 97: void Setup(void){
+"116
+[; ;master.c: 116: void Setup(void){
 [v _Setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _Setup ]
 [f ]
-"99
-[; ;master.c: 99:     PORTA = 0;
+"118
+[; ;master.c: 118:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"100
-[; ;master.c: 100:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
-"101
-[; ;master.c: 101:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
-"102
-[; ;master.c: 102:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
-"103
-[; ;master.c: 103:     PORTE = 0;
-[e = _PORTE -> -> 0 `i `uc ]
-"105
-[; ;master.c: 105:     TRISA = 0B00000000;
-[e = _TRISA -> -> 0 `i `uc ]
-"106
-[; ;master.c: 106:     TRISB = 0B00000000;
-[e = _TRISB -> -> 0 `i `uc ]
-"107
-[; ;master.c: 107:     TRISC = 0B00010000;
-[e = _TRISC -> -> 16 `i `uc ]
-"108
-[; ;master.c: 108:     TRISD = 0B00000000;
-[e = _TRISD -> -> 0 `i `uc ]
-"109
-[; ;master.c: 109:     TRISE = 1 ;
-[e = _TRISE -> -> 1 `i `uc ]
-"111
-[; ;master.c: 111:     ANSEL = 0B00000000;
-[e = _ANSEL -> -> 0 `i `uc ]
-"112
-[; ;master.c: 112:     ANSELH = 0B00000000;
-[e = _ANSELH -> -> 0 `i `uc ]
-"115
-[; ;master.c: 115:     INTCONbits.GIE=1;
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"116
-[; ;master.c: 116:     INTCONbits.PEIE=1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"117
-[; ;master.c: 117:     INTCONbits.RBIE=1;
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
 "119
-[; ;master.c: 119: }
+[; ;master.c: 119:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"120
+[; ;master.c: 120:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"121
+[; ;master.c: 121:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"122
+[; ;master.c: 122:     PORTE = 0;
+[e = _PORTE -> -> 0 `i `uc ]
+"124
+[; ;master.c: 124:     TRISA = 0B00000000;
+[e = _TRISA -> -> 0 `i `uc ]
+"125
+[; ;master.c: 125:     TRISB = 0B00000000;
+[e = _TRISB -> -> 0 `i `uc ]
+"127
+[; ;master.c: 127:     TRISD = 0B00000000;
+[e = _TRISD -> -> 0 `i `uc ]
+"128
+[; ;master.c: 128:     TRISE = 1 ;
+[e = _TRISE -> -> 1 `i `uc ]
+"130
+[; ;master.c: 130:     ANSEL = 0B00000000;
+[e = _ANSEL -> -> 0 `i `uc ]
+"131
+[; ;master.c: 131:     ANSELH = 0B00000000;
+[e = _ANSELH -> -> 0 `i `uc ]
+"134
+[; ;master.c: 134:     INTCONbits.GIE=1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"135
+[; ;master.c: 135:     INTCONbits.PEIE=1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"136
+[; ;master.c: 136:     INTCONbits.RBIE=1;
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+"138
+[; ;master.c: 138: }
 [e :UE 147 ]
 }
-"123
-[; ;master.c: 123: void CONV (void){
+"142
+[; ;master.c: 142: void CONV (void){
 [v _CONV `(v ~T0 @X0 1 ef ]
 {
 [e :U _CONV ]
 [f ]
-"125
-[; ;master.c: 125:     POT1_U=(L/51);
+"144
+[; ;master.c: 144:     POT1_U=(L/51);
 [e = _POT1_U -> / -> _L `i -> 51 `i `uc ]
-"126
-[; ;master.c: 126:     POT1_T=((L*100/51)-(POT1_U*100))/10;
+"145
+[; ;master.c: 145:     POT1_T=((L*100/51)-(POT1_U*100))/10;
 [e = _POT1_T -> / - / * -> _L `i -> 100 `i -> 51 `i * -> _POT1_U `i -> 100 `i -> 10 `i `uc ]
-"127
-[; ;master.c: 127:     POT1_H=((L*100/51)-(POT1_U*100)-(POT1_T*10));
+"146
+[; ;master.c: 146:     POT1_H=((L*100/51)-(POT1_U*100)-(POT1_T*10));
 [e = _POT1_H -> - - / * -> _L `i -> 100 `i -> 51 `i * -> _POT1_U `i -> 100 `i * -> _POT1_T `i -> 10 `i `uc ]
-"128
-[; ;master.c: 128:     }
+"147
+[; ;master.c: 147:     }
 [e :UE 148 ]
 }
-"129
-[; ;master.c: 129: void CONT (void){
+"148
+[; ;master.c: 148: void CONT (void){
 [v _CONT `(v ~T0 @X0 1 ef ]
 {
 [e :U _CONT ]
 [f ]
-"131
-[; ;master.c: 131:     TEM_U=(l/51);
+"150
+[; ;master.c: 150:     TEM_U=(l/51);
 [e = _TEM_U -> / -> _l `i -> 51 `i `uc ]
-"132
-[; ;master.c: 132:     TEM_T=((l*100/51)-(TEM_U*100))/10;
+"151
+[; ;master.c: 151:     TEM_T=((l*100/51)-(TEM_U*100))/10;
 [e = _TEM_T -> / - / * -> _l `i -> 100 `i -> 51 `i * -> _TEM_U `i -> 100 `i -> 10 `i `uc ]
-"133
-[; ;master.c: 133:     }
+"152
+[; ;master.c: 152:     }
 [e :UE 149 ]
 }
-"134
-[; ;master.c: 134: void CONVET_cont (void){
+"153
+[; ;master.c: 153: void CONVET_cont (void){
 [v _CONVET_cont `(v ~T0 @X0 1 ef ]
 {
 [e :U _CONVET_cont ]
 [f ]
-"135
-[; ;master.c: 135:     cont_1=(cont/100);
+"154
+[; ;master.c: 154:     cont_1=(cont/100);
 [e = _cont_1 -> / -> _cont `i -> 100 `i `uc ]
-"136
-[; ;master.c: 136:     cont_2=((cont)-(cont_1*100))/10;
+"155
+[; ;master.c: 155:     cont_2=((cont)-(cont_1*100))/10;
 [e = _cont_2 -> / - -> _cont `i * -> _cont_1 `i -> 100 `i -> 10 `i `uc ]
-"137
-[; ;master.c: 137:     cont_3=((cont)-(cont_1*100)-(cont_2*10));
+"156
+[; ;master.c: 156:     cont_3=((cont)-(cont_1*100)-(cont_2*10));
 [e = _cont_3 -> - - -> _cont `i * -> _cont_1 `i -> 100 `i * -> _cont_2 `i -> 10 `i `uc ]
-"138
-[; ;master.c: 138:     }
+"157
+[; ;master.c: 157:     }
 [e :UE 150 ]
 }
-"139
-[; ;master.c: 139: void CONV_AS (void){
+"158
+[; ;master.c: 158: void CONV_AS (void){
 [v _CONV_AS `(v ~T0 @X0 1 ef ]
 {
 [e :U _CONV_AS ]
 [f ]
-"140
-[; ;master.c: 140:     POT1_Uas=(POT1_U+0x30);
+"159
+[; ;master.c: 159:     POT1_Uas=(POT1_U+0x30);
 [e = _POT1_Uas -> + -> _POT1_U `i -> 48 `i `uc ]
-"141
-[; ;master.c: 141:     POT1_Tas=(POT1_T+0x30);
+"160
+[; ;master.c: 160:     POT1_Tas=(POT1_T+0x30);
 [e = _POT1_Tas -> + -> _POT1_T `i -> 48 `i `uc ]
-"142
-[; ;master.c: 142:     POT1_Has=(POT1_H+0x30);
+"161
+[; ;master.c: 161:     POT1_Has=(POT1_H+0x30);
 [e = _POT1_Has -> + -> _POT1_H `i -> 48 `i `uc ]
-"143
-[; ;master.c: 143:     cont_1AS=(cont_1+0X30);
+"162
+[; ;master.c: 162:     cont_1AS=(cont_1+0X30);
 [e = _cont_1AS -> + -> _cont_1 `i -> 48 `i `uc ]
-"144
-[; ;master.c: 144:     cont_2AS=(cont_2+0X30);
+"163
+[; ;master.c: 163:     cont_2AS=(cont_2+0X30);
 [e = _cont_2AS -> + -> _cont_2 `i -> 48 `i `uc ]
-"145
-[; ;master.c: 145:     cont_3AS=(cont_3+0X30);
+"164
+[; ;master.c: 164:     cont_3AS=(cont_3+0X30);
 [e = _cont_3AS -> + -> _cont_3 `i -> 48 `i `uc ]
-"146
-[; ;master.c: 146:     TEM_UAS=(TEM_U+0X30);
+"165
+[; ;master.c: 165:     TEM_UAS=(TEM_U+0X30);
 [e = _TEM_UAS -> + -> _TEM_U `i -> 48 `i `uc ]
-"147
-[; ;master.c: 147:     TEM_TAS=(TEM_T+0X30);
+"166
+[; ;master.c: 166:     TEM_TAS=(TEM_T+0X30);
 [e = _TEM_TAS -> + -> _TEM_T `i -> 48 `i `uc ]
-"148
-[; ;master.c: 148:     }
+"167
+[; ;master.c: 167:     }
 [e :UE 151 ]
 }
-"149
-[; ;master.c: 149: void send (void){
+"168
+[; ;master.c: 168: void send (void){
 [v _send `(v ~T0 @X0 1 ef ]
 {
 [e :U _send ]
 [f ]
-"150
-[; ;master.c: 150:     switch (z){
+"169
+[; ;master.c: 169:     switch (z){
 [e $U 154  ]
 {
-"151
-[; ;master.c: 151:         case 0:
-[e :U 155 ]
-"152
-[; ;master.c: 152:             TXREG = POT1_Uas;
-[e = _TXREG _POT1_Uas ]
-"153
-[; ;master.c: 153:             break;
-[e $U 153  ]
-"154
-[; ;master.c: 154:         case 1:
-[e :U 156 ]
-"155
-[; ;master.c: 155:             TXREG = POT1_Uas;
-[e = _TXREG _POT1_Uas ]
-"156
-[; ;master.c: 156:             break;
-[e $U 153  ]
-"157
-[; ;master.c: 157:         case 2:
-[e :U 157 ]
-"158
-[; ;master.c: 158:             TXREG = 0x2E;
-[e = _TXREG -> -> 46 `i `uc ]
-"159
-[; ;master.c: 159:             break;
-[e $U 153  ]
-"160
-[; ;master.c: 160:         case 3:
-[e :U 158 ]
-"161
-[; ;master.c: 161:             TXREG = POT1_Tas;
-[e = _TXREG _POT1_Tas ]
-"162
-[; ;master.c: 162:             break;
-[e $U 153  ]
-"163
-[; ;master.c: 163:         case 4:
-[e :U 159 ]
-"164
-[; ;master.c: 164:             TXREG = POT1_Has;
-[e = _TXREG _POT1_Has ]
-"165
-[; ;master.c: 165:             break;
-[e $U 153  ]
-"166
-[; ;master.c: 166:         case 5:
-[e :U 160 ]
-"167
-[; ;master.c: 167:             TXREG = 0x20;
-[e = _TXREG -> -> 32 `i `uc ]
-"168
-[; ;master.c: 168:             break;
-[e $U 153  ]
-"169
-[; ;master.c: 169:         case 6:
-[e :U 161 ]
 "170
-[; ;master.c: 170:             TXREG = cont_1AS;
-[e = _TXREG _cont_1AS ]
+[; ;master.c: 170:         case 0:
+[e :U 155 ]
 "171
-[; ;master.c: 171:             break;
-[e $U 153  ]
+[; ;master.c: 171:             TXREG = POT1_Uas;
+[e = _TXREG _POT1_Uas ]
 "172
-[; ;master.c: 172:         case 7:
-[e :U 162 ]
+[; ;master.c: 172:             break;
+[e $U 153  ]
 "173
-[; ;master.c: 173:             TXREG = cont_2AS;
-[e = _TXREG _cont_2AS ]
+[; ;master.c: 173:         case 1:
+[e :U 156 ]
 "174
-[; ;master.c: 174:             break;
-[e $U 153  ]
+[; ;master.c: 174:             TXREG = POT1_Uas;
+[e = _TXREG _POT1_Uas ]
 "175
-[; ;master.c: 175:         case 8:
-[e :U 163 ]
+[; ;master.c: 175:             break;
+[e $U 153  ]
 "176
-[; ;master.c: 176:             TXREG = cont_3AS;
-[e = _TXREG _cont_3AS ]
+[; ;master.c: 176:         case 2:
+[e :U 157 ]
 "177
-[; ;master.c: 177:             break;
-[e $U 153  ]
+[; ;master.c: 177:             TXREG = 0x2E;
+[e = _TXREG -> -> 46 `i `uc ]
 "178
-[; ;master.c: 178:         case 9:
-[e :U 164 ]
+[; ;master.c: 178:             break;
+[e $U 153  ]
 "179
-[; ;master.c: 179:             TXREG = 0x20;
-[e = _TXREG -> -> 32 `i `uc ]
+[; ;master.c: 179:         case 3:
+[e :U 158 ]
 "180
-[; ;master.c: 180:             break;
-[e $U 153  ]
+[; ;master.c: 180:             TXREG = POT1_Tas;
+[e = _TXREG _POT1_Tas ]
 "181
-[; ;master.c: 181:         case 10:
-[e :U 165 ]
+[; ;master.c: 181:             break;
+[e $U 153  ]
 "182
-[; ;master.c: 182:             TXREG = TEM_UAS;
-[e = _TXREG _TEM_UAS ]
+[; ;master.c: 182:         case 4:
+[e :U 159 ]
 "183
-[; ;master.c: 183:             break;
-[e $U 153  ]
+[; ;master.c: 183:             TXREG = POT1_Has;
+[e = _TXREG _POT1_Has ]
 "184
-[; ;master.c: 184:         case 11:
-[e :U 166 ]
-"185
-[; ;master.c: 185:             TXREG = TEM_TAS;
-[e = _TXREG _TEM_TAS ]
-"186
-[; ;master.c: 186:             break;
+[; ;master.c: 184:             break;
 [e $U 153  ]
+"185
+[; ;master.c: 185:         case 5:
+[e :U 160 ]
+"186
+[; ;master.c: 186:             TXREG = 0x20;
+[e = _TXREG -> -> 32 `i `uc ]
 "187
-[; ;master.c: 187:         default:
-[e :U 167 ]
+[; ;master.c: 187:             break;
+[e $U 153  ]
 "188
-[; ;master.c: 188:              TXREG = 0x0D;
-[e = _TXREG -> -> 13 `i `uc ]
+[; ;master.c: 188:         case 6:
+[e :U 161 ]
 "189
-[; ;master.c: 189:              z=0;
-[e = _z -> -> 0 `i `uc ]
+[; ;master.c: 189:             TXREG = cont_1AS;
+[e = _TXREG _cont_1AS ]
 "190
 [; ;master.c: 190:             break;
 [e $U 153  ]
 "191
-[; ;master.c: 191:     }}
+[; ;master.c: 191:         case 7:
+[e :U 162 ]
+"192
+[; ;master.c: 192:             TXREG = cont_2AS;
+[e = _TXREG _cont_2AS ]
+"193
+[; ;master.c: 193:             break;
+[e $U 153  ]
+"194
+[; ;master.c: 194:         case 8:
+[e :U 163 ]
+"195
+[; ;master.c: 195:             TXREG = cont_3AS;
+[e = _TXREG _cont_3AS ]
+"196
+[; ;master.c: 196:             break;
+[e $U 153  ]
+"197
+[; ;master.c: 197:         case 9:
+[e :U 164 ]
+"198
+[; ;master.c: 198:             TXREG = 0x20;
+[e = _TXREG -> -> 32 `i `uc ]
+"199
+[; ;master.c: 199:             break;
+[e $U 153  ]
+"200
+[; ;master.c: 200:         case 10:
+[e :U 165 ]
+"201
+[; ;master.c: 201:             TXREG = TEM_UAS;
+[e = _TXREG _TEM_UAS ]
+"202
+[; ;master.c: 202:             break;
+[e $U 153  ]
+"203
+[; ;master.c: 203:         case 11:
+[e :U 166 ]
+"204
+[; ;master.c: 204:             TXREG = TEM_TAS;
+[e = _TXREG _TEM_TAS ]
+"205
+[; ;master.c: 205:             break;
+[e $U 153  ]
+"206
+[; ;master.c: 206:         default:
+[e :U 167 ]
+"207
+[; ;master.c: 207:              TXREG = 0x0D;
+[e = _TXREG -> -> 13 `i `uc ]
+"208
+[; ;master.c: 208:              z=0;
+[e = _z -> -> 0 `i `uc ]
+"209
+[; ;master.c: 209:             break;
+[e $U 153  ]
+"210
+[; ;master.c: 210:     }}
 }
 [e $U 153  ]
 [e :U 154 ]

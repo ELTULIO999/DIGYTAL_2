@@ -2723,12 +2723,12 @@ uint8_t L,l,Z,z;
 uint8_t POT1_U,POT1_H, POT1_T;
 uint8_t TEM_U,TEM_T;
 uint8_t TEM_UAS,TEM_TAS;
-char cont_1,cont_2,cont_3,cont;
+uint8_t cont_1,cont_2,cont_3,cont;
 uint8_t cont_1AS,cont_2AS,cont_3AS;
 uint8_t POT1_Uas,POT1_Has, POT1_Tas;
 # 55 "master.c"
 void main(void) {
-    spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+    spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_END, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     Setup();
     LCD_IN();
     LCD_CL();
@@ -2739,9 +2739,7 @@ void main(void) {
 
 
     while (1){
-    LCDVAL1 (10,cont_1);
-    LCDVAL1 (11,cont_2);
-    LCDVAL1 (12,cont_3);
+
         switch (Z){
             case 0:
                 PORTEbits.RE0=0;
@@ -2749,14 +2747,35 @@ void main(void) {
                 PORTEbits.RE2=1;
 
                 spiWrite(0x00);
+                _delay((unsigned long)((1)*(4000000/4000.0)));
                 cont=spiRead();
                 CONVET_cont();
+                _delay((unsigned long)((1)*(4000000/4000.0)));
 
+                LCDVAL1 (10,cont_1);
+                LCDVAL1 (11,cont_2);
+                LCDVAL1 (12,cont_3);
+                Z++;
                 break;
             case 1:
                 PORTEbits.RE0=1;
                 PORTEbits.RE1=0;
                 PORTEbits.RE2=1;
+
+                spiWrite(0x00);
+                _delay((unsigned long)((1)*(4000000/4000.0)));
+                L=spiRead();
+                PORTA=L;
+                CONV();
+                _delay((unsigned long)((1)*(4000000/4000.0)));
+
+                LCDVAL1 (2,POT1_U);
+                LCDVAL1 (3,16);
+                LCDVAL1 (4,POT1_T);
+                LCDVAL1 (5,POT1_H);
+
+
+                Z=0;
                 break;
             default:
                 PORTEbits.RE0=1;
@@ -2779,7 +2798,7 @@ void Setup(void){
 
     TRISA = 0B00000000;
     TRISB = 0B00000000;
-    TRISC = 0B00010000;
+
     TRISD = 0B00000000;
     TRISE = 1 ;
 

@@ -2718,7 +2718,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
 void main(void) {
     Setup();
-    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+    spiInit(SPI_SLAVE_SS_EN,SPI_DATA_SAMPLE_END, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
 
 
@@ -2735,9 +2735,9 @@ void Setup(void){
     PORTD = 0;
     PORTE = 0;
 
-    TRISA = 0B00000000;
+    TRISA = 0B00100000;
     TRISB = 0B00000011;
-    TRISC = 0B00011000;
+
     TRISD = 0B00000000;
     TRISE = 0B0000;
 
@@ -2752,7 +2752,7 @@ void Setup(void){
     INTCONbits.RBIF=0;
     PIR1bits.SSPIF = 0;
     PIE1bits.SSPIE = 1;
-    TRISAbits.TRISA5 = 1;
+
     WPUB =0B00000011;
     IOCB = 0B00000011;
 }

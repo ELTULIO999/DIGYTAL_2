@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"52 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave1.X\slave1.c
+"53 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave1.X\slave1.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -57,11 +57,11 @@ SPI_ACTIVE_2_IDLE 64
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "38 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave1.X\slave1.c
 [v _isr isr `II(v  1 e 1 0 ]
-"51
+"52
 [v _main main `(v  1 e 1 0 ]
-"64
+"65
 [v _Setup Setup `(v  1 e 1 0 ]
-"91
+"94
 [v _ADCG ADCG `(v  1 e 1 0 ]
 "6 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave1.X\SSSPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -79,7 +79,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S163 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S162 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -89,14 +89,14 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 GIE 1 0 :1:7 
 ]
 "482
-[s S172 . 1 `uc 1 . 1 0 :2:0 
+[s S171 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S177 . 1 `S163 1 . 1 0 `S172 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES177  1 e 1 @11 ]
-[s S25 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S176 . 1 `S162 1 . 1 0 `S171 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES176  1 e 1 @11 ]
+[s S24 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -105,21 +105,21 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S33 . 1 `S25 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES33  1 e 1 @12 ]
+[u S32 . 1 `S24 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES32  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S44 . 1 `uc 1 ADON 1 0 :1:0 
+[s S43 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1276
-[s S49 . 1 `uc 1 . 1 0 :1:0 
+[s S48 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -128,20 +128,18 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S58 . 1 `uc 1 . 1 0 :1:0 
+[s S57 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S61 . 1 `uc 1 . 1 0 :1:0 
+[s S60 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S64 . 1 `S44 1 . 1 0 `S49 1 . 1 0 `S58 1 . 1 0 `S61 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES64  1 e 1 @31 ]
+[u S63 . 1 `S43 1 . 1 0 `S48 1 . 1 0 `S57 1 . 1 0 `S60 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES63  1 e 1 @31 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-"1540
-[v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
@@ -216,46 +214,47 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
 "33 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave1.X\slave1.c
 [v _ADCGO ADCGO `uc  1 e 1 0 ]
-"51
+[v _L L `uc  1 e 1 0 ]
+"52
 [v _main main `(v  1 e 1 0 ]
 {
-"60
+"61
 } 0
 "6 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave1.X\SSSPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
 {
 [v spiInit@sType sType `E1264  1 a 1 wreg ]
 [v spiInit@sType sType `E1264  1 a 1 wreg ]
-[v spiInit@sDataSample sDataSample `E1272  1 p 1 3 ]
-[v spiInit@sClockIdle sClockIdle `E1276  1 p 1 4 ]
-[v spiInit@sTransmitEdge sTransmitEdge `E1280  1 p 1 5 ]
+[v spiInit@sDataSample sDataSample `E1272  1 p 1 4 ]
+[v spiInit@sClockIdle sClockIdle `E1276  1 p 1 5 ]
+[v spiInit@sTransmitEdge sTransmitEdge `E1280  1 p 1 6 ]
 "8
-[v spiInit@sType sType `E1264  1 a 1 6 ]
+[v spiInit@sType sType `E1264  1 a 1 7 ]
 "21
 } 0
-"64 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave1.X\slave1.c
+"65 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave1.X\slave1.c
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"86
+"89
 } 0
 "4 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave1.X\ADC.c
 [v _ADC_CHS_CLKS ADC_CHS_CLKS `(v  1 e 1 0 ]
 {
 [v ADC_CHS_CLKS@C C `uc  1 a 1 wreg ]
 [v ADC_CHS_CLKS@C C `uc  1 a 1 wreg ]
-[v ADC_CHS_CLKS@S S `uc  1 p 1 3 ]
-[v ADC_CHS_CLKS@C C `uc  1 a 1 6 ]
+[v ADC_CHS_CLKS@S S `uc  1 p 1 4 ]
+[v ADC_CHS_CLKS@C C `uc  1 a 1 7 ]
 "169
 } 0
-"91 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave1.X\slave1.c
+"94 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave1.X\slave1.c
 [v _ADCG ADCG `(v  1 e 1 0 ]
 {
-"96
+"99
 } 0
 "38
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"47
+"48
 } 0
 "28 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave1.X\SSSPI.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]

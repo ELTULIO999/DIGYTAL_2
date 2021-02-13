@@ -2703,18 +2703,19 @@ void ADC_CHS_CLKS (uint8_t C, uint8_t S);
 
 void Setup (void);
 void ADCG (void);
-uint8_t ADCGO;
+uint8_t ADCGO,L;
 
 
 
 
 void __attribute__((picinterrupt(("")))) isr(void){
     if (ADIF==1){
-        PORTB=ADRESH;
+        L=ADRESH;
         PIR1bits.ADIF=0;
         ADCON0bits.GO=1;}
     if(SSPIF == 1){
-        spiWrite(PORTB);
+        PORTB=L;
+        spiWrite(L);
         SSPIF = 0;
         }
 }
@@ -2722,7 +2723,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
 
 void main(void) {
-    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_END, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     Setup();
 
 
@@ -2744,9 +2745,8 @@ void Setup(void){
     PORTD = 0;
     PORTE = 0;
 
-    TRISA = 0B00000001;
+    TRISA = 0B00100001;
     TRISB = 0B00000000;
-    TRISC = 0B00011000;
     TRISD = 0B00000000;
     TRISE = 0B0000;
 
@@ -2755,7 +2755,10 @@ void Setup(void){
 
     INTCONbits.GIE=1;
     INTCONbits.PEIE=1;
+     PIR1bits.ADIF=0;
     PIR1bits.ADIF=0;
+    PIR1bits.SSPIF = 0;
+    PIE1bits.SSPIE = 1;
 }
 
 

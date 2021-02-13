@@ -40,7 +40,7 @@ uint8_t L,l,Z,z;
 uint8_t POT1_U,POT1_H, POT1_T;
 uint8_t TEM_U,TEM_T;
 uint8_t TEM_UAS,TEM_TAS;
-char cont_1,cont_2,cont_3,cont;
+uint8_t cont_1,cont_2,cont_3,cont;
 uint8_t cont_1AS,cont_2AS,cont_3AS;
 uint8_t POT1_Uas,POT1_Has, POT1_Tas;
 
@@ -53,7 +53,7 @@ uint8_t POT1_Uas,POT1_Has, POT1_Tas;
 // Ciclo principal
 //******************************************************************************
 void main(void) {
-    spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+    spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_END, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     Setup(); // general set up
     LCD_IN(); //start up of lcd
     LCD_CL();// start up of lcd
@@ -64,9 +64,7 @@ void main(void) {
     // Loop principal
     //**************************************************************************
     while (1){
-    LCDVAL1 (10,cont_1);
-    LCDVAL1 (11,cont_2);
-    LCDVAL1 (12,cont_3);
+   
         switch (Z){
             case 0:
                 PORTEbits.RE0=0;
@@ -74,14 +72,35 @@ void main(void) {
                 PORTEbits.RE2=1;
                 
                 spiWrite(0x00);
-                cont=spiRead();
+                __delay_ms(1);
+                cont=spiRead();              
                 CONVET_cont();
-                //Z++;
+                __delay_ms(1);
+                
+                LCDVAL1 (10,cont_1);
+                LCDVAL1 (11,cont_2);
+                LCDVAL1 (12,cont_3);
+                Z++;
                 break;
             case 1:
                 PORTEbits.RE0=1;
                 PORTEbits.RE1=0;
                 PORTEbits.RE2=1;
+                
+                spiWrite(0x00);
+                __delay_ms(1);
+                L=spiRead();
+                PORTA=L;
+                CONV();
+                __delay_ms(1);
+                
+                LCDVAL1 (2,POT1_U);
+                LCDVAL1 (3,16);
+                LCDVAL1 (4,POT1_T);
+                LCDVAL1 (5,POT1_H);
+                
+                
+                Z=0;
                 break;
             default:
                 PORTEbits.RE0=1;
@@ -104,7 +123,7 @@ void Setup(void){
 // inputs y otputs
     TRISA =  0B00000000; //INPUT EN porta
     TRISB =  0B00000000; //INPUT EN portb
-    TRISC =  0B00010000; //INPUT EN portc
+    //TRISC =  0B00101000; //INPUT EN portc
     TRISD =  0B00000000; //INPUT EN portd
     TRISE =  1 ; //INPUT EN porte
 // analog inputs 
@@ -121,7 +140,7 @@ void Setup(void){
 // funciones 
 //******************************************************************************
 void CONV (void){   
-   
+    
     POT1_U=(L/51);//mapeo de primera var
     POT1_T=((L*100/51)-(POT1_U*100))/10;//mapeo de segunda var
     POT1_H=((L*100/51)-(POT1_U*100)-(POT1_T*10));//mapeo de tersero  var
