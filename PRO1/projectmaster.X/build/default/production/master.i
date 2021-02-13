@@ -2705,6 +2705,16 @@ unsigned spiDataReady();
 char spiRead();
 # 24 "master.c" 2
 
+# 1 "./Oscilador.h" 1
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 4 "./Oscilador.h" 2
+
+void initOsc (uint8_t IRCF);
+# 25 "master.c" 2
+
 
 
 
@@ -2719,71 +2729,100 @@ void CONVET_cont(void);
 void send (void);
 void CONV_AS (void);
 
-uint8_t L,l,Z,z;
+uint8_t L,R,r,Z,z,C,c,sign,bro;
 uint8_t POT1_U,POT1_H, POT1_T;
-uint8_t TEM_U,TEM_T;
-uint8_t TEM_UAS,TEM_TAS;
+uint8_t TEM_U,TEM_T,TEM_H;
+uint8_t TEM_UAS,TEM_TAS, TEM_HAS;
 uint8_t cont_1,cont_2,cont_3,cont;
 uint8_t cont_1AS,cont_2AS,cont_3AS;
 uint8_t POT1_Uas,POT1_Has, POT1_Tas;
-# 55 "master.c"
+
+
+
+
+
+void __attribute__((picinterrupt(("")))) isr(void){
+    if (PIR1bits.TXIF == 1){
+        z++;
+        send();
+        PIE1bits.TXIE = 0;}
+    if (INTCONbits.TMR0IF==1){
+        TMR0=250;
+        INTCONbits.TMR0IF=0;
+        r++;
+        if(r==100){
+            r=0;
+            PIE1bits.TXIE = 1;}
+       }
+
+
+}
+
+
+
 void main(void) {
+    SET_TXR();
+    SET_RXT();
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_END, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     Setup();
     LCD_IN();
     LCD_CL();
-    LCD_POINT(0,1,"ADC TEMP CONT");
+    LCD_POINT(0,1,"ADC   TEMP   CONT");
     Z=0;
+    z=0;
 
 
 
 
     while (1){
-
         switch (Z){
             case 0:
                 PORTEbits.RE0=0;
                 PORTEbits.RE1=1;
                 PORTEbits.RE2=1;
-
                 spiWrite(0x00);
-                _delay((unsigned long)((1)*(4000000/4000.0)));
                 cont=spiRead();
                 PORTA=cont;
                 CONVET_cont();
-                _delay((unsigned long)((1)*(4000000/4000.0)));
-
-                LCDVAL1 (10,cont_1);
-                LCDVAL1 (11,cont_2);
-                LCDVAL1 (12,cont_3);
+                LCDVAL1 (13,cont_1);
+                LCDVAL1 (14,cont_2);
+                LCDVAL1 (15,cont_3);
                 Z++;
                 break;
             case 1:
                 PORTEbits.RE0=1;
                 PORTEbits.RE1=0;
                 PORTEbits.RE2=1;
-
                 spiWrite(0x00);
-                _delay((unsigned long)((1)*(4000000/4000.0)));
                 L=spiRead();
-
                 CONV();
-                _delay((unsigned long)((1)*(4000000/4000.0)));
-
-                LCDVAL1 (2,POT1_U);
-                LCDVAL1 (3,16);
-                LCDVAL1 (4,POT1_T);
-                LCDVAL1 (5,POT1_H);
-
-
-                Z=0;
+                LCDVAL1 (0,POT1_U);
+                LCDVAL1 (1,16);
+                LCDVAL1 (2,POT1_T);
+                LCDVAL1 (3,POT1_H);
+                Z++;
                 break;
-            default:
+            case 2:
                 PORTEbits.RE0=1;
                 PORTEbits.RE1=1;
                 PORTEbits.RE2=0;
+
+                spiWrite(0x00);
+
+                C=spiRead();
+
+                LCDVAL1 (6,bro);
+                LCDVAL1 (7,TEM_U);
+                LCDVAL1 (8,TEM_T);
+                LCDVAL1 (9,TEM_H);
+
+
+                CONT();
+
+                Z=0;
                 break;
         }
+        CONV_AS();
     }
 }
 
@@ -2799,9 +2838,9 @@ void Setup(void){
 
     TRISA = 0B00000000;
     TRISB = 0B00000000;
-
+    TRISC = 0B00010000;
     TRISD = 0B00000000;
-    TRISE = 0 ;
+    TRISE = 0B0000;
 
     ANSEL = 0B00000000;
     ANSELH = 0B00000000;
@@ -2809,7 +2848,17 @@ void Setup(void){
 
     INTCONbits.GIE=1;
     INTCONbits.PEIE=1;
-    INTCONbits.RBIE=1;
+    INTCONbits.TMR0IE=1;
+    INTCONbits.TMR0IF=0;
+    PIE1bits.TXIE = 1;
+    OPTION_REGbits.T0CS=0;
+    OPTION_REGbits.T0SE=0;
+    OPTION_REGbits.PSA=0;
+
+    OPTION_REGbits.PS0=1;
+    OPTION_REGbits.PS1=1;
+    OPTION_REGbits.PS2=1;
+
 
 }
 
@@ -2822,10 +2871,24 @@ void CONV (void){
     POT1_H=((L*100/51)-(POT1_U*100)-(POT1_T*10));
     }
 void CONT (void){
-
-    TEM_U=(l/51);
-    TEM_T=((l*100/51)-(TEM_U*100))/10;
+    R=C;
+    if (R>=26){
+        c =(((R-26)*150)/77);
+        TEM_U=(c/100);
+        TEM_T=(c-(TEM_U*100))/10;
+        TEM_H=(c-(TEM_U*100)-(TEM_T*10));
+        sign=0x20;
+        bro=20;
     }
+    else{
+        c=-((c-26)*55)/27;
+        TEM_U=(c/100);
+        TEM_T=(c-(TEM_U*100))/10;
+        TEM_H=(c-(TEM_U*100)-(TEM_T*10));
+        sign=0x2D;
+        bro=18;
+    }
+}
 void CONVET_cont (void){
     cont_1=(cont/100);
     cont_2=((cont)-(cont_1*100))/10;
@@ -2840,6 +2903,7 @@ void CONV_AS (void){
     cont_3AS=(cont_3+0X30);
     TEM_UAS=(TEM_U+0X30);
     TEM_TAS=(TEM_T+0X30);
+    TEM_HAS=(TEM_H+0X30);
     }
 void send (void){
     switch (z){
@@ -2862,22 +2926,28 @@ void send (void){
             TXREG = 0x20;
             break;
         case 6:
-            TXREG = cont_1AS;
+            TXREG = sign;
             break;
         case 7:
-            TXREG = cont_2AS;
-            break;
-        case 8:
-            TXREG = cont_3AS;
-            break;
-        case 9:
-            TXREG = 0x20;
-            break;
-        case 10:
             TXREG = TEM_UAS;
             break;
-        case 11:
+        case 8:
             TXREG = TEM_TAS;
+            break;
+        case 9:
+            TXREG = TEM_HAS;
+            break;
+        case 10:
+            TXREG = 0x20;
+            break;
+        case 11:
+            TXREG = cont_1AS;
+            break;
+        case 12:
+            TXREG = cont_2AS;
+            break;
+        case 13:
+            TXREG = cont_3AS;
             break;
         default:
              TXREG = 0x0D;

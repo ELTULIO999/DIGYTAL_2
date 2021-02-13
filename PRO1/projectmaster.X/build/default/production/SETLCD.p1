@@ -642,16 +642,61 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SETLCD.c: 108:             break;
 [e $U 154  ]
 "109
-[; ;SETLCD.c: 109:         default:
+[; ;SETLCD.c: 109:         case 16:
 [e :U 172 ]
 "110
-[; ;SETLCD.c: 110:             LCD_POINT(x,2,".");
+[; ;SETLCD.c: 110:             LCD_POINT (x,2,".");
 [e ( _LCD_POINT (3 , , _x -> 2 `i :s 17C ]
 "111
 [; ;SETLCD.c: 111:             break;
 [e $U 154  ]
 "112
-[; ;SETLCD.c: 112:     }
+[; ;SETLCD.c: 112:         case 17:
+[e :U 173 ]
+"113
+[; ;SETLCD.c: 113:             LCD_POINT (x,2,"+");
+[e ( _LCD_POINT (3 , , _x -> 2 `i :s 18C ]
+"114
+[; ;SETLCD.c: 114:             break;
+[e $U 154  ]
+"115
+[; ;SETLCD.c: 115:         case 18:
+[e :U 174 ]
+"116
+[; ;SETLCD.c: 116:             LCD_POINT (x,2,"-");
+[e ( _LCD_POINT (3 , , _x -> 2 `i :s 19C ]
+"117
+[; ;SETLCD.c: 117:             break;
+[e $U 154  ]
+"118
+[; ;SETLCD.c: 118:         case 19:
+[e :U 175 ]
+"119
+[; ;SETLCD.c: 119:             LCD_POINT (x,2,"°");
+[e ( _LCD_POINT (3 , , _x -> 2 `i :s 20C ]
+"120
+[; ;SETLCD.c: 120:             break;
+[e $U 154  ]
+"121
+[; ;SETLCD.c: 121:         case 20:
+[e :U 176 ]
+"122
+[; ;SETLCD.c: 122:             LCD_POINT (x,2," ");
+[e ( _LCD_POINT (3 , , _x -> 2 `i :s 21C ]
+"123
+[; ;SETLCD.c: 123:             break;
+[e $U 154  ]
+"124
+[; ;SETLCD.c: 124:         default:
+[e :U 177 ]
+"125
+[; ;SETLCD.c: 125:             LCD_POINT(x,2,"@");
+[e ( _LCD_POINT (3 , , _x -> 2 `i :s 22C ]
+"126
+[; ;SETLCD.c: 126:             break;
+[e $U 154  ]
+"127
+[; ;SETLCD.c: 127:     }
 }
 [e $U 154  ]
 [e :U 155 ]
@@ -671,10 +716,15 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 13 `i 169
  , $ -> 14 `i 170
  , $ -> 15 `i 171
- 172 ]
+ , $ -> 16 `i 172
+ , $ -> 17 `i 173
+ , $ -> 18 `i 174
+ , $ -> 19 `i 175
+ , $ -> 20 `i 176
+ 177 ]
 [e :U 154 ]
-"113
-[; ;SETLCD.c: 113: }
+"128
+[; ;SETLCD.c: 128: }
 [e :UE 153 ]
 }
 [a 16C 70 0 ]
@@ -683,6 +733,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 13C 67 0 ]
 [a 12C 66 0 ]
 [a 11C 65 0 ]
+[a 22C 64 0 ]
 [a 10C 57 0 ]
 [a 9C 56 0 ]
 [a 8C 55 0 ]
@@ -694,3 +745,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 2C 49 0 ]
 [a 1C 48 0 ]
 [a 17C 46 0 ]
+[a 19C 45 0 ]
+[a 18C 43 0 ]
+[a 21C 32 0 ]
+[a 20C 18446744073709551554 18446744073709551536 0 ]

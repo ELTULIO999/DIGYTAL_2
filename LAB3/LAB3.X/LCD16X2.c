@@ -78,7 +78,6 @@ void main(void) {
     Setup(); // general set up
     SET_RXT(); //set up to send data 
     SET_TXR(); //set up to recive  
-    
     LCD_IN(); //start up of lcd
     LCD_CL();// start up of lcd
     LCD_POINT(0,1,"ADC1 ADC2 CONT");//Mensaje inicia    
@@ -114,6 +113,7 @@ void Setup(void){
     PIR1bits.ADIF = 0;
     INTCONbits.GIE = 1;
     ADCON0bits.GO_DONE = 1;
+    
     INTCONbits.TMR0IE=1;//on timer 0
     INTCONbits.TMR0IF=0;// clean flags
 //puertos on clear 

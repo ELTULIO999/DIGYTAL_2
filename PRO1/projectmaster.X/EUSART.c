@@ -7,6 +7,7 @@ void SET_TXR (void) {
     TXSTAbits.TX9=0;
     BAUDCTLbits.BRG16=0;
     SPBRG=25;
+    SPBRGH=0;
 }
 void SET_RXT (void) {
     RCSTAbits.SPEN=1;

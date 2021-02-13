@@ -2741,8 +2741,23 @@ void LCDVAL1 (int x, int Z){
         case 15:
             LCD_POINT (x,2,"F");
             break;
+        case 16:
+            LCD_POINT (x,2,".");
+            break;
+        case 17:
+            LCD_POINT (x,2,"+");
+            break;
+        case 18:
+            LCD_POINT (x,2,"-");
+            break;
+        case 19:
+            LCD_POINT (x,2,"°");
+            break;
+        case 20:
+            LCD_POINT (x,2," ");
+            break;
         default:
-            LCD_POINT(x,2,".");
+            LCD_POINT(x,2,"@");
             break;
     }
 }

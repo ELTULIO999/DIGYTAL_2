@@ -13,10 +13,13 @@
 // CONFIG2
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
+
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
+
 #include <xc.h>
 #include <stdint.h>
+#include "SSSPI.h"
 #include "ADC.h"      
 
 //******************************************************************************
@@ -26,25 +29,28 @@
 // Prototipos de funciones
 //******************************************************************************
 void Setup   (void);
-void pull    (void);
-void push_0  (void);
-void push_1  (void);
 void ADCG    (void);
-uint8_t W,w,Q,H,h,L,ADCGO;
+uint8_t ADCGO,L;
 //******************************************************************************
 //******************************************************************************
 //                            interuption 
 //******************************************************************************
 void __interrupt ( ) isr(void){
     if (ADIF==1){ //revisamos la bandera del adc
-        PORTA=ADRESH; // pasamos el contenido de adresh a unavariable 
+        L=ADRESH; // pasamos el contenido de adresh a unavariable 
         PIR1bits.ADIF=0; // //reset la bandera
-        ADCON0bits.GO=1;} //  ponemos esta en on para que vuelva a 
+        ADCON0bits.GO=1;} //  ponemos esta en on para que vuelva a
+    if(SSPIF == 1){
+        PORTB=L;
+        spiWrite(L);
+        SSPIF = 0;
+        }
 }
 //******************************************************************************
 // Ciclo principal
 //******************************************************************************
 void main(void) { 
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_END, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     Setup();
     //**************************************************************************
     // Loop principal
@@ -61,16 +67,25 @@ void Setup(void){
     PIE1bits.ADIE=1;
  //puertos on clear 
     PORTA =  0; //PORTA EN 0
-    PORTD =  0; //PORTA EN 0
+    PORTB =  0; //PORTB EN 0
+    PORTC =  0; //PORTC EN 0
+    PORTD =  0; //PORTD EN 0
+    PORTE =  0; //PORTE EN 0
 // inputs y otputs
-    TRISA =  0B00000001; //INPUT EN porta
+    TRISA =  0B00100001; //INPUT EN porta
+    TRISB =  0B00000000; //INPUT EN portb
     TRISD =  0B00000000; //INPUT EN portd
-    ANSEL =  0B00000001;
+    TRISE =  0B0000; //INPUT EN porte
 // analog inputs 
+    ANSEL =  0B00000001; // solo estamos usando el RA0 como analogico 
+
 // Configuración de timer0------------------------------------------------------
     INTCONbits.GIE=1; //on todas las interrupts global 
     INTCONbits.PEIE=1;//on periferal
+     PIR1bits.ADIF=0; // //reset la bandera
     PIR1bits.ADIF=0; // //reset la bandera
+    PIR1bits.SSPIF = 0;// Borramos bandera interrupción MSSP
+    PIE1bits.SSPIE = 1;// Habilitamos interrupción MSSP
 }
 //******************************************************************************
 // funciones 
