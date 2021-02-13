@@ -106,6 +106,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1718
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1718: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x08C)));
 [v _PIE1bits `VS62 ~T0 @X0 0 e@140 ]
+"1422
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1422:     struct {
+[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S53 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
+"1421
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1421: typedef union {
+[u S52 `S53 1 ]
+[n S52 . . ]
+"1433
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1433: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x085)));
+[v _TRISAbits `VS52 ~T0 @X0 0 e@133 ]
 "2346
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2346: extern volatile unsigned char WPUB __attribute__((address(0x095)));
 [v _WPUB `Vuc ~T0 @X0 0 e@149 ]
@@ -421,7 +432,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;salve2.c: 48:          spiWrite(PORTD);
 [e ( _spiWrite (1 -> _PORTD `uc ]
 "49
-[; ;salve2.c: 49:       SSPIF = 0;
+[; ;salve2.c: 49:          SSPIF = 0;
 [e = _SSPIF -> -> 0 `i `b ]
 "50
 [; ;salve2.c: 50: }
@@ -478,8 +489,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;salve2.c: 73:     PORTE = 0;
 [e = _PORTE -> -> 0 `i `uc ]
 "75
-[; ;salve2.c: 75:     TRISA = 0B00100000;
-[e = _TRISA -> -> 32 `i `uc ]
+[; ;salve2.c: 75:     TRISA = 0B00000000;
+[e = _TRISA -> -> 0 `i `uc ]
 "76
 [; ;salve2.c: 76:     TRISB = 0B00000011;
 [e = _TRISB -> -> 3 `i `uc ]
@@ -516,6 +527,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "91
 [; ;salve2.c: 91:     PIE1bits.SSPIE = 1;
 [e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
+"92
+[; ;salve2.c: 92:     TRISAbits.TRISA5 = 1;
+[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
 "93
 [; ;salve2.c: 93:     WPUB =0B00000011;
 [e = _WPUB -> -> 3 `i `uc ]

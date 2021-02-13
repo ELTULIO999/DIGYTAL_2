@@ -2749,6 +2749,7 @@ void main(void) {
                 spiWrite(0x00);
                 _delay((unsigned long)((1)*(4000000/4000.0)));
                 cont=spiRead();
+                PORTA=cont;
                 CONVET_cont();
                 _delay((unsigned long)((1)*(4000000/4000.0)));
 
@@ -2765,7 +2766,7 @@ void main(void) {
                 spiWrite(0x00);
                 _delay((unsigned long)((1)*(4000000/4000.0)));
                 L=spiRead();
-                PORTA=L;
+
                 CONV();
                 _delay((unsigned long)((1)*(4000000/4000.0)));
 
@@ -2800,7 +2801,7 @@ void Setup(void){
     TRISB = 0B00000000;
 
     TRISD = 0B00000000;
-    TRISE = 1 ;
+    TRISE = 0 ;
 
     ANSEL = 0B00000000;
     ANSELH = 0B00000000;

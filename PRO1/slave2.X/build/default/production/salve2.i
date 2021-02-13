@@ -2709,7 +2709,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
          RBIF=0;}
      if(SSPIF == 1){
          spiWrite(PORTD);
-      SSPIF = 0;
+         SSPIF = 0;
 }
 }
 
@@ -2735,7 +2735,7 @@ void Setup(void){
     PORTD = 0;
     PORTE = 0;
 
-    TRISA = 0B00100000;
+    TRISA = 0B00000000;
     TRISB = 0B00000011;
 
     TRISD = 0B00000000;
@@ -2752,7 +2752,7 @@ void Setup(void){
     INTCONbits.RBIF=0;
     PIR1bits.SSPIF = 0;
     PIE1bits.SSPIE = 1;
-
+    TRISAbits.TRISA5 = 1;
     WPUB =0B00000011;
     IOCB = 0B00000011;
 }

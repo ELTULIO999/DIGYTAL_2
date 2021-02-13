@@ -25,7 +25,7 @@ cstackBANK0 BANK0 1 20 20 3 1
 intentry CODE 0 4 4 8 2
 bssCOMMON COMMON 1 70 70 6 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\julit\AppData\Local\Temp\s10eo.o
+$C:\Users\julit\AppData\Local\Temp\s11gg.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -75,17 +75,17 @@ STRING C5-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\slave2.X.production.o
-F cinit CODE >799:C:\Users\julit\AppData\Local\Temp\s10eo.s
-F cinit CODE >802:C:\Users\julit\AppData\Local\Temp\s10eo.s
-F cinit CODE >828:C:\Users\julit\AppData\Local\Temp\s10eo.s
-10 cinit CODE >829:C:\Users\julit\AppData\Local\Temp\s10eo.s
-11 cinit CODE >830:C:\Users\julit\AppData\Local\Temp\s10eo.s
-12 cinit CODE >831:C:\Users\julit\AppData\Local\Temp\s10eo.s
-13 cinit CODE >832:C:\Users\julit\AppData\Local\Temp\s10eo.s
-14 cinit CODE >833:C:\Users\julit\AppData\Local\Temp\s10eo.s
-15 cinit CODE >839:C:\Users\julit\AppData\Local\Temp\s10eo.s
-15 cinit CODE >841:C:\Users\julit\AppData\Local\Temp\s10eo.s
-16 cinit CODE >842:C:\Users\julit\AppData\Local\Temp\s10eo.s
+F cinit CODE >801:C:\Users\julit\AppData\Local\Temp\s11gg.s
+F cinit CODE >804:C:\Users\julit\AppData\Local\Temp\s11gg.s
+F cinit CODE >830:C:\Users\julit\AppData\Local\Temp\s11gg.s
+10 cinit CODE >831:C:\Users\julit\AppData\Local\Temp\s11gg.s
+11 cinit CODE >832:C:\Users\julit\AppData\Local\Temp\s11gg.s
+12 cinit CODE >833:C:\Users\julit\AppData\Local\Temp\s11gg.s
+13 cinit CODE >834:C:\Users\julit\AppData\Local\Temp\s11gg.s
+14 cinit CODE >835:C:\Users\julit\AppData\Local\Temp\s11gg.s
+15 cinit CODE >841:C:\Users\julit\AppData\Local\Temp\s11gg.s
+15 cinit CODE >843:C:\Users\julit\AppData\Local\Temp\s11gg.s
+16 cinit CODE >844:C:\Users\julit\AppData\Local\Temp\s11gg.s
 4 intentry CODE >42:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
 99 text6 CODE >100:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
 99 text6 CODE >101:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
@@ -120,18 +120,19 @@ C4 text4 CODE >30:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\SSSPI.c
 1E text2 CODE >72:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
 1F text2 CODE >73:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
 20 text2 CODE >75:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
-24 text2 CODE >76:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
-26 text2 CODE >78:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
-27 text2 CODE >79:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
-28 text2 CODE >81:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
-2B text2 CODE >82:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
-2C text2 CODE >84:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
-30 text2 CODE >86:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
-31 text2 CODE >87:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
-32 text2 CODE >88:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
-33 text2 CODE >89:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
-34 text2 CODE >90:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
-37 text2 CODE >91:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+23 text2 CODE >76:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+25 text2 CODE >78:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+26 text2 CODE >79:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+27 text2 CODE >81:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+2A text2 CODE >82:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+2B text2 CODE >84:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+2F text2 CODE >86:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+30 text2 CODE >87:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+31 text2 CODE >88:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+32 text2 CODE >89:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+33 text2 CODE >90:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+36 text2 CODE >91:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
+39 text2 CODE >92:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
 3A text2 CODE >93:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
 3C text2 CODE >94:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
 3E text2 CODE >95:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\slave2.X\salve2.c
@@ -177,19 +178,19 @@ __Hstrings 0 0 ABS 0 strings -
 _IOCB 96 0 ABS 0 - dist/default/production\slave2.X.production.o
 _RBIF 58 0 ABS 0 - dist/default/production\slave2.X.production.o
 _WPUB 95 0 ABS 0 - dist/default/production\slave2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\s10eo.o
+___sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\s11gg.o
 _main 104 0 CODE 0 maintext dist/default/production\slave2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\slave2.X.production.o
-start 18 0 CODE 0 init C:\Users\julit\AppData\Local\Temp\s10eo.o
+start 18 0 CODE 0 init C:\Users\julit\AppData\Local\Temp\s11gg.o
 __size_of_main 0 0 ABS 0 - dist/default/production\slave2.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\s10eo.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\s10eo.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\s10eo.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\s10eo.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\s10eo.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\s10eo.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\s11gg.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\s11gg.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\s11gg.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\s11gg.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\s11gg.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\s11gg.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\slave2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\slave2.X.production.o
@@ -199,11 +200,12 @@ _ANSELH 189 0 ABS 0 - dist/default/production\slave2.X.production.o
 __size_of_spiInit 0 0 ABS 0 - dist/default/production\slave2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 _OPTION_REG 81 0 ABS 0 - dist/default/production\slave2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\s10eo.o
-___stacklo 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\s10eo.o
+___stackhi 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\s11gg.o
+___stacklo 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\s11gg.o
 __size_of_Setup 0 0 ABS 0 - dist/default/production\slave2.X.production.o
 spiInit@sDataSample 20 0 BANK0 1 cstackBANK0 dist/default/production\slave2.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\slave2.X.production.o
+_TRISAbits 85 0 ABS 0 - dist/default/production\slave2.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\slave2.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\slave2.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\slave2.X.production.o
@@ -211,7 +213,7 @@ _TRISC3 43B 0 ABS 0 - dist/default/production\slave2.X.production.o
 _TRISC5 43D 0 ABS 0 - dist/default/production\slave2.X.production.o
 __end_of_push_0 15A 0 CODE 0 text6 dist/default/production\slave2.X.production.o
 __end_of_push_1 17E 0 CODE 0 text5 dist/default/production\slave2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\s10eo.o
+___int_sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\s11gg.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -256,7 +258,7 @@ _isr 7E 0 CODE 0 text3 dist/default/production\slave2.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\slave2.X.production.o
 __end_of_isr C8 0 CODE 0 text3 dist/default/production\slave2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\julit\AppData\Local\Temp\s10eo.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\julit\AppData\Local\Temp\s11gg.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\slave2.X.production.o
 __pmaintext 104 0 CODE 0 maintext dist/default/production\slave2.X.production.o
 __Lcommon 0 0 ABS 0 common -

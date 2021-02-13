@@ -73,7 +73,8 @@ void main(void) {
                 
                 spiWrite(0x00);
                 __delay_ms(1);
-                cont=spiRead();              
+                cont=spiRead(); 
+                PORTA=cont;
                 CONVET_cont();
                 __delay_ms(1);
                 
@@ -90,7 +91,7 @@ void main(void) {
                 spiWrite(0x00);
                 __delay_ms(1);
                 L=spiRead();
-                PORTA=L;
+                
                 CONV();
                 __delay_ms(1);
                 
@@ -125,7 +126,7 @@ void Setup(void){
     TRISB =  0B00000000; //INPUT EN portb
     //TRISC =  0B00101000; //INPUT EN portc
     TRISD =  0B00000000; //INPUT EN portd
-    TRISE =  1 ; //INPUT EN porte
+    TRISE =  0 ; //INPUT EN porte
 // analog inputs 
     ANSEL =  0B00000000; // solo estamos usando el RA0 como analogico 
     ANSELH = 0B00000000;

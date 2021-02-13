@@ -46,7 +46,7 @@ void __interrupt ( ) isr(void){
          RBIF=0;} //reset la bandera
      if(SSPIF == 1){
          spiWrite(PORTD);
-      SSPIF = 0;
+         SSPIF = 0;
 }
 }
 
@@ -72,7 +72,7 @@ void Setup(void){
     PORTD =  0; //PORTD EN 0
     PORTE =  0; //PORTE EN 0
 // inputs y otputs
-    TRISA =  0B00100000; //INPUT EN porta
+    TRISA =  0B00000000; //INPUT EN porta
     TRISB =  0B00000011; //INPUT EN portb
     //TRISC =  0B00010000; //INPUT EN portc
     TRISD =  0B00000000; //INPUT EN portd
@@ -89,7 +89,7 @@ void Setup(void){
     INTCONbits.RBIF=0; //PORTB Change Interrupt Enable bit
     PIR1bits.SSPIF = 0;         // Borramos bandera interrupción MSSP
     PIE1bits.SSPIE = 1;         // Habilitamos interrupción MSSP
-    //TRISAbits.TRISA5 = 1;       // Slave Select
+    TRISAbits.TRISA5 = 1;       // Slave Select
     WPUB =0B00000011;
     IOCB = 0B00000011;
 }
