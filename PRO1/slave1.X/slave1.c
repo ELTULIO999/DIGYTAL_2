@@ -82,7 +82,7 @@ void Setup(void){
 // Configuración de timer0------------------------------------------------------
     INTCONbits.GIE=1; //on todas las interrupts global 
     INTCONbits.PEIE=1;//on periferal
-     PIR1bits.ADIF=0; // //reset la bandera
+    PIR1bits.ADIF=0; // //reset la bandera
     PIR1bits.ADIF=0; // //reset la bandera
     PIR1bits.SSPIF = 0;// Borramos bandera interrupción MSSP
     PIE1bits.SSPIE = 1;// Habilitamos interrupción MSSP

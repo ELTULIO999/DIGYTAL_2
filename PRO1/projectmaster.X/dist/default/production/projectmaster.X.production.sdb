@@ -63,21 +63,21 @@ SPI_ACTIVE_2_IDLE 64
 [v _SET_TXR SET_TXR `(v  1 e 1 0 ]
 "12
 [v _SET_RXT SET_RXT `(v  1 e 1 0 ]
-"52 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+"54 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
 [v _isr isr `II(v  1 e 1 0 ]
 "71
 [v _main main `(v  1 e 1 0 ]
-"139
+"132
 [v _Setup Setup `(v  1 e 1 0 ]
-"175
+"168
 [v _CONV CONV `(v  1 e 1 0 ]
-"181
+"174
 [v _CONT CONT `(v  1 e 1 0 ]
-"200
+"193
 [v _CONVET_cont CONVET_cont `(v  1 e 1 0 ]
-"205
+"198
 [v _CONV_AS CONV_AS `(v  1 e 1 0 ]
-"216
+"210
 [v _send send `(v  1 e 1 0 ]
 "6 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -340,7 +340,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4463
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
-"40 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+"42 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
 [v _L L `uc  1 e 1 0 ]
 [v _R R `uc  1 e 1 0 ]
 [v _r r `uc  1 e 1 0 ]
@@ -350,35 +350,35 @@ SPI_ACTIVE_2_IDLE 64
 [v _c c `uc  1 e 1 0 ]
 [v _sign sign `uc  1 e 1 0 ]
 [v _bro bro `uc  1 e 1 0 ]
-"41
+"43
 [v _POT1_U POT1_U `uc  1 e 1 0 ]
 [v _POT1_H POT1_H `uc  1 e 1 0 ]
 [v _POT1_T POT1_T `uc  1 e 1 0 ]
-"42
+"44
 [v _TEM_U TEM_U `uc  1 e 1 0 ]
 [v _TEM_T TEM_T `uc  1 e 1 0 ]
 [v _TEM_H TEM_H `uc  1 e 1 0 ]
-"43
+"45
 [v _TEM_UAS TEM_UAS `uc  1 e 1 0 ]
 [v _TEM_TAS TEM_TAS `uc  1 e 1 0 ]
 [v _TEM_HAS TEM_HAS `uc  1 e 1 0 ]
-"44
+"46
 [v _cont_1 cont_1 `uc  1 e 1 0 ]
 [v _cont_2 cont_2 `uc  1 e 1 0 ]
 [v _cont_3 cont_3 `uc  1 e 1 0 ]
 [v _cont cont `uc  1 e 1 0 ]
-"45
+"47
 [v _cont_1AS cont_1AS `uc  1 e 1 0 ]
 [v _cont_2AS cont_2AS `uc  1 e 1 0 ]
 [v _cont_3AS cont_3AS `uc  1 e 1 0 ]
-"46
+"48
 [v _POT1_Uas POT1_Uas `uc  1 e 1 0 ]
 [v _POT1_Has POT1_Has `uc  1 e 1 0 ]
 [v _POT1_Tas POT1_Tas `uc  1 e 1 0 ]
 "71
 [v _main main `(v  1 e 1 0 ]
 {
-"135
+"128
 } 0
 "28 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\MSSP.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
@@ -411,10 +411,10 @@ SPI_ACTIVE_2_IDLE 64
 [v spiInit@sType sType `E1264  1 a 1 3 ]
 "21
 } 0
-"139 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+"132 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"171
+"164
 } 0
 "3 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\EUSART.c
 [v _SET_TXR SET_TXR `(v  1 e 1 0 ]
@@ -483,25 +483,25 @@ SPI_ACTIVE_2_IDLE 64
 {
 "27
 } 0
-"205 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+"198 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
 [v _CONV_AS CONV_AS `(v  1 e 1 0 ]
 {
-"215
+"209
 } 0
-"200
+"193
 [v _CONVET_cont CONVET_cont `(v  1 e 1 0 ]
 {
-"204
+"197
 } 0
-"175
+"168
 [v _CONV CONV `(v  1 e 1 0 ]
 {
-"180
+"173
 } 0
-"181
+"174
 [v _CONT CONT `(v  1 e 1 0 ]
 {
-"199
+"192
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -539,13 +539,13 @@ SPI_ACTIVE_2_IDLE 64
 [v ___awdiv@dividend dividend `i  1 p 2 8 ]
 "41
 } 0
-"52 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
+"54 C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO1\projectmaster.X\master.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
 "67
 } 0
-"216
+"210
 [v _send send `(v  1 e 1 0 ]
 {
-"264
+"259
 } 0

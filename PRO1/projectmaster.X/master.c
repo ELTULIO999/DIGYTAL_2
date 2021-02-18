@@ -36,7 +36,9 @@ void CONT (void);
 void CONVET_cont(void);
 void send (void);
 void CONV_AS (void);
-
+//******************************************************************************
+// Variables
+//******************************************************************************
 uint8_t L,R,r,Z,z,C,c,sign,bro;
 uint8_t POT1_U,POT1_H, POT1_T;
 uint8_t TEM_U,TEM_T,TEM_H;
@@ -61,9 +63,7 @@ void __interrupt ( ) isr(void){
         if(r==100){
             r=0;
             PIE1bits.TXIE = 1;}
-       }
-
-     
+       }     
 }
 //******************************************************************************
 // Ciclo principal
@@ -84,53 +84,46 @@ void main(void) {
     //**************************************************************************
     while (1){
         switch (Z){
-            case 0:
-                PORTEbits.RE0=0;
-                PORTEbits.RE1=1;
-                PORTEbits.RE2=1;
-                spiWrite(0x00);
-                cont=spiRead(); 
-                PORTA=cont;
-                CONVET_cont();
-                LCDVAL1 (13,cont_1);
-                LCDVAL1 (14,cont_2);
-                LCDVAL1 (15,cont_3);
-                Z++;
+            case 0://first slave 
+                PORTEbits.RE0=0;//set up of ss
+                PORTEbits.RE1=1;//set up of ss
+                PORTEbits.RE2=1;//set up of ss
+                spiWrite(0x00);//cleaning the buff
+                cont=spiRead(); // reading the buff
+                CONVET_cont();//conversion of the data receive 
+                LCDVAL1 (13,cont_1);//placement on the lcd
+                LCDVAL1 (14,cont_2);//placement on the lcd
+                LCDVAL1 (15,cont_3);//placement on the lcd
+                Z++;//change of salve 
                 break;
             case 1:
-                PORTEbits.RE0=1;
-                PORTEbits.RE1=0;
-                PORTEbits.RE2=1;
-                spiWrite(0x00);
-                L=spiRead();
-                CONV();
-                LCDVAL1 (0,POT1_U);
-                LCDVAL1 (1,16);
-                LCDVAL1 (2,POT1_T);
-                LCDVAL1 (3,POT1_H);
+                PORTEbits.RE0=1;//set up of ss
+                PORTEbits.RE1=0;//set up of ss
+                PORTEbits.RE2=1;//set up of ss
+                spiWrite(0x00);//set up of ss
+                L=spiRead();// reading the buff
+                CONV();//conversion of the data receive 
+                LCDVAL1 (0,POT1_U);//placement on the lcd
+                LCDVAL1 (1,16);//placement on the lcd
+                LCDVAL1 (2,POT1_T);//placement on the lcd
+                LCDVAL1 (3,POT1_H);//placement on the lcd
                 Z++;
                 break;
             case 2:
-                PORTEbits.RE0=1;
-                PORTEbits.RE1=1;
-                PORTEbits.RE2=0;
-
-                spiWrite(0x00);
-    
-                C=spiRead();
-                
-                LCDVAL1 (6,bro);
-                LCDVAL1 (7,TEM_U);
-                LCDVAL1 (8,TEM_T);
-                LCDVAL1 (9,TEM_H);
-
-
-                CONT();
-    
-                Z=0;
+                PORTEbits.RE0=1;//set up of ss
+                PORTEbits.RE1=1;//set up of ss
+                PORTEbits.RE2=0;//set up of ss
+                spiWrite(0x00);//set up of ss
+                C=spiRead();// reading the buff
+                LCDVAL1 (6,bro);//placement on the lcd
+                LCDVAL1 (7,TEM_U);//placement on the lcd
+                LCDVAL1 (8,TEM_T);//placement on the lcd
+                LCDVAL1 (9,TEM_H);//placement on the lcd
+                CONT();//conversion of the data receive 
+                Z=0;// reseting ss
                 break;
         }
-        CONV_AS();
+        CONV_AS();//conversion of data to asccii
     }
 }
 //******************************************************************************
@@ -180,8 +173,8 @@ void CONV (void){
     }
 void CONT (void){  
     R=C;
-    if (R>=26){
-        c =(((R-26)*150)/77);
+    if (R>=65){
+        c =(((R-65)*150)/190);
         TEM_U=(c/100);
         TEM_T=(c-(TEM_U*100))/10;
         TEM_H=(c-(TEM_U*100)-(TEM_T*10));
@@ -189,7 +182,7 @@ void CONT (void){
         bro=20;
     }
     else{
-        c=-((c-26)*55)/27;
+        c=-((R-65)*55)/65;
         TEM_U=(c/100);
         TEM_T=(c-(TEM_U*100))/10;
         TEM_H=(c-(TEM_U*100)-(TEM_T*10));
@@ -203,6 +196,7 @@ void CONVET_cont (void){
     cont_3=((cont)-(cont_1*100)-(cont_2*10));   
     }
 void CONV_AS (void){
+    //add each var a 0x00 to turn to accii
     POT1_Uas=(POT1_U+0x30);
     POT1_Tas=(POT1_T+0x30);
     POT1_Has=(POT1_H+0x30);  
@@ -214,6 +208,7 @@ void CONV_AS (void){
     TEM_HAS=(TEM_H+0X30);
     }
 void send (void){
+    //sending each var to the eausart module
     switch (z){
         case 0:
             TXREG = POT1_Uas;

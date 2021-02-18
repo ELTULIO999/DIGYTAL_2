@@ -2703,7 +2703,7 @@ void ADC_CHS_CLKS (uint8_t C, uint8_t S);
 
 void Setup (void);
 void ADCG (void);
-uint8_t ADCGO,L;
+uint8_t ADCGO,L,q;
 
 
 
@@ -2712,6 +2712,16 @@ void __attribute__((picinterrupt(("")))) isr(void){
     if (ADIF==1){
         L=ADRESH;
         PIR1bits.ADIF=0;
+        q=L;
+        if(q <= 97){
+           PORTD = 0B00000010;
+        }
+        if(q > 97 && q < 111){
+           PORTD = 0B00000100;
+        }
+        if(q >= 111){
+           PORTD = 0B00001000;
+        }
         ADCON0bits.GO=1;}
     if(SSPIF == 1){
         PORTB=L;
@@ -2729,9 +2739,9 @@ void main(void) {
 
 
     while(1){
-     ADCG();
-    }
-}
+        ADCG();
+
+}}
 
 
 

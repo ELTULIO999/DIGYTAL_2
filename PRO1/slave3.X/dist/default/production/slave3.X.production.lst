@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Fri Feb 12 23:48:39 2021
+                                                                                               Mon Feb 15 22:09:15 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -458,1217 +458,1275 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    444  0014                     _SSPCON	set	20
    445  000B                     _INTCONbits	set	11
    446  0009                     _PORTE	set	9
-   447  0008                     _PORTD	set	8
-   448  0007                     _PORTC	set	7
-   449  0005                     _PORTA	set	5
-   450  0006                     _PORTB	set	6
-   451  001F                     _ADCON0bits	set	31
+   447  0007                     _PORTC	set	7
+   448  0005                     _PORTA	set	5
+   449  0006                     _PORTB	set	6
+   450  001F                     _ADCON0bits	set	31
+   451  0008                     _PORTD	set	8
    452  000C                     _PIR1bits	set	12
    453  001E                     _ADRESH	set	30
    454  0063                     _SSPIF	set	99
    455  0066                     _ADIF	set	102
-   456  009F                     _ADCON1	set	159
-   457  008F                     _OSCCONbits	set	143
-   458  0094                     _SSPSTATbits	set	148
-   459  0094                     _SSPSTAT	set	148
-   460  0089                     _TRISE	set	137
-   461  0088                     _TRISD	set	136
-   462  0086                     _TRISB	set	134
-   463  0085                     _TRISA	set	133
-   464  008C                     _PIE1bits	set	140
-   465  043B                     _TRISC3	set	1083
-   466  043D                     _TRISC5	set	1085
-   467  0188                     _ANSEL	set	392
-   468                           
-   469                           	psect	cinit
-   470  000F                     start_initialization:	
-   471                           ; #config settings
-   472                           
-   473  000F                     __initialization:
-   474                           
-   475                           ; Clear objects allocated to COMMON
-   476  000F  01F8               	clrf	__pbssCOMMON& (0+127)
-   477  0010  01F9               	clrf	(__pbssCOMMON+1)& (0+127)
-   478  0011                     end_of_initialization:	
-   479                           ;End of C runtime variable initialization code
-   480                           
-   481  0011                     __end_of__initialization:
-   482  0011  0183               	clrf	3
-   483  0012  120A  118A  2930   	ljmp	_main	;jump to C main() function
-   484                           
-   485                           	psect	bssCOMMON
-   486  0078                     __pbssCOMMON:
-   487  0078                     _L:
-   488  0078                     	ds	1
-   489  0079                     _ADCGO:
-   490  0079                     	ds	1
-   491                           
-   492                           	psect	cstackCOMMON
-   493  0070                     __pcstackCOMMON:
-   494  0070                     ?_spiWrite:
-   495  0070                     ??_spiWrite:	
-   496                           ; 1 bytes @ 0x0
-   497                           
-   498  0070                     ?_Setup:	
-   499                           ; 1 bytes @ 0x0
-   500                           
-   501  0070                     ?_ADCG:	
-   502                           ; 1 bytes @ 0x0
-   503                           
-   504  0070                     ?_isr:	
-   505                           ; 1 bytes @ 0x0
-   506                           
-   507  0070                     ?_main:	
-   508                           ; 1 bytes @ 0x0
-   509                           
-   510  0070                     spiWrite@dat:	
-   511                           ; 1 bytes @ 0x0
-   512                           
+   456  009F                     _ADCON1bits	set	159
+   457  009F                     _ADCON1	set	159
+   458  008F                     _OSCCONbits	set	143
+   459  0094                     _SSPSTATbits	set	148
+   460  0094                     _SSPSTAT	set	148
+   461  0089                     _TRISE	set	137
+   462  0088                     _TRISD	set	136
+   463  0086                     _TRISB	set	134
+   464  0085                     _TRISA	set	133
+   465  008C                     _PIE1bits	set	140
+   466  043B                     _TRISC3	set	1083
+   467  043D                     _TRISC5	set	1085
+   468  0188                     _ANSEL	set	392
+   469                           
+   470                           	psect	cinit
+   471  000F                     start_initialization:	
+   472                           ; #config settings
+   473                           
+   474  000F                     __initialization:
+   475                           
+   476                           ; Clear objects allocated to COMMON
+   477  000F  01F7               	clrf	__pbssCOMMON& (0+127)
+   478  0010  01F8               	clrf	(__pbssCOMMON+1)& (0+127)
+   479  0011  01F9               	clrf	(__pbssCOMMON+2)& (0+127)
+   480  0012                     end_of_initialization:	
+   481                           ;End of C runtime variable initialization code
+   482                           
+   483  0012                     __end_of__initialization:
+   484  0012  0183               	clrf	3
+   485  0013  120A  118A  2956   	ljmp	_main	;jump to C main() function
+   486                           
+   487                           	psect	bssCOMMON
+   488  0077                     __pbssCOMMON:
+   489  0077                     _q:
+   490  0077                     	ds	1
+   491  0078                     _L:
+   492  0078                     	ds	1
+   493  0079                     _ADCGO:
+   494  0079                     	ds	1
+   495                           
+   496                           	psect	cstackCOMMON
+   497  0070                     __pcstackCOMMON:
+   498  0070                     ?_spiWrite:
+   499  0070                     ??_spiWrite:	
+   500                           ; 1 bytes @ 0x0
+   501                           
+   502  0070                     ?_Setup:	
+   503                           ; 1 bytes @ 0x0
+   504                           
+   505  0070                     ?_ADCG:	
+   506                           ; 1 bytes @ 0x0
+   507                           
+   508  0070                     ?_isr:	
+   509                           ; 1 bytes @ 0x0
+   510                           
+   511  0070                     ?_main:	
+   512                           ; 1 bytes @ 0x0
    513                           
-   514                           ; 1 bytes @ 0x0
-   515  0070                     	ds	1
-   516  0071                     ??_isr:
+   514  0070                     spiWrite@dat:	
+   515                           ; 1 bytes @ 0x0
+   516                           
    517                           
-   518                           ; 1 bytes @ 0x1
-   519  0071                     	ds	3
-   520  0074                     ?_spiInit:
-   521  0074                     ??_ADCG:	
-   522                           ; 1 bytes @ 0x4
-   523                           
-   524  0074                     ?_ADC_CHS_CLKS:	
-   525                           ; 1 bytes @ 0x4
-   526                           
-   527  0074                     spiInit@sDataSample:	
-   528                           ; 1 bytes @ 0x4
-   529                           
-   530  0074                     ADC_CHS_CLKS@S:	
-   531                           ; 1 bytes @ 0x4
-   532                           
+   518                           ; 1 bytes @ 0x0
+   519  0070                     	ds	1
+   520  0071                     ??_isr:
+   521                           
+   522                           ; 1 bytes @ 0x1
+   523  0071                     	ds	3
+   524  0074                     ?_spiInit:
+   525  0074                     ??_ADCG:	
+   526                           ; 1 bytes @ 0x4
+   527                           
+   528  0074                     ?_ADC_CHS_CLKS:	
+   529                           ; 1 bytes @ 0x4
+   530                           
+   531  0074                     spiInit@sDataSample:	
+   532                           ; 1 bytes @ 0x4
    533                           
-   534                           ; 1 bytes @ 0x4
-   535  0074                     	ds	1
-   536  0075                     ??_ADC_CHS_CLKS:
-   537  0075                     spiInit@sClockIdle:	
-   538                           ; 1 bytes @ 0x5
-   539                           
-   540                           
-   541                           ; 1 bytes @ 0x5
-   542  0075                     	ds	1
-   543  0076                     spiInit@sTransmitEdge:
+   534  0074                     ADC_CHS_CLKS@S:	
+   535                           ; 1 bytes @ 0x4
+   536                           
+   537                           
+   538                           ; 1 bytes @ 0x4
+   539  0074                     	ds	1
+   540  0075                     ??_ADC_CHS_CLKS:
+   541  0075                     spiInit@sClockIdle:	
+   542                           ; 1 bytes @ 0x5
+   543                           
    544                           
-   545                           ; 1 bytes @ 0x6
-   546  0076                     	ds	1
-   547  0077                     ??_spiInit:
-   548  0077                     spiInit@sType:	
-   549                           ; 1 bytes @ 0x7
-   550                           
-   551  0077                     ADC_CHS_CLKS@C:	
-   552                           ; 1 bytes @ 0x7
-   553                           
-   554                           
+   545                           ; 1 bytes @ 0x5
+   546  0075                     	ds	1
+   547  0076                     spiInit@sTransmitEdge:
+   548                           
+   549                           ; 1 bytes @ 0x6
+   550  0076                     	ds	1
+   551  0077                     ??_spiInit:
+   552                           
+   553                           	psect	cstackBANK0
+   554  0020                     __pcstackBANK0:	
    555                           ; 1 bytes @ 0x7
-   556  0077                     	ds	1
-   557                           
-   558                           	psect	cstackBANK0
-   559  0020                     __pcstackBANK0:
-   560  0020                     ??_Setup:
+   556                           
+   557  0020                     spiInit@sType:
+   558  0020                     ADC_CHS_CLKS@C:	
+   559                           ; 1 bytes @ 0x0
+   560                           
    561                           
    562                           ; 1 bytes @ 0x0
    563  0020                     	ds	1
-   564  0021                     ??_main:
+   564  0021                     ??_Setup:
    565                           
    566                           ; 1 bytes @ 0x1
    567  0021                     	ds	1
-   568                           
-   569                           	psect	maintext
-   570  0130                     __pmaintext:	
-   571 ;;
-   572 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
-   573 ;;
-   574 ;; *************** function _main *****************
-   575 ;; Defined at:
-   576 ;;		line 52 in file "slave3.c"
-   577 ;; Parameters:    Size  Location     Type
-   578 ;;		None
-   579 ;; Auto vars:     Size  Location     Type
-   580 ;;		None
-   581 ;; Return value:  Size  Location     Type
-   582 ;;                  1    wreg      void 
-   583 ;; Registers used:
-   584 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-   585 ;; Tracked objects:
-   586 ;;		On entry : B00/0
-   587 ;;		On exit  : 0/0
-   588 ;;		Unchanged: 0/0
-   589 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   590 ;;      Params:         0       0       0       0       0
-   591 ;;      Locals:         0       0       0       0       0
-   592 ;;      Temps:          0       1       0       0       0
-   593 ;;      Totals:         0       1       0       0       0
-   594 ;;Total ram usage:        1 bytes
-   595 ;; Hardware stack levels required when called:    4
-   596 ;; This function calls:
-   597 ;;		_ADCG
-   598 ;;		_Setup
-   599 ;;		_spiInit
-   600 ;; This function is called by:
-   601 ;;		Startup code after reset
-   602 ;; This function uses a non-reentrant model
-   603 ;;
-   604                           
-   605                           
-   606                           ;psect for function _main
-   607  0130                     _main:
-   608  0130                     l1063:	
-   609                           ;incstack = 0
-   610                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-   611                           
-   612                           
-   613                           ;slave3.c: 53:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_END, SPI_CLOCK_IDLE_LOW, SPI
+   568  0022                     ??_main:
+   569                           
+   570                           ; 1 bytes @ 0x2
+   571  0022                     	ds	1
+   572                           
+   573                           	psect	maintext
+   574  0156                     __pmaintext:	
+   575 ;;
+   576 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   577 ;;
+   578 ;; *************** function _main *****************
+   579 ;; Defined at:
+   580 ;;		line 62 in file "slave3.c"
+   581 ;; Parameters:    Size  Location     Type
+   582 ;;		None
+   583 ;; Auto vars:     Size  Location     Type
+   584 ;;		None
+   585 ;; Return value:  Size  Location     Type
+   586 ;;                  1    wreg      void 
+   587 ;; Registers used:
+   588 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   589 ;; Tracked objects:
+   590 ;;		On entry : B00/0
+   591 ;;		On exit  : 0/0
+   592 ;;		Unchanged: 0/0
+   593 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   594 ;;      Params:         0       0       0       0       0
+   595 ;;      Locals:         0       0       0       0       0
+   596 ;;      Temps:          0       1       0       0       0
+   597 ;;      Totals:         0       1       0       0       0
+   598 ;;Total ram usage:        1 bytes
+   599 ;; Hardware stack levels required when called:    4
+   600 ;; This function calls:
+   601 ;;		_ADCG
+   602 ;;		_Setup
+   603 ;;		_spiInit
+   604 ;; This function is called by:
+   605 ;;		Startup code after reset
+   606 ;; This function uses a non-reentrant model
+   607 ;;
+   608                           
+   609                           
+   610                           ;psect for function _main
+   611  0156                     _main:
+   612  0156                     l1136:	
+   613                           ;incstack = 0
+   614                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   615                           
+   616                           
+   617                           ;slave3.c: 63:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_END, SPI_CLOCK_IDLE_LOW, SPI
       +                          _IDLE_2_ACTIVE);
-   614  0130  3080               	movlw	128
-   615  0131  1283               	bcf	3,5	;RP0=0, select bank0
-   616  0132  1303               	bcf	3,6	;RP1=0, select bank0
-   617  0133  00A1               	movwf	??_main
-   618  0134  0821               	movf	??_main,w
-   619  0135  00F4               	movwf	spiInit@sDataSample
-   620  0136  01F5               	clrf	spiInit@sClockIdle
-   621  0137  01F6               	clrf	spiInit@sTransmitEdge
-   622  0138  3024               	movlw	36
-   623  0139  120A  118A  214C  120A  118A  	fcall	_spiInit
-   624  013E                     l1065:
-   625                           
-   626                           ;slave3.c: 54:     Setup();
-   627  013E  120A  118A  20E2  120A  118A  	fcall	_Setup
-   628  0143                     l1067:
+   618  0156  3080               	movlw	128
+   619  0157  1283               	bcf	3,5	;RP0=0, select bank0
+   620  0158  1303               	bcf	3,6	;RP1=0, select bank0
+   621  0159  00A2               	movwf	??_main
+   622  015A  0822               	movf	??_main,w
+   623  015B  00F4               	movwf	spiInit@sDataSample
+   624  015C  01F5               	clrf	spiInit@sClockIdle
+   625  015D  01F6               	clrf	spiInit@sTransmitEdge
+   626  015E  3024               	movlw	36
+   627  015F  120A  118A  2138  120A  118A  	fcall	_spiInit
+   628  0164                     l1138:
    629                           
-   630                           ;slave3.c: 59:      ADCG();
-   631  0143  120A  118A  2162  120A  118A  	fcall	_ADCG
-   632  0148  2943               	goto	l1067
-   633  0149  120A  118A  280C   	ljmp	start
-   634  014C                     __end_of_main:
-   635                           
-   636                           	psect	text1
-   637  014C                     __ptext1:	
-   638 ;; *************** function _spiInit *****************
-   639 ;; Defined at:
-   640 ;;		line 5 in file "SSSPI.c"
-   641 ;; Parameters:    Size  Location     Type
-   642 ;;  sType           1    wreg     enum E1264
-   643 ;;  sDataSample     1    4[COMMON] enum E1272
-   644 ;;  sClockIdle      1    5[COMMON] enum E1276
-   645 ;;  sTransmitEdg    1    6[COMMON] enum E1280
-   646 ;; Auto vars:     Size  Location     Type
-   647 ;;  sType           1    7[COMMON] enum E1264
-   648 ;; Return value:  Size  Location     Type
-   649 ;;                  1    wreg      void 
-   650 ;; Registers used:
-   651 ;;		wreg, status,2, status,0
-   652 ;; Tracked objects:
-   653 ;;		On entry : 0/0
-   654 ;;		On exit  : 0/0
-   655 ;;		Unchanged: 0/0
-   656 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   657 ;;      Params:         3       0       0       0       0
-   658 ;;      Locals:         1       0       0       0       0
-   659 ;;      Temps:          0       0       0       0       0
-   660 ;;      Totals:         4       0       0       0       0
-   661 ;;Total ram usage:        4 bytes
-   662 ;; Hardware stack levels used:    1
-   663 ;; Hardware stack levels required when called:    2
-   664 ;; This function calls:
-   665 ;;		Nothing
-   666 ;; This function is called by:
-   667 ;;		_main
-   668 ;; This function uses a non-reentrant model
-   669 ;;
-   670                           
-   671                           
-   672                           ;psect for function _spiInit
-   673  014C                     _spiInit:
+   630                           ;slave3.c: 64:     Setup();
+   631  0164  120A  118A  210C  120A  118A  	fcall	_Setup
+   632  0169                     l1140:
+   633                           
+   634                           ;slave3.c: 69:         ADCG();
+   635  0169  120A  118A  2172  120A  118A  	fcall	_ADCG
+   636  016E  2969               	goto	l1140
+   637  016F  120A  118A  280C   	ljmp	start
+   638  0172                     __end_of_main:
+   639                           
+   640                           	psect	text1
+   641  0138                     __ptext1:	
+   642 ;; *************** function _spiInit *****************
+   643 ;; Defined at:
+   644 ;;		line 5 in file "SSSPI.c"
+   645 ;; Parameters:    Size  Location     Type
+   646 ;;  sType           1    wreg     enum E1264
+   647 ;;  sDataSample     1    4[COMMON] enum E1272
+   648 ;;  sClockIdle      1    5[COMMON] enum E1276
+   649 ;;  sTransmitEdg    1    6[COMMON] enum E1280
+   650 ;; Auto vars:     Size  Location     Type
+   651 ;;  sType           1    0[BANK0 ] enum E1264
+   652 ;; Return value:  Size  Location     Type
+   653 ;;                  1    wreg      void 
+   654 ;; Registers used:
+   655 ;;		wreg, status,2, status,0
+   656 ;; Tracked objects:
+   657 ;;		On entry : 0/0
+   658 ;;		On exit  : 0/0
+   659 ;;		Unchanged: 0/0
+   660 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   661 ;;      Params:         3       0       0       0       0
+   662 ;;      Locals:         0       1       0       0       0
+   663 ;;      Temps:          0       0       0       0       0
+   664 ;;      Totals:         3       1       0       0       0
+   665 ;;Total ram usage:        4 bytes
+   666 ;; Hardware stack levels used:    1
+   667 ;; Hardware stack levels required when called:    2
+   668 ;; This function calls:
+   669 ;;		Nothing
+   670 ;; This function is called by:
+   671 ;;		_main
+   672 ;; This function uses a non-reentrant model
+   673 ;;
    674                           
-   675                           ;incstack = 0
-   676                           ; Regs used in _spiInit: [wreg+status,2+status,0]
-   677                           ;spiInit@sType stored from wreg
-   678  014C  00F7               	movwf	spiInit@sType
-   679  014D                     l955:
-   680                           
-   681                           ;SSSPI.c: 5: void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sC
+   675                           
+   676                           ;psect for function _spiInit
+   677  0138                     _spiInit:
+   678                           
+   679                           ;incstack = 0
+   680                           ; Regs used in _spiInit: [wreg+status,2+status,0]
+   681                           ;spiInit@sType stored from wreg
+   682  0138  1283               	bcf	3,5	;RP0=0, select bank0
+   683  0139  1303               	bcf	3,6	;RP1=0, select bank0
+   684  013A  00A0               	movwf	spiInit@sType
+   685  013B                     l1090:
+   686                           
+   687                           ;SSSPI.c: 5: void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sC
       +                          lockIdle, Spi_Transmit_Edge sTransmitEdge);SSSPI.c: 6: {;SSSPI.c: 7:     TRISC5 = 0;
-   682  014D  1683               	bsf	3,5	;RP0=1, select bank1
-   683  014E  1303               	bcf	3,6	;RP1=0, select bank1
-   684  014F  1287               	bcf	7,5	;volatile
-   685                           
-   686                           ;SSSPI.c: 8:     if(sType & 0b00000100)
-   687  0150  1D77               	btfss	spiInit@sType,2
-   688  0151  2953               	goto	u61
-   689  0152  2954               	goto	u60
-   690  0153                     u61:
-   691  0153  2958               	goto	l961
-   692  0154                     u60:
-   693  0154                     l957:
-   694                           
-   695                           ;SSSPI.c: 9:     {;SSSPI.c: 10:         SSPSTAT = sTransmitEdge;
-   696  0154  0876               	movf	spiInit@sTransmitEdge,w
-   697  0155  0094               	movwf	20	;volatile
-   698  0156                     l959:
-   699                           
-   700                           ;SSSPI.c: 11:         TRISC3 = 1;
-   701  0156  1587               	bsf	7,3	;volatile
+   688  013B  1683               	bsf	3,5	;RP0=1, select bank1
+   689  013C  1303               	bcf	3,6	;RP1=0, select bank1
+   690  013D  1287               	bcf	7,5	;volatile
+   691                           
+   692                           ;SSSPI.c: 8:     if(sType & 0b00000100)
+   693  013E  1283               	bcf	3,5	;RP0=0, select bank0
+   694  013F  1303               	bcf	3,6	;RP1=0, select bank0
+   695  0140  1D20               	btfss	spiInit@sType,2
+   696  0141  2943               	goto	u111
+   697  0142  2944               	goto	u110
+   698  0143                     u111:
+   699  0143  294A               	goto	l1096
+   700  0144                     u110:
+   701  0144                     l1092:
    702                           
-   703                           ;SSSPI.c: 12:     }
-   704  0157  295C               	goto	l86
-   705  0158                     l961:
-   706                           
-   707                           ;SSSPI.c: 14:     {;SSSPI.c: 15:         SSPSTAT = sDataSample | sTransmitEdge;
-   708  0158  0874               	movf	spiInit@sDataSample,w
-   709  0159  0476               	iorwf	spiInit@sTransmitEdge,w
-   710  015A  0094               	movwf	20	;volatile
-   711  015B                     l963:
+   703                           ;SSSPI.c: 9:     {;SSSPI.c: 10:         SSPSTAT = sTransmitEdge;
+   704  0144  0876               	movf	spiInit@sTransmitEdge,w
+   705  0145  1683               	bsf	3,5	;RP0=1, select bank1
+   706  0146  1303               	bcf	3,6	;RP1=0, select bank1
+   707  0147  0094               	movwf	20	;volatile
+   708  0148                     l1094:
+   709                           
+   710                           ;SSSPI.c: 11:         TRISC3 = 1;
+   711  0148  1587               	bsf	7,3	;volatile
    712                           
-   713                           ;SSSPI.c: 16:         TRISC3 = 0;
-   714  015B  1187               	bcf	7,3	;volatile
-   715  015C                     l86:	
-   716                           ;SSSPI.c: 17:     }
-   717                           
-   718                           
-   719                           ;SSSPI.c: 19:     SSPCON = sType | sClockIdle;
-   720  015C  0877               	movf	spiInit@sType,w
-   721  015D  0475               	iorwf	spiInit@sClockIdle,w
-   722  015E  1283               	bcf	3,5	;RP0=0, select bank0
-   723  015F  1303               	bcf	3,6	;RP1=0, select bank0
-   724  0160  0094               	movwf	20	;volatile
-   725  0161                     l87:
-   726  0161  0008               	return
-   727  0162                     __end_of_spiInit:
-   728                           
-   729                           	psect	text2
-   730  00E2                     __ptext2:	
-   731 ;; *************** function _Setup *****************
-   732 ;; Defined at:
-   733 ;;		line 65 in file "slave3.c"
-   734 ;; Parameters:    Size  Location     Type
-   735 ;;		None
-   736 ;; Auto vars:     Size  Location     Type
-   737 ;;		None
-   738 ;; Return value:  Size  Location     Type
-   739 ;;                  1    wreg      void 
-   740 ;; Registers used:
-   741 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-   742 ;; Tracked objects:
-   743 ;;		On entry : 0/0
-   744 ;;		On exit  : 0/0
-   745 ;;		Unchanged: 0/0
-   746 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   747 ;;      Params:         0       0       0       0       0
-   748 ;;      Locals:         0       0       0       0       0
-   749 ;;      Temps:          0       1       0       0       0
-   750 ;;      Totals:         0       1       0       0       0
-   751 ;;Total ram usage:        1 bytes
-   752 ;; Hardware stack levels used:    1
-   753 ;; Hardware stack levels required when called:    3
-   754 ;; This function calls:
-   755 ;;		_ADC_CHS_CLKS
-   756 ;; This function is called by:
-   757 ;;		_main
-   758 ;; This function uses a non-reentrant model
-   759 ;;
-   760                           
-   761                           
-   762                           ;psect for function _Setup
-   763  00E2                     _Setup:
-   764  00E2                     l1027:	
-   765                           ;incstack = 0
-   766                           ; Regs used in _Setup: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-   767                           
-   768                           
-   769                           ;slave3.c: 66:     ADC_CHS_CLKS (0,2);
-   770  00E2  3002               	movlw	2
-   771  00E3  1283               	bcf	3,5	;RP0=0, select bank0
-   772  00E4  1303               	bcf	3,6	;RP1=0, select bank0
-   773  00E5  00A0               	movwf	??_Setup
-   774  00E6  0820               	movf	??_Setup,w
-   775  00E7  00F4               	movwf	ADC_CHS_CLKS@S
-   776  00E8  3000               	movlw	0
-   777  00E9  120A  118A  2015  120A  118A  	fcall	_ADC_CHS_CLKS
-   778  00EE                     l1029:
+   713                           ;SSSPI.c: 12:     }
+   714  0149  2950               	goto	l91
+   715  014A                     l1096:
+   716                           
+   717                           ;SSSPI.c: 14:     {;SSSPI.c: 15:         SSPSTAT = sDataSample | sTransmitEdge;
+   718  014A  0874               	movf	spiInit@sDataSample,w
+   719  014B  0476               	iorwf	spiInit@sTransmitEdge,w
+   720  014C  1683               	bsf	3,5	;RP0=1, select bank1
+   721  014D  1303               	bcf	3,6	;RP1=0, select bank1
+   722  014E  0094               	movwf	20	;volatile
+   723  014F                     l1098:
+   724                           
+   725                           ;SSSPI.c: 16:         TRISC3 = 0;
+   726  014F  1187               	bcf	7,3	;volatile
+   727  0150                     l91:	
+   728                           ;SSSPI.c: 17:     }
+   729                           
+   730                           
+   731                           ;SSSPI.c: 19:     SSPCON = sType | sClockIdle;
+   732  0150  1283               	bcf	3,5	;RP0=0, select bank0
+   733  0151  1303               	bcf	3,6	;RP1=0, select bank0
+   734  0152  0820               	movf	spiInit@sType,w
+   735  0153  0475               	iorwf	spiInit@sClockIdle,w
+   736  0154  0094               	movwf	20	;volatile
+   737  0155                     l92:
+   738  0155  0008               	return
+   739  0156                     __end_of_spiInit:
+   740                           
+   741                           	psect	text2
+   742  010C                     __ptext2:	
+   743 ;; *************** function _Setup *****************
+   744 ;; Defined at:
+   745 ;;		line 75 in file "slave3.c"
+   746 ;; Parameters:    Size  Location     Type
+   747 ;;		None
+   748 ;; Auto vars:     Size  Location     Type
+   749 ;;		None
+   750 ;; Return value:  Size  Location     Type
+   751 ;;                  1    wreg      void 
+   752 ;; Registers used:
+   753 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   754 ;; Tracked objects:
+   755 ;;		On entry : 0/0
+   756 ;;		On exit  : 0/0
+   757 ;;		Unchanged: 0/0
+   758 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   759 ;;      Params:         0       0       0       0       0
+   760 ;;      Locals:         0       0       0       0       0
+   761 ;;      Temps:          0       1       0       0       0
+   762 ;;      Totals:         0       1       0       0       0
+   763 ;;Total ram usage:        1 bytes
+   764 ;; Hardware stack levels used:    1
+   765 ;; Hardware stack levels required when called:    3
+   766 ;; This function calls:
+   767 ;;		_ADC_CHS_CLKS
+   768 ;; This function is called by:
+   769 ;;		_main
+   770 ;; This function uses a non-reentrant model
+   771 ;;
+   772                           
+   773                           
+   774                           ;psect for function _Setup
+   775  010C                     _Setup:
+   776  010C                     l1100:	
+   777                           ;incstack = 0
+   778                           ; Regs used in _Setup: [wreg-fsr0h+status,2+status,0+pclath+cstack]
    779                           
-   780                           ;slave3.c: 67:     PIE1bits.ADIE=1;
-   781  00EE  1683               	bsf	3,5	;RP0=1, select bank1
-   782  00EF  1303               	bcf	3,6	;RP1=0, select bank1
-   783  00F0  170C               	bsf	12,6	;volatile
-   784  00F1                     l1031:
-   785                           
-   786                           ;slave3.c: 69:     PORTA = 0;
-   787  00F1  1283               	bcf	3,5	;RP0=0, select bank0
-   788  00F2  1303               	bcf	3,6	;RP1=0, select bank0
-   789  00F3  0185               	clrf	5	;volatile
-   790  00F4                     l1033:
+   780                           
+   781                           ;slave3.c: 76:     ADC_CHS_CLKS (0,2);
+   782  010C  3002               	movlw	2
+   783  010D  1283               	bcf	3,5	;RP0=0, select bank0
+   784  010E  1303               	bcf	3,6	;RP1=0, select bank0
+   785  010F  00A1               	movwf	??_Setup
+   786  0110  0821               	movf	??_Setup,w
+   787  0111  00F4               	movwf	ADC_CHS_CLKS@S
+   788  0112  3000               	movlw	0
+   789  0113  120A  118A  2016  120A  118A  	fcall	_ADC_CHS_CLKS
+   790  0118                     l1102:
    791                           
-   792                           ;slave3.c: 70:     PORTB = 0;
-   793  00F4  0186               	clrf	6	;volatile
-   794  00F5                     l1035:
-   795                           
-   796                           ;slave3.c: 71:     PORTC = 0;
-   797  00F5  0187               	clrf	7	;volatile
-   798  00F6                     l1037:
-   799                           
-   800                           ;slave3.c: 72:     PORTD = 0;
-   801  00F6  0188               	clrf	8	;volatile
-   802  00F7                     l1039:
+   792                           ;slave3.c: 77:     PIE1bits.ADIE=1;
+   793  0118  1683               	bsf	3,5	;RP0=1, select bank1
+   794  0119  1303               	bcf	3,6	;RP1=0, select bank1
+   795  011A  170C               	bsf	12,6	;volatile
+   796  011B                     l1104:
+   797                           
+   798                           ;slave3.c: 79:     PORTA = 0;
+   799  011B  1283               	bcf	3,5	;RP0=0, select bank0
+   800  011C  1303               	bcf	3,6	;RP1=0, select bank0
+   801  011D  0185               	clrf	5	;volatile
+   802  011E                     l1106:
    803                           
-   804                           ;slave3.c: 73:     PORTE = 0;
-   805  00F7  0189               	clrf	9	;volatile
-   806  00F8                     l1041:
+   804                           ;slave3.c: 80:     PORTB = 0;
+   805  011E  0186               	clrf	6	;volatile
+   806  011F                     l1108:
    807                           
-   808                           ;slave3.c: 75:     TRISA = 0B00100001;
-   809  00F8  3021               	movlw	33
-   810  00F9  1683               	bsf	3,5	;RP0=1, select bank1
-   811  00FA  1303               	bcf	3,6	;RP1=0, select bank1
-   812  00FB  0085               	movwf	5	;volatile
-   813  00FC                     l1043:
-   814                           
-   815                           ;slave3.c: 76:     TRISB = 0B00000000;
-   816  00FC  0186               	clrf	6	;volatile
-   817  00FD                     l1045:
-   818                           
-   819                           ;slave3.c: 77:     TRISD = 0B00000000;
-   820  00FD  0188               	clrf	8	;volatile
-   821  00FE                     l1047:
-   822                           
-   823                           ;slave3.c: 78:     TRISE = 0B0000;
-   824  00FE  0189               	clrf	9	;volatile
-   825  00FF                     l1049:
+   808                           ;slave3.c: 81:     PORTC = 0;
+   809  011F  0187               	clrf	7	;volatile
+   810  0120                     l1110:
+   811                           
+   812                           ;slave3.c: 82:     PORTD = 0;
+   813  0120  0188               	clrf	8	;volatile
+   814  0121                     l1112:
+   815                           
+   816                           ;slave3.c: 83:     PORTE = 0;
+   817  0121  0189               	clrf	9	;volatile
+   818  0122                     l1114:
+   819                           
+   820                           ;slave3.c: 85:     TRISA = 0B00100001;
+   821  0122  3021               	movlw	33
+   822  0123  1683               	bsf	3,5	;RP0=1, select bank1
+   823  0124  1303               	bcf	3,6	;RP1=0, select bank1
+   824  0125  0085               	movwf	5	;volatile
+   825  0126                     l1116:
    826                           
-   827                           ;slave3.c: 80:     ANSEL = 0B00000001;
-   828  00FF  3001               	movlw	1
-   829  0100  1683               	bsf	3,5	;RP0=1, select bank3
-   830  0101  1703               	bsf	3,6	;RP1=1, select bank3
-   831  0102  0088               	movwf	8	;volatile
-   832  0103                     l1051:
-   833                           
-   834                           ;slave3.c: 83:     INTCONbits.GIE=1;
-   835  0103  178B               	bsf	11,7	;volatile
-   836  0104                     l1053:
-   837                           
-   838                           ;slave3.c: 84:     INTCONbits.PEIE=1;
-   839  0104  170B               	bsf	11,6	;volatile
-   840  0105                     l1055:
-   841                           
-   842                           ;slave3.c: 85:      PIR1bits.ADIF=0;
-   843  0105  1283               	bcf	3,5	;RP0=0, select bank0
-   844  0106  1303               	bcf	3,6	;RP1=0, select bank0
-   845  0107  130C               	bcf	12,6	;volatile
-   846  0108                     l1057:
-   847                           
-   848                           ;slave3.c: 86:     PIR1bits.ADIF=0;
-   849  0108  130C               	bcf	12,6	;volatile
-   850  0109                     l1059:
-   851                           
-   852                           ;slave3.c: 87:     PIR1bits.SSPIF = 0;
-   853  0109  118C               	bcf	12,3	;volatile
-   854  010A                     l1061:
-   855                           
-   856                           ;slave3.c: 88:     PIE1bits.SSPIE = 1;
-   857  010A  1683               	bsf	3,5	;RP0=1, select bank1
-   858  010B  1303               	bcf	3,6	;RP1=0, select bank1
-   859  010C  158C               	bsf	12,3	;volatile
-   860  010D                     l66:
-   861  010D  0008               	return
-   862  010E                     __end_of_Setup:
+   827                           ;slave3.c: 86:     TRISB = 0B00000000;
+   828  0126  0186               	clrf	6	;volatile
+   829  0127                     l1118:
+   830                           
+   831                           ;slave3.c: 87:     TRISD = 0B00000000;
+   832  0127  0188               	clrf	8	;volatile
+   833  0128                     l1120:
+   834                           
+   835                           ;slave3.c: 88:     TRISE = 0B0000;
+   836  0128  0189               	clrf	9	;volatile
+   837  0129                     l1122:
+   838                           
+   839                           ;slave3.c: 90:     ANSEL = 0B00000001;
+   840  0129  3001               	movlw	1
+   841  012A  1683               	bsf	3,5	;RP0=1, select bank3
+   842  012B  1703               	bsf	3,6	;RP1=1, select bank3
+   843  012C  0088               	movwf	8	;volatile
+   844  012D                     l1124:
+   845                           
+   846                           ;slave3.c: 93:     INTCONbits.GIE=1;
+   847  012D  178B               	bsf	11,7	;volatile
+   848  012E                     l1126:
+   849                           
+   850                           ;slave3.c: 94:     INTCONbits.PEIE=1;
+   851  012E  170B               	bsf	11,6	;volatile
+   852  012F                     l1128:
+   853                           
+   854                           ;slave3.c: 95:      PIR1bits.ADIF=0;
+   855  012F  1283               	bcf	3,5	;RP0=0, select bank0
+   856  0130  1303               	bcf	3,6	;RP1=0, select bank0
+   857  0131  130C               	bcf	12,6	;volatile
+   858  0132                     l1130:
+   859                           
+   860                           ;slave3.c: 96:     PIR1bits.ADIF=0;
+   861  0132  130C               	bcf	12,6	;volatile
+   862  0133                     l1132:
    863                           
-   864                           	psect	text3
-   865  0015                     __ptext3:	
-   866 ;; *************** function _ADC_CHS_CLKS *****************
-   867 ;; Defined at:
-   868 ;;		line 4 in file "ADC.c"
-   869 ;; Parameters:    Size  Location     Type
-   870 ;;  C               1    wreg     unsigned char 
-   871 ;;  S               1    4[COMMON] unsigned char 
-   872 ;; Auto vars:     Size  Location     Type
-   873 ;;  C               1    7[COMMON] unsigned char 
-   874 ;; Return value:  Size  Location     Type
-   875 ;;                  1    wreg      void 
-   876 ;; Registers used:
-   877 ;;		wreg, fsr0l, fsr0h, status,2, status,0
-   878 ;; Tracked objects:
-   879 ;;		On entry : 0/0
-   880 ;;		On exit  : 0/0
-   881 ;;		Unchanged: 0/0
-   882 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   883 ;;      Params:         1       0       0       0       0
-   884 ;;      Locals:         1       0       0       0       0
-   885 ;;      Temps:          2       0       0       0       0
-   886 ;;      Totals:         4       0       0       0       0
-   887 ;;Total ram usage:        4 bytes
-   888 ;; Hardware stack levels used:    1
-   889 ;; Hardware stack levels required when called:    2
-   890 ;; This function calls:
-   891 ;;		Nothing
-   892 ;; This function is called by:
-   893 ;;		_Setup
-   894 ;; This function uses a non-reentrant model
-   895 ;;
-   896                           
-   897                           
-   898                           ;psect for function _ADC_CHS_CLKS
-   899  0015                     _ADC_CHS_CLKS:
-   900                           
-   901                           ;incstack = 0
-   902                           ; Regs used in _ADC_CHS_CLKS: [wreg-fsr0h+status,2+status,0]
-   903                           ;ADC_CHS_CLKS@C stored from wreg
-   904  0015  00F7               	movwf	ADC_CHS_CLKS@C
-   905  0016                     l909:
-   906                           
-   907                           ;ADC.c: 5: switch (C) {
-   908  0016  28AA               	goto	l949
-   909  0017                     l128:	
-   910                           ;ADC.c: 8:     case 0:
-   911                           
+   864                           ;slave3.c: 97:     PIR1bits.SSPIF = 0;
+   865  0133  118C               	bcf	12,3	;volatile
+   866  0134                     l1134:
+   867                           
+   868                           ;slave3.c: 98:     PIE1bits.SSPIE = 1;
+   869  0134  1683               	bsf	3,5	;RP0=1, select bank1
+   870  0135  1303               	bcf	3,6	;RP1=0, select bank1
+   871  0136  158C               	bsf	12,3	;volatile
+   872  0137                     l71:
+   873  0137  0008               	return
+   874  0138                     __end_of_Setup:
+   875                           
+   876                           	psect	text3
+   877  0016                     __ptext3:	
+   878 ;; *************** function _ADC_CHS_CLKS *****************
+   879 ;; Defined at:
+   880 ;;		line 4 in file "ADC.c"
+   881 ;; Parameters:    Size  Location     Type
+   882 ;;  C               1    wreg     unsigned char 
+   883 ;;  S               1    4[COMMON] unsigned char 
+   884 ;; Auto vars:     Size  Location     Type
+   885 ;;  C               1    0[BANK0 ] unsigned char 
+   886 ;; Return value:  Size  Location     Type
+   887 ;;                  1    wreg      void 
+   888 ;; Registers used:
+   889 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   890 ;; Tracked objects:
+   891 ;;		On entry : 0/0
+   892 ;;		On exit  : 0/0
+   893 ;;		Unchanged: 0/0
+   894 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   895 ;;      Params:         1       0       0       0       0
+   896 ;;      Locals:         0       1       0       0       0
+   897 ;;      Temps:          2       0       0       0       0
+   898 ;;      Totals:         3       1       0       0       0
+   899 ;;Total ram usage:        4 bytes
+   900 ;; Hardware stack levels used:    1
+   901 ;; Hardware stack levels required when called:    2
+   902 ;; This function calls:
+   903 ;;		Nothing
+   904 ;; This function is called by:
+   905 ;;		_Setup
+   906 ;; This function uses a non-reentrant model
+   907 ;;
+   908                           
+   909                           
+   910                           ;psect for function _ADC_CHS_CLKS
+   911  0016                     _ADC_CHS_CLKS:
    912                           
-   913                           ;ADC.c: 9:         ADCON0bits.CHS3 = 0;
-   914  0017  1283               	bcf	3,5	;RP0=0, select bank0
-   915  0018  1303               	bcf	3,6	;RP1=0, select bank0
-   916  0019  129F               	bcf	31,5	;volatile
-   917                           
-   918                           ;ADC.c: 10:         ADCON0bits.CHS2 = 0;
-   919  001A  121F               	bcf	31,4	;volatile
+   913                           ;incstack = 0
+   914                           ; Regs used in _ADC_CHS_CLKS: [wreg-fsr0h+status,2+status,0]
+   915                           ;ADC_CHS_CLKS@C stored from wreg
+   916  0016  1283               	bcf	3,5	;RP0=0, select bank0
+   917  0017  1303               	bcf	3,6	;RP1=0, select bank0
+   918  0018  00A0               	movwf	ADC_CHS_CLKS@C
+   919  0019                     l1042:
    920                           
-   921                           ;ADC.c: 11:         ADCON0bits.CHS1 = 0;
-   922  001B  119F               	bcf	31,3	;volatile
-   923                           
-   924                           ;ADC.c: 12:         ADCON0bits.CHS0 = 0;
-   925  001C  111F               	bcf	31,2	;volatile
+   921                           ;ADC.c: 5: switch (C) {
+   922  0019  288D               	goto	l1082
+   923  001A                     l135:	
+   924                           ;ADC.c: 8:     case 0:
+   925                           
    926                           
-   927                           ;ADC.c: 13:         ADCON0bits.ADON = 1;
-   928  001D  141F               	bsf	31,0	;volatile
+   927                           ;ADC.c: 9:         ADCON0bits.CHS3 = 0;
+   928  001A  129F               	bcf	31,5	;volatile
    929                           
-   930                           ;ADC.c: 14:         ADCON0bits.GO = 1;
-   931  001E  149F               	bsf	31,1	;volatile
-   932  001F                     l911:
-   933                           
-   934                           ;ADC.c: 15:         ADCON1 = 0;
-   935  001F  1683               	bsf	3,5	;RP0=1, select bank1
-   936  0020  1303               	bcf	3,6	;RP1=0, select bank1
-   937  0021  019F               	clrf	31	;volatile
+   930                           ;ADC.c: 10:         ADCON0bits.CHS2 = 0;
+   931  001B  121F               	bcf	31,4	;volatile
+   932                           
+   933                           ;ADC.c: 11:         ADCON0bits.CHS1 = 0;
+   934  001C  119F               	bcf	31,3	;volatile
+   935                           
+   936                           ;ADC.c: 12:         ADCON0bits.CHS0 = 0;
+   937  001D  111F               	bcf	31,2	;volatile
    938                           
-   939                           ;ADC.c: 16:     break;
-   940  0022  28E1               	goto	l151
-   941  0023                     l130:	
-   942                           ;ADC.c: 17:     case 1:
-   943                           
-   944                           
-   945                           ;ADC.c: 18:         ADCON0bits.CHS3=0;
-   946  0023  1283               	bcf	3,5	;RP0=0, select bank0
-   947  0024  1303               	bcf	3,6	;RP1=0, select bank0
-   948  0025  129F               	bcf	31,5	;volatile
-   949                           
-   950                           ;ADC.c: 19:         ADCON0bits.CHS2=0;
-   951  0026  121F               	bcf	31,4	;volatile
-   952                           
-   953                           ;ADC.c: 20:         ADCON0bits.CHS1=0;
-   954  0027  119F               	bcf	31,3	;volatile
+   939                           ;ADC.c: 13:         ADCON0bits.ADON = 1;
+   940  001E  141F               	bsf	31,0	;volatile
+   941                           
+   942                           ;ADC.c: 14:         ADCON0bits.GO = 1;
+   943  001F  149F               	bsf	31,1	;volatile
+   944  0020                     l1044:
+   945                           
+   946                           ;ADC.c: 15:         ADCON1 = 0;
+   947  0020  1683               	bsf	3,5	;RP0=1, select bank1
+   948  0021  1303               	bcf	3,6	;RP1=0, select bank1
+   949  0022  019F               	clrf	31	;volatile
+   950                           
+   951                           ;ADC.c: 16:     break;
+   952  0023  28C4               	goto	l136
+   953  0024                     l137:	
+   954                           ;ADC.c: 17:     case 1:
    955                           
-   956                           ;ADC.c: 21:         ADCON0bits.CHS0=1;
-   957  0028  151F               	bsf	31,2	;volatile
-   958                           
-   959                           ;ADC.c: 22:         ADCON0bits.ADON = 1;
-   960  0029  141F               	bsf	31,0	;volatile
-   961                           
-   962                           ;ADC.c: 23:         ADCON0bits.GO = 1;
-   963  002A  149F               	bsf	31,1	;volatile
-   964  002B  281F               	goto	l911
-   965  002C                     l131:	
-   966                           ;ADC.c: 26:     case 2:
-   967                           
+   956                           
+   957                           ;ADC.c: 18:         ADCON0bits.CHS3=0;
+   958  0024  129F               	bcf	31,5	;volatile
+   959                           
+   960                           ;ADC.c: 19:         ADCON0bits.CHS2=0;
+   961  0025  121F               	bcf	31,4	;volatile
+   962                           
+   963                           ;ADC.c: 20:         ADCON0bits.CHS1=0;
+   964  0026  119F               	bcf	31,3	;volatile
+   965                           
+   966                           ;ADC.c: 21:         ADCON0bits.CHS0=1;
+   967  0027  151F               	bsf	31,2	;volatile
    968                           
-   969                           ;ADC.c: 27:         ADCON0bits.CHS3=0;
-   970  002C  1283               	bcf	3,5	;RP0=0, select bank0
-   971  002D  1303               	bcf	3,6	;RP1=0, select bank0
-   972  002E  129F               	bcf	31,5	;volatile
-   973                           
-   974                           ;ADC.c: 28:         ADCON0bits.CHS2=0;
-   975  002F  121F               	bcf	31,4	;volatile
-   976                           
-   977                           ;ADC.c: 29:         ADCON0bits.CHS1=1;
-   978  0030  159F               	bsf	31,3	;volatile
-   979                           
-   980                           ;ADC.c: 30:         ADCON0bits.CHS0=0;
-   981  0031  111F               	bcf	31,2	;volatile
-   982                           
-   983                           ;ADC.c: 31:         ADCON0bits.ADON = 1;
-   984  0032  141F               	bsf	31,0	;volatile
-   985                           
-   986                           ;ADC.c: 32:         ADCON0bits.GO = 1;
-   987  0033  149F               	bsf	31,1	;volatile
-   988  0034  281F               	goto	l911
-   989  0035                     l132:	
-   990                           ;ADC.c: 35:     case 3:
-   991                           
-   992                           
-   993                           ;ADC.c: 36:         ADCON0bits.CHS3=0;
-   994  0035  1283               	bcf	3,5	;RP0=0, select bank0
-   995  0036  1303               	bcf	3,6	;RP1=0, select bank0
-   996  0037  129F               	bcf	31,5	;volatile
-   997                           
-   998                           ;ADC.c: 37:         ADCON0bits.CHS2=0;
-   999  0038  121F               	bcf	31,4	;volatile
+   969                           ;ADC.c: 22:         ADCON0bits.ADON = 1;
+   970  0028  141F               	bsf	31,0	;volatile
+   971                           
+   972                           ;ADC.c: 23:         ADCON0bits.GO = 1;
+   973  0029  149F               	bsf	31,1	;volatile
+   974  002A  2820               	goto	l1044
+   975  002B                     l138:	
+   976                           ;ADC.c: 26:     case 2:
+   977                           
+   978                           
+   979                           ;ADC.c: 27:         ADCON0bits.CHS3=0;
+   980  002B  129F               	bcf	31,5	;volatile
+   981                           
+   982                           ;ADC.c: 28:         ADCON0bits.CHS2=0;
+   983  002C  121F               	bcf	31,4	;volatile
+   984                           
+   985                           ;ADC.c: 29:         ADCON0bits.CHS1=1;
+   986  002D  159F               	bsf	31,3	;volatile
+   987                           
+   988                           ;ADC.c: 30:         ADCON0bits.CHS0=0;
+   989  002E  111F               	bcf	31,2	;volatile
+   990                           
+   991                           ;ADC.c: 31:         ADCON0bits.ADON = 1;
+   992  002F  141F               	bsf	31,0	;volatile
+   993                           
+   994                           ;ADC.c: 32:         ADCON0bits.GO = 1;
+   995  0030  149F               	bsf	31,1	;volatile
+   996  0031  2820               	goto	l1044
+   997  0032                     l139:	
+   998                           ;ADC.c: 35:     case 3:
+   999                           
   1000                           
-  1001                           ;ADC.c: 38:         ADCON0bits.CHS1=1;
-  1002  0039  159F               	bsf	31,3	;volatile
+  1001                           ;ADC.c: 36:         ADCON0bits.CHS3=0;
+  1002  0032  129F               	bcf	31,5	;volatile
   1003                           
-  1004                           ;ADC.c: 39:         ADCON0bits.CHS0=1;
-  1005  003A  151F               	bsf	31,2	;volatile
+  1004                           ;ADC.c: 37:         ADCON0bits.CHS2=0;
+  1005  0033  121F               	bcf	31,4	;volatile
   1006                           
-  1007                           ;ADC.c: 40:         ADCON0bits.ADON = 1;
-  1008  003B  141F               	bsf	31,0	;volatile
+  1007                           ;ADC.c: 38:         ADCON0bits.CHS1=1;
+  1008  0034  159F               	bsf	31,3	;volatile
   1009                           
-  1010                           ;ADC.c: 41:         ADCON0bits.GO = 1;
-  1011  003C  149F               	bsf	31,1	;volatile
-  1012  003D  281F               	goto	l911
-  1013  003E                     l133:	
-  1014                           ;ADC.c: 44:     case 4:
+  1010                           ;ADC.c: 39:         ADCON0bits.CHS0=1;
+  1011  0035  151F               	bsf	31,2	;volatile
+  1012                           
+  1013                           ;ADC.c: 40:         ADCON0bits.ADON = 1;
+  1014  0036  141F               	bsf	31,0	;volatile
   1015                           
-  1016                           
-  1017                           ;ADC.c: 45:         ADCON0bits.CHS3=0;
-  1018  003E  1283               	bcf	3,5	;RP0=0, select bank0
-  1019  003F  1303               	bcf	3,6	;RP1=0, select bank0
-  1020  0040  129F               	bcf	31,5	;volatile
+  1016                           ;ADC.c: 41:         ADCON0bits.GO = 1;
+  1017  0037  149F               	bsf	31,1	;volatile
+  1018  0038  2820               	goto	l1044
+  1019  0039                     l140:	
+  1020                           ;ADC.c: 44:     case 4:
   1021                           
-  1022                           ;ADC.c: 46:         ADCON0bits.CHS2=1;
-  1023  0041  161F               	bsf	31,4	;volatile
-  1024                           
-  1025                           ;ADC.c: 47:         ADCON0bits.CHS1=0;
-  1026  0042  119F               	bcf	31,3	;volatile
-  1027                           
-  1028                           ;ADC.c: 48:         ADCON0bits.CHS0=0;
-  1029  0043  111F               	bcf	31,2	;volatile
-  1030                           
-  1031                           ;ADC.c: 49:         ADCON0bits.ADON = 1;
-  1032  0044  141F               	bsf	31,0	;volatile
-  1033                           
-  1034                           ;ADC.c: 50:         ADCON0bits.GO = 1;
-  1035  0045  149F               	bsf	31,1	;volatile
-  1036  0046  281F               	goto	l911
-  1037  0047                     l134:	
-  1038                           ;ADC.c: 53:     case 5:
-  1039                           
-  1040                           
-  1041                           ;ADC.c: 54:         ADCON0bits.CHS3=0;
-  1042  0047  1283               	bcf	3,5	;RP0=0, select bank0
-  1043  0048  1303               	bcf	3,6	;RP1=0, select bank0
-  1044  0049  129F               	bcf	31,5	;volatile
-  1045                           
-  1046                           ;ADC.c: 55:         ADCON0bits.CHS2=1;
-  1047  004A  161F               	bsf	31,4	;volatile
-  1048                           
-  1049                           ;ADC.c: 56:         ADCON0bits.CHS1=0;
-  1050  004B  119F               	bcf	31,3	;volatile
-  1051                           
-  1052                           ;ADC.c: 57:         ADCON0bits.CHS0=1;
-  1053  004C  151F               	bsf	31,2	;volatile
-  1054                           
-  1055                           ;ADC.c: 58:         ADCON0bits.ADON = 1;
-  1056  004D  141F               	bsf	31,0	;volatile
-  1057                           
-  1058                           ;ADC.c: 59:         ADCON0bits.GO = 1;
-  1059  004E  149F               	bsf	31,1	;volatile
-  1060  004F  281F               	goto	l911
-  1061  0050                     l135:	
-  1062                           ;ADC.c: 62:     case 6:
-  1063                           
-  1064                           
-  1065                           ;ADC.c: 63:         ADCON0bits.CHS3=0;
-  1066  0050  1283               	bcf	3,5	;RP0=0, select bank0
-  1067  0051  1303               	bcf	3,6	;RP1=0, select bank0
-  1068  0052  129F               	bcf	31,5	;volatile
+  1022                           
+  1023                           ;ADC.c: 45:         ADCON0bits.CHS3=0;
+  1024  0039  129F               	bcf	31,5	;volatile
+  1025                           
+  1026                           ;ADC.c: 46:         ADCON0bits.CHS2=1;
+  1027  003A  161F               	bsf	31,4	;volatile
+  1028                           
+  1029                           ;ADC.c: 47:         ADCON0bits.CHS1=0;
+  1030  003B  119F               	bcf	31,3	;volatile
+  1031                           
+  1032                           ;ADC.c: 48:         ADCON0bits.CHS0=0;
+  1033  003C  111F               	bcf	31,2	;volatile
+  1034                           
+  1035                           ;ADC.c: 49:         ADCON0bits.ADON = 1;
+  1036  003D  141F               	bsf	31,0	;volatile
+  1037                           
+  1038                           ;ADC.c: 50:         ADCON0bits.GO = 1;
+  1039  003E  149F               	bsf	31,1	;volatile
+  1040  003F  2820               	goto	l1044
+  1041  0040                     l141:	
+  1042                           ;ADC.c: 53:     case 5:
+  1043                           
+  1044                           
+  1045                           ;ADC.c: 54:         ADCON0bits.CHS3=0;
+  1046  0040  129F               	bcf	31,5	;volatile
+  1047                           
+  1048                           ;ADC.c: 55:         ADCON0bits.CHS2=1;
+  1049  0041  161F               	bsf	31,4	;volatile
+  1050                           
+  1051                           ;ADC.c: 56:         ADCON0bits.CHS1=0;
+  1052  0042  119F               	bcf	31,3	;volatile
+  1053                           
+  1054                           ;ADC.c: 57:         ADCON0bits.CHS0=1;
+  1055  0043  151F               	bsf	31,2	;volatile
+  1056                           
+  1057                           ;ADC.c: 58:         ADCON0bits.ADON = 1;
+  1058  0044  141F               	bsf	31,0	;volatile
+  1059                           
+  1060                           ;ADC.c: 59:         ADCON0bits.GO = 1;
+  1061  0045  149F               	bsf	31,1	;volatile
+  1062  0046  2820               	goto	l1044
+  1063  0047                     l142:	
+  1064                           ;ADC.c: 62:     case 6:
+  1065                           
+  1066                           
+  1067                           ;ADC.c: 63:         ADCON0bits.CHS3=0;
+  1068  0047  129F               	bcf	31,5	;volatile
   1069                           
   1070                           ;ADC.c: 64:         ADCON0bits.CHS2=1;
-  1071  0053  161F               	bsf	31,4	;volatile
+  1071  0048  161F               	bsf	31,4	;volatile
   1072                           
   1073                           ;ADC.c: 65:         ADCON0bits.CHS1=1;
-  1074  0054  159F               	bsf	31,3	;volatile
+  1074  0049  159F               	bsf	31,3	;volatile
   1075                           
   1076                           ;ADC.c: 66:         ADCON0bits.CHS0=0;
-  1077  0055  111F               	bcf	31,2	;volatile
+  1077  004A  111F               	bcf	31,2	;volatile
   1078                           
   1079                           ;ADC.c: 67:         ADCON0bits.ADON = 1;
-  1080  0056  141F               	bsf	31,0	;volatile
+  1080  004B  141F               	bsf	31,0	;volatile
   1081                           
   1082                           ;ADC.c: 68:         ADCON0bits.GO = 1;
-  1083  0057  149F               	bsf	31,1	;volatile
-  1084  0058  281F               	goto	l911
-  1085  0059                     l136:	
+  1083  004C  149F               	bsf	31,1	;volatile
+  1084  004D  2820               	goto	l1044
+  1085  004E                     l143:	
   1086                           ;ADC.c: 71:     case 7:
   1087                           
   1088                           
   1089                           ;ADC.c: 72:         ADCON0bits.CHS3=0;
-  1090  0059  1283               	bcf	3,5	;RP0=0, select bank0
-  1091  005A  1303               	bcf	3,6	;RP1=0, select bank0
-  1092  005B  129F               	bcf	31,5	;volatile
-  1093                           
-  1094                           ;ADC.c: 73:         ADCON0bits.CHS2=1;
-  1095  005C  161F               	bsf	31,4	;volatile
-  1096                           
-  1097                           ;ADC.c: 74:         ADCON0bits.CHS1=1;
-  1098  005D  159F               	bsf	31,3	;volatile
-  1099                           
-  1100                           ;ADC.c: 75:         ADCON0bits.CHS0=1;
-  1101  005E  151F               	bsf	31,2	;volatile
-  1102                           
-  1103                           ;ADC.c: 76:         ADCON0bits.ADON = 1;
-  1104  005F  141F               	bsf	31,0	;volatile
-  1105                           
-  1106                           ;ADC.c: 77:         ADCON0bits.GO = 1;
-  1107  0060  149F               	bsf	31,1	;volatile
-  1108  0061  281F               	goto	l911
-  1109  0062                     l137:	
-  1110                           ;ADC.c: 80:     case 8:
-  1111                           
-  1112                           
-  1113                           ;ADC.c: 81:         ADCON0bits.CHS3=1;
-  1114  0062  1283               	bcf	3,5	;RP0=0, select bank0
-  1115  0063  1303               	bcf	3,6	;RP1=0, select bank0
-  1116  0064  169F               	bsf	31,5	;volatile
-  1117                           
-  1118                           ;ADC.c: 82:         ADCON0bits.CHS2=0;
-  1119  0065  121F               	bcf	31,4	;volatile
-  1120                           
-  1121                           ;ADC.c: 83:         ADCON0bits.CHS1=0;
-  1122  0066  119F               	bcf	31,3	;volatile
-  1123                           
-  1124                           ;ADC.c: 84:         ADCON0bits.CHS0=0;
-  1125  0067  111F               	bcf	31,2	;volatile
-  1126                           
-  1127                           ;ADC.c: 85:         ADCON0bits.ADON = 1;
-  1128  0068  141F               	bsf	31,0	;volatile
-  1129                           
-  1130                           ;ADC.c: 86:         ADCON0bits.GO = 1;
-  1131  0069  149F               	bsf	31,1	;volatile
-  1132  006A  281F               	goto	l911
-  1133  006B                     l138:	
-  1134                           ;ADC.c: 89:     case 9:
+  1090  004E  129F               	bcf	31,5	;volatile
+  1091                           
+  1092                           ;ADC.c: 73:         ADCON0bits.CHS2=1;
+  1093  004F  161F               	bsf	31,4	;volatile
+  1094                           
+  1095                           ;ADC.c: 74:         ADCON0bits.CHS1=1;
+  1096  0050  159F               	bsf	31,3	;volatile
+  1097                           
+  1098                           ;ADC.c: 75:         ADCON0bits.CHS0=1;
+  1099  0051  151F               	bsf	31,2	;volatile
+  1100                           
+  1101                           ;ADC.c: 76:         ADCON0bits.ADON = 1;
+  1102  0052  141F               	bsf	31,0	;volatile
+  1103                           
+  1104                           ;ADC.c: 77:         ADCON0bits.GO = 1;
+  1105  0053  149F               	bsf	31,1	;volatile
+  1106  0054  2820               	goto	l1044
+  1107  0055                     l144:	
+  1108                           ;ADC.c: 80:     case 8:
+  1109                           
+  1110                           
+  1111                           ;ADC.c: 81:         ADCON0bits.CHS3=1;
+  1112  0055  169F               	bsf	31,5	;volatile
+  1113                           
+  1114                           ;ADC.c: 82:         ADCON0bits.CHS2=0;
+  1115  0056  121F               	bcf	31,4	;volatile
+  1116                           
+  1117                           ;ADC.c: 83:         ADCON0bits.CHS1=0;
+  1118  0057  119F               	bcf	31,3	;volatile
+  1119                           
+  1120                           ;ADC.c: 84:         ADCON0bits.CHS0=0;
+  1121  0058  111F               	bcf	31,2	;volatile
+  1122                           
+  1123                           ;ADC.c: 85:         ADCON0bits.ADON = 1;
+  1124  0059  141F               	bsf	31,0	;volatile
+  1125                           
+  1126                           ;ADC.c: 86:         ADCON0bits.GO = 1;
+  1127  005A  149F               	bsf	31,1	;volatile
+  1128  005B  2820               	goto	l1044
+  1129  005C                     l145:	
+  1130                           ;ADC.c: 89:     case 9:
+  1131                           
+  1132                           
+  1133                           ;ADC.c: 90:         ADCON0bits.CHS3=1;
+  1134  005C  169F               	bsf	31,5	;volatile
   1135                           
-  1136                           
-  1137                           ;ADC.c: 90:         ADCON0bits.CHS3=1;
-  1138  006B  1283               	bcf	3,5	;RP0=0, select bank0
-  1139  006C  1303               	bcf	3,6	;RP1=0, select bank0
-  1140  006D  169F               	bsf	31,5	;volatile
+  1136                           ;ADC.c: 91:         ADCON0bits.CHS2=0;
+  1137  005D  121F               	bcf	31,4	;volatile
+  1138                           
+  1139                           ;ADC.c: 92:         ADCON0bits.CHS1=0;
+  1140  005E  119F               	bcf	31,3	;volatile
   1141                           
-  1142                           ;ADC.c: 91:         ADCON0bits.CHS2=0;
-  1143  006E  121F               	bcf	31,4	;volatile
+  1142                           ;ADC.c: 93:         ADCON0bits.CHS0=1;
+  1143  005F  151F               	bsf	31,2	;volatile
   1144                           
-  1145                           ;ADC.c: 92:         ADCON0bits.CHS1=0;
-  1146  006F  119F               	bcf	31,3	;volatile
+  1145                           ;ADC.c: 94:         ADCON0bits.ADON = 1;
+  1146  0060  141F               	bsf	31,0	;volatile
   1147                           
-  1148                           ;ADC.c: 93:         ADCON0bits.CHS0=1;
-  1149  0070  151F               	bsf	31,2	;volatile
-  1150                           
-  1151                           ;ADC.c: 94:         ADCON0bits.ADON = 1;
-  1152  0071  141F               	bsf	31,0	;volatile
+  1148                           ;ADC.c: 95:         ADCON0bits.GO = 1;
+  1149  0061  149F               	bsf	31,1	;volatile
+  1150  0062  2820               	goto	l1044
+  1151  0063                     l146:	
+  1152                           ;ADC.c: 98:     case 10:
   1153                           
-  1154                           ;ADC.c: 95:         ADCON0bits.GO = 1;
-  1155  0072  149F               	bsf	31,1	;volatile
-  1156  0073  281F               	goto	l911
-  1157  0074                     l139:	
-  1158                           ;ADC.c: 98:     case 10:
-  1159                           
+  1154                           
+  1155                           ;ADC.c: 99:         ADCON0bits.CHS3=1;
+  1156  0063  169F               	bsf	31,5	;volatile
+  1157                           
+  1158                           ;ADC.c: 100:         ADCON0bits.CHS2=0;
+  1159  0064  121F               	bcf	31,4	;volatile
   1160                           
-  1161                           ;ADC.c: 99:         ADCON0bits.CHS3=1;
-  1162  0074  1283               	bcf	3,5	;RP0=0, select bank0
-  1163  0075  1303               	bcf	3,6	;RP1=0, select bank0
-  1164  0076  169F               	bsf	31,5	;volatile
-  1165                           
-  1166                           ;ADC.c: 100:         ADCON0bits.CHS2=0;
-  1167  0077  121F               	bcf	31,4	;volatile
-  1168                           
-  1169                           ;ADC.c: 101:         ADCON0bits.CHS1=1;
-  1170  0078  159F               	bsf	31,3	;volatile
-  1171                           
-  1172                           ;ADC.c: 102:         ADCON0bits.CHS0=0;
-  1173  0079  111F               	bcf	31,2	;volatile
-  1174                           
-  1175                           ;ADC.c: 103:         ADCON0bits.ADON = 1;
-  1176  007A  141F               	bsf	31,0	;volatile
-  1177                           
-  1178                           ;ADC.c: 104:         ADCON0bits.GO = 1;
-  1179  007B  149F               	bsf	31,1	;volatile
-  1180  007C  281F               	goto	l911
-  1181  007D                     l140:	
-  1182                           ;ADC.c: 107:     case 11:
-  1183                           
-  1184                           
-  1185                           ;ADC.c: 108:         ADCON0bits.CHS3=1;
-  1186  007D  1283               	bcf	3,5	;RP0=0, select bank0
-  1187  007E  1303               	bcf	3,6	;RP1=0, select bank0
-  1188  007F  169F               	bsf	31,5	;volatile
-  1189                           
-  1190                           ;ADC.c: 109:         ADCON0bits.CHS2=0;
-  1191  0080  121F               	bcf	31,4	;volatile
-  1192                           
-  1193                           ;ADC.c: 110:         ADCON0bits.CHS1=1;
-  1194  0081  159F               	bsf	31,3	;volatile
-  1195                           
-  1196                           ;ADC.c: 111:         ADCON0bits.CHS0=1;
-  1197  0082  151F               	bsf	31,2	;volatile
+  1161                           ;ADC.c: 101:         ADCON0bits.CHS1=1;
+  1162  0065  159F               	bsf	31,3	;volatile
+  1163                           
+  1164                           ;ADC.c: 102:         ADCON0bits.CHS0=0;
+  1165  0066  111F               	bcf	31,2	;volatile
+  1166                           
+  1167                           ;ADC.c: 103:         ADCON0bits.ADON = 1;
+  1168  0067  141F               	bsf	31,0	;volatile
+  1169                           
+  1170                           ;ADC.c: 104:         ADCON0bits.GO = 1;
+  1171  0068  149F               	bsf	31,1	;volatile
+  1172  0069  2820               	goto	l1044
+  1173  006A                     l147:	
+  1174                           ;ADC.c: 107:     case 11:
+  1175                           
+  1176                           
+  1177                           ;ADC.c: 108:         ADCON0bits.CHS3=1;
+  1178  006A  169F               	bsf	31,5	;volatile
+  1179                           
+  1180                           ;ADC.c: 109:         ADCON0bits.CHS2=0;
+  1181  006B  121F               	bcf	31,4	;volatile
+  1182                           
+  1183                           ;ADC.c: 110:         ADCON0bits.CHS1=1;
+  1184  006C  159F               	bsf	31,3	;volatile
+  1185                           
+  1186                           ;ADC.c: 111:         ADCON0bits.CHS0=1;
+  1187  006D  151F               	bsf	31,2	;volatile
+  1188                           
+  1189                           ;ADC.c: 112:         ADCON0bits.ADON = 1;
+  1190  006E  141F               	bsf	31,0	;volatile
+  1191                           
+  1192                           ;ADC.c: 113:         ADCON0bits.GO = 1;
+  1193  006F  149F               	bsf	31,1	;volatile
+  1194  0070  2820               	goto	l1044
+  1195  0071                     l148:	
+  1196                           ;ADC.c: 116:     case 12:
+  1197                           
   1198                           
-  1199                           ;ADC.c: 112:         ADCON0bits.ADON = 1;
-  1200  0083  141F               	bsf	31,0	;volatile
+  1199                           ;ADC.c: 117:         ADCON0bits.CHS3=1;
+  1200  0071  169F               	bsf	31,5	;volatile
   1201                           
-  1202                           ;ADC.c: 113:         ADCON0bits.GO = 1;
-  1203  0084  149F               	bsf	31,1	;volatile
-  1204  0085  281F               	goto	l911
-  1205  0086                     l141:	
-  1206                           ;ADC.c: 116:     case 12:
+  1202                           ;ADC.c: 118:         ADCON0bits.CHS2=1;
+  1203  0072  161F               	bsf	31,4	;volatile
+  1204                           
+  1205                           ;ADC.c: 119:         ADCON0bits.CHS1=0;
+  1206  0073  119F               	bcf	31,3	;volatile
   1207                           
-  1208                           
-  1209                           ;ADC.c: 117:         ADCON0bits.CHS3=1;
-  1210  0086  1283               	bcf	3,5	;RP0=0, select bank0
-  1211  0087  1303               	bcf	3,6	;RP1=0, select bank0
-  1212  0088  169F               	bsf	31,5	;volatile
+  1208                           ;ADC.c: 120:         ADCON0bits.CHS0=0;
+  1209  0074  111F               	bcf	31,2	;volatile
+  1210                           
+  1211                           ;ADC.c: 121:         ADCON0bits.ADON = 1;
+  1212  0075  141F               	bsf	31,0	;volatile
   1213                           
-  1214                           ;ADC.c: 118:         ADCON0bits.CHS2=1;
-  1215  0089  161F               	bsf	31,4	;volatile
-  1216                           
-  1217                           ;ADC.c: 119:         ADCON0bits.CHS1=0;
-  1218  008A  119F               	bcf	31,3	;volatile
+  1214                           ;ADC.c: 122:         ADCON0bits.GO = 1;
+  1215  0076  149F               	bsf	31,1	;volatile
+  1216  0077  2820               	goto	l1044
+  1217  0078                     l149:	
+  1218                           ;ADC.c: 125:     case 13:
   1219                           
-  1220                           ;ADC.c: 120:         ADCON0bits.CHS0=0;
-  1221  008B  111F               	bcf	31,2	;volatile
-  1222                           
-  1223                           ;ADC.c: 121:         ADCON0bits.ADON = 1;
-  1224  008C  141F               	bsf	31,0	;volatile
-  1225                           
-  1226                           ;ADC.c: 122:         ADCON0bits.GO = 1;
-  1227  008D  149F               	bsf	31,1	;volatile
-  1228  008E  281F               	goto	l911
-  1229  008F                     l142:	
-  1230                           ;ADC.c: 125:     case 13:
-  1231                           
+  1220                           
+  1221                           ;ADC.c: 126:         ADCON0bits.CHS3=1;
+  1222  0078  169F               	bsf	31,5	;volatile
+  1223                           
+  1224                           ;ADC.c: 127:         ADCON0bits.CHS2=1;
+  1225  0079  161F               	bsf	31,4	;volatile
+  1226                           
+  1227                           ;ADC.c: 128:         ADCON0bits.CHS1=0;
+  1228  007A  119F               	bcf	31,3	;volatile
+  1229                           
+  1230                           ;ADC.c: 129:         ADCON0bits.CHS0=1;
+  1231  007B  151F               	bsf	31,2	;volatile
   1232                           
-  1233                           ;ADC.c: 126:         ADCON0bits.CHS3=1;
-  1234  008F  1283               	bcf	3,5	;RP0=0, select bank0
-  1235  0090  1303               	bcf	3,6	;RP1=0, select bank0
-  1236  0091  169F               	bsf	31,5	;volatile
-  1237                           
-  1238                           ;ADC.c: 127:         ADCON0bits.CHS2=1;
-  1239  0092  161F               	bsf	31,4	;volatile
-  1240                           
-  1241                           ;ADC.c: 128:         ADCON0bits.CHS1=0;
-  1242  0093  119F               	bcf	31,3	;volatile
-  1243                           
-  1244                           ;ADC.c: 129:         ADCON0bits.CHS0=1;
-  1245  0094  151F               	bsf	31,2	;volatile
-  1246                           
-  1247                           ;ADC.c: 130:         ADCON0bits.ADON = 1;
-  1248  0095  141F               	bsf	31,0	;volatile
-  1249                           
-  1250                           ;ADC.c: 131:         ADCON0bits.GO = 1;
-  1251  0096  149F               	bsf	31,1	;volatile
-  1252  0097  281F               	goto	l911
-  1253  0098                     l143:	
-  1254                           ;ADC.c: 134:     case 14:
-  1255                           
-  1256                           
-  1257                           ;ADC.c: 135:         ADCON0bits.CHS3=1;
-  1258  0098  1283               	bcf	3,5	;RP0=0, select bank0
-  1259  0099  1303               	bcf	3,6	;RP1=0, select bank0
-  1260  009A  169F               	bsf	31,5	;volatile
-  1261                           
-  1262                           ;ADC.c: 136:         ADCON0bits.CHS2=1;
-  1263  009B  161F               	bsf	31,4	;volatile
+  1233                           ;ADC.c: 130:         ADCON0bits.ADON = 1;
+  1234  007C  141F               	bsf	31,0	;volatile
+  1235                           
+  1236                           ;ADC.c: 131:         ADCON0bits.GO = 1;
+  1237  007D  149F               	bsf	31,1	;volatile
+  1238  007E  2820               	goto	l1044
+  1239  007F                     l150:	
+  1240                           ;ADC.c: 134:     case 14:
+  1241                           
+  1242                           
+  1243                           ;ADC.c: 135:         ADCON0bits.CHS3=1;
+  1244  007F  169F               	bsf	31,5	;volatile
+  1245                           
+  1246                           ;ADC.c: 136:         ADCON0bits.CHS2=1;
+  1247  0080  161F               	bsf	31,4	;volatile
+  1248                           
+  1249                           ;ADC.c: 137:         ADCON0bits.CHS1=1;
+  1250  0081  159F               	bsf	31,3	;volatile
+  1251                           
+  1252                           ;ADC.c: 138:         ADCON0bits.CHS0=0;
+  1253  0082  111F               	bcf	31,2	;volatile
+  1254                           
+  1255                           ;ADC.c: 139:         ADCON0bits.ADON = 1;
+  1256  0083  141F               	bsf	31,0	;volatile
+  1257                           
+  1258                           ;ADC.c: 140:         ADCON0bits.GO = 1;
+  1259  0084  149F               	bsf	31,1	;volatile
+  1260  0085  2820               	goto	l1044
+  1261  0086                     l151:	
+  1262                           ;ADC.c: 143:     default:
+  1263                           
   1264                           
-  1265                           ;ADC.c: 137:         ADCON0bits.CHS1=1;
-  1266  009C  159F               	bsf	31,3	;volatile
+  1265                           ;ADC.c: 144:         ADCON0bits.CHS3=1;
+  1266  0086  169F               	bsf	31,5	;volatile
   1267                           
-  1268                           ;ADC.c: 138:         ADCON0bits.CHS0=0;
-  1269  009D  111F               	bcf	31,2	;volatile
+  1268                           ;ADC.c: 145:         ADCON0bits.CHS2=1;
+  1269  0087  161F               	bsf	31,4	;volatile
   1270                           
-  1271                           ;ADC.c: 139:         ADCON0bits.ADON = 1;
-  1272  009E  141F               	bsf	31,0	;volatile
+  1271                           ;ADC.c: 146:         ADCON0bits.CHS1=1;
+  1272  0088  159F               	bsf	31,3	;volatile
   1273                           
-  1274                           ;ADC.c: 140:         ADCON0bits.GO = 1;
-  1275  009F  149F               	bsf	31,1	;volatile
-  1276  00A0  281F               	goto	l911
-  1277  00A1                     l144:	
-  1278                           ;ADC.c: 143:     default:
+  1274                           ;ADC.c: 147:         ADCON0bits.CHS0=1;
+  1275  0089  151F               	bsf	31,2	;volatile
+  1276                           
+  1277                           ;ADC.c: 148:         ADCON0bits.ADON = 1;
+  1278  008A  141F               	bsf	31,0	;volatile
   1279                           
-  1280                           
-  1281                           ;ADC.c: 144:         ADCON0bits.CHS3=1;
-  1282  00A1  1283               	bcf	3,5	;RP0=0, select bank0
-  1283  00A2  1303               	bcf	3,6	;RP1=0, select bank0
-  1284  00A3  169F               	bsf	31,5	;volatile
-  1285                           
-  1286                           ;ADC.c: 145:         ADCON0bits.CHS2=1;
-  1287  00A4  161F               	bsf	31,4	;volatile
-  1288                           
-  1289                           ;ADC.c: 146:         ADCON0bits.CHS1=1;
-  1290  00A5  159F               	bsf	31,3	;volatile
-  1291                           
-  1292                           ;ADC.c: 147:         ADCON0bits.CHS0=1;
-  1293  00A6  151F               	bsf	31,2	;volatile
-  1294                           
-  1295                           ;ADC.c: 148:         ADCON0bits.ADON = 1;
-  1296  00A7  141F               	bsf	31,0	;volatile
-  1297                           
-  1298                           ;ADC.c: 149:         ADCON0bits.GO = 1;
-  1299  00A8  149F               	bsf	31,1	;volatile
-  1300  00A9  281F               	goto	l911
-  1301  00AA                     l949:
-  1302  00AA  0877               	movf	ADC_CHS_CLKS@C,w
-  1303  00AB  00F5               	movwf	??_ADC_CHS_CLKS
-  1304  00AC  01F6               	clrf	??_ADC_CHS_CLKS+1
-  1305                           
-  1306                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+  1280                           ;ADC.c: 149:         ADCON0bits.GO = 1;
+  1281  008B  149F               	bsf	31,1	;volatile
+  1282  008C  2820               	goto	l1044
+  1283  008D                     l1082:
+  1284  008D  0820               	movf	ADC_CHS_CLKS@C,w
+  1285  008E  00F5               	movwf	??_ADC_CHS_CLKS
+  1286  008F  01F6               	clrf	??_ADC_CHS_CLKS+1
+  1287                           
+  1288                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
-  1307                           ; Switch size 1, requested type "simple"
-  1308                           ; Number of cases is 1, Range of values is 0 to 0
-  1309                           ; switch strategies available:
-  1310                           ; Name         Instructions Cycles
-  1311                           ; simple_byte            4     3 (average)
-  1312                           ; direct_byte           11     8 (fixed)
-  1313                           ; jumptable            260     6 (fixed)
-  1314                           ;	Chosen strategy is simple_byte
-  1315  00AD  0876               	movf	??_ADC_CHS_CLKS+1,w
-  1316  00AE  3A00               	xorlw	0	; case 0
-  1317  00AF  1903               	skipnz
-  1318  00B0  28B2               	goto	l1089
-  1319  00B1  28A1               	goto	l144
-  1320  00B2                     l1089:
-  1321                           
-  1322                           ; Switch size 1, requested type "simple"
-  1323                           ; Number of cases is 15, Range of values is 0 to 14
-  1324                           ; switch strategies available:
-  1325                           ; Name         Instructions Cycles
-  1326                           ; simple_byte           46    24 (average)
-  1327                           ; direct_byte           53     8 (fixed)
-  1328                           ; jumptable            260     6 (fixed)
-  1329                           ;	Chosen strategy is simple_byte
-  1330  00B2  0875               	movf	??_ADC_CHS_CLKS,w
-  1331  00B3  3A00               	xorlw	0	; case 0
-  1332  00B4  1903               	skipnz
-  1333  00B5  2817               	goto	l128
-  1334  00B6  3A01               	xorlw	1	; case 1
-  1335  00B7  1903               	skipnz
-  1336  00B8  2823               	goto	l130
-  1337  00B9  3A03               	xorlw	3	; case 2
-  1338  00BA  1903               	skipnz
-  1339  00BB  282C               	goto	l131
-  1340  00BC  3A01               	xorlw	1	; case 3
-  1341  00BD  1903               	skipnz
-  1342  00BE  2835               	goto	l132
-  1343  00BF  3A07               	xorlw	7	; case 4
-  1344  00C0  1903               	skipnz
-  1345  00C1  283E               	goto	l133
-  1346  00C2  3A01               	xorlw	1	; case 5
-  1347  00C3  1903               	skipnz
-  1348  00C4  2847               	goto	l134
-  1349  00C5  3A03               	xorlw	3	; case 6
-  1350  00C6  1903               	skipnz
-  1351  00C7  2850               	goto	l135
-  1352  00C8  3A01               	xorlw	1	; case 7
-  1353  00C9  1903               	skipnz
-  1354  00CA  2859               	goto	l136
-  1355  00CB  3A0F               	xorlw	15	; case 8
-  1356  00CC  1903               	skipnz
-  1357  00CD  2862               	goto	l137
-  1358  00CE  3A01               	xorlw	1	; case 9
-  1359  00CF  1903               	skipnz
-  1360  00D0  286B               	goto	l138
-  1361  00D1  3A03               	xorlw	3	; case 10
-  1362  00D2  1903               	skipnz
-  1363  00D3  2874               	goto	l139
-  1364  00D4  3A01               	xorlw	1	; case 11
-  1365  00D5  1903               	skipnz
-  1366  00D6  287D               	goto	l140
-  1367  00D7  3A07               	xorlw	7	; case 12
-  1368  00D8  1903               	skipnz
-  1369  00D9  2886               	goto	l141
-  1370  00DA  3A01               	xorlw	1	; case 13
-  1371  00DB  1903               	skipnz
-  1372  00DC  288F               	goto	l142
-  1373  00DD  3A03               	xorlw	3	; case 14
-  1374  00DE  1903               	skipnz
-  1375  00DF  2898               	goto	l143
-  1376  00E0  28A1               	goto	l144
-  1377  00E1                     l151:
-  1378  00E1  0008               	return
-  1379  00E2                     __end_of_ADC_CHS_CLKS:
-  1380                           
-  1381                           	psect	text4
-  1382  0162                     __ptext4:	
-  1383 ;; *************** function _ADCG *****************
-  1384 ;; Defined at:
-  1385 ;;		line 94 in file "slave3.c"
-  1386 ;; Parameters:    Size  Location     Type
-  1387 ;;		None
-  1388 ;; Auto vars:     Size  Location     Type
-  1389 ;;		None
-  1390 ;; Return value:  Size  Location     Type
-  1391 ;;                  1    wreg      void 
-  1392 ;; Registers used:
-  1393 ;;		wreg, status,2
-  1394 ;; Tracked objects:
-  1395 ;;		On entry : 0/0
-  1396 ;;		On exit  : 0/0
-  1397 ;;		Unchanged: 0/0
-  1398 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1399 ;;      Params:         0       0       0       0       0
-  1400 ;;      Locals:         0       0       0       0       0
-  1401 ;;      Temps:          0       0       0       0       0
-  1402 ;;      Totals:         0       0       0       0       0
-  1403 ;;Total ram usage:        0 bytes
-  1404 ;; Hardware stack levels used:    1
-  1405 ;; Hardware stack levels required when called:    2
-  1406 ;; This function calls:
-  1407 ;;		Nothing
-  1408 ;; This function is called by:
-  1409 ;;		_main
-  1410 ;; This function uses a non-reentrant model
-  1411 ;;
+  1289                           ; Switch size 1, requested type "simple"
+  1290                           ; Number of cases is 1, Range of values is 0 to 0
+  1291                           ; switch strategies available:
+  1292                           ; Name         Instructions Cycles
+  1293                           ; simple_byte            4     3 (average)
+  1294                           ; direct_byte           11     8 (fixed)
+  1295                           ; jumptable            260     6 (fixed)
+  1296                           ;	Chosen strategy is simple_byte
+  1297  0090  0876               	movf	??_ADC_CHS_CLKS+1,w
+  1298  0091  3A00               	xorlw	0	; case 0
+  1299  0092  1903               	skipnz
+  1300  0093  2895               	goto	l1172
+  1301  0094  2886               	goto	l151
+  1302  0095                     l1172:
+  1303                           
+  1304                           ; Switch size 1, requested type "simple"
+  1305                           ; Number of cases is 15, Range of values is 0 to 14
+  1306                           ; switch strategies available:
+  1307                           ; Name         Instructions Cycles
+  1308                           ; simple_byte           46    24 (average)
+  1309                           ; direct_byte           53     8 (fixed)
+  1310                           ; jumptable            260     6 (fixed)
+  1311                           ;	Chosen strategy is simple_byte
+  1312  0095  0875               	movf	??_ADC_CHS_CLKS,w
+  1313  0096  3A00               	xorlw	0	; case 0
+  1314  0097  1903               	skipnz
+  1315  0098  281A               	goto	l135
+  1316  0099  3A01               	xorlw	1	; case 1
+  1317  009A  1903               	skipnz
+  1318  009B  2824               	goto	l137
+  1319  009C  3A03               	xorlw	3	; case 2
+  1320  009D  1903               	skipnz
+  1321  009E  282B               	goto	l138
+  1322  009F  3A01               	xorlw	1	; case 3
+  1323  00A0  1903               	skipnz
+  1324  00A1  2832               	goto	l139
+  1325  00A2  3A07               	xorlw	7	; case 4
+  1326  00A3  1903               	skipnz
+  1327  00A4  2839               	goto	l140
+  1328  00A5  3A01               	xorlw	1	; case 5
+  1329  00A6  1903               	skipnz
+  1330  00A7  2840               	goto	l141
+  1331  00A8  3A03               	xorlw	3	; case 6
+  1332  00A9  1903               	skipnz
+  1333  00AA  2847               	goto	l142
+  1334  00AB  3A01               	xorlw	1	; case 7
+  1335  00AC  1903               	skipnz
+  1336  00AD  284E               	goto	l143
+  1337  00AE  3A0F               	xorlw	15	; case 8
+  1338  00AF  1903               	skipnz
+  1339  00B0  2855               	goto	l144
+  1340  00B1  3A01               	xorlw	1	; case 9
+  1341  00B2  1903               	skipnz
+  1342  00B3  285C               	goto	l145
+  1343  00B4  3A03               	xorlw	3	; case 10
+  1344  00B5  1903               	skipnz
+  1345  00B6  2863               	goto	l146
+  1346  00B7  3A01               	xorlw	1	; case 11
+  1347  00B8  1903               	skipnz
+  1348  00B9  286A               	goto	l147
+  1349  00BA  3A07               	xorlw	7	; case 12
+  1350  00BB  1903               	skipnz
+  1351  00BC  2871               	goto	l148
+  1352  00BD  3A01               	xorlw	1	; case 13
+  1353  00BE  1903               	skipnz
+  1354  00BF  2878               	goto	l149
+  1355  00C0  3A03               	xorlw	3	; case 14
+  1356  00C1  1903               	skipnz
+  1357  00C2  287F               	goto	l150
+  1358  00C3  2886               	goto	l151
+  1359  00C4                     l136:
+  1360                           
+  1361                           ;ADC.c: 170: ADCON1bits.VCFG0=1;
+  1362  00C4  161F               	bsf	31,4	;volatile
+  1363                           
+  1364                           ;ADC.c: 171: ADCON1bits.VCFG1=1;
+  1365  00C5  169F               	bsf	31,5	;volatile
+  1366                           
+  1367                           ;ADC.c: 172: ADCON1bits.ADFM=0;
+  1368  00C6  139F               	bcf	31,7	;volatile
+  1369  00C7                     l158:
+  1370  00C7  0008               	return
+  1371  00C8                     __end_of_ADC_CHS_CLKS:
+  1372                           
+  1373                           	psect	text4
+  1374  0172                     __ptext4:	
+  1375 ;; *************** function _ADCG *****************
+  1376 ;; Defined at:
+  1377 ;;		line 104 in file "slave3.c"
+  1378 ;; Parameters:    Size  Location     Type
+  1379 ;;		None
+  1380 ;; Auto vars:     Size  Location     Type
+  1381 ;;		None
+  1382 ;; Return value:  Size  Location     Type
+  1383 ;;                  1    wreg      void 
+  1384 ;; Registers used:
+  1385 ;;		wreg, status,2
+  1386 ;; Tracked objects:
+  1387 ;;		On entry : 0/0
+  1388 ;;		On exit  : 0/0
+  1389 ;;		Unchanged: 0/0
+  1390 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1391 ;;      Params:         0       0       0       0       0
+  1392 ;;      Locals:         0       0       0       0       0
+  1393 ;;      Temps:          0       0       0       0       0
+  1394 ;;      Totals:         0       0       0       0       0
+  1395 ;;Total ram usage:        0 bytes
+  1396 ;; Hardware stack levels used:    1
+  1397 ;; Hardware stack levels required when called:    2
+  1398 ;; This function calls:
+  1399 ;;		Nothing
+  1400 ;; This function is called by:
+  1401 ;;		_main
+  1402 ;; This function uses a non-reentrant model
+  1403 ;;
+  1404                           
+  1405                           
+  1406                           ;psect for function _ADCG
+  1407  0172                     _ADCG:
+  1408  0172                     l844:	
+  1409                           ;incstack = 0
+  1410                           ; Regs used in _ADCG: [wreg+status,2]
+  1411                           
   1412                           
-  1413                           
-  1414                           ;psect for function _ADCG
-  1415  0162                     _ADCG:
-  1416  0162                     l837:	
-  1417                           ;incstack = 0
-  1418                           ; Regs used in _ADCG: [wreg+status,2]
-  1419                           
-  1420                           
-  1421                           ;slave3.c: 95:     if(ADCGO > 20){
-  1422  0162  3015               	movlw	21
-  1423  0163  0279               	subwf	_ADCGO,w
-  1424  0164  1C03               	skipc
-  1425  0165  2967               	goto	u21
-  1426  0166  2968               	goto	u20
-  1427  0167                     u21:
-  1428  0167  296C               	goto	l70
-  1429  0168                     u20:
-  1430  0168                     l839:
-  1431                           
-  1432                           ;slave3.c: 96:         ADCGO = 0;
-  1433  0168  01F9               	clrf	_ADCGO
-  1434  0169                     l841:
+  1413                           ;slave3.c: 105:     if(ADCGO > 20){
+  1414  0172  3015               	movlw	21
+  1415  0173  0279               	subwf	_ADCGO,w
+  1416  0174  1C03               	skipc
+  1417  0175  2977               	goto	u21
+  1418  0176  2978               	goto	u20
+  1419  0177                     u21:
+  1420  0177  297C               	goto	l75
+  1421  0178                     u20:
+  1422  0178                     l846:
+  1423                           
+  1424                           ;slave3.c: 106:         ADCGO = 0;
+  1425  0178  01F9               	clrf	_ADCGO
+  1426  0179                     l848:
+  1427                           
+  1428                           ;slave3.c: 107:         ADCON0bits.GO_nDONE = 1;
+  1429  0179  1283               	bcf	3,5	;RP0=0, select bank0
+  1430  017A  1303               	bcf	3,6	;RP1=0, select bank0
+  1431  017B  149F               	bsf	31,1	;volatile
+  1432  017C                     l75:
+  1433  017C  0008               	return
+  1434  017D                     __end_of_ADCG:
   1435                           
-  1436                           ;slave3.c: 97:         ADCON0bits.GO_nDONE = 1;
-  1437  0169  1283               	bcf	3,5	;RP0=0, select bank0
-  1438  016A  1303               	bcf	3,6	;RP1=0, select bank0
-  1439  016B  149F               	bsf	31,1	;volatile
-  1440  016C                     l70:
-  1441  016C  0008               	return
-  1442  016D                     __end_of_ADCG:
-  1443                           
-  1444                           	psect	text5
-  1445  010E                     __ptext5:	
-  1446 ;; *************** function _isr *****************
-  1447 ;; Defined at:
-  1448 ;;		line 38 in file "slave3.c"
-  1449 ;; Parameters:    Size  Location     Type
-  1450 ;;		None
-  1451 ;; Auto vars:     Size  Location     Type
-  1452 ;;		None
-  1453 ;; Return value:  Size  Location     Type
-  1454 ;;                  1    wreg      void 
-  1455 ;; Registers used:
-  1456 ;;		wreg, status,2, status,0, pclath, cstack
-  1457 ;; Tracked objects:
-  1458 ;;		On entry : 0/0
-  1459 ;;		On exit  : 0/0
-  1460 ;;		Unchanged: 0/0
-  1461 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1462 ;;      Params:         0       0       0       0       0
-  1463 ;;      Locals:         0       0       0       0       0
-  1464 ;;      Temps:          3       0       0       0       0
-  1465 ;;      Totals:         3       0       0       0       0
-  1466 ;;Total ram usage:        3 bytes
-  1467 ;; Hardware stack levels used:    1
-  1468 ;; Hardware stack levels required when called:    1
-  1469 ;; This function calls:
-  1470 ;;		_spiWrite
-  1471 ;; This function is called by:
-  1472 ;;		Interrupt level 1
-  1473 ;; This function uses a non-reentrant model
-  1474 ;;
-  1475                           
-  1476                           
-  1477                           ;psect for function _isr
-  1478  010E                     _isr:
-  1479  010E                     i1l845:
-  1480                           
-  1481                           ;slave3.c: 39:     if (ADIF==1){
-  1482  010E  1283               	bcf	3,5	;RP0=0, select bank0
-  1483  010F  1303               	bcf	3,6	;RP1=0, select bank0
-  1484  0110  1F0C               	btfss	12,6	;volatile
-  1485  0111  2913               	goto	u4_21
-  1486  0112  2914               	goto	u4_20
-  1487  0113                     u4_21:
-  1488  0113  291A               	goto	i1l853
-  1489  0114                     u4_20:
-  1490  0114                     i1l847:
-  1491                           
-  1492                           ;slave3.c: 40:         L=ADRESH;
-  1493  0114  081E               	movf	30,w	;volatile
-  1494  0115  00F1               	movwf	??_isr
-  1495  0116  0871               	movf	??_isr,w
-  1496  0117  00F8               	movwf	_L
-  1497  0118                     i1l849:
-  1498                           
-  1499                           ;slave3.c: 41:         PIR1bits.ADIF=0;
-  1500  0118  130C               	bcf	12,6	;volatile
-  1501  0119                     i1l851:
-  1502                           
-  1503                           ;slave3.c: 42:         ADCON0bits.GO=1;}
-  1504  0119  149F               	bsf	31,1	;volatile
-  1505  011A                     i1l853:
-  1506                           
-  1507                           ;slave3.c: 43:     if(SSPIF == 1){
-  1508  011A  1D8C               	btfss	12,3	;volatile
-  1509  011B  291D               	goto	u5_21
-  1510  011C  291E               	goto	u5_20
-  1511  011D                     u5_21:
-  1512  011D  2929               	goto	i1l55
-  1513  011E                     u5_20:
-  1514  011E                     i1l855:
-  1515                           
-  1516                           ;slave3.c: 44:         PORTB=L;
-  1517  011E  0878               	movf	_L,w
-  1518  011F  0086               	movwf	6	;volatile
-  1519  0120                     i1l857:
-  1520                           
-  1521                           ;slave3.c: 45:         spiWrite(L);
-  1522  0120  0878               	movf	_L,w
-  1523  0121  120A  118A  216D  120A  118A  	fcall	_spiWrite
-  1524  0126                     i1l859:
-  1525                           
-  1526                           ;slave3.c: 46:         SSPIF = 0;
-  1527  0126  1283               	bcf	3,5	;RP0=0, select bank0
-  1528  0127  1303               	bcf	3,6	;RP1=0, select bank0
-  1529  0128  118C               	bcf	12,3	;volatile
-  1530  0129                     i1l55:
-  1531  0129  0873               	movf	??_isr+2,w
-  1532  012A  008A               	movwf	10
-  1533  012B  0E72               	swapf	??_isr+1,w
-  1534  012C  0083               	movwf	3
-  1535  012D  0EFE               	swapf	btemp,f
-  1536  012E  0E7E               	swapf	btemp,w
-  1537  012F  0009               	retfie
-  1538  0130                     __end_of_isr:
-  1539                           
-  1540                           	psect	intentry
-  1541  0004                     __pintentry:	
-  1542                           ;incstack = 0
-  1543                           ; Regs used in _isr: [wreg+status,2+status,0+pclath+cstack]
+  1436                           	psect	text5
+  1437  00C8                     __ptext5:	
+  1438 ;; *************** function _isr *****************
+  1439 ;; Defined at:
+  1440 ;;		line 38 in file "slave3.c"
+  1441 ;; Parameters:    Size  Location     Type
+  1442 ;;		None
+  1443 ;; Auto vars:     Size  Location     Type
+  1444 ;;		None
+  1445 ;; Return value:  Size  Location     Type
+  1446 ;;                  1    wreg      void 
+  1447 ;; Registers used:
+  1448 ;;		wreg, status,2, status,0, pclath, cstack
+  1449 ;; Tracked objects:
+  1450 ;;		On entry : 0/0
+  1451 ;;		On exit  : 0/0
+  1452 ;;		Unchanged: 0/0
+  1453 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1454 ;;      Params:         0       0       0       0       0
+  1455 ;;      Locals:         0       0       0       0       0
+  1456 ;;      Temps:          3       0       0       0       0
+  1457 ;;      Totals:         3       0       0       0       0
+  1458 ;;Total ram usage:        3 bytes
+  1459 ;; Hardware stack levels used:    1
+  1460 ;; Hardware stack levels required when called:    1
+  1461 ;; This function calls:
+  1462 ;;		_spiWrite
+  1463 ;; This function is called by:
+  1464 ;;		Interrupt level 1
+  1465 ;; This function uses a non-reentrant model
+  1466 ;;
+  1467                           
+  1468                           
+  1469                           ;psect for function _isr
+  1470  00C8                     _isr:
+  1471  00C8                     i1l852:
+  1472                           
+  1473                           ;slave3.c: 39:     if (ADIF==1){
+  1474  00C8  1283               	bcf	3,5	;RP0=0, select bank0
+  1475  00C9  1303               	bcf	3,6	;RP1=0, select bank0
+  1476  00CA  1F0C               	btfss	12,6	;volatile
+  1477  00CB  28CD               	goto	u4_21
+  1478  00CC  28CE               	goto	u4_20
+  1479  00CD                     u4_21:
+  1480  00CD  28F6               	goto	i1l868
+  1481  00CE                     u4_20:
+  1482  00CE                     i1l854:
+  1483                           
+  1484                           ;slave3.c: 40:         L=ADRESH;
+  1485  00CE  081E               	movf	30,w	;volatile
+  1486  00CF  00F1               	movwf	??_isr
+  1487  00D0  0871               	movf	??_isr,w
+  1488  00D1  00F8               	movwf	_L
+  1489  00D2                     i1l856:
+  1490                           
+  1491                           ;slave3.c: 41:         PIR1bits.ADIF=0;
+  1492  00D2  130C               	bcf	12,6	;volatile
+  1493                           
+  1494                           ;slave3.c: 42:         q=L;
+  1495  00D3  0878               	movf	_L,w
+  1496  00D4  00F1               	movwf	??_isr
+  1497  00D5  0871               	movf	??_isr,w
+  1498  00D6  00F7               	movwf	_q
+  1499                           
+  1500                           ;slave3.c: 43:         if(q <= 97){
+  1501  00D7  3062               	movlw	98
+  1502  00D8  0277               	subwf	_q,w
+  1503  00D9  1803               	skipnc
+  1504  00DA  28DC               	goto	u5_21
+  1505  00DB  28DD               	goto	u5_20
+  1506  00DC                     u5_21:
+  1507  00DC  28DF               	goto	i1l56
+  1508  00DD                     u5_20:
+  1509  00DD                     i1l858:
+  1510                           
+  1511                           ;slave3.c: 44:            PORTD = 0B00000010;
+  1512  00DD  3002               	movlw	2
+  1513  00DE  0088               	movwf	8	;volatile
+  1514  00DF                     i1l56:	
+  1515                           ;slave3.c: 45:         }
+  1516                           
+  1517                           
+  1518                           ;slave3.c: 46:         if(q > 97 && q < 111){
+  1519  00DF  3062               	movlw	98
+  1520  00E0  0277               	subwf	_q,w
+  1521  00E1  1C03               	skipc
+  1522  00E2  28E4               	goto	u6_21
+  1523  00E3  28E5               	goto	u6_20
+  1524  00E4                     u6_21:
+  1525  00E4  28ED               	goto	i1l57
+  1526  00E5                     u6_20:
+  1527  00E5                     i1l860:
+  1528  00E5  306F               	movlw	111
+  1529  00E6  0277               	subwf	_q,w
+  1530  00E7  1803               	skipnc
+  1531  00E8  28EA               	goto	u7_21
+  1532  00E9  28EB               	goto	u7_20
+  1533  00EA                     u7_21:
+  1534  00EA  28ED               	goto	i1l57
+  1535  00EB                     u7_20:
+  1536  00EB                     i1l862:
+  1537                           
+  1538                           ;slave3.c: 47:            PORTD = 0B00000100;
+  1539  00EB  3004               	movlw	4
+  1540  00EC  0088               	movwf	8	;volatile
+  1541  00ED                     i1l57:	
+  1542                           ;slave3.c: 48:         }
+  1543                           
   1544                           
-  1545  0004                     interrupt_function:
-  1546  007E                     saved_w	set	btemp
-  1547  0004  00FE               	movwf	btemp
-  1548  0005  0E03               	swapf	3,w
-  1549  0006  00F2               	movwf	??_isr+1
-  1550  0007  080A               	movf	10,w
-  1551  0008  00F3               	movwf	??_isr+2
-  1552  0009  120A  118A  290E   	ljmp	_isr
-  1553                           
-  1554                           	psect	text6
-  1555  016D                     __ptext6:	
-  1556 ;; *************** function _spiWrite *****************
-  1557 ;; Defined at:
-  1558 ;;		line 27 in file "SSSPI.c"
-  1559 ;; Parameters:    Size  Location     Type
-  1560 ;;  dat             1    wreg     unsigned char 
-  1561 ;; Auto vars:     Size  Location     Type
-  1562 ;;  dat             1    0[COMMON] unsigned char 
-  1563 ;; Return value:  Size  Location     Type
-  1564 ;;                  1    wreg      void 
-  1565 ;; Registers used:
-  1566 ;;		wreg
-  1567 ;; Tracked objects:
-  1568 ;;		On entry : 0/0
-  1569 ;;		On exit  : 0/0
-  1570 ;;		Unchanged: 0/0
-  1571 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1572 ;;      Params:         0       0       0       0       0
-  1573 ;;      Locals:         1       0       0       0       0
-  1574 ;;      Temps:          0       0       0       0       0
-  1575 ;;      Totals:         1       0       0       0       0
-  1576 ;;Total ram usage:        1 bytes
-  1577 ;; Hardware stack levels used:    1
-  1578 ;; This function calls:
-  1579 ;;		Nothing
-  1580 ;; This function is called by:
-  1581 ;;		_isr
-  1582 ;; This function uses a non-reentrant model
-  1583 ;;
-  1584                           
-  1585                           
-  1586                           ;psect for function _spiWrite
-  1587  016D                     _spiWrite:
-  1588                           
-  1589                           ;incstack = 0
-  1590                           ; Regs used in _spiWrite: [wreg]
-  1591                           ;spiWrite@dat stored from wreg
-  1592  016D  00F0               	movwf	spiWrite@dat
-  1593  016E                     i1l789:
-  1594                           
-  1595                           ;SSSPI.c: 27: void spiWrite(char dat);SSSPI.c: 28: {;SSSPI.c: 29:     SSPBUF = dat;
-  1596  016E  0870               	movf	spiWrite@dat,w
-  1597  016F  1283               	bcf	3,5	;RP0=0, select bank0
-  1598  0170  1303               	bcf	3,6	;RP1=0, select bank0
-  1599  0171  0093               	movwf	19	;volatile
-  1600  0172                     i1l96:
-  1601  0172  0008               	return
-  1602  0173                     __end_of_spiWrite:
-  1603  007E                     btemp	set	126	;btemp
-  1604  007E                     wtemp0	set	126
-  1605                           
-  1606                           	psect	config
-  1607                           
-  1608                           ;Config register CONFIG1 @ 0x2007
-  1609                           ;	Oscillator Selection bits
-  1610                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
+  1545                           ;slave3.c: 49:         if(q >= 111){
+  1546  00ED  306F               	movlw	111
+  1547  00EE  0277               	subwf	_q,w
+  1548  00EF  1C03               	skipc
+  1549  00F0  28F2               	goto	u8_21
+  1550  00F1  28F3               	goto	u8_20
+  1551  00F2                     u8_21:
+  1552  00F2  28F5               	goto	i1l866
+  1553  00F3                     u8_20:
+  1554  00F3                     i1l864:
+  1555                           
+  1556                           ;slave3.c: 50:            PORTD = 0B00001000;
+  1557  00F3  3008               	movlw	8
+  1558  00F4  0088               	movwf	8	;volatile
+  1559  00F5                     i1l866:
+  1560                           
+  1561                           ;slave3.c: 52:         ADCON0bits.GO=1;}
+  1562  00F5  149F               	bsf	31,1	;volatile
+  1563  00F6                     i1l868:
+  1564                           
+  1565                           ;slave3.c: 53:     if(SSPIF == 1){
+  1566  00F6  1D8C               	btfss	12,3	;volatile
+  1567  00F7  28F9               	goto	u9_21
+  1568  00F8  28FA               	goto	u9_20
+  1569  00F9                     u9_21:
+  1570  00F9  2905               	goto	i1l60
+  1571  00FA                     u9_20:
+  1572  00FA                     i1l870:
+  1573                           
+  1574                           ;slave3.c: 54:         PORTB=L;
+  1575  00FA  0878               	movf	_L,w
+  1576  00FB  0086               	movwf	6	;volatile
+  1577  00FC                     i1l872:
+  1578                           
+  1579                           ;slave3.c: 55:         spiWrite(L);
+  1580  00FC  0878               	movf	_L,w
+  1581  00FD  120A  118A  217D  120A  118A  	fcall	_spiWrite
+  1582  0102                     i1l874:
+  1583                           
+  1584                           ;slave3.c: 56:         SSPIF = 0;
+  1585  0102  1283               	bcf	3,5	;RP0=0, select bank0
+  1586  0103  1303               	bcf	3,6	;RP1=0, select bank0
+  1587  0104  118C               	bcf	12,3	;volatile
+  1588  0105                     i1l60:
+  1589  0105  0873               	movf	??_isr+2,w
+  1590  0106  008A               	movwf	10
+  1591  0107  0E72               	swapf	??_isr+1,w
+  1592  0108  0083               	movwf	3
+  1593  0109  0EFE               	swapf	btemp,f
+  1594  010A  0E7E               	swapf	btemp,w
+  1595  010B  0009               	retfie
+  1596  010C                     __end_of_isr:
+  1597                           
+  1598                           	psect	intentry
+  1599  0004                     __pintentry:	
+  1600                           ;incstack = 0
+  1601                           ; Regs used in _isr: [wreg+status,2+status,0+pclath+cstack]
+  1602                           
+  1603  0004                     interrupt_function:
+  1604  007E                     saved_w	set	btemp
+  1605  0004  00FE               	movwf	btemp
+  1606  0005  0E03               	swapf	3,w
+  1607  0006  00F2               	movwf	??_isr+1
+  1608  0007  080A               	movf	10,w
+  1609  0008  00F3               	movwf	??_isr+2
+  1610  0009  120A  118A  28C8   	ljmp	_isr
+  1611                           
+  1612                           	psect	text6
+  1613  017D                     __ptext6:	
+  1614 ;; *************** function _spiWrite *****************
+  1615 ;; Defined at:
+  1616 ;;		line 27 in file "SSSPI.c"
+  1617 ;; Parameters:    Size  Location     Type
+  1618 ;;  dat             1    wreg     unsigned char 
+  1619 ;; Auto vars:     Size  Location     Type
+  1620 ;;  dat             1    0[COMMON] unsigned char 
+  1621 ;; Return value:  Size  Location     Type
+  1622 ;;                  1    wreg      void 
+  1623 ;; Registers used:
+  1624 ;;		wreg
+  1625 ;; Tracked objects:
+  1626 ;;		On entry : 0/0
+  1627 ;;		On exit  : 0/0
+  1628 ;;		Unchanged: 0/0
+  1629 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1630 ;;      Params:         0       0       0       0       0
+  1631 ;;      Locals:         1       0       0       0       0
+  1632 ;;      Temps:          0       0       0       0       0
+  1633 ;;      Totals:         1       0       0       0       0
+  1634 ;;Total ram usage:        1 bytes
+  1635 ;; Hardware stack levels used:    1
+  1636 ;; This function calls:
+  1637 ;;		Nothing
+  1638 ;; This function is called by:
+  1639 ;;		_isr
+  1640 ;; This function uses a non-reentrant model
+  1641 ;;
+  1642                           
+  1643                           
+  1644                           ;psect for function _spiWrite
+  1645  017D                     _spiWrite:
+  1646                           
+  1647                           ;incstack = 0
+  1648                           ; Regs used in _spiWrite: [wreg]
+  1649                           ;spiWrite@dat stored from wreg
+  1650  017D  00F0               	movwf	spiWrite@dat
+  1651  017E                     i1l796:
+  1652                           
+  1653                           ;SSSPI.c: 27: void spiWrite(char dat);SSSPI.c: 28: {;SSSPI.c: 29:     SSPBUF = dat;
+  1654  017E  0870               	movf	spiWrite@dat,w
+  1655  017F  1283               	bcf	3,5	;RP0=0, select bank0
+  1656  0180  1303               	bcf	3,6	;RP1=0, select bank0
+  1657  0181  0093               	movwf	19	;volatile
+  1658  0182                     i1l101:
+  1659  0182  0008               	return
+  1660  0183                     __end_of_spiWrite:
+  1661  007E                     btemp	set	126	;btemp
+  1662  007E                     wtemp0	set	126
+  1663                           
+  1664                           	psect	config
+  1665                           
+  1666                           ;Config register CONFIG1 @ 0x2007
+  1667                           ;	Oscillator Selection bits
+  1668                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
       +                          unction on RA7/OSC1/CLKIN
-  1611                           ;	Watchdog Timer Enable bit
-  1612                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
-  1613                           ;	Power-up Timer Enable bit
-  1614                           ;	PWRTE = OFF, PWRT disabled
-  1615                           ;	RE3/MCLR pin function select bit
-  1616                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
-  1617                           ;	Code Protection bit
-  1618                           ;	CP = OFF, Program memory code protection is disabled
-  1619                           ;	Data Code Protection bit
-  1620                           ;	CPD = OFF, Data memory code protection is disabled
-  1621                           ;	Brown Out Reset Selection bits
-  1622                           ;	BOREN = OFF, BOR disabled
-  1623                           ;	Internal External Switchover bit
-  1624                           ;	IESO = OFF, Internal/External Switchover mode is disabled
-  1625                           ;	Fail-Safe Clock Monitor Enabled bit
-  1626                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
-  1627                           ;	Low Voltage Programming Enable bit
-  1628                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
-  1629                           ;	In-Circuit Debugger Mode bit
-  1630                           ;	DEBUG = 0x1, unprogrammed default
-  1631  2007                     	org	8199
-  1632  2007  20D4               	dw	8404
-  1633                           
-  1634                           ;Config register CONFIG2 @ 0x2008
-  1635                           ;	Brown-out Reset Selection bit
-  1636                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
-  1637                           ;	Flash Program Memory Self Write Enable bits
-  1638                           ;	WRT = OFF, Write protection off
-  1639  2008                     	org	8200
-  1640  2008  3FFF               	dw	16383
+  1669                           ;	Watchdog Timer Enable bit
+  1670                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+  1671                           ;	Power-up Timer Enable bit
+  1672                           ;	PWRTE = OFF, PWRT disabled
+  1673                           ;	RE3/MCLR pin function select bit
+  1674                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
+  1675                           ;	Code Protection bit
+  1676                           ;	CP = OFF, Program memory code protection is disabled
+  1677                           ;	Data Code Protection bit
+  1678                           ;	CPD = OFF, Data memory code protection is disabled
+  1679                           ;	Brown Out Reset Selection bits
+  1680                           ;	BOREN = OFF, BOR disabled
+  1681                           ;	Internal External Switchover bit
+  1682                           ;	IESO = OFF, Internal/External Switchover mode is disabled
+  1683                           ;	Fail-Safe Clock Monitor Enabled bit
+  1684                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
+  1685                           ;	Low Voltage Programming Enable bit
+  1686                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
+  1687                           ;	In-Circuit Debugger Mode bit
+  1688                           ;	DEBUG = 0x1, unprogrammed default
+  1689  2007                     	org	8199
+  1690  2007  20D4               	dw	8404
+  1691                           
+  1692                           ;Config register CONFIG2 @ 0x2008
+  1693                           ;	Brown-out Reset Selection bit
+  1694                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
+  1695                           ;	Flash Program Memory Self Write Enable bits
+  1696                           ;	WRT = OFF, Write protection off
+  1697  2008                     	org	8200
+  1698  2008  3FFF               	dw	16383
 
 Data Sizes:
     Strings     0
     Constant    0
     Data        0
-    BSS         2
+    BSS         3
     Persistent  0
     Stack       0
 
 Auto Spaces:
     Space          Size  Autos    Used
-    COMMON           14      8      10
-    BANK0            80      2       2
+    COMMON           14      7      10
+    BANK0            80      3       3
     BANK1            80      0       0
     BANK3            96      0       0
     BANK2            96      0       0
@@ -1689,6 +1747,7 @@ Critical Paths under _isr in COMMON
 Critical Paths under _main in BANK0
 
     _main->_Setup
+    _Setup->_ADC_CHS_CLKS
 
 Critical Paths under _isr in BANK0
 
@@ -1723,21 +1782,23 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 1     1      0     480
-                                              1 BANK0      1     1      0
+ (0) _main                                                 1     1      0     608
+                                              2 BANK0      1     1      0
                                _ADCG
                               _Setup
                             _spiInit
  ---------------------------------------------------------------------------------
- (1) _spiInit                                              4     1      3     360
-                                              4 COMMON     4     1      3
- ---------------------------------------------------------------------------------
- (1) _Setup                                                1     1      0     120
+ (1) _spiInit                                              4     1      3     456
+                                              4 COMMON     3     0      3
                                               0 BANK0      1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _Setup                                                1     1      0     152
+                                              1 BANK0      1     1      0
                        _ADC_CHS_CLKS
  ---------------------------------------------------------------------------------
- (2) _ADC_CHS_CLKS                                         4     3      1     120
-                                              4 COMMON     4     3      1
+ (2) _ADC_CHS_CLKS                                         4     3      1     152
+                                              4 COMMON     3     2      1
+                                              0 BANK0      1     1      0
  ---------------------------------------------------------------------------------
  (1) _ADCG                                                 0     0      0       0
  ---------------------------------------------------------------------------------
@@ -1772,17 +1833,17 @@ BITCOMMON            E      0       0       0        0.0%
 EEDATA             100      0       0       0        0.0%
 NULL                 0      0       0       0        0.0%
 CODE                 0      0       0       0        0.0%
-COMMON               E      8       A       1       71.4%
+COMMON               E      7       A       1       71.4%
 BITSFR0              0      0       0       1        0.0%
 SFR0                 0      0       0       1        0.0%
 BITSFR1              0      0       0       2        0.0%
 SFR1                 0      0       0       2        0.0%
 STACK                0      0       0       2        0.0%
-ABS                  0      0       C       3        0.0%
+ABS                  0      0       D       3        0.0%
 BITBANK0            50      0       0       4        0.0%
 BITSFR3              0      0       0       4        0.0%
 SFR3                 0      0       0       4        0.0%
-BANK0               50      2       2       5        2.5%
+BANK0               50      3       3       5        3.8%
 BITSFR2              0      0       0       5        0.0%
 SFR2                 0      0       0       5        0.0%
 BITBANK1            50      0       0       6        0.0%
@@ -1791,65 +1852,70 @@ BITBANK3            60      0       0       8        0.0%
 BANK3               60      0       0       9        0.0%
 BITBANK2            60      0       0      10        0.0%
 BANK2               60      0       0      11        0.0%
-DATA                 0      0       C      12        0.0%
+DATA                 0      0       D      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Fri Feb 12 23:48:39 2021
+Symbol Table                                                                                   Mon Feb 15 22:09:15 2021
 
-                      _L 0078    __size_of_ADC_CHS_CLKS 00CD              _SSPSTATbits 0094  
-                     l70 016C                       l66 010D                       l86 015C  
-                     l87 0161                       u20 0168                       u21 0167  
-                     u60 0154                       u61 0153                      l130 0023  
-                    l131 002C                      l140 007D                      l132 0035  
-                    l141 0086                      l133 003E                      l142 008F  
-                    l134 0047                      l143 0098                      l135 0050  
-                    l151 00E1                      l144 00A1                      l136 0059  
-                    l128 0017                      l137 0062                      l138 006B  
-                    l139 0074                      l911 001F                      l841 0169  
-                    l837 0162                      l909 0016                      l839 0168  
-                    l961 0158                      l963 015B                      l955 014D  
-                    l949 00AA                      l957 0154                      l959 0156  
-                    _isr 010E                     l1031 00F1                     l1041 00F8  
-                   l1033 00F4                     l1051 0103                     l1043 00FC  
-                   l1035 00F5                     l1027 00E2                     l1061 010A  
-                   l1053 0104                     l1045 00FD                     l1037 00F6  
-                   l1029 00EE                     l1055 0105                     l1047 00FE  
-                   l1039 00F7                     l1063 0130                     l1057 0108  
-                   l1049 00FF                     l1065 013E                     l1059 0109  
-                   l1067 0143                     l1089 00B2                     _ADCG 0162  
-                   _ADIF 0066                     ?_isr 0070                     i1l55 0129  
-                   i1l96 0172                     u4_20 0114                     u4_21 0113  
-                   u5_20 011E                     u5_21 011D                     _main 0130  
-                   btemp 007E                     start 000C             _ADC_CHS_CLKS 0015  
-                  ?_ADCG 0070                    ??_isr 0071                    _ADCGO 0079  
-                  ?_main 0070                    _ANSEL 0188                    i1l851 0119  
-                  i1l853 011A                    i1l845 010E                    i1l855 011E  
-                  i1l847 0114                    i1l857 0120                    i1l849 0118  
-                  i1l859 0126                    i1l789 016E                    _PORTA 0005  
-                  _PORTB 0006                    _PORTC 0007                    _PORTD 0008  
-                  _PORTE 0009                    _TRISA 0085                    _TRISB 0086  
-                  _TRISD 0088                    _TRISE 0089                    _SSPIF 0063  
-                  _Setup 00E2                    pclath 000A          __end_of_spiInit 0162  
-                  status 0003                    wtemp0 007E             __end_of_ADCG 016D  
-        __initialization 000F             __end_of_main 014C                   ??_ADCG 0074  
-                 ??_main 0021                   ?_Setup 0070                   _ADCON1 009F  
-                 _ADRESH 001E                   _TRISC3 043B                   _TRISC5 043D  
-                 _SSPCON 0014                   _SSPBUF 0013                   saved_w 007E  
-       __end_of_spiWrite 0173                ??_spiInit 0077  __end_of__initialization 0011  
-         __pcstackCOMMON 0070            __end_of_Setup 010E                  ??_Setup 0020  
-             __pmaintext 0130               __pintentry 0004                  _SSPSTAT 0094  
-              ?_spiWrite 0070                  __ptext1 014C                  __ptext2 00E2  
-                __ptext3 0015                  __ptext4 0162                  __ptext5 010E  
-                __ptext6 016D             __size_of_isr 0022                  _spiInit 014C  
-   end_of_initialization 0011               ??_spiWrite 0070            ADC_CHS_CLKS@C 0077  
-          ADC_CHS_CLKS@S 0074              spiWrite@dat 0070      start_initialization 000F  
-            __end_of_isr 0130            ?_ADC_CHS_CLKS 0074              __pbssCOMMON 0078  
-              ___latbits 0002            __pcstackBANK0 0020           ??_ADC_CHS_CLKS 0075  
-      __size_of_spiWrite 0006                 ?_spiInit 0074           __size_of_Setup 002C  
-   spiInit@sTransmitEdge 0076        interrupt_function 0004                 _PIE1bits 008C  
-     spiInit@sDataSample 0074                 _PIR1bits 000C               _ADCON0bits 001F  
-   __end_of_ADC_CHS_CLKS 00E2         __size_of_spiInit 0016            __size_of_ADCG 000B  
-          __size_of_main 001C                 _spiWrite 016D             spiInit@sType 0077  
-      spiInit@sClockIdle 0075               _INTCONbits 000B                 intlevel1 0000  
-             _OSCCONbits 008F  
+                      _L 0078                        _q 0077    __size_of_ADC_CHS_CLKS 00B2  
+            _SSPSTATbits 0094                       l71 0137                       l75 017C  
+                     l91 0150                       l92 0155                       u20 0178  
+                     u21 0177                      l140 0039                      l141 0040  
+                    l150 007F                      l142 0047                      l151 0086  
+                    l143 004E                      l135 001A                      l144 0055  
+                    l136 00C4                      l145 005C                      l137 0024  
+                    l146 0063                      l138 002B                      l147 006A  
+                    l139 0032                      l148 0071                      l149 0078  
+                    l158 00C7                      l844 0172                      l846 0178  
+                    l848 0179                      u110 0144                      u111 0143  
+                    _isr 00C8                     l1100 010C                     l1110 0120  
+                   l1102 0118                     l1120 0128                     l1112 0121  
+                   l1104 011B                     l1042 0019                     l1130 0132  
+                   l1122 0129                     l1114 0122                     l1106 011E  
+                   l1044 0020                     l1132 0133                     l1124 012D  
+                   l1116 0126                     l1108 011F                     l1140 0169  
+                   l1134 0134                     l1126 012E                     l1118 0127  
+                   l1128 012F                     l1136 0156                     l1082 008D  
+                   l1090 013B                     l1138 0164                     l1172 0095  
+                   l1092 0144                     l1094 0148                     l1096 014A  
+                   l1098 014F                     _ADCG 0172                     _ADIF 0066  
+                   ?_isr 0070                     i1l60 0105                     i1l56 00DF  
+                   i1l57 00ED                     u4_20 00CE                     u4_21 00CD  
+                   u5_20 00DD                     u5_21 00DC                     u6_20 00E5  
+                   u6_21 00E4                     u7_20 00EB                     u7_21 00EA  
+                   u8_20 00F3                     u8_21 00F2                     u9_20 00FA  
+                   u9_21 00F9                     _main 0156                     btemp 007E  
+                   start 000C             _ADC_CHS_CLKS 0016                    ?_ADCG 0070  
+                  ??_isr 0071                    _ADCGO 0079                    ?_main 0070  
+                  _ANSEL 0188                    i1l101 0182                    i1l860 00E5  
+                  i1l852 00C8                    i1l870 00FA                    i1l862 00EB  
+                  i1l854 00CE                    i1l872 00FC                    i1l864 00F3  
+                  i1l856 00D2                    i1l874 0102                    i1l866 00F5  
+                  i1l858 00DD                    i1l796 017E                    i1l868 00F6  
+                  _PORTA 0005                    _PORTB 0006                    _PORTC 0007  
+                  _PORTD 0008                    _PORTE 0009                    _TRISA 0085  
+                  _TRISB 0086                    _TRISD 0088                    _TRISE 0089  
+                  _SSPIF 0063                    _Setup 010C                    pclath 000A  
+        __end_of_spiInit 0156                    status 0003                    wtemp0 007E  
+           __end_of_ADCG 017D          __initialization 000F             __end_of_main 0172  
+                 ??_ADCG 0074                   ??_main 0022                   ?_Setup 0070  
+                 _ADCON1 009F                   _ADRESH 001E                   _TRISC3 043B  
+                 _TRISC5 043D                   _SSPCON 0014                   _SSPBUF 0013  
+                 saved_w 007E         __end_of_spiWrite 0183                ??_spiInit 0077  
+__end_of__initialization 0012           __pcstackCOMMON 0070            __end_of_Setup 0138  
+                ??_Setup 0021               __pmaintext 0156               __pintentry 0004  
+                _SSPSTAT 0094                ?_spiWrite 0070                  __ptext1 0138  
+                __ptext2 010C                  __ptext3 0016                  __ptext4 0172  
+                __ptext5 00C8                  __ptext6 017D             __size_of_isr 0044  
+                _spiInit 0138     end_of_initialization 0012               ??_spiWrite 0070  
+          ADC_CHS_CLKS@C 0020            ADC_CHS_CLKS@S 0074              spiWrite@dat 0070  
+    start_initialization 000F              __end_of_isr 010C            ?_ADC_CHS_CLKS 0074  
+            __pbssCOMMON 0077                ___latbits 0002            __pcstackBANK0 0020  
+         ??_ADC_CHS_CLKS 0075        __size_of_spiWrite 0006                 ?_spiInit 0074  
+         __size_of_Setup 002C     spiInit@sTransmitEdge 0076        interrupt_function 0004  
+               _PIE1bits 008C       spiInit@sDataSample 0074                 _PIR1bits 000C  
+             _ADCON0bits 001F               _ADCON1bits 009F     __end_of_ADC_CHS_CLKS 00C8  
+       __size_of_spiInit 001E            __size_of_ADCG 000B            __size_of_main 001C  
+               _spiWrite 017D             spiInit@sType 0020        spiInit@sClockIdle 0075  
+             _INTCONbits 000B                 intlevel1 0000               _OSCCONbits 008F  

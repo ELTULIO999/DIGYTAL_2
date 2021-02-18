@@ -30,7 +30,7 @@
 //******************************************************************************
 void Setup   (void);
 void ADCG    (void);
-uint8_t ADCGO,L;
+uint8_t ADCGO,L,q;
 //******************************************************************************
 //******************************************************************************
 //                            interuption 
@@ -39,31 +39,41 @@ void __interrupt ( ) isr(void){
     if (ADIF==1){ //revisamos la bandera del adc
         L=ADRESH; // pasamos el contenido de adresh a unavariable 
         PIR1bits.ADIF=0; // //reset la bandera
+        q=L;
+        if(q <= 97){
+           PORTD =  0B00000010; //leds on greeen
+        }
+        if(q > 97 && q < 111){
+           PORTD =  0B00000100; //leds on yellow
+        }
+        if(q >= 111){
+           PORTD =  0B00001000; //leds on red
+        }
         ADCON0bits.GO=1;} //  ponemos esta en on para que vuelva a
     if(SSPIF == 1){
-        PORTB=L;
-        spiWrite(L);
-        SSPIF = 0;
+        PORTB=L; //test of the adc to a port 
+        spiWrite(L); //sending to master pic
+        SSPIF = 0; //flag reset
         }
 }
 //******************************************************************************
 // Ciclo principal
 //******************************************************************************
 void main(void) { 
-    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_END, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_END, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);// call of the slave set up
     Setup();
     //**************************************************************************
     // Loop principal
     //**************************************************************************
     while(1){
-     ADCG();
-    }
-}
+        ADCG();//fetch the flag of the adc
+        
+}}
 //******************************************************************************
 // Configuración
 //******************************************************************************
 void Setup(void){
-    ADC_CHS_CLKS (0,2);
+    ADC_CHS_CLKS (0,2);// set up of adc
     PIE1bits.ADIE=1;
  //puertos on clear 
     PORTA =  0; //PORTA EN 0

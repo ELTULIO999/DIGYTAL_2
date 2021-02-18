@@ -2797,4 +2797,8 @@ default:
     ADCON0bits.ADCS1=1;
     ADCON0bits.ADCS0=1;
 break;
-}}}
+}}
+ADCON1bits.VCFG0=1;
+ADCON1bits.VCFG1=1;
+ADCON1bits.ADFM=0;
+}

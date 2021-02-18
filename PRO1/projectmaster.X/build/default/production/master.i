@@ -2729,6 +2729,8 @@ void CONVET_cont(void);
 void send (void);
 void CONV_AS (void);
 
+
+
 uint8_t L,R,r,Z,z,C,c,sign,bro;
 uint8_t POT1_U,POT1_H, POT1_T;
 uint8_t TEM_U,TEM_T,TEM_H;
@@ -2754,8 +2756,6 @@ void __attribute__((picinterrupt(("")))) isr(void){
             r=0;
             PIE1bits.TXIE = 1;}
        }
-
-
 }
 
 
@@ -2782,7 +2782,6 @@ void main(void) {
                 PORTEbits.RE2=1;
                 spiWrite(0x00);
                 cont=spiRead();
-                PORTA=cont;
                 CONVET_cont();
                 LCDVAL1 (13,cont_1);
                 LCDVAL1 (14,cont_2);
@@ -2806,19 +2805,13 @@ void main(void) {
                 PORTEbits.RE0=1;
                 PORTEbits.RE1=1;
                 PORTEbits.RE2=0;
-
                 spiWrite(0x00);
-
                 C=spiRead();
-
                 LCDVAL1 (6,bro);
                 LCDVAL1 (7,TEM_U);
                 LCDVAL1 (8,TEM_T);
                 LCDVAL1 (9,TEM_H);
-
-
                 CONT();
-
                 Z=0;
                 break;
         }
@@ -2872,8 +2865,8 @@ void CONV (void){
     }
 void CONT (void){
     R=C;
-    if (R>=26){
-        c =(((R-26)*150)/77);
+    if (R>=65){
+        c =(((R-65)*150)/190);
         TEM_U=(c/100);
         TEM_T=(c-(TEM_U*100))/10;
         TEM_H=(c-(TEM_U*100)-(TEM_T*10));
@@ -2881,7 +2874,7 @@ void CONT (void){
         bro=20;
     }
     else{
-        c=-((c-26)*55)/27;
+        c=-((R-65)*55)/65;
         TEM_U=(c/100);
         TEM_T=(c-(TEM_U*100))/10;
         TEM_H=(c-(TEM_U*100)-(TEM_T*10));
@@ -2895,6 +2888,7 @@ void CONVET_cont (void){
     cont_3=((cont)-(cont_1*100)-(cont_2*10));
     }
 void CONV_AS (void){
+
     POT1_Uas=(POT1_U+0x30);
     POT1_Tas=(POT1_T+0x30);
     POT1_Has=(POT1_H+0x30);
@@ -2906,6 +2900,7 @@ void CONV_AS (void){
     TEM_HAS=(TEM_H+0X30);
     }
 void send (void){
+
     switch (z){
         case 0:
             TXREG = POT1_Uas;
