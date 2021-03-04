@@ -1,5 +1,6 @@
 #define RXD2 16
 #define TXD2 17
+char timedata; 
 
 void setup() {
   // Note the format for setting a serial port is as follows: Serial2.begin(baud-rate, protocol, RX pin, TX pin);

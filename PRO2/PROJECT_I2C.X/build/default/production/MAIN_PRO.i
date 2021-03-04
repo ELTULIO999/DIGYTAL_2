@@ -19,10 +19,8 @@
 #pragma config FCMEN = OFF
 #pragma config LVP = OFF
 
-
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-
 
 
 
@@ -2507,7 +2505,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 20 "MAIN_PRO.c" 2
+# 18 "MAIN_PRO.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2642,7 +2640,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 21 "MAIN_PRO.c" 2
+# 19 "MAIN_PRO.c" 2
 
 # 1 "./EUSART.h" 1
 
@@ -2650,7 +2648,7 @@ typedef uint16_t uintptr_t;
 
 void SET_RXT (void);
 void SET_TXR (void);
-# 22 "MAIN_PRO.c" 2
+# 20 "MAIN_PRO.c" 2
 
 # 1 "./Oscilador.h" 1
 
@@ -2660,7 +2658,7 @@ void SET_TXR (void);
 # 4 "./Oscilador.h" 2
 
 void initOsc (uint8_t IRCF);
-# 23 "MAIN_PRO.c" 2
+# 21 "MAIN_PRO.c" 2
 
 # 1 "./I2C.h" 1
 
@@ -2709,7 +2707,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 24 "MAIN_PRO.c" 2
+# 22 "MAIN_PRO.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2808,29 +2806,43 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 25 "MAIN_PRO.c" 2
-# 35 "MAIN_PRO.c"
-void Setup(void);
-void send (void);
+# 23 "MAIN_PRO.c" 2
+# 33 "MAIN_PRO.c"
+void Setup (void);
+void send_hora (void);
+void send_dia (void);
 void CONVET (void);
 void CARGA (void);
+void REV (void);
+void forced_send (void);
 
 
 
-uint8_t L,z,r;
-uint8_t GET;
+uint8_t L,Z,z,r,C,q;
+uint8_t GET,GET2,temp;
 uint8_t mou,day,hor,min,seg,week,year;
 uint8_t mou_u,day_u,hor_u,min_u,seg_u ;
 uint8_t mou_t,day_t,hor_t,min_t,seg_t ;
-# 55 "MAIN_PRO.c"
+
+
+
+
+
 void __attribute__((picinterrupt(("")))) isr(void){
-    if (PIR1bits.TXIF == 1){
-        send();
-        PIE1bits.TXIE = 0;}
+
+        if (PIR1bits.TXIF ==1){
+            send_hora();
+            PIE1bits.TXIE = 0;
+            PIR1bits.TXIF =0;}
+
+
+
+
 
     if (PIR1bits.RCIF==1){
-        GET=RCREG;
-        PIR1bits.RCIF=0;
+        temp= RCREG ;
+        forced_send();
+        PIR1bits.RCIF=1;
     }
     if (INTCONbits.TMR0IF==1){
         TMR0=236;
@@ -2850,12 +2862,11 @@ void main(void) {
     SET_RXT();
     SET_TXR();
     I2C_Master_Init(100000);
-    CARGA();
 
 
 
     while (1){
-
+        PORTAbits.RA0=0;
         I2C_Master_Start();
         I2C_Master_Write(0xD0);
         I2C_Master_Write(0x00);
@@ -2870,6 +2881,7 @@ void main(void) {
         year= I2C_Master_Read(0);
         I2C_Master_Stop();
         CONVET();
+
     }}
 
 
@@ -2933,67 +2945,96 @@ void CARGA (void){
     I2C_Master_Write(0x21);
     I2C_Master_Stop();
 }
-
-void send (void){
-    switch (z){
+void REV (void){
+    switch (Z){
         case 0:
-            TXREG = (seg_t+0x30);
-            z++;
+            GET=RCREG;
+            if (GET==3){PORTAbits.RA0=1;}
+            if (GET==4){PORTAbits.RA0=0;}
+            Z++;
+            PIR1bits.RCIF=0;
             break;
         case 1:
-            TXREG = (seg_u+0x30);
-            z++;
+            GET2=RCREG;
+            if (GET2==5){PORTAbits.RA1=1;}
+            if (GET2==6){PORTAbits.RA1=0;}
+            Z=0;
+            PIR1bits.RCIF=0;
             break;
-        case 2:
-            TXREG = (0x2E);
-            z++;
-            break;
-        case 3:
-            TXREG = (min_t+0x30);
-            z++;
-            break;
-        case 4:
-            TXREG = (min_u +0x30);
-            z++;
-            break;
-        case 5:
-            TXREG = (0x2E);
-            z++;
-            break;
-        case 6:
+    }
+}
+void forced_send (void){
+    if (temp == 1){C=1;
+    PORTAbits.RA0=0;
+    }
+
+
+
+}
+void send_hora (void){
+    switch (z){
+        case 0:
             TXREG = (hor_t+0x30);
             z++;
             break;
-        case 7:
+        case 1:
             TXREG = (hor_u+0x30);
             z++;
             break;
+        case 2:
+            TXREG = (0x3A);
+            z++;
+            break;
+        case 3:
+             TXREG = (min_t+0x30);
+             z++;
+            break;
+        case 4:
+             TXREG = (min_u +0x30);
+            z++;
+            break;
+        case 5:
+            TXREG = (0x3A);
+            z++;
+            break;
+        case 6:
+              TXREG = (seg_t+0x30);
+             z++;
+            break;
+        case 7:
+              TXREG = (seg_u+0x30);
+             z++;
+            break;
         case 8:
-            TXREG = (0x2E);
-            z++;
-            break;
-        case 9:
-             TXREG = (day_t+0x30);
-             z++;
-            break;
-        case 10:
-             TXREG = (day_u+0x30);
-            z++;
-            break;
-        case 11:
-            TXREG = (0x2E);
-            z++;
-            break;
-        case 12:
-              TXREG = (mou_t+0x30);
-             z++;
-            break;
-        case 13:
-              TXREG = (mou_u+0x30);
-             z++;
-            break;
-        case 14:
              TXREG = (0x0A);
              z=0;
+             C=0;
+            break;
+    }}
+void send_dia (void){
+    switch (q){
+        case 0:
+            TXREG = (mou_t+0x30);
+            q++;
+            break;
+        case 1:
+            TXREG = (mou_u+0x30);
+            q++;
+            break;
+        case 2:
+            TXREG = (0x2F);
+            q++;
+            break;
+        case 3:
+            TXREG = (day_t+0x30);
+            q++;
+            break;
+        case 4:
+            TXREG = (day_u+0x30 );
+            q++;
+            break;
+        case 5:
+            TXREG = (0x0A);
+            q=0;
             break;
     }}
