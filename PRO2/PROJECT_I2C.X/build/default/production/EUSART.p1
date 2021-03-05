@@ -330,35 +330,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 "10
 [; ;EUSART.c: 10:     SPBRGH=0;
 [e = _SPBRGH -> -> 0 `i `uc ]
-"11
-[; ;EUSART.c: 11: }
+"12
+[; ;EUSART.c: 12: }
 [e :UE 138 ]
 }
-"12
-[; ;EUSART.c: 12: void SET_RXT (void) {
+"13
+[; ;EUSART.c: 13: void SET_RXT (void) {
 [v _SET_RXT `(v ~T0 @X0 1 ef ]
 {
 [e :U _SET_RXT ]
 [f ]
-"13
-[; ;EUSART.c: 13:     RCSTAbits.SPEN=1;
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
 "14
-[; ;EUSART.c: 14:     RCSTAbits.CREN=1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+[; ;EUSART.c: 14:     RCSTAbits.SPEN=1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
 "15
-[; ;EUSART.c: 15:     RCSTAbits.FERR=0;
-[e = . . _RCSTAbits 0 2 -> -> 0 `i `uc ]
+[; ;EUSART.c: 15:     RCSTAbits.CREN=1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
 "16
-[; ;EUSART.c: 16:     RCSTAbits.OERR=0;
-[e = . . _RCSTAbits 0 1 -> -> 0 `i `uc ]
+[; ;EUSART.c: 16:     RCSTAbits.FERR=0;
+[e = . . _RCSTAbits 0 2 -> -> 0 `i `uc ]
 "17
-[; ;EUSART.c: 17:     RCSTAbits.RX9=0;
-[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+[; ;EUSART.c: 17:     RCSTAbits.OERR=0;
+[e = . . _RCSTAbits 0 1 -> -> 0 `i `uc ]
 "18
-[; ;EUSART.c: 18:     PIE1bits.RCIE=1;
-[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+[; ;EUSART.c: 18:     RCSTAbits.RX9=0;
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
 "19
-[; ;EUSART.c: 19: }
+[; ;EUSART.c: 19:     PIE1bits.RCIE=1;
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+"20
+[; ;EUSART.c: 20: }
 [e :UE 139 ]
 }
