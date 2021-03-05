@@ -534,449 +534,443 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _b -> -> 1 `i `uc ]
 }
 [e :U 146 ]
-"69
-[; ;MAIN_PRO.c: 69:     }
+"68
+[; ;MAIN_PRO.c: 68:     }
 }
 [e :U 140 ]
-"70
-[; ;MAIN_PRO.c: 70:     if (INTCONbits.TMR0IF==1){
+"69
+[; ;MAIN_PRO.c: 69:     if (INTCONbits.TMR0IF==1){
 [e $ ! == -> . . _INTCONbits 1 1 `i -> 1 `i 147  ]
 {
-"71
-[; ;MAIN_PRO.c: 71:         TMR0=236;
+"70
+[; ;MAIN_PRO.c: 70:         TMR0=236;
 [e = _TMR0 -> -> 236 `i `uc ]
-"72
-[; ;MAIN_PRO.c: 72:         INTCONbits.TMR0IF=0;
+"71
+[; ;MAIN_PRO.c: 71:         INTCONbits.TMR0IF=0;
 [e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
-"73
-[; ;MAIN_PRO.c: 73:         r++;
+"72
+[; ;MAIN_PRO.c: 72:         r++;
 [e ++ _r -> -> 1 `i `uc ]
-"74
-[; ;MAIN_PRO.c: 74:         if(r==10){
+"73
+[; ;MAIN_PRO.c: 73:         if(r==10){
 [e $ ! == -> _r `i -> 10 `i 148  ]
 {
-"75
-[; ;MAIN_PRO.c: 75:             r=0;
+"74
+[; ;MAIN_PRO.c: 74:             r=0;
 [e = _r -> -> 0 `i `uc ]
-"76
-[; ;MAIN_PRO.c: 76:         }
+"75
+[; ;MAIN_PRO.c: 75:         }
 }
 [e :U 148 ]
-"77
-[; ;MAIN_PRO.c: 77:     }
+"76
+[; ;MAIN_PRO.c: 76:     }
 }
 [e :U 147 ]
-"78
-[; ;MAIN_PRO.c: 78: }
+"77
+[; ;MAIN_PRO.c: 77: }
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"82
-[; ;MAIN_PRO.c: 82: void main(void) {
+"81
+[; ;MAIN_PRO.c: 81: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"83
-[; ;MAIN_PRO.c: 83:     Setup();
+"82
+[; ;MAIN_PRO.c: 82:     Setup();
 [e ( _Setup ..  ]
-"84
-[; ;MAIN_PRO.c: 84:     PORTAbits.RA0=1;
+"83
+[; ;MAIN_PRO.c: 83:     PORTAbits.RA0=1;
 [e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-"85
-[; ;MAIN_PRO.c: 85:     PORTAbits.RA1=1;
+"84
+[; ;MAIN_PRO.c: 84:     PORTAbits.RA1=1;
 [e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
-"86
-[; ;MAIN_PRO.c: 86:     PORTAbits.RA0=0;
+"85
+[; ;MAIN_PRO.c: 85:     PORTAbits.RA0=0;
 [e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-"87
-[; ;MAIN_PRO.c: 87:     PORTAbits.RA1=0;
+"86
+[; ;MAIN_PRO.c: 86:     PORTAbits.RA1=0;
 [e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
-"88
-[; ;MAIN_PRO.c: 88:     I2C_Master_Init(100000);
+"87
+[; ;MAIN_PRO.c: 87:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"92
-[; ;MAIN_PRO.c: 92:     while (1){
+"91
+[; ;MAIN_PRO.c: 91:     while (1){
 [e :U 151 ]
 {
-"94
-[; ;MAIN_PRO.c: 94:         I2C_Master_Start();
+"92
+[; ;MAIN_PRO.c: 92:         I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"95
-[; ;MAIN_PRO.c: 95:         I2C_Master_Write(0xD0);
+"93
+[; ;MAIN_PRO.c: 93:         I2C_Master_Write(0xD0);
 [e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
-"96
-[; ;MAIN_PRO.c: 96:         I2C_Master_Write(0x00);
+"94
+[; ;MAIN_PRO.c: 94:         I2C_Master_Write(0x00);
 [e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
-"97
-[; ;MAIN_PRO.c: 97:         I2C_Master_RepeatedStart();
+"95
+[; ;MAIN_PRO.c: 95:         I2C_Master_RepeatedStart();
 [e ( _I2C_Master_RepeatedStart ..  ]
-"98
-[; ;MAIN_PRO.c: 98:         I2C_Master_Write(0xD1);
+"96
+[; ;MAIN_PRO.c: 96:         I2C_Master_Write(0xD1);
 [e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
-"99
-[; ;MAIN_PRO.c: 99:         seg = I2C_Master_Read(1);
+"97
+[; ;MAIN_PRO.c: 97:         seg = I2C_Master_Read(1);
 [e = _seg -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
-"100
-[; ;MAIN_PRO.c: 100:         min = I2C_Master_Read(1);
+"98
+[; ;MAIN_PRO.c: 98:         min = I2C_Master_Read(1);
 [e = _min -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
-"101
-[; ;MAIN_PRO.c: 101:         hor = I2C_Master_Read(1);
+"99
+[; ;MAIN_PRO.c: 99:         hor = I2C_Master_Read(1);
 [e = _hor -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
-"102
-[; ;MAIN_PRO.c: 102:         week = I2C_Master_Read(1);
+"100
+[; ;MAIN_PRO.c: 100:         week = I2C_Master_Read(1);
 [e = _week -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
-"103
-[; ;MAIN_PRO.c: 103:         day = I2C_Master_Read(1);
+"101
+[; ;MAIN_PRO.c: 101:         day = I2C_Master_Read(1);
 [e = _day -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
-"104
-[; ;MAIN_PRO.c: 104:         mou = I2C_Master_Read(1);
+"102
+[; ;MAIN_PRO.c: 102:         mou = I2C_Master_Read(1);
 [e = _mou -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
-"105
-[; ;MAIN_PRO.c: 105:         year= I2C_Master_Read(0);
+"103
+[; ;MAIN_PRO.c: 103:         year= I2C_Master_Read(0);
 [e = _year -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"106
-[; ;MAIN_PRO.c: 106:         I2C_Master_Stop();
+"104
+[; ;MAIN_PRO.c: 104:         I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"107
-[; ;MAIN_PRO.c: 107:         CONVET();
+"105
+[; ;MAIN_PRO.c: 105:         CONVET();
 [e ( _CONVET ..  ]
-"108
-[; ;MAIN_PRO.c: 108:         forced_send();
+"106
+[; ;MAIN_PRO.c: 106:         forced_send();
 [e ( _forced_send ..  ]
-"112
-[; ;MAIN_PRO.c: 112:     }}
+"107
+[; ;MAIN_PRO.c: 107:     }}
 }
 [e :U 150 ]
 [e $U 151  ]
 [e :U 152 ]
 [e :UE 149 ]
 }
-"116
-[; ;MAIN_PRO.c: 116: void Setup(void){
+"111
+[; ;MAIN_PRO.c: 111: void Setup(void){
 [v _Setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _Setup ]
 [f ]
-"118
-[; ;MAIN_PRO.c: 118:     PORTA = 0;
+"113
+[; ;MAIN_PRO.c: 113:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"119
-[; ;MAIN_PRO.c: 119:     PORTB = 0;
+"114
+[; ;MAIN_PRO.c: 114:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"120
-[; ;MAIN_PRO.c: 120:     PORTC = 0;
+"115
+[; ;MAIN_PRO.c: 115:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"121
-[; ;MAIN_PRO.c: 121:     PORTD = 0;
+"116
+[; ;MAIN_PRO.c: 116:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"122
-[; ;MAIN_PRO.c: 122:     PORTE = 0;
+"117
+[; ;MAIN_PRO.c: 117:     PORTE = 0;
 [e = _PORTE -> -> 0 `i `uc ]
-"124
-[; ;MAIN_PRO.c: 124:     TRISA = 0B00000000;
+"119
+[; ;MAIN_PRO.c: 119:     TRISA = 0B00000000;
 [e = _TRISA -> -> 0 `i `uc ]
-"125
-[; ;MAIN_PRO.c: 125:     TRISB = 0B00000000;
+"120
+[; ;MAIN_PRO.c: 120:     TRISB = 0B00000000;
 [e = _TRISB -> -> 0 `i `uc ]
-"126
-[; ;MAIN_PRO.c: 126:     TRISC = 0B00000000;
+"121
+[; ;MAIN_PRO.c: 121:     TRISC = 0B00000000;
 [e = _TRISC -> -> 0 `i `uc ]
-"127
-[; ;MAIN_PRO.c: 127:     TRISD = 0B00000000;
+"122
+[; ;MAIN_PRO.c: 122:     TRISD = 0B00000000;
 [e = _TRISD -> -> 0 `i `uc ]
-"128
-[; ;MAIN_PRO.c: 128:     TRISE = 0B0000;
+"123
+[; ;MAIN_PRO.c: 123:     TRISE = 0B0000;
 [e = _TRISE -> -> 0 `i `uc ]
-"130
-[; ;MAIN_PRO.c: 130:     ANSEL = 0B00000000;
+"125
+[; ;MAIN_PRO.c: 125:     ANSEL = 0B00000000;
 [e = _ANSEL -> -> 0 `i `uc ]
-"131
-[; ;MAIN_PRO.c: 131:     ANSELH = 0B00000000;
+"126
+[; ;MAIN_PRO.c: 126:     ANSELH = 0B00000000;
 [e = _ANSELH -> -> 0 `i `uc ]
-"134
-[; ;MAIN_PRO.c: 134:     INTCONbits.GIE=1;
+"129
+[; ;MAIN_PRO.c: 129:     INTCONbits.GIE=1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"135
-[; ;MAIN_PRO.c: 135:     INTCONbits.PEIE=1;
+"130
+[; ;MAIN_PRO.c: 130:     INTCONbits.PEIE=1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"136
-[; ;MAIN_PRO.c: 136:     INTCONbits.TMR0IE=1;
+"131
+[; ;MAIN_PRO.c: 131:     INTCONbits.TMR0IE=1;
 [e = . . _INTCONbits 1 3 -> -> 1 `i `uc ]
-"137
-[; ;MAIN_PRO.c: 137:     INTCONbits.TMR0IF=0;
+"132
+[; ;MAIN_PRO.c: 132:     INTCONbits.TMR0IF=0;
 [e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
-"139
-[; ;MAIN_PRO.c: 139:     PIE1bits.RCIE = 1;
+"134
+[; ;MAIN_PRO.c: 134:     PIE1bits.RCIE = 1;
 [e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
-"140
-[; ;MAIN_PRO.c: 140:     OPTION_REGbits.T0CS=0;
+"135
+[; ;MAIN_PRO.c: 135:     OPTION_REGbits.T0CS=0;
 [e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
-"141
-[; ;MAIN_PRO.c: 141:     OPTION_REGbits.T0SE=0;
+"136
+[; ;MAIN_PRO.c: 136:     OPTION_REGbits.T0SE=0;
 [e = . . _OPTION_REGbits 0 2 -> -> 0 `i `uc ]
-"142
-[; ;MAIN_PRO.c: 142:     OPTION_REGbits.PSA=0;
+"137
+[; ;MAIN_PRO.c: 137:     OPTION_REGbits.PSA=0;
 [e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
-"144
-[; ;MAIN_PRO.c: 144:     OPTION_REGbits.PS0=1;
+"139
+[; ;MAIN_PRO.c: 139:     OPTION_REGbits.PS0=1;
 [e = . . _OPTION_REGbits 1 0 -> -> 1 `i `uc ]
-"145
-[; ;MAIN_PRO.c: 145:     OPTION_REGbits.PS1=1;
+"140
+[; ;MAIN_PRO.c: 140:     OPTION_REGbits.PS1=1;
 [e = . . _OPTION_REGbits 1 1 -> -> 1 `i `uc ]
-"146
-[; ;MAIN_PRO.c: 146:     OPTION_REGbits.PS2=1;
+"141
+[; ;MAIN_PRO.c: 141:     OPTION_REGbits.PS2=1;
 [e = . . _OPTION_REGbits 1 2 -> -> 1 `i `uc ]
-"148
-[; ;MAIN_PRO.c: 148:     initOsc(6);
+"143
+[; ;MAIN_PRO.c: 143:     initOsc(6);
 [e ( _initOsc (1 -> -> 6 `i `uc ]
-"149
-[; ;MAIN_PRO.c: 149:     SET_RXT();
+"144
+[; ;MAIN_PRO.c: 144:     SET_RXT();
 [e ( _SET_RXT ..  ]
-"150
-[; ;MAIN_PRO.c: 150:     SET_TXR();
+"145
+[; ;MAIN_PRO.c: 145:     SET_TXR();
 [e ( _SET_TXR ..  ]
-"151
-[; ;MAIN_PRO.c: 151: }
+"146
+[; ;MAIN_PRO.c: 146: }
 [e :UE 153 ]
 }
-"155
-[; ;MAIN_PRO.c: 155: void CONVET (void){
+"150
+[; ;MAIN_PRO.c: 150: void CONVET (void){
 [v _CONVET `(v ~T0 @X0 1 ef ]
 {
 [e :U _CONVET ]
 [f ]
-"156
-[; ;MAIN_PRO.c: 156:     mou_t = ((mou & 0b00010000)>>4);
+"151
+[; ;MAIN_PRO.c: 151:     mou_t = ((mou & 0b00010000)>>4);
 [e = _mou_t -> >> & -> _mou `i -> 16 `i -> 4 `i `uc ]
-"157
-[; ;MAIN_PRO.c: 157:     mou_u = (mou & 0b00001111);
+"152
+[; ;MAIN_PRO.c: 152:     mou_u = (mou & 0b00001111);
 [e = _mou_u -> & -> _mou `i -> 15 `i `uc ]
-"158
-[; ;MAIN_PRO.c: 158:     day_t = ((day & 0b00110000)>>4);
+"153
+[; ;MAIN_PRO.c: 153:     day_t = ((day & 0b00110000)>>4);
 [e = _day_t -> >> & -> _day `i -> 48 `i -> 4 `i `uc ]
-"159
-[; ;MAIN_PRO.c: 159:     day_u = (day & 0b00001111);
+"154
+[; ;MAIN_PRO.c: 154:     day_u = (day & 0b00001111);
 [e = _day_u -> & -> _day `i -> 15 `i `uc ]
-"160
-[; ;MAIN_PRO.c: 160:     hor_t = ((hor & 0b00110000)>>4);
+"155
+[; ;MAIN_PRO.c: 155:     hor_t = ((hor & 0b00110000)>>4);
 [e = _hor_t -> >> & -> _hor `i -> 48 `i -> 4 `i `uc ]
-"161
-[; ;MAIN_PRO.c: 161:     hor_u = (hor & 0b00001111);
+"156
+[; ;MAIN_PRO.c: 156:     hor_u = (hor & 0b00001111);
 [e = _hor_u -> & -> _hor `i -> 15 `i `uc ]
-"162
-[; ;MAIN_PRO.c: 162:     min_t = ((min & 0b01110000)>>4);
+"157
+[; ;MAIN_PRO.c: 157:     min_t = ((min & 0b01110000)>>4);
 [e = _min_t -> >> & -> _min `i -> 112 `i -> 4 `i `uc ]
-"163
-[; ;MAIN_PRO.c: 163:     min_u = (min & 0b00001111);
+"158
+[; ;MAIN_PRO.c: 158:     min_u = (min & 0b00001111);
 [e = _min_u -> & -> _min `i -> 15 `i `uc ]
-"164
-[; ;MAIN_PRO.c: 164:     seg_t = ((seg & 0b01110000)>>4);
+"159
+[; ;MAIN_PRO.c: 159:     seg_t = ((seg & 0b01110000)>>4);
 [e = _seg_t -> >> & -> _seg `i -> 112 `i -> 4 `i `uc ]
-"165
-[; ;MAIN_PRO.c: 165:     seg_u = (seg & 0b00001111);
+"160
+[; ;MAIN_PRO.c: 160:     seg_u = (seg & 0b00001111);
 [e = _seg_u -> & -> _seg `i -> 15 `i `uc ]
-"167
-[; ;MAIN_PRO.c: 167: }
+"162
+[; ;MAIN_PRO.c: 162: }
 [e :UE 154 ]
 }
-"168
-[; ;MAIN_PRO.c: 168: void CARGA (void){
+"163
+[; ;MAIN_PRO.c: 163: void CARGA (void){
 [v _CARGA `(v ~T0 @X0 1 ef ]
 {
 [e :U _CARGA ]
 [f ]
-"169
-[; ;MAIN_PRO.c: 169:     I2C_Master_Start();
+"164
+[; ;MAIN_PRO.c: 164:     I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"170
-[; ;MAIN_PRO.c: 170:     I2C_Master_Write(0xD0);
+"165
+[; ;MAIN_PRO.c: 165:     I2C_Master_Write(0xD0);
 [e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
-"171
-[; ;MAIN_PRO.c: 171:     I2C_Master_Write(0);
+"166
+[; ;MAIN_PRO.c: 166:     I2C_Master_Write(0);
 [e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
-"172
-[; ;MAIN_PRO.c: 172:     I2C_Master_Write(0b00000000);
+"167
+[; ;MAIN_PRO.c: 167:     I2C_Master_Write(0b00000000);
 [e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
-"173
-[; ;MAIN_PRO.c: 173:     I2C_Master_Write(0x35);
+"168
+[; ;MAIN_PRO.c: 168:     I2C_Master_Write(0x35);
 [e ( _I2C_Master_Write (1 -> -> 53 `i `ui ]
-"174
-[; ;MAIN_PRO.c: 174:     I2C_Master_Write(0x01);
+"169
+[; ;MAIN_PRO.c: 169:     I2C_Master_Write(0x01);
 [e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
-"175
-[; ;MAIN_PRO.c: 175:     I2C_Master_Write(1);
+"170
+[; ;MAIN_PRO.c: 170:     I2C_Master_Write(1);
 [e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
-"176
-[; ;MAIN_PRO.c: 176:     I2C_Master_Write(0x01);
+"171
+[; ;MAIN_PRO.c: 171:     I2C_Master_Write(0x01);
 [e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
-"177
-[; ;MAIN_PRO.c: 177:     I2C_Master_Write(0x03);
+"172
+[; ;MAIN_PRO.c: 172:     I2C_Master_Write(0x03);
 [e ( _I2C_Master_Write (1 -> -> 3 `i `ui ]
-"178
-[; ;MAIN_PRO.c: 178:     I2C_Master_Write(0x21);
+"173
+[; ;MAIN_PRO.c: 173:     I2C_Master_Write(0x21);
 [e ( _I2C_Master_Write (1 -> -> 33 `i `ui ]
-"179
-[; ;MAIN_PRO.c: 179:     I2C_Master_Stop();
+"174
+[; ;MAIN_PRO.c: 174:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"180
-[; ;MAIN_PRO.c: 180: }
+"175
+[; ;MAIN_PRO.c: 175: }
 [e :UE 155 ]
 }
-"181
-[; ;MAIN_PRO.c: 181: void first_send (void){
+"176
+[; ;MAIN_PRO.c: 176: void first_send (void){
 [v _first_send `(v ~T0 @X0 1 ef ]
 {
 [e :U _first_send ]
 [f ]
-"182
-[; ;MAIN_PRO.c: 182:     if (b==1){
+"177
+[; ;MAIN_PRO.c: 177:     if (b==1){
 [e $ ! == -> _b `i -> 1 `i 157  ]
 {
-"183
-[; ;MAIN_PRO.c: 183:         send_seg();
+"178
+[; ;MAIN_PRO.c: 178:         send_seg();
 [e ( _send_seg ..  ]
-"184
-[; ;MAIN_PRO.c: 184:         send_min();
+"179
+[; ;MAIN_PRO.c: 179:         send_min();
 [e ( _send_min ..  ]
-"185
-[; ;MAIN_PRO.c: 185:         send_hora();
+"180
+[; ;MAIN_PRO.c: 180:         send_hora();
 [e ( _send_hora ..  ]
-"186
-[; ;MAIN_PRO.c: 186:     }
+"181
+[; ;MAIN_PRO.c: 181:     }
 }
 [e :U 157 ]
-"187
-[; ;MAIN_PRO.c: 187: }
+"182
+[; ;MAIN_PRO.c: 182: }
 [e :UE 156 ]
 }
-"188
-[; ;MAIN_PRO.c: 188: void forced_send (void){
+"183
+[; ;MAIN_PRO.c: 183: void forced_send (void){
 [v _forced_send `(v ~T0 @X0 1 ef ]
 {
 [e :U _forced_send ]
 [f ]
-"189
-[; ;MAIN_PRO.c: 189:     if (C==1){
-[e $ ! == -> _C `i -> 1 `i 159  ]
+"184
+[; ;MAIN_PRO.c: 184:     if (C==1 && M <=19 && H < 1199){
+[e $ ! && && == -> _C `i -> 1 `i <= -> _M `i -> 19 `i < _H -> -> 1199 `i `ui 159  ]
 {
-"190
-[; ;MAIN_PRO.c: 190:         send_seg();
+"185
+[; ;MAIN_PRO.c: 185:         send_seg();
 [e ( _send_seg ..  ]
-"191
-[; ;MAIN_PRO.c: 191:         M++;
+"186
+[; ;MAIN_PRO.c: 186:         M++;}
 [e ++ _M -> -> 1 `i `uc ]
-"192
-[; ;MAIN_PRO.c: 192:         if (M==19){
-[e $ ! == -> _M `i -> 19 `i 160  ]
-{
-"193
-[; ;MAIN_PRO.c: 193:             send_min();
-[e ( _send_min ..  ]
-"194
-[; ;MAIN_PRO.c: 194:             M=0;
-[e = _M -> -> 0 `i `uc ]
-"195
-[; ;MAIN_PRO.c: 195:             H++;
-[e ++ _H -> -> 1 `i `ui ]
-"196
-[; ;MAIN_PRO.c: 196:             if (H==1199){
-[e $ ! == _H -> -> 1199 `i `ui 161  ]
-{
-"197
-[; ;MAIN_PRO.c: 197:                 send_hora();
-[e ( _send_hora ..  ]
-"198
-[; ;MAIN_PRO.c: 198:                 H=0;
-[e = _H -> -> 0 `i `ui ]
-"199
-[; ;MAIN_PRO.c: 199:             }
-}
-[e :U 161 ]
-"201
-[; ;MAIN_PRO.c: 201:         }
-}
-[e :U 160 ]
-"203
-[; ;MAIN_PRO.c: 203:     }
 }
 [e :U 159 ]
-"204
-[; ;MAIN_PRO.c: 204: }
+"187
+[; ;MAIN_PRO.c: 187:     if (C==1 && M==19 && H < 1199){
+[e $ ! && && == -> _C `i -> 1 `i == -> _M `i -> 19 `i < _H -> -> 1199 `i `ui 160  ]
+{
+"188
+[; ;MAIN_PRO.c: 188:         send_min();
+[e ( _send_min ..  ]
+"189
+[; ;MAIN_PRO.c: 189:         M=0;
+[e = _M -> -> 0 `i `uc ]
+"190
+[; ;MAIN_PRO.c: 190:         H++;}
+[e ++ _H -> -> 1 `i `ui ]
+}
+[e :U 160 ]
+"191
+[; ;MAIN_PRO.c: 191:     if (C==1 && M==19 && H==1199){
+[e $ ! && && == -> _C `i -> 1 `i == -> _M `i -> 19 `i == _H -> -> 1199 `i `ui 161  ]
+{
+"192
+[; ;MAIN_PRO.c: 192:         send_hora();
+[e ( _send_hora ..  ]
+"193
+[; ;MAIN_PRO.c: 193:         H=0;}
+[e = _H -> -> 0 `i `ui ]
+}
+[e :U 161 ]
+"195
+[; ;MAIN_PRO.c: 195: }
 [e :UE 158 ]
 }
-"205
-[; ;MAIN_PRO.c: 205: void send_hora (void){
+"196
+[; ;MAIN_PRO.c: 196: void send_hora (void){
 [v _send_hora `(v ~T0 @X0 1 ef ]
 {
 [e :U _send_hora ]
 [f ]
-"206
-[; ;MAIN_PRO.c: 206:     switch (h){
+"198
+[; ;MAIN_PRO.c: 198:     switch (h){
 [e $U 164  ]
 {
-"207
-[; ;MAIN_PRO.c: 207:         case 0:
+"199
+[; ;MAIN_PRO.c: 199:         case 0:
 [e :U 165 ]
-"208
-[; ;MAIN_PRO.c: 208:             TXREG = (hor_t+0x30);
+"200
+[; ;MAIN_PRO.c: 200:             TXREG = (hor_t+0x30);
 [e = _TXREG -> + -> _hor_t `i -> 48 `i `uc ]
-"209
-[; ;MAIN_PRO.c: 209:             while(!TXSTAbits.TRMT);
+"201
+[; ;MAIN_PRO.c: 201:             while(!TXSTAbits.TRMT);
 [e $U 166  ]
 [e :U 167 ]
 [e :U 166 ]
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 167  ]
 [e :U 168 ]
-"210
-[; ;MAIN_PRO.c: 210:             h++;
+"202
+[; ;MAIN_PRO.c: 202:             h++;
 [e ++ _h -> -> 1 `i `uc ]
-"211
-[; ;MAIN_PRO.c: 211:             break;
+"203
+[; ;MAIN_PRO.c: 203:             break;
 [e $U 163  ]
-"212
-[; ;MAIN_PRO.c: 212:         case 1:
+"204
+[; ;MAIN_PRO.c: 204:         case 1:
 [e :U 169 ]
-"213
-[; ;MAIN_PRO.c: 213:             TXREG = (hor_u+0x30);
+"205
+[; ;MAIN_PRO.c: 205:             TXREG = (hor_u+0x30);
 [e = _TXREG -> + -> _hor_u `i -> 48 `i `uc ]
-"214
-[; ;MAIN_PRO.c: 214:             while(!TXSTAbits.TRMT);
+"206
+[; ;MAIN_PRO.c: 206:             while(!TXSTAbits.TRMT);
 [e $U 170  ]
 [e :U 171 ]
 [e :U 170 ]
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 171  ]
 [e :U 172 ]
-"215
-[; ;MAIN_PRO.c: 215:             h++;
+"207
+[; ;MAIN_PRO.c: 207:             h++;
 [e ++ _h -> -> 1 `i `uc ]
-"216
-[; ;MAIN_PRO.c: 216:             break;
+"208
+[; ;MAIN_PRO.c: 208:             break;
 [e $U 163  ]
-"217
-[; ;MAIN_PRO.c: 217:         case 2:
+"209
+[; ;MAIN_PRO.c: 209:         case 2:
 [e :U 173 ]
-"218
-[; ;MAIN_PRO.c: 218:             TXREG = (0x3A);
+"210
+[; ;MAIN_PRO.c: 210:             TXREG = (0x3A);
 [e = _TXREG -> -> 58 `i `uc ]
-"219
-[; ;MAIN_PRO.c: 219:             while(!TXSTAbits.TRMT);
+"211
+[; ;MAIN_PRO.c: 211:             while(!TXSTAbits.TRMT);
 [e $U 174  ]
 [e :U 175 ]
 [e :U 174 ]
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 175  ]
 [e :U 176 ]
-"220
-[; ;MAIN_PRO.c: 220:             h=0;
+"212
+[; ;MAIN_PRO.c: 212:             h=0;
 [e = _h -> -> 0 `i `uc ]
-"221
-[; ;MAIN_PRO.c: 221:             C=0;
+"213
+[; ;MAIN_PRO.c: 213:             C=0;
 [e = _C -> -> 0 `i `uc ]
-"222
-[; ;MAIN_PRO.c: 222:             break;
+"214
+[; ;MAIN_PRO.c: 214:             break;
 [e $U 163  ]
-"223
-[; ;MAIN_PRO.c: 223:     }}
+"215
+[; ;MAIN_PRO.c: 215:     }}
 }
 [e $U 163  ]
 [e :U 164 ]
@@ -987,78 +981,78 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 163 ]
 [e :UE 162 ]
 }
-"224
-[; ;MAIN_PRO.c: 224: void send_min (void){
+"216
+[; ;MAIN_PRO.c: 216: void send_min (void){
 [v _send_min `(v ~T0 @X0 1 ef ]
 {
 [e :U _send_min ]
 [f ]
-"225
-[; ;MAIN_PRO.c: 225:     switch (m){
+"218
+[; ;MAIN_PRO.c: 218:     switch (m){
 [e $U 179  ]
 {
-"226
-[; ;MAIN_PRO.c: 226:         case 0:
+"219
+[; ;MAIN_PRO.c: 219:         case 0:
 [e :U 180 ]
-"227
-[; ;MAIN_PRO.c: 227:              TXREG = (min_t+0x30);
+"220
+[; ;MAIN_PRO.c: 220:              TXREG = (min_t+0x30);
 [e = _TXREG -> + -> _min_t `i -> 48 `i `uc ]
-"228
-[; ;MAIN_PRO.c: 228:              while(!TXSTAbits.TRMT);
+"221
+[; ;MAIN_PRO.c: 221:              while(!TXSTAbits.TRMT);
 [e $U 181  ]
 [e :U 182 ]
 [e :U 181 ]
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 182  ]
 [e :U 183 ]
-"229
-[; ;MAIN_PRO.c: 229:              m++;
+"222
+[; ;MAIN_PRO.c: 222:              m++;
 [e ++ _m -> -> 1 `i `uc ]
-"230
-[; ;MAIN_PRO.c: 230:             break;
+"223
+[; ;MAIN_PRO.c: 223:             break;
 [e $U 178  ]
-"231
-[; ;MAIN_PRO.c: 231:         case 1:
+"224
+[; ;MAIN_PRO.c: 224:         case 1:
 [e :U 184 ]
-"232
-[; ;MAIN_PRO.c: 232:              TXREG = (min_u +0x30);
+"225
+[; ;MAIN_PRO.c: 225:              TXREG = (min_u +0x30);
 [e = _TXREG -> + -> _min_u `i -> 48 `i `uc ]
-"233
-[; ;MAIN_PRO.c: 233:              while(!TXSTAbits.TRMT);
+"226
+[; ;MAIN_PRO.c: 226:              while(!TXSTAbits.TRMT);
 [e $U 185  ]
 [e :U 186 ]
 [e :U 185 ]
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 186  ]
 [e :U 187 ]
-"234
-[; ;MAIN_PRO.c: 234:              m++;
+"227
+[; ;MAIN_PRO.c: 227:              m++;
 [e ++ _m -> -> 1 `i `uc ]
-"235
-[; ;MAIN_PRO.c: 235:             break;
+"228
+[; ;MAIN_PRO.c: 228:             break;
 [e $U 178  ]
-"236
-[; ;MAIN_PRO.c: 236:         case 2:
+"229
+[; ;MAIN_PRO.c: 229:         case 2:
 [e :U 188 ]
-"237
-[; ;MAIN_PRO.c: 237:             TXREG = (0x3A);
+"230
+[; ;MAIN_PRO.c: 230:             TXREG = (0x3A);
 [e = _TXREG -> -> 58 `i `uc ]
-"238
-[; ;MAIN_PRO.c: 238:             while(!TXSTAbits.TRMT);
+"231
+[; ;MAIN_PRO.c: 231:             while(!TXSTAbits.TRMT);
 [e $U 189  ]
 [e :U 190 ]
 [e :U 189 ]
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 190  ]
 [e :U 191 ]
-"239
-[; ;MAIN_PRO.c: 239:             m=0;
+"232
+[; ;MAIN_PRO.c: 232:             m=0;
 [e = _m -> -> 0 `i `uc ]
-"240
-[; ;MAIN_PRO.c: 240:             C=0;
+"233
+[; ;MAIN_PRO.c: 233:             C=0;
 [e = _C -> -> 0 `i `uc ]
-"241
-[; ;MAIN_PRO.c: 241:             break;
+"234
+[; ;MAIN_PRO.c: 234:             break;
 [e $U 178  ]
-"242
-[; ;MAIN_PRO.c: 242:     }}
+"235
+[; ;MAIN_PRO.c: 235:     }}
 }
 [e $U 178  ]
 [e :U 179 ]
@@ -1069,78 +1063,78 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 178 ]
 [e :UE 177 ]
 }
-"244
-[; ;MAIN_PRO.c: 244: void send_seg (void){
+"237
+[; ;MAIN_PRO.c: 237: void send_seg (void){
 [v _send_seg `(v ~T0 @X0 1 ef ]
 {
 [e :U _send_seg ]
 [f ]
-"245
-[; ;MAIN_PRO.c: 245:     switch (s){
+"239
+[; ;MAIN_PRO.c: 239:     switch (s){
 [e $U 194  ]
 {
-"246
-[; ;MAIN_PRO.c: 246:         case 0:
+"240
+[; ;MAIN_PRO.c: 240:         case 0:
 [e :U 195 ]
-"247
-[; ;MAIN_PRO.c: 247:             TXREG = (seg_t+0x30);
+"241
+[; ;MAIN_PRO.c: 241:             TXREG = (seg_t+0x30);
 [e = _TXREG -> + -> _seg_t `i -> 48 `i `uc ]
-"248
-[; ;MAIN_PRO.c: 248:             while(!TXSTAbits.TRMT);
+"242
+[; ;MAIN_PRO.c: 242:             while(!TXSTAbits.TRMT);
 [e $U 196  ]
 [e :U 197 ]
 [e :U 196 ]
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 197  ]
 [e :U 198 ]
-"249
-[; ;MAIN_PRO.c: 249:             s++;
+"243
+[; ;MAIN_PRO.c: 243:             s++;
 [e ++ _s -> -> 1 `i `uc ]
-"250
-[; ;MAIN_PRO.c: 250:             break;
+"244
+[; ;MAIN_PRO.c: 244:             break;
 [e $U 193  ]
-"251
-[; ;MAIN_PRO.c: 251:         case 1:
+"245
+[; ;MAIN_PRO.c: 245:         case 1:
 [e :U 199 ]
-"252
-[; ;MAIN_PRO.c: 252:             TXREG = (seg_u+0x30);
+"246
+[; ;MAIN_PRO.c: 246:             TXREG = (seg_u+0x30);
 [e = _TXREG -> + -> _seg_u `i -> 48 `i `uc ]
-"253
-[; ;MAIN_PRO.c: 253:             while(!TXSTAbits.TRMT);
+"247
+[; ;MAIN_PRO.c: 247:             while(!TXSTAbits.TRMT);
 [e $U 200  ]
 [e :U 201 ]
 [e :U 200 ]
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 201  ]
 [e :U 202 ]
-"254
-[; ;MAIN_PRO.c: 254:             s++;
+"248
+[; ;MAIN_PRO.c: 248:             s++;
 [e ++ _s -> -> 1 `i `uc ]
-"255
-[; ;MAIN_PRO.c: 255:             break;
+"249
+[; ;MAIN_PRO.c: 249:             break;
 [e $U 193  ]
-"256
-[; ;MAIN_PRO.c: 256:         case 2:
+"250
+[; ;MAIN_PRO.c: 250:         case 2:
 [e :U 203 ]
-"257
-[; ;MAIN_PRO.c: 257:             TXREG = (0x3A);
+"251
+[; ;MAIN_PRO.c: 251:             TXREG = (0x3A);
 [e = _TXREG -> -> 58 `i `uc ]
-"258
-[; ;MAIN_PRO.c: 258:             while(!TXSTAbits.TRMT);
+"252
+[; ;MAIN_PRO.c: 252:             while(!TXSTAbits.TRMT);
 [e $U 204  ]
 [e :U 205 ]
 [e :U 204 ]
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 205  ]
 [e :U 206 ]
-"259
-[; ;MAIN_PRO.c: 259:             s=0;
+"253
+[; ;MAIN_PRO.c: 253:             s=0;
 [e = _s -> -> 0 `i `uc ]
-"260
-[; ;MAIN_PRO.c: 260:             C=0;
+"254
+[; ;MAIN_PRO.c: 254:             C=0;
 [e = _C -> -> 0 `i `uc ]
-"261
-[; ;MAIN_PRO.c: 261:             break;
+"255
+[; ;MAIN_PRO.c: 255:             break;
 [e $U 193  ]
-"262
-[; ;MAIN_PRO.c: 262:     }}
+"256
+[; ;MAIN_PRO.c: 256:     }}
 }
 [e $U 193  ]
 [e :U 194 ]
@@ -1151,121 +1145,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 193 ]
 [e :UE 192 ]
 }
-"263
-[; ;MAIN_PRO.c: 263: void send_dia (void){
-[v _send_dia `(v ~T0 @X0 1 ef ]
-{
-[e :U _send_dia ]
-[f ]
-"264
-[; ;MAIN_PRO.c: 264:     switch (q){
-[e $U 209  ]
-{
-"265
-[; ;MAIN_PRO.c: 265:         case 0:
-[e :U 210 ]
-"266
-[; ;MAIN_PRO.c: 266:             TXREG = (mou_t+0x30);
-[e = _TXREG -> + -> _mou_t `i -> 48 `i `uc ]
-"267
-[; ;MAIN_PRO.c: 267:             q++;
-[e ++ _q -> -> 1 `i `uc ]
-"268
-[; ;MAIN_PRO.c: 268:             break;
-[e $U 208  ]
-"269
-[; ;MAIN_PRO.c: 269:         case 1:
-[e :U 211 ]
-"270
-[; ;MAIN_PRO.c: 270:             TXREG = (mou_u+0x30);
-[e = _TXREG -> + -> _mou_u `i -> 48 `i `uc ]
-"271
-[; ;MAIN_PRO.c: 271:             q++;
-[e ++ _q -> -> 1 `i `uc ]
-"272
-[; ;MAIN_PRO.c: 272:             break;
-[e $U 208  ]
-"273
-[; ;MAIN_PRO.c: 273:         case 2:
-[e :U 212 ]
-"274
-[; ;MAIN_PRO.c: 274:             TXREG = (0x2F);
-[e = _TXREG -> -> 47 `i `uc ]
-"275
-[; ;MAIN_PRO.c: 275:             q++;
-[e ++ _q -> -> 1 `i `uc ]
-"276
-[; ;MAIN_PRO.c: 276:             break;
-[e $U 208  ]
-"277
-[; ;MAIN_PRO.c: 277:         case 3:
-[e :U 213 ]
-"278
-[; ;MAIN_PRO.c: 278:             TXREG = (day_t+0x30);
-[e = _TXREG -> + -> _day_t `i -> 48 `i `uc ]
-"279
-[; ;MAIN_PRO.c: 279:             q++;
-[e ++ _q -> -> 1 `i `uc ]
-"280
-[; ;MAIN_PRO.c: 280:             break;
-[e $U 208  ]
-"281
-[; ;MAIN_PRO.c: 281:         case 4:
-[e :U 214 ]
-"282
-[; ;MAIN_PRO.c: 282:             TXREG = (day_u+0x30 );
-[e = _TXREG -> + -> _day_u `i -> 48 `i `uc ]
-"283
-[; ;MAIN_PRO.c: 283:             q++;
-[e ++ _q -> -> 1 `i `uc ]
 "284
-[; ;MAIN_PRO.c: 284:             break;
-[e $U 208  ]
-"285
-[; ;MAIN_PRO.c: 285:         case 5:
-[e :U 215 ]
-"286
-[; ;MAIN_PRO.c: 286:             TXREG = (0x0A);
-[e = _TXREG -> -> 10 `i `uc ]
-"287
-[; ;MAIN_PRO.c: 287:             q=0;
-[e = _q -> -> 0 `i `uc ]
-"288
-[; ;MAIN_PRO.c: 288:             break;
-[e $U 208  ]
-"289
-[; ;MAIN_PRO.c: 289:     }}
-}
-[e $U 208  ]
-[e :U 209 ]
-[e [\ -> _q `i , $ -> 0 `i 210
- , $ -> 1 `i 211
- , $ -> 2 `i 212
- , $ -> 3 `i 213
- , $ -> 4 `i 214
- , $ -> 5 `i 215
- 208 ]
-[e :U 208 ]
-[e :UE 207 ]
-}
-"290
-[; ;MAIN_PRO.c: 290: void UART_write(char data){
+[; ;MAIN_PRO.c: 284: void UART_write(char data){
 [v _UART_write `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _UART_write ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"291
-[; ;MAIN_PRO.c: 291:     TXREG=data;
+"285
+[; ;MAIN_PRO.c: 285:     TXREG=data;
 [e = _TXREG -> _data `uc ]
-"292
-[; ;MAIN_PRO.c: 292:     while(!TXSTAbits.TRMT);
-[e $U 217  ]
-[e :U 218 ]
-[e :U 217 ]
-[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 218  ]
-[e :U 219 ]
-"293
-[; ;MAIN_PRO.c: 293: }
-[e :UE 216 ]
+"286
+[; ;MAIN_PRO.c: 286:     while(!TXSTAbits.TRMT);
+[e $U 208  ]
+[e :U 209 ]
+[e :U 208 ]
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 209  ]
+[e :U 210 ]
+"287
+[; ;MAIN_PRO.c: 287: }
+[e :UE 207 ]
 }

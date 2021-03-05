@@ -2843,7 +2843,6 @@ void __attribute__((picinterrupt(("")))) isr(void){
         if (temp == 0X33){PORTAbits.RA0=1;}
         if (temp == 0X34){C=1;}
         if (temp == 0X35){b=1;}
-
     }
     if (INTCONbits.TMR0IF==1){
         TMR0=236;
@@ -2868,7 +2867,6 @@ void main(void) {
 
 
     while (1){
-
         I2C_Master_Start();
         I2C_Master_Write(0xD0);
         I2C_Master_Write(0x00);
@@ -2884,9 +2882,6 @@ void main(void) {
         I2C_Master_Stop();
         CONVET();
         forced_send();
-
-
-
     }}
 
 
@@ -2964,23 +2959,20 @@ void first_send (void){
     }
 }
 void forced_send (void){
-    if (C==1){
+    if (C==1 && M <=19 && H < 1199){
         send_seg();
-        M++;
-        if (M==19){
-            send_min();
-            M=0;
-            H++;
-            if (H==1199){
-                send_hora();
-                H=0;
-            }
+        M++;}
+    if (C==1 && M==19 && H < 1199){
+        send_min();
+        M=0;
+        H++;}
+    if (C==1 && M==19 && H==1199){
+        send_hora();
+        H=0;}
 
-        }
-
-    }
 }
 void send_hora (void){
+
     switch (h){
         case 0:
             TXREG = (hor_t+0x30);
@@ -3000,6 +2992,7 @@ void send_hora (void){
             break;
     }}
 void send_min (void){
+
     switch (m){
         case 0:
              TXREG = (min_t+0x30);
@@ -3020,6 +3013,7 @@ void send_min (void){
     }}
 
 void send_seg (void){
+
     switch (s){
         case 0:
             TXREG = (seg_t+0x30);
@@ -3038,33 +3032,7 @@ void send_seg (void){
             C=0;
             break;
     }}
-void send_dia (void){
-    switch (q){
-        case 0:
-            TXREG = (mou_t+0x30);
-            q++;
-            break;
-        case 1:
-            TXREG = (mou_u+0x30);
-            q++;
-            break;
-        case 2:
-            TXREG = (0x2F);
-            q++;
-            break;
-        case 3:
-            TXREG = (day_t+0x30);
-            q++;
-            break;
-        case 4:
-            TXREG = (day_u+0x30 );
-            q++;
-            break;
-        case 5:
-            TXREG = (0x0A);
-            q=0;
-            break;
-    }}
+# 284 "MAIN_PRO.c"
 void UART_write(char data){
     TXREG=data;
     while(!TXSTAbits.TRMT);
