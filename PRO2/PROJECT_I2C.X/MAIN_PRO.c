@@ -44,12 +44,14 @@ void UART_write(char data);
 //******************************************************************************
 // Variables
 //******************************************************************************
-uint8_t L,b,Z,z,r,C,q,h,m,s,M;
-uint8_t temp;
+uint8_t L,Z,z,r,C,q,h,m,s,M;
+uint8_t b,g;
+uint8_t temp,empty;
 uint16_t H;
 uint8_t mou,day,hor,min,seg,week,year;
 uint8_t mou_u,day_u,hor_u,min_u,seg_u ;
 uint8_t mou_t,day_t,hor_t,min_t,seg_t ;
+uint8_t segundos ;
 //******************************************************************************
 
 //******************************************************************************
@@ -63,8 +65,11 @@ void __interrupt ( ) isr(void){
         if (temp == 0X31){PORTAbits.RA1=1;} //turn on led1
         if (temp == 0X32){PORTAbits.RA0=0;} //turn off led2
         if (temp == 0X33){PORTAbits.RA0=1;} //turn on led2
-        if (temp == 0X34){C=1;}
-        if (temp == 0X35){b=1;} 
+        if (temp == 0X34){C=1;} //seg
+        if (temp == 0X35){b=1;} //min
+        if (temp == 0X36){g=1;} //hora
+        if (temp == 0X37){empty=1;} //hora
+
     }
     if (INTCONbits.TMR0IF==1){//este if esta revisando la bandera del timer0
         TMR0=236;             //le cargamos un valor al timer0
@@ -103,7 +108,7 @@ void main(void) {
         year=  I2C_Master_Read(0);
         I2C_Master_Stop();
         CONVET();
-        forced_send();
+        first_send();
     }}
 //******************************************************************************
 // Configuración
@@ -157,8 +162,7 @@ void CONVET (void){
     min_t = ((min & 0b01110000)>>4);
     min_u = (min  & 0b00001111);
     seg_t = ((seg & 0b01110000)>>4);
-    seg_u = (seg  & 0b00001111);
-    
+    seg_u = (seg  & 0b00001111);    
 }
 void CARGA (void){
     I2C_Master_Start();
@@ -174,11 +178,9 @@ void CARGA (void){
     I2C_Master_Stop();//finalizo comunicacion
 }
 void first_send (void){
-    if (b==1){
-        send_seg();
-        send_min();
-        send_hora();
-    }
+    if (C==1){send_seg();}
+    if (b==1){send_min();}
+    if (g==1){send_hora();}
 }
 void forced_send (void){
     if (C==1 && M <=19 && H < 1199){ //this makes sure to send  only seg 
@@ -207,10 +209,10 @@ void send_hora (void){
             h++;
             break;
         case 2:
-            TXREG = (0x3A);
+            TXREG = (0x03);
             while(!TXSTAbits.TRMT);
             h=0;
-            C=0;
+            g=0;
             break;
     }}
 void send_min (void){
@@ -227,10 +229,10 @@ void send_min (void){
              m++;
             break;
         case 2:
-            TXREG = (0x3A);
+            TXREG = (0x03);
             while(!TXSTAbits.TRMT);
             m=0;
-            C=0;
+            b=0;
             break;
     }}
             
@@ -245,10 +247,12 @@ void send_seg (void){
         case 1:
             TXREG = (seg_u+0x30);
             while(!TXSTAbits.TRMT);
-            s++;
+            //s++;
+            s=0;
+            C=0;
             break;
         case 2:
-            TXREG = (0x3A);
+            TXREG = (0x03);
             while(!TXSTAbits.TRMT);
             s=0;
             C=0;

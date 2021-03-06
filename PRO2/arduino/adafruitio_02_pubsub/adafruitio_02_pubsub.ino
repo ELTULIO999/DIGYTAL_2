@@ -6,6 +6,8 @@ char segundos[2];
 char minutos[2];
 char horas [2];
 
+int flag;
+
 /************************ Example Starts Here *******************************/
 // this int will hold the current count for our sketch
 
@@ -18,7 +20,6 @@ AdafruitIO_Feed *push = io.feed("push");
 AdafruitIO_Feed *push2 = io.feed("push2");
 
 void setup() {
-  // start the serial connection
   Serial.begin(9600);
   Serial2.begin(9600);
   Serial.print("Connecting to Adafruit IO");
@@ -38,13 +39,26 @@ void setup() {
 }
 void loop() {
   io.run();
-//  if(flag==1 && cont==1)
   Serial2.write(0X34);
   Serial2.readBytesUntil(0x3A,segundos,3);
-  delay (3000);
+  delay (2200);
   seg -> save(segundos);
-  Serial.print("sending -> ");
+  Serial.print("sending_s -> ");
   Serial.println(segundos);
+
+  Serial2.write(0X35);
+    Serial2.readBytesUntil(0x3A,minutos,3);
+  delay (2200);
+  minu -> save(minutos);
+  Serial.print("sending_m -> ");
+  Serial.println(minutos);
+  
+  Serial2.write(0X36);
+  Serial2.readBytesUntil(0x3A,horas,3);
+  delay (2200);
+  hora -> save(horas);
+  Serial.print("sending_h -> ");
+  Serial.println(horas);
     
 
 }
@@ -58,6 +72,6 @@ void handleMessage2(AdafruitIO_Data *data) {
    
    if (data -> toString()== "On"){Serial2.write(0X33);}
    if (data -> toString()== "OFF"){Serial2.write(0X32);}
-  Serial.print("received <- ");
+  Serial.print("received2 <- ");
   Serial.println(data->value());
 }
