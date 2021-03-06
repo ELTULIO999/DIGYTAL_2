@@ -19,7 +19,6 @@
 #pragma config FCMEN = OFF
 #pragma config LVP = OFF
 
-
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
 
@@ -2506,7 +2505,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 19 "MAIN_PRO.c" 2
+# 18 "MAIN_PRO.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2641,7 +2640,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 20 "MAIN_PRO.c" 2
+# 19 "MAIN_PRO.c" 2
 
 # 1 "./EUSART.h" 1
 
@@ -2649,7 +2648,7 @@ typedef uint16_t uintptr_t;
 
 void SET_RXT (void);
 void SET_TXR (void);
-# 21 "MAIN_PRO.c" 2
+# 20 "MAIN_PRO.c" 2
 
 # 1 "./Oscilador.h" 1
 
@@ -2659,7 +2658,7 @@ void SET_TXR (void);
 # 4 "./Oscilador.h" 2
 
 void initOsc (uint8_t IRCF);
-# 22 "MAIN_PRO.c" 2
+# 21 "MAIN_PRO.c" 2
 
 # 1 "./I2C.h" 1
 
@@ -2708,7 +2707,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 23 "MAIN_PRO.c" 2
+# 22 "MAIN_PRO.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2807,8 +2806,11 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 24 "MAIN_PRO.c" 2
-# 34 "MAIN_PRO.c"
+# 23 "MAIN_PRO.c" 2
+
+
+
+
 void Setup (void);
 void send_hora (void);
 void send_min (void);
@@ -2816,16 +2818,13 @@ void send_seg (void);
 void send_dia (void);
 void CONVET (void);
 void CARGA (void);
-void forced_send (void);
 void first_send (void);
 void UART_write(char data);
 
 
 
-uint8_t L,Z,z,r,C,q,h,m,s,M;
-uint8_t b,g;
-uint8_t temp,empty;
-uint16_t H;
+uint8_t L,Z,z,r,C,q,h,m,s,M,b,g;
+uint8_t temp;
 uint8_t mou,day,hor,min,seg,week,year;
 uint8_t mou_u,day_u,hor_u,min_u,seg_u ;
 uint8_t mou_t,day_t,hor_t,min_t,seg_t ;
@@ -2833,21 +2832,17 @@ uint8_t segundos ;
 
 
 
-
-
 void __attribute__((picinterrupt(("")))) isr(void){
     if (PIR1bits.RCIF==1){
         temp = 0;
         temp = RCREG;
-        if (temp == 0X30){PORTAbits.RA1=0;}
-        if (temp == 0X31){PORTAbits.RA1=1;}
-        if (temp == 0X32){PORTAbits.RA0=0;}
-        if (temp == 0X33){PORTAbits.RA0=1;}
+        if (temp == 0X30){PORTAbits.RA0=0;}
+        if (temp == 0X31){PORTAbits.RA0=1;}
+        if (temp == 0X32){PORTAbits.RA1=0;}
+        if (temp == 0X33){PORTAbits.RA1=1;}
         if (temp == 0X34){C=1;}
         if (temp == 0X35){b=1;}
         if (temp == 0X36){g=1;}
-        if (temp == 0X37){empty=1;}
-
     }
     if (INTCONbits.TMR0IF==1){
         TMR0=236;
@@ -2872,6 +2867,7 @@ void main(void) {
 
 
     while (1){
+
         I2C_Master_Start();
         I2C_Master_Write(0xD0);
         I2C_Master_Write(0x00);
@@ -2913,7 +2909,6 @@ void Setup(void){
     INTCONbits.PEIE=1;
     INTCONbits.TMR0IE=1;
     INTCONbits.TMR0IF=0;
-
     PIE1bits.RCIE = 1;
     OPTION_REGbits.T0CS=0;
     OPTION_REGbits.T0SE=0;
@@ -2960,19 +2955,6 @@ void first_send (void){
     if (b==1){send_min();}
     if (g==1){send_hora();}
 }
-void forced_send (void){
-    if (C==1 && M <=19 && H < 1199){
-        send_seg();
-        M++;}
-    if (C==1 && M==19 && H < 1199){
-        send_min();
-        M=0;
-        H++;}
-    if (C==1 && M==19 && H==1199){
-        send_hora();
-        H=0;}
-
-}
 void send_hora (void){
 
     switch (h){
@@ -2987,7 +2969,7 @@ void send_hora (void){
             h++;
             break;
         case 2:
-            TXREG = (0x03);
+            TXREG = (0x3A);
             while(!TXSTAbits.TRMT);
             h=0;
             g=0;
@@ -3013,7 +2995,6 @@ void send_min (void){
             b=0;
             break;
     }}
-
 void send_seg (void){
 
     switch (s){
@@ -3025,7 +3006,7 @@ void send_seg (void){
         case 1:
             TXREG = (seg_u+0x30);
             while(!TXSTAbits.TRMT);
-
+            s++;
             s=0;
             C=0;
             break;
@@ -3036,8 +3017,7 @@ void send_seg (void){
             C=0;
             break;
     }}
-# 288 "MAIN_PRO.c"
-void UART_write(char data){
+void UART_write (char data){
     TXREG=data;
     while(!TXSTAbits.TRMT);
 }
