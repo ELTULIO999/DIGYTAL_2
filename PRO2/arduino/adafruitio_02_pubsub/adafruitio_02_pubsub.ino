@@ -81,7 +81,6 @@ void handleMessage(AdafruitIO_Data *data) {
     Serial.println(data->value());
 }
 void handleMessage2(AdafruitIO_Data *data) { 
-   
    if (data -> toString()== "ON"){Serial2.write(0X33);}
    if (data -> toString()== "Off"){Serial2.write(0X32);}
   Serial.print("received2 <- ");

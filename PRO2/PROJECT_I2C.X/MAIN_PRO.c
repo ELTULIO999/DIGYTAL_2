@@ -17,7 +17,7 @@
 #define _XTAL_FREQ 4000000
 #include <xc.h>
 #include <stdint.h>
-#include "EUSART.h"
+#include "EUSART.h
 #include "Oscilador.h"
 #include "I2C.h"
 #include "stdio.h"
