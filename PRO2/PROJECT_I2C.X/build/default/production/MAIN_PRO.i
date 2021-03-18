@@ -2642,13 +2642,6 @@ typedef int16_t intptr_t;
 typedef uint16_t uintptr_t;
 # 19 "MAIN_PRO.c" 2
 
-# 1 "./EUSART.h" 1
-
-
-
-void SET_RXT (void);
-void SET_TXR (void);
-# 20 "MAIN_PRO.c" 2
 
 # 1 "./Oscilador.h" 1
 
@@ -2919,8 +2912,7 @@ void Setup(void){
     OPTION_REGbits.PS2=1;
 
     initOsc(6);
-    SET_RXT();
-    SET_TXR();
+
 }
 
 
@@ -2969,7 +2961,7 @@ void send_hora (void){
             h++;
             break;
         case 2:
-            TXREG = (0x3A);
+            TXREG = (0x03);
             while(!TXSTAbits.TRMT);
             h=0;
             g=0;

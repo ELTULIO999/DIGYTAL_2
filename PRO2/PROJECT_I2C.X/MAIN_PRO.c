@@ -17,7 +17,7 @@
 #define _XTAL_FREQ 4000000
 #include <xc.h>
 #include <stdint.h>
-#include "EUSART.h
+
 #include "Oscilador.h"
 #include "I2C.h"
 #include "stdio.h"
@@ -132,8 +132,7 @@ void Setup(void){
     OPTION_REGbits.PS2=1;
 //set up of libery  -----------------------------------------------------------   
     initOsc(6);
-    SET_RXT(); //set up to send data 
-    SET_TXR(); //set up to recive  
+
 }
 //******************************************************************************
 // funciones 
@@ -182,7 +181,7 @@ void send_hora   (void){
             h++;
             break;
         case 2:
-            TXREG = (0x3A);
+            TXREG = (0x03);
             while(!TXSTAbits.TRMT);
             h=0;
             g=0;

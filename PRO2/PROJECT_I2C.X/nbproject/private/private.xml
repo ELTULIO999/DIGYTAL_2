@@ -5,7 +5,7 @@
             <url>MAIN_PRO.c</url>
             <bookmark id="1">
                 <name/>
-                <line>164</line>
+                <line>163</line>
                 <key/>
             </bookmark>
         </file>
@@ -13,6 +13,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/julit/MPLABXProjects/DIGYTAL_2/PRO2/PROJECT_I2C.X/MAIN_PRO.c</file>
+            <file>file:/C:/Users/julit/MPLABXProjects/DIGYTAL_2/PRO2/PROJECT_I2C.X/EUSART.c</file>
         </group>
     </open-files>
 </project-private>

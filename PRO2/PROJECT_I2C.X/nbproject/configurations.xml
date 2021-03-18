@@ -4,7 +4,6 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>EUSART.h</itemPath>
       <itemPath>Oscilador.h</itemPath>
       <itemPath>I2C.h</itemPath>
     </logicalFolder>
@@ -16,7 +15,6 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>MAIN_PRO.c</itemPath>
-      <itemPath>EUSART.c</itemPath>
       <itemPath>Oscilador.c</itemPath>
       <itemPath>I2C.c</itemPath>
     </logicalFolder>
@@ -159,7 +157,6 @@
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
-        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>

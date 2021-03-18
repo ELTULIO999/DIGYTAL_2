@@ -11,36 +11,34 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\julit\AppData\Local\Temp\sqk0.o
+$C:\Users\julit\AppData\Local\Temp\siac.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\PROJECT_I2C.X.production.o
 cinit CODE 0 F F 10 2
-text1 CODE 0 3AB 3AB 25 2
+text1 CODE 0 3A1 3A1 25 2
 text2 CODE 0 24F 24F 46 2
 text3 CODE 0 295 295 3E 2
 text4 CODE 0 2D3 2D3 3E 2
-text5 CODE 0 34B 34B 30 2
+text5 CODE 0 37B 37B 26 2
 text6 CODE 0 19B 19B 5C 2
-text7 CODE 0 3D0 3D0 F 2
-text8 CODE 0 3EC 3EC B 2
-text9 CODE 0 3F7 3F7 A 2
-text10 CODE 0 401 401 9 2
-text11 CODE 0 40A 40A 9 2
-text12 CODE 0 413 413 9 2
-text13 CODE 0 37B 37B 30 2
-text14 CODE 0 3DF 3DF D 2
-text15 CODE 0 311 311 3A 2
-text16 CODE 0 D6 D6 68 2
-text17 CODE 0 13E 13E 5D 2
-text18 CODE 0 1F7 1F7 58 2
+text7 CODE 0 3D3 3D3 A 2
+text8 CODE 0 3DD 3DD 9 2
+text9 CODE 0 3E6 3E6 9 2
+text10 CODE 0 3EF 3EF 9 2
+text11 CODE 0 34B 34B 30 2
+text12 CODE 0 3C6 3C6 D 2
+text13 CODE 0 311 311 3A 2
+text14 CODE 0 D6 D6 68 2
+text15 CODE 0 13E 13E 5D 2
+text16 CODE 0 1F7 1F7 58 2
 maintext CODE 0 1F 1F B7 2
 cstackCOMMON COMMON 1 70 70 8 1
 cstackBANK0 BANK0 1 3C 3C 12 1
 intentry CODE 0 4 4 8 2
 bssBANK0 BANK0 1 20 20 1C 1
-clrtext CODE 0 41C 41C 8 2
+clrtext CODE 0 3F8 3F8 8 2
 bssCOMMON COMMON 1 78 78 3 1
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
@@ -58,13 +56,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 424-1FFF 2
+CONST 400-1FFF 2
 ENTRY 3-3 2
-ENTRY 424-1FFF 2
+ENTRY 400-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 424-1FFF 2
+CODE 400-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -72,9 +70,9 @@ SFR3 180-18F 1
 COMMON 7B-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 424-1FFF 2
+STRCODE 400-1FFF 2
 STRING 3-3 2
-STRING 424-1FFF 2
+STRING 400-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -89,125 +87,108 @@ STRING 424-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\PROJECT_I2C.X.production.o
-F cinit CODE >1018:C:\Users\julit\AppData\Local\Temp\sqk0.s
-F cinit CODE >1021:C:\Users\julit\AppData\Local\Temp\sqk0.s
-F cinit CODE >1140:C:\Users\julit\AppData\Local\Temp\sqk0.s
-10 cinit CODE >1141:C:\Users\julit\AppData\Local\Temp\sqk0.s
-11 cinit CODE >1142:C:\Users\julit\AppData\Local\Temp\sqk0.s
-12 cinit CODE >1145:C:\Users\julit\AppData\Local\Temp\sqk0.s
-13 cinit CODE >1146:C:\Users\julit\AppData\Local\Temp\sqk0.s
-14 cinit CODE >1147:C:\Users\julit\AppData\Local\Temp\sqk0.s
-15 cinit CODE >1148:C:\Users\julit\AppData\Local\Temp\sqk0.s
-16 cinit CODE >1149:C:\Users\julit\AppData\Local\Temp\sqk0.s
-1B cinit CODE >1155:C:\Users\julit\AppData\Local\Temp\sqk0.s
-1B cinit CODE >1157:C:\Users\julit\AppData\Local\Temp\sqk0.s
-1C cinit CODE >1158:C:\Users\julit\AppData\Local\Temp\sqk0.s
+F cinit CODE >852:C:\Users\julit\AppData\Local\Temp\siac.s
+F cinit CODE >855:C:\Users\julit\AppData\Local\Temp\siac.s
+F cinit CODE >974:C:\Users\julit\AppData\Local\Temp\siac.s
+10 cinit CODE >975:C:\Users\julit\AppData\Local\Temp\siac.s
+11 cinit CODE >976:C:\Users\julit\AppData\Local\Temp\siac.s
+12 cinit CODE >979:C:\Users\julit\AppData\Local\Temp\siac.s
+13 cinit CODE >980:C:\Users\julit\AppData\Local\Temp\siac.s
+14 cinit CODE >981:C:\Users\julit\AppData\Local\Temp\siac.s
+15 cinit CODE >982:C:\Users\julit\AppData\Local\Temp\siac.s
+16 cinit CODE >983:C:\Users\julit\AppData\Local\Temp\siac.s
+1B cinit CODE >989:C:\Users\julit\AppData\Local\Temp\siac.s
+1B cinit CODE >991:C:\Users\julit\AppData\Local\Temp\siac.s
+1C cinit CODE >992:C:\Users\julit\AppData\Local\Temp\siac.s
 4 intentry CODE >48:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-1F7 text18 CODE >48:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-1F7 text18 CODE >49:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-1FD text18 CODE >50:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-1FE text18 CODE >51:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-202 text18 CODE >52:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-209 text18 CODE >53:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-210 text18 CODE >54:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-217 text18 CODE >55:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-21E text18 CODE >56:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-226 text18 CODE >57:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-22E text18 CODE >58:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-236 text18 CODE >59:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-236 text18 CODE >60:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-23A text18 CODE >61:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-23C text18 CODE >62:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-23D text18 CODE >63:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-241 text18 CODE >64:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-247 text18 CODE >65:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-248 text18 CODE >68:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-13E text17 CODE >141:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-13E text17 CODE >142:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-14D text17 CODE >143:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-152 text17 CODE >144:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-15F text17 CODE >145:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-164 text17 CODE >146:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-171 text17 CODE >147:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-176 text17 CODE >148:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-183 text17 CODE >149:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-188 text17 CODE >150:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-195 text17 CODE >151:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-19A text17 CODE >152:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-D6 text16 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-D6 text16 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-E0 text16 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-E8 text16 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-EA text16 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-EB text16 CODE >17:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-F4 text16 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-F8 text16 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-FC text16 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-105 text16 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-117 text16 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-125 text16 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-126 text16 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-12F text16 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-135 text16 CODE >29:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-13D text16 CODE >30:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-311 text15 CODE >5:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-311 text15 CODE >7:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-315 text15 CODE >8:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-318 text15 CODE >9:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-347 text15 CODE >10:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-348 text15 CODE >11:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-349 text15 CODE >12:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-34A text15 CODE >13:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-3DF text14 CODE >21:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-3DF text14 CODE >23:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-3EB text14 CODE >24:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-37B text13 CODE >63:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-37B text13 CODE >66:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-380 text13 CODE >67:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-383 text13 CODE >68:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-388 text13 CODE >69:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-391 text13 CODE >70:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-396 text13 CODE >71:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-39C text13 CODE >72:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-39F text13 CODE >73:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-3A0 text13 CODE >74:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-3A3 text13 CODE >75:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-3A3 text13 CODE >76:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-3A4 text13 CODE >77:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-3AA text13 CODE >78:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-413 text12 CODE >36:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-413 text12 CODE >38:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-418 text12 CODE >39:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-41B text12 CODE >40:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-40A text11 CODE >28:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-40A text11 CODE >30:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-40F text11 CODE >31:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-412 text11 CODE >32:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-401 text10 CODE >44:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-401 text10 CODE >46:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-406 text10 CODE >47:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-409 text10 CODE >48:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-3F7 text9 CODE >54:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-3F7 text9 CODE >56:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-3FC text9 CODE >57:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-400 text9 CODE >58:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
-3EC text8 CODE >13:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3EC text8 CODE >14:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3EF text8 CODE >15:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3F0 text8 CODE >16:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3F1 text8 CODE >17:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3F2 text8 CODE >18:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3F3 text8 CODE >19:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3F6 text8 CODE >20:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3D0 text7 CODE >3:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3D0 text7 CODE >4:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3D3 text7 CODE >5:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3D4 text7 CODE >6:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3D5 text7 CODE >7:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3D6 text7 CODE >8:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3D9 text7 CODE >9:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3DD text7 CODE >10:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
-3DE text7 CODE >12:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\EUSART.c
+1F7 text16 CODE >48:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+1F7 text16 CODE >49:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+1FD text16 CODE >50:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+1FE text16 CODE >51:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+202 text16 CODE >52:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+209 text16 CODE >53:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+210 text16 CODE >54:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+217 text16 CODE >55:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+21E text16 CODE >56:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+226 text16 CODE >57:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+22E text16 CODE >58:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+236 text16 CODE >59:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+236 text16 CODE >60:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+23A text16 CODE >61:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+23C text16 CODE >62:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+23D text16 CODE >63:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+241 text16 CODE >64:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+247 text16 CODE >65:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+248 text16 CODE >68:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+13E text15 CODE >140:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+13E text15 CODE >141:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+14D text15 CODE >142:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+152 text15 CODE >143:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+15F text15 CODE >144:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+164 text15 CODE >145:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+171 text15 CODE >146:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+176 text15 CODE >147:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+183 text15 CODE >148:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+188 text15 CODE >149:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+195 text15 CODE >150:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+19A text15 CODE >151:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+D6 text14 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+D6 text14 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+E0 text14 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+E8 text14 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+EA text14 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+EB text14 CODE >17:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+F4 text14 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+F8 text14 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+FC text14 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+105 text14 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+117 text14 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+125 text14 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+126 text14 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+12F text14 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+135 text14 CODE >29:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+13D text14 CODE >30:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+311 text13 CODE >5:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+311 text13 CODE >7:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+315 text13 CODE >8:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+318 text13 CODE >9:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+347 text13 CODE >10:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+348 text13 CODE >11:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+349 text13 CODE >12:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+34A text13 CODE >13:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3C6 text12 CODE >21:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3C6 text12 CODE >23:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3D2 text12 CODE >24:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+34B text11 CODE >63:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+34B text11 CODE >66:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+350 text11 CODE >67:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+353 text11 CODE >68:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+358 text11 CODE >69:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+361 text11 CODE >70:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+366 text11 CODE >71:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+36C text11 CODE >72:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+36F text11 CODE >73:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+370 text11 CODE >74:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+373 text11 CODE >75:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+373 text11 CODE >76:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+374 text11 CODE >77:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+37A text11 CODE >78:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3EF text10 CODE >36:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3EF text10 CODE >38:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3F4 text10 CODE >39:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3F7 text10 CODE >40:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3E6 text9 CODE >28:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3E6 text9 CODE >30:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3EB text9 CODE >31:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3EE text9 CODE >32:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3DD text8 CODE >44:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3DD text8 CODE >46:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3E2 text8 CODE >47:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3E5 text8 CODE >48:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3D3 text7 CODE >54:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3D3 text7 CODE >56:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3D8 text7 CODE >57:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
+3DC text7 CODE >58:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\I2C.c
 19B text6 CODE >6:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\Oscilador.c
 19C text6 CODE >7:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\Oscilador.c
 19D text6 CODE >8:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\Oscilador.c
@@ -258,85 +239,83 @@ FC text16 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\_
 1D3 text6 CODE >53:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\Oscilador.c
 1F5 text6 CODE >54:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\Oscilador.c
 1F6 text6 CODE >55:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\Oscilador.c
-34B text5 CODE >103:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-34B text5 CODE >105:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-34E text5 CODE >106:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-34F text5 CODE >107:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-350 text5 CODE >108:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-351 text5 CODE >109:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-352 text5 CODE >111:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-355 text5 CODE >112:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-356 text5 CODE >113:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-357 text5 CODE >114:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-358 text5 CODE >115:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-359 text5 CODE >117:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-35C text5 CODE >118:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-35D text5 CODE >121:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-35E text5 CODE >122:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-35F text5 CODE >123:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-360 text5 CODE >124:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-361 text5 CODE >125:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-364 text5 CODE >126:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-365 text5 CODE >127:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-366 text5 CODE >128:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-367 text5 CODE >130:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-368 text5 CODE >131:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-369 text5 CODE >132:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-36A text5 CODE >134:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-370 text5 CODE >135:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-375 text5 CODE >136:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-37A text5 CODE >137:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2D3 text4 CODE >171:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2D3 text4 CODE >173:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2D4 text4 CODE >175:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2D7 text4 CODE >176:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2DD text4 CODE >177:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2E3 text4 CODE >178:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2E4 text4 CODE >180:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2E7 text4 CODE >181:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2EE text4 CODE >185:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2F0 text4 CODE >186:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2F6 text4 CODE >187:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2F9 text4 CODE >188:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2FA text4 CODE >189:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2FB text4 CODE >190:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-295 text3 CODE >191:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-295 text3 CODE >193:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-296 text3 CODE >195:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-299 text3 CODE >196:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-29F text3 CODE >197:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2A5 text3 CODE >198:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2A6 text3 CODE >200:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2A9 text3 CODE >201:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2B0 text3 CODE >205:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2B2 text3 CODE >206:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2B8 text3 CODE >207:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2BB text3 CODE >208:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2BC text3 CODE >209:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-2BD text3 CODE >210:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-24F text2 CODE >211:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-24F text2 CODE >213:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-250 text2 CODE >215:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-253 text2 CODE >216:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-259 text2 CODE >217:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-25F text2 CODE >218:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-260 text2 CODE >220:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-263 text2 CODE >221:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-269 text2 CODE >222:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-26F text2 CODE >223:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-270 text2 CODE >224:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-271 text2 CODE >225:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-272 text2 CODE >227:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-274 text2 CODE >228:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-27A text2 CODE >229:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-27D text2 CODE >230:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-27E text2 CODE >231:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-27F text2 CODE >232:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-3AB text1 CODE >166:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-3AB text1 CODE >167:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-3B7 text1 CODE >168:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-3C3 text1 CODE >169:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-3CF text1 CODE >170:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+37B text5 CODE >103:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+37B text5 CODE >105:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+37E text5 CODE >106:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+37F text5 CODE >107:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+380 text5 CODE >108:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+381 text5 CODE >109:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+382 text5 CODE >111:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+385 text5 CODE >112:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+386 text5 CODE >113:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+387 text5 CODE >114:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+388 text5 CODE >115:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+389 text5 CODE >117:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+38C text5 CODE >118:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+38D text5 CODE >121:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+38E text5 CODE >122:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+38F text5 CODE >123:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+390 text5 CODE >124:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+391 text5 CODE >125:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+394 text5 CODE >126:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+395 text5 CODE >127:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+396 text5 CODE >128:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+397 text5 CODE >130:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+398 text5 CODE >131:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+399 text5 CODE >132:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+39A text5 CODE >134:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+3A0 text5 CODE >136:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2D3 text4 CODE >170:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2D3 text4 CODE >172:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2D4 text4 CODE >174:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2D7 text4 CODE >175:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2DD text4 CODE >176:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2E3 text4 CODE >177:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2E4 text4 CODE >179:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2E7 text4 CODE >180:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2EE text4 CODE >184:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2F0 text4 CODE >185:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2F6 text4 CODE >186:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2F9 text4 CODE >187:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2FA text4 CODE >188:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2FB text4 CODE >189:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+295 text3 CODE >190:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+295 text3 CODE >192:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+296 text3 CODE >194:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+299 text3 CODE >195:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+29F text3 CODE >196:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2A5 text3 CODE >197:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2A6 text3 CODE >199:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2A9 text3 CODE >200:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2B0 text3 CODE >204:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2B2 text3 CODE >205:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2B8 text3 CODE >206:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2BB text3 CODE >207:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2BC text3 CODE >208:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+2BD text3 CODE >209:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+24F text2 CODE >210:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+24F text2 CODE >212:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+250 text2 CODE >214:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+253 text2 CODE >215:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+259 text2 CODE >216:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+25F text2 CODE >217:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+260 text2 CODE >219:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+263 text2 CODE >220:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+269 text2 CODE >221:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+26F text2 CODE >222:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+270 text2 CODE >223:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+271 text2 CODE >224:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+272 text2 CODE >226:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+274 text2 CODE >227:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+27A text2 CODE >228:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+27D text2 CODE >229:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+27E text2 CODE >230:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+27F text2 CODE >231:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+3A1 text1 CODE >165:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+3A1 text1 CODE >166:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+3AD text1 CODE >167:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+3B9 text1 CODE >168:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
+3C5 text1 CODE >169:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
 1F maintext CODE >72:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
 1F maintext CODE >73:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
 24 maintext CODE >74:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
@@ -359,16 +338,16 @@ B5 maintext CODE >95:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\
 C3 maintext CODE >96:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
 C8 maintext CODE >97:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
 CD maintext CODE >98:C:\Users\julit\MPLABXProjects\DIGYTAL_2\PRO2\PROJECT_I2C.X\MAIN_PRO.c
-41C clrtext CODE >1127:C:\Users\julit\AppData\Local\Temp\sqk0.s
-41C clrtext CODE >1128:C:\Users\julit\AppData\Local\Temp\sqk0.s
-41D clrtext CODE >1129:C:\Users\julit\AppData\Local\Temp\sqk0.s
-41D clrtext CODE >1130:C:\Users\julit\AppData\Local\Temp\sqk0.s
-41E clrtext CODE >1131:C:\Users\julit\AppData\Local\Temp\sqk0.s
-41F clrtext CODE >1132:C:\Users\julit\AppData\Local\Temp\sqk0.s
-420 clrtext CODE >1133:C:\Users\julit\AppData\Local\Temp\sqk0.s
-421 clrtext CODE >1134:C:\Users\julit\AppData\Local\Temp\sqk0.s
-422 clrtext CODE >1135:C:\Users\julit\AppData\Local\Temp\sqk0.s
-423 clrtext CODE >1136:C:\Users\julit\AppData\Local\Temp\sqk0.s
+3F8 clrtext CODE >961:C:\Users\julit\AppData\Local\Temp\siac.s
+3F8 clrtext CODE >962:C:\Users\julit\AppData\Local\Temp\siac.s
+3F9 clrtext CODE >963:C:\Users\julit\AppData\Local\Temp\siac.s
+3F9 clrtext CODE >964:C:\Users\julit\AppData\Local\Temp\siac.s
+3FA clrtext CODE >965:C:\Users\julit\AppData\Local\Temp\siac.s
+3FB clrtext CODE >966:C:\Users\julit\AppData\Local\Temp\siac.s
+3FC clrtext CODE >967:C:\Users\julit\AppData\Local\Temp\siac.s
+3FD clrtext CODE >968:C:\Users\julit\AppData\Local\Temp\siac.s
+3FE clrtext CODE >969:C:\Users\julit\AppData\Local\Temp\siac.s
+3FF clrtext CODE >970:C:\Users\julit\AppData\Local\Temp\siac.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -389,7 +368,7 @@ _m 34 0 BANK0 1 bssBANK0 dist/default/production\PROJECT_I2C.X.production.o
 _r 38 0 BANK0 1 bssBANK0 dist/default/production\PROJECT_I2C.X.production.o
 _s 33 0 BANK0 1 bssBANK0 dist/default/production\PROJECT_I2C.X.production.o
 ___latbits 2 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
-__Hspace_0 424 0 ABS 0 - -
+__Hspace_0 400 0 ABS 0 - -
 __Hspace_1 7B 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
@@ -399,13 +378,13 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\sqk0.o
+___sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\siac.o
 _main 3E 0 CODE 0 maintext dist/default/production\PROJECT_I2C.X.production.o
 _temp 7A 0 COMMON 1 bssCOMMON dist/default/production\PROJECT_I2C.X.production.o
 _week 2C 0 BANK0 1 bssBANK0 dist/default/production\PROJECT_I2C.X.production.o
 _year 2B 0 BANK0 1 bssBANK0 dist/default/production\PROJECT_I2C.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
-start 18 0 CODE 0 init C:\Users\julit\AppData\Local\Temp\sqk0.o
+start 18 0 CODE 0 init C:\Users\julit\AppData\Local\Temp\siac.o
 __size_of_main 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 __size_of___lldiv 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
@@ -413,12 +392,12 @@ _OPTION_REGbits 81 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_first_send 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 I2C_Master_Read@a 73 0 COMMON 1 cstackCOMMON dist/default/production\PROJECT_I2C.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sqk0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sqk0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sqk0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sqk0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sqk0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\sqk0.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\siac.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\siac.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\siac.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\siac.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\siac.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\julit\AppData\Local\Temp\siac.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
@@ -428,24 +407,20 @@ __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELH 189 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 __end_of_send_hora 622 0 CODE 0 text4 dist/default/production\PROJECT_I2C.X.production.o
 __size_of_initOsc 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
-_CONVET 27C 0 CODE 0 text17 dist/default/production\PROJECT_I2C.X.production.o
+_CONVET 27C 0 CODE 0 text15 dist/default/production\PROJECT_I2C.X.production.o
 __size_of_send_hora 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
-__size_of_SET_RXT 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
-__size_of_SET_TXR 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-__end_of___lldiv 27C 0 CODE 0 text16 dist/default/production\PROJECT_I2C.X.production.o
+__end_of___lldiv 27C 0 CODE 0 text14 dist/default/production\PROJECT_I2C.X.production.o
 _send_hora 5A6 0 CODE 0 text4 dist/default/production\PROJECT_I2C.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\sqk0.o
-___stacklo 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\sqk0.o
-_BAUDCTLbits 187 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\siac.o
+___stacklo 0 0 ABS 0 - C:\Users\julit\AppData\Local\Temp\siac.o
 __size_of_Setup 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 ___lldiv@counter 48 0 BANK0 1 cstackBANK0 dist/default/production\PROJECT_I2C.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\PROJECT_I2C.X.production.o
 __size_of_CONVET 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 ___lldiv@dividend 40 0 BANK0 1 cstackBANK0 dist/default/production\PROJECT_I2C.X.production.o
-clear_ram0 838 0 CODE 0 clrtext dist/default/production\PROJECT_I2C.X.production.o
-_SPBRGH 9A 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
+clear_ram0 7F0 0 CODE 0 clrtext dist/default/production\PROJECT_I2C.X.production.o
 __pcstackBANK0 3C 0 BANK0 1 cstackBANK0 dist/default/production\PROJECT_I2C.X.production.o
 _SSPADD 93 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
@@ -453,9 +428,7 @@ _SSPCON 14 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 __end_of_initOsc 3EE 0 CODE 0 text6 dist/default/production\PROJECT_I2C.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\sqk0.o
-__end_of_SET_RXT 7EE 0 CODE 0 text8 dist/default/production\PROJECT_I2C.X.production.o
-__end_of_SET_TXR 7BE 0 CODE 0 text7 dist/default/production\PROJECT_I2C.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\julit\AppData\Local\Temp\siac.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -464,7 +437,7 @@ __Hcinit 3E 0 CODE 0 cinit -
 __Hstack 0 0 STACK 2 stack -
 I2C_Master_Write@d 73 0 COMMON 1 cstackCOMMON dist/default/production\PROJECT_I2C.X.production.o
 __Hmaintext 0 0 ABS 0 maintext -
-_I2C_Master_RepeatedStart 826 0 CODE 0 text12 dist/default/production\PROJECT_I2C.X.production.o
+_I2C_Master_RepeatedStart 7DE 0 CODE 0 text10 dist/default/production\PROJECT_I2C.X.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
 __Lbank0 0 0 ABS 0 bank0 -
@@ -494,56 +467,53 @@ __Ltext 0 0 ABS 0 text -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _GIE 5F 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
-__S0 424 0 ABS 0 - -
+__S0 400 0 ABS 0 - -
 __S1 7B 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 _day 78 0 COMMON 1 bssCOMMON dist/default/production\PROJECT_I2C.X.production.o
 _hor 2F 0 BANK0 1 bssBANK0 dist/default/production\PROJECT_I2C.X.production.o
-_isr 3EE 0 CODE 0 text18 dist/default/production\PROJECT_I2C.X.production.o
+_isr 3EE 0 CODE 0 text16 dist/default/production\PROJECT_I2C.X.production.o
 _min 2E 0 BANK0 1 bssBANK0 dist/default/production\PROJECT_I2C.X.production.o
 _mou 79 0 COMMON 1 bssCOMMON dist/default/production\PROJECT_I2C.X.production.o
 _seg 2D 0 BANK0 1 bssBANK0 dist/default/production\PROJECT_I2C.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
-_I2C_Master_Start 814 0 CODE 0 text11 dist/default/production\PROJECT_I2C.X.production.o
-_I2C_Master_Write 7EE 0 CODE 0 text9 dist/default/production\PROJECT_I2C.X.production.o
-__end_of_isr 49E 0 CODE 0 text18 dist/default/production\PROJECT_I2C.X.production.o
+_I2C_Master_Start 7CC 0 CODE 0 text9 dist/default/production\PROJECT_I2C.X.production.o
+_I2C_Master_Write 7A6 0 CODE 0 text7 dist/default/production\PROJECT_I2C.X.production.o
+__end_of_isr 49E 0 CODE 0 text16 dist/default/production\PROJECT_I2C.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
 ___lldiv@divisor 3C 0 BANK0 1 cstackBANK0 dist/default/production\PROJECT_I2C.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\julit\AppData\Local\Temp\sqk0.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\julit\AppData\Local\Temp\siac.o
 initOsc@IRCF 75 0 COMMON 1 cstackCOMMON dist/default/production\PROJECT_I2C.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __size_of_send_min 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 __size_of_send_seg 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
-_RCSTAbits 18 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
-__ptext10 802 0 CODE 0 text10 dist/default/production\PROJECT_I2C.X.production.o
-__ptext11 814 0 CODE 0 text11 dist/default/production\PROJECT_I2C.X.production.o
-__ptext12 826 0 CODE 0 text12 dist/default/production\PROJECT_I2C.X.production.o
-__ptext13 6F6 0 CODE 0 text13 dist/default/production\PROJECT_I2C.X.production.o
-__ptext14 7BE 0 CODE 0 text14 dist/default/production\PROJECT_I2C.X.production.o
-__ptext15 622 0 CODE 0 text15 dist/default/production\PROJECT_I2C.X.production.o
-__ptext16 1AC 0 CODE 0 text16 dist/default/production\PROJECT_I2C.X.production.o
-__ptext17 27C 0 CODE 0 text17 dist/default/production\PROJECT_I2C.X.production.o
-__ptext18 3EE 0 CODE 0 text18 dist/default/production\PROJECT_I2C.X.production.o
-___lldiv 1AC 0 CODE 0 text16 dist/default/production\PROJECT_I2C.X.production.o
+__ptext10 7DE 0 CODE 0 text10 dist/default/production\PROJECT_I2C.X.production.o
+__ptext11 696 0 CODE 0 text11 dist/default/production\PROJECT_I2C.X.production.o
+__ptext12 78C 0 CODE 0 text12 dist/default/production\PROJECT_I2C.X.production.o
+__ptext13 622 0 CODE 0 text13 dist/default/production\PROJECT_I2C.X.production.o
+__ptext14 1AC 0 CODE 0 text14 dist/default/production\PROJECT_I2C.X.production.o
+__ptext15 27C 0 CODE 0 text15 dist/default/production\PROJECT_I2C.X.production.o
+__ptext16 3EE 0 CODE 0 text16 dist/default/production\PROJECT_I2C.X.production.o
+___lldiv 1AC 0 CODE 0 text14 dist/default/production\PROJECT_I2C.X.production.o
 __pmaintext 3E 0 CODE 0 maintext dist/default/production\PROJECT_I2C.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 __size_of_I2C_Master_RepeatedStart 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 ?_I2C_Master_Read 73 0 COMMON 1 cstackCOMMON dist/default/production\PROJECT_I2C.X.production.o
-_first_send 756 0 CODE 0 text1 dist/default/production\PROJECT_I2C.X.production.o
-__end_of_I2C_Master_Init 696 0 CODE 0 text15 dist/default/production\PROJECT_I2C.X.production.o
-__end_of_I2C_Master_Read 756 0 CODE 0 text13 dist/default/production\PROJECT_I2C.X.production.o
-__end_of_I2C_Master_Stop 814 0 CODE 0 text10 dist/default/production\PROJECT_I2C.X.production.o
-__end_of_I2C_Master_Wait 7D8 0 CODE 0 text14 dist/default/production\PROJECT_I2C.X.production.o
-__end_of_I2C_Master_Start 826 0 CODE 0 text11 dist/default/production\PROJECT_I2C.X.production.o
+_first_send 742 0 CODE 0 text1 dist/default/production\PROJECT_I2C.X.production.o
+__end_of_I2C_Master_Init 696 0 CODE 0 text13 dist/default/production\PROJECT_I2C.X.production.o
+__end_of_I2C_Master_Read 6F6 0 CODE 0 text11 dist/default/production\PROJECT_I2C.X.production.o
+__end_of_I2C_Master_Stop 7CC 0 CODE 0 text8 dist/default/production\PROJECT_I2C.X.production.o
+__end_of_I2C_Master_Wait 7A6 0 CODE 0 text12 dist/default/production\PROJECT_I2C.X.production.o
+__end_of_I2C_Master_Start 7DE 0 CODE 0 text9 dist/default/production\PROJECT_I2C.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__end_of_I2C_Master_Write 802 0 CODE 0 text9 dist/default/production\PROJECT_I2C.X.production.o
+__end_of_I2C_Master_Write 7BA 0 CODE 0 text7 dist/default/production\PROJECT_I2C.X.production.o
 _send_min 52A 0 CODE 0 text3 dist/default/production\PROJECT_I2C.X.production.o
 _send_seg 49E 0 CODE 0 text2 dist/default/production\PROJECT_I2C.X.production.o
 __pbssCOMMON 78 0 COMMON 1 bssCOMMON dist/default/production\PROJECT_I2C.X.production.o
@@ -562,27 +532,25 @@ __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 6 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 _initOsc 336 0 CODE 0 text6 dist/default/production\PROJECT_I2C.X.production.o
-_SET_RXT 7D8 0 CODE 0 text8 dist/default/production\PROJECT_I2C.X.production.o
-_SET_TXR 7A0 0 CODE 0 text7 dist/default/production\PROJECT_I2C.X.production.o
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
-__ptext1 756 0 CODE 0 text1 dist/default/production\PROJECT_I2C.X.production.o
+__ptext1 742 0 CODE 0 text1 dist/default/production\PROJECT_I2C.X.production.o
 __ptext2 49E 0 CODE 0 text2 dist/default/production\PROJECT_I2C.X.production.o
 __ptext3 52A 0 CODE 0 text3 dist/default/production\PROJECT_I2C.X.production.o
 __ptext4 5A6 0 CODE 0 text4 dist/default/production\PROJECT_I2C.X.production.o
-__ptext5 696 0 CODE 0 text5 dist/default/production\PROJECT_I2C.X.production.o
+__ptext5 6F6 0 CODE 0 text5 dist/default/production\PROJECT_I2C.X.production.o
 __ptext6 336 0 CODE 0 text6 dist/default/production\PROJECT_I2C.X.production.o
-__ptext7 7A0 0 CODE 0 text7 dist/default/production\PROJECT_I2C.X.production.o
-__ptext8 7D8 0 CODE 0 text8 dist/default/production\PROJECT_I2C.X.production.o
-__ptext9 7EE 0 CODE 0 text9 dist/default/production\PROJECT_I2C.X.production.o
+__ptext7 7A6 0 CODE 0 text7 dist/default/production\PROJECT_I2C.X.production.o
+__ptext8 7BA 0 CODE 0 text8 dist/default/production\PROJECT_I2C.X.production.o
+__ptext9 7CC 0 CODE 0 text9 dist/default/production\PROJECT_I2C.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-__end_of_first_send 7A0 0 CODE 0 text1 dist/default/production\PROJECT_I2C.X.production.o
-_I2C_Master_Init 622 0 CODE 0 text15 dist/default/production\PROJECT_I2C.X.production.o
-_I2C_Master_Read 6F6 0 CODE 0 text13 dist/default/production\PROJECT_I2C.X.production.o
-_I2C_Master_Stop 802 0 CODE 0 text10 dist/default/production\PROJECT_I2C.X.production.o
-_I2C_Master_Wait 7BE 0 CODE 0 text14 dist/default/production\PROJECT_I2C.X.production.o
+__end_of_first_send 78C 0 CODE 0 text1 dist/default/production\PROJECT_I2C.X.production.o
+_I2C_Master_Init 622 0 CODE 0 text13 dist/default/production\PROJECT_I2C.X.production.o
+_I2C_Master_Read 696 0 CODE 0 text11 dist/default/production\PROJECT_I2C.X.production.o
+_I2C_Master_Stop 7BA 0 CODE 0 text8 dist/default/production\PROJECT_I2C.X.production.o
+_I2C_Master_Wait 78C 0 CODE 0 text12 dist/default/production\PROJECT_I2C.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
-__end_of_I2C_Master_RepeatedStart 838 0 CODE 0 text12 dist/default/production\PROJECT_I2C.X.production.o
+__end_of_I2C_Master_RepeatedStart 7F0 0 CODE 0 text10 dist/default/production\PROJECT_I2C.X.production.o
 __end_of__initialization 36 0 CODE 0 cinit dist/default/production\PROJECT_I2C.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
@@ -593,7 +561,7 @@ _SSPCON2 91 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
 __end_of_main 1AC 0 CODE 0 maintext dist/default/production\PROJECT_I2C.X.production.o
-__end_of_Setup 6F6 0 CODE 0 text5 dist/default/production\PROJECT_I2C.X.production.o
+__end_of_Setup 742 0 CODE 0 text5 dist/default/production\PROJECT_I2C.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
@@ -601,10 +569,9 @@ _PORTC 7 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _PORTD 8 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _PORTE 9 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _RCREG 1A 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
-_SPBRG 99 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _SSPIE 463 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _SSPIF 63 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
-_Setup 696 0 CODE 0 text5 dist/default/production\PROJECT_I2C.X.production.o
+_Setup 6F6 0 CODE 0 text5 dist/default/production\PROJECT_I2C.X.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
@@ -627,7 +594,7 @@ _seg_u 26 0 BANK0 1 bssBANK0 dist/default/production\PROJECT_I2C.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\PROJECT_I2C.X.production.o
 __size_of_isr 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\PROJECT_I2C.X.production.o
-__end_of_CONVET 336 0 CODE 0 text17 dist/default/production\PROJECT_I2C.X.production.o
+__end_of_CONVET 336 0 CODE 0 text15 dist/default/production\PROJECT_I2C.X.production.o
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\PROJECT_I2C.X.production.o
 __size_of_I2C_Master_Init 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
 __size_of_I2C_Master_Read 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.production.o
@@ -659,7 +626,7 @@ __size_of_I2C_Master_Wait 0 0 ABS 0 - dist/default/production\PROJECT_I2C.X.prod
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cstackCOMMON 1 70 70 B 1
-intentry 0 4 8 420 2
+intentry 0 4 8 3FC 2
 reset_vec 0 0 0 3 2
 bssBANK0 1 20 20 2E 1
 # %NOTES Section

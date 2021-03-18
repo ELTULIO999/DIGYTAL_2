@@ -69,6 +69,7 @@ void __interrupt ( ) isr(void){
         TMR0=236;//le cargamos un valor al timer0
         INTCONbits.TMR0IF=0; //reset la bandera
         r++;
+        PIE1bits.TXIE = 1;
        }
      
 }
