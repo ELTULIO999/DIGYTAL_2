@@ -60,8 +60,6 @@ void setup() {
 //********************************************************************************************************
 void loop() {
 //use to rest leds (all leds off)  
-  PLY1();
-  PLY2();
 //wait for both players to be ready and sequence of read light 
   int val_P1 = digitalRead(P1);
   int val_P2 = digitalRead(P2);
@@ -98,6 +96,8 @@ void start  (unsigned char n,unsigned char N){//sequence of read light
           digitalWrite(LEDG, LOW);    
           delay(300);
           E=1;}
+          cont1=0;
+          cont2=0;
           }
 void pushb1 (unsigned char n){//debouce  
     if (n==0){
