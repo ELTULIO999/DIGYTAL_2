@@ -13,6 +13,7 @@ void printDirectory(File dir, int numTabs);
 //**********************************************************************************************************
 //*                                     General setup                                                      *
 //**********************************************************************************************************
+
 void setup(){
   Serial.begin(9600); // Open serial communications and wait for port to open:
   SPI.setModule(0);   // waiting for the SD to start with the module spi 0
@@ -78,6 +79,7 @@ void MENU (unsigned char poke){ // prints  text depending on that you select
        }
 }
 void printDirectory(File dir, int numTabs){ // showes you what is inside of the SD
+  dir.rewindDirectory();
   Serial.println("            Bien venido al laboratorio de del Profesor Oak, el no está en este momento pero dejo los");
   Serial.println("                        siguientes Pokémon para que empieces tu aventura Pokémon");
    while(true){
