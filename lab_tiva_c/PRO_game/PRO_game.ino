@@ -12,11 +12,9 @@
 #include "driverlib/rom.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/timer.h"
-
 #include "bitmaps.h"
 #include "font.h"
 #include "lcd_registers.h"
-
 #define LCD_RST PD_0
 #define LCD_CS PD_1
 #define LCD_RS PD_2
@@ -27,20 +25,18 @@ int DPINS[] = {PB_0, PB_1, PB_2, PB_3, PB_4, PB_5, PB_6, PB_7};
 #define P1 PA_7 //LEFT
 #define P2 PE_3 //shoot
 #define P3 PA_6  //RIGHT
-
 #define P4 PD_7
 #define P5 PD_6
 #define P6 PF_4
 
+#include <SPI.h>
+#include <SD.h>
+File myFile;
+File root;
 
-//#define pb1 PUSH1
-//#define pb2 PUSH2
 
 int L,l,W, w,S,s,F, f;
 int flg_1,flg_2;
-
-int game_mode_flag;
-
 int g1,g2,g3,g4,g5,g6,g7,g8,g9,g10;
 int r1,r2,r3,r4,r5,r6,r7,r8,r9,r10;
 
@@ -48,10 +44,12 @@ int flag1 ,flag_1,P_cor_x,P_cor_y;
 int flag2 ,flag_2,P2_cor_x,P2_cor_y;
 
 int cont_index; 
-
 int cont_ply1,cont_play2;
-
 int contador_J1, contador_J2;
+
+int game_mode_flag;
+int w_cont_j1;
+int w_cont_j2;
 
 
 //***************************************************************************************************************************************
@@ -70,11 +68,12 @@ void LCD_Print(String text, int x, int y, int fontSize, int color, int backgroun
 void LCD_Bitmap(unsigned int x, unsigned int y, unsigned int width, unsigned int height, unsigned char bitmap[]);
 void LCD_Sprite(int x, int y, int width, int height, unsigned char bitmap[],int columns, int index, char flip, char offset);
 
+
+
+
 void move_nave_1 (void);
 void enemigo (int x,int y);
 void shoot(unsigned char n);
-
-
 void PLY1  (void);
 void PLY2  (void);
 
@@ -86,40 +85,52 @@ void setup() {
   SysCtlClockSet(SYSCTL_SYSDIV_2_5|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN|SYSCTL_XTAL_16MHZ);
   Serial.begin(9600);
   GPIOPadConfigSet(GPIO_PORTB_BASE, 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7, GPIO_STRENGTH_8MA, GPIO_PIN_TYPE_STD_WPU);
-  Serial.println("Inicio");
   LCD_Init();
-  LCD_Clear(0x0F7D);
-
-  
+  LCD_Clear(0x00);
+  //com with sd
+  SPI.setModule(0);   // waiting for the SD to start with the module spi 0
+  Serial.print("WAITING...");
+  pinMode(PA_3, OUTPUT); // setup of the pin for spi com 
+  if (!SD.begin(PA_3)) {Serial.println("int failed!");
+  return;}
+ 
+ Serial.println("Inicio");
  pinMode(P1, INPUT_PULLUP);
  pinMode(P2, INPUT_PULLUP);
  pinMode(P3, INPUT_PULLUP);
  pinMode(P4, INPUT_PULLUP);
  pinMode(P5, INPUT_PULLUP);
  pinMode(P6, INPUT_PULLUP);
-
-
-  
  P_cor_y=198;
  P2_cor_y=198;
- l=120;
- s=220;
- contador_J1=10;
- contador_J2=10;
- 
-
-
 }
 //***************************************************************************************************************************************
 // Loop Infinito
 //***************************************************************************************************************************************
 void loop() {
-  /*int val_PB1 = digitalRead(pb1);
-  int val_PB2 = digitalRead(pb2);
-  if (val_PB1==HIGH&&val_PB2==LOW){game_mode_flag=1;}
-  else if (val_PB1==LOW &&val_PB2==LOW){game_mode_flag=2;}
+  while(game_mode_flag==0){ 
+    int val_PB1 = digitalRead(P3);
+    int val_PB2 = digitalRead(P6);
     
-  while (game_mode_flag==1){//single player
+
+    if (val_PB1==LOW){
+      game_mode_flag=1;
+      contador_J1=20;
+      l=150;
+      g1=0;g2=0;g3=0;g4=0;g5=0;g6=0;g7=0;g8=0;g9=0;g10=0;
+      r1=0;r2=0;r3=0;r4=0;r5=0;r6=0;r7=0;r8=0;r9=0;r10=0;
+      }
+    if (val_PB2==LOW){
+      game_mode_flag=2;
+      contador_J1=10;
+      contador_J2=10;
+      l=120;s=220;
+      g1=0;g2=0;g3=0;g4=0;g5=0;g6=0;g7=0;g8=0;g9=0;g10=0;
+      r1=0;r2=0;r3=0;r4=0;r5=0;r6=0;r7=0;r8=0;r9=0;r10=0;
+    }
+  }
+  
+  while (game_mode_flag==2){//single player
     int val_P1 = digitalRead(P1);
     int val_P2 = digitalRead(P2); 
     int val_P3 = digitalRead(P3);
@@ -127,32 +138,37 @@ void loop() {
     pushb1 (val_P1);
     pushb2 (val_P2);
     move_nave();
-    enemigos (50,50,23,14,cont_index,enemy_b,&g1);
-    enemigos (74,50,23,14,cont_index,enemy_b,&g2);
-    enemigos (98,50,23,14,cont_index,enemy_b,&g3);
-    enemigos (122,50,23,14,cont_index,enemy_b,&g4);
-    enemigos (62,65,23,14,cont_index,enemy_b,&g5);
-    enemigos (86,65,23,14,cont_index,enemy_b,&g6);
-    enemigos (110,65,23,14,cont_index,enemy_b,&g7);
-    enemigos (74,80,23,14,cont_index,enemy_b,&g8);
-    enemigos (98,80,23,14,cont_index,enemy_b,&g9);
-    enemigos (86,95,23,14,cont_index,enemy_b,&g10);
+    
+    enemigos1 (50,50,23,14,cont_index,enemy_b,&g1,&contador_J1);
+    enemigos1 (74,50,23,14,cont_index,enemy_b,&g2,&contador_J1);
+    enemigos1 (98,50,23,14,cont_index,enemy_b,&g3,&contador_J1);
+    enemigos1 (122,50,23,14,cont_index,enemy_b,&g4,&contador_J1);
+    enemigos1 (62,65,23,14,cont_index,enemy_b,&g5,&contador_J1);
+    enemigos1 (86,65,23,14,cont_index,enemy_b,&g6,&contador_J1);
+    enemigos1 (110,65,23,14,cont_index,enemy_b,&g7,&contador_J1);
+    enemigos1 (74,80,23,14,cont_index,enemy_b,&g8,&contador_J1);
+    enemigos1 (98,80,23,14,cont_index,enemy_b,&g9,&contador_J1);
+    enemigos1 (86,95,23,14,cont_index,enemy_b,&g10,&contador_J1);
+    enemigos1 (170,50,23,14,cont_index,enemy_c,&r1,&contador_J1);
+    enemigos1 (170+24,50,23,14,cont_index,enemy_c,&r2,&contador_J1);
+    enemigos1 (170+48,50,23,14,cont_index,enemy_c,&r3,&contador_J1);
+    enemigos1 (170+72,50,23,14,cont_index,enemy_c,&r4,&contador_J1);
+    enemigos1 (182,65,23,14,cont_index,enemy_c,&r5,&contador_J1);
+    enemigos1 (182+24,65,23,14,cont_index,enemy_c,&r6,&contador_J1);
+    enemigos1 (182+48,65,23,14,cont_index,enemy_c,&r7,&contador_J1);
+    enemigos1 (194,50+30,23,14,cont_index,enemy_c,&r8,&contador_J1);
+    enemigos1 (194+24,50+30,23,14,cont_index,enemy_c,&r9,&contador_J1);
+    enemigos1 (206,50+45,23,14,cont_index,enemy_c,&r10,&contador_J1);
 
-    enemigos (170,50,23,14,cont_index,enemy_c,&r1,);
-    enemigos (170+24,50,23,14,cont_index,enemy_c,&r2);
-    enemigos (170+48,50,23,14,cont_index,enemy_c,&r3);
-    enemigos (170+72,50,23,14,cont_index,enemy_c,&r4);
-    enemigos (182,65,23,14,cont_index,enemy_c,&r5);
-    enemigos (182+24,65,23,14,cont_index,enemy_c,&r6);
-    enemigos (182+48,65,23,14,cont_index,enemy_c,&r7);
-    enemigos (194,50+30,23,14,cont_index,enemy_c,&r8);
-    enemigos (194+24,50+30,23,14,cont_index,enemy_c,&r9);
-    enemigos (206,50+45,23,14,cont_index,enemy_c,&r10);
+    if (contador_J1==0){
+      game_mode_flag=0;
+      LCD_Clear(0x0F7D);
+    }
+    if (cont_index>30){cont_index=0;}
     cont_index++;
-   if (cont_index>30){cont_index=0;}
   }
   
-  while (game_mode_flag==2){*/
+  while (game_mode_flag==3){//TWO PLAYER MODE 
     int val_P1 = digitalRead(P1);
     int val_P2 = digitalRead(P2); 
     int val_P3 = digitalRead(P3);
@@ -160,7 +176,6 @@ void loop() {
     pushb1 (val_P1);
     pushb2 (val_P2);
     move_nave_1();
-    
     int val_P4 = digitalRead(P4);
     int val_P5 = digitalRead(P5); 
     int val_P6 = digitalRead(P6);
@@ -168,7 +183,18 @@ void loop() {
     pushb4 (val_P5);
     move_nave_2();  
     shoot_2(val_P6);
-    
+
+    enemigos1 (50,50,23,14,cont_index,enemy_b,&g1,&contador_J1);
+    enemigos1 (74,50,23,14,cont_index,enemy_b,&g2,&contador_J1);
+    enemigos1 (98,50,23,14,cont_index,enemy_b,&g3,&contador_J1);
+    enemigos1 (122,50,23,14,cont_index,enemy_b,&g4,&contador_J1);
+    enemigos1 (62,65,23,14,cont_index,enemy_b,&g5,&contador_J1);
+    enemigos1 (86,65,23,14,cont_index,enemy_b,&g6,&contador_J1);
+    enemigos1 (110,65,23,14,cont_index,enemy_b,&g7,&contador_J1);
+    enemigos1 (74,80,23,14,cont_index,enemy_b,&g8,&contador_J1);
+    enemigos1 (98,80,23,14,cont_index,enemy_b,&g9,&contador_J1);
+    enemigos1 (86,95,23,14,cont_index,enemy_b,&g10,&contador_J1);
+
     enemigos2 (170,50,23,14,cont_index,enemy_c,&r1,&contador_J2);
     enemigos2 (170+24,50,23,14,cont_index,enemy_c,&r2,&contador_J2);
     enemigos2 (170+48,50,23,14,cont_index,enemy_c,&r3,&contador_J2);
@@ -180,32 +206,57 @@ void loop() {
     enemigos2 (194+24,50+30,23,14,cont_index,enemy_c,&r9,&contador_J2);
     enemigos2 (206,50+45,23,14,cont_index,enemy_c,&r10,&contador_J2);
     
-    if (contador_J2==0){FillRect(100,100,11,12,0x00);}
-    if (contador_J1==0){FillRect(100,100,11,12,0x00);}
+    if (contador_J1==0){
+      w_cont_j1++;
+      game_mode_flag=0; 
+    myFile = SD.open("PL1.txt", FILE_WRITE);
+    if (myFile) {
+      Serial.print("Writing to PL1.txt...");
+      myFile.println(w_cont_j1);
+      myFile.close();} 
+      else {Serial.println("error opening PL1.txt");}
+      LCD_Clear(0x00);
+      delay(500);
+      
+      }
+      
+    if (contador_J2==0){
+      w_cont_j2++;
+      game_mode_flag=0; 
+    myFile = SD.open("PL2.txt", FILE_WRITE);
+    if (myFile) {
+      Serial.print("Writing to PL2.txt...");
+      myFile.println(w_cont_j2);
+      myFile.close();} 
+      else {Serial.println("error opening PL2.txt");}
+      LCD_Clear(0x00);
+      delay(500);
+    }
     if (cont_index>30){cont_index=0;}
     cont_index++;
-  //}
+  }
 }
 //***************************************************************************************************************************************
 // Función para inicializar LCD
 //***************************************************************************************************************************************
 
-void enemigos (int x,int y, int m, int q,int ind,unsigned char bla[],int* flagx){
-  if (P_cor_x<=x && P_cor_x>=x-m && P_cor_y<=y && *flagx==0){
+void enemigos (int x,int y, int m, int q,int ind,unsigned char bla[],int* flagx, int* flag){
+  if (P2_cor_x> (x-10) && P2_cor_x< (x+10) && P_cor_y<=y && *flagx==0){
     (*flagx)=1;
-    FillRect(x,y,23,14,0x00);
+    FillRect(x,y,23,14,0x00);   
     FillRect(P_cor_x+5,P_cor_y+11,11,12,0x00);
     P_cor_y=198;
     flag1=0;
     flag_1=0;
+    (*flag)--;
     }
   else if ((*flagx)==0){
-    if(ind>0&&ind<10){LCD_Sprite(x,y,23,14,bla,2, 0, 1,1);}
-    else if (ind>10&&ind<20){LCD_Sprite(x,y,23,14,bla,2, 1, 1,1);}
+    if(ind>0&&ind<10){LCD_Sprite(x,y,m,q,bla,2, 0, 1,1);}
+    else if (ind>10&&ind<20){LCD_Sprite(x,y,m,q,bla,2, 1, 1,1);}
     }
 }
 void enemigos1 (int x,int y, int m, int q,int ind,unsigned char bla[],int* flagx,int* flag){
-  if (P_cor_x<=x && P_cor_x>=x-m && P_cor_y<=y && *flagx==0){
+  if (P_cor_x> (x-10) && P_cor_x< (x+10) && P_cor_y<=y && *flagx==0){
     (*flagx)=1;
     FillRect(x,y,23,14,0x00);
     FillRect(P_cor_x+5,P_cor_y+11,11,12,0x00);
@@ -215,13 +266,12 @@ void enemigos1 (int x,int y, int m, int q,int ind,unsigned char bla[],int* flagx
     (*flag)--;
     }
   else if ((*flagx)==0){
-    if(ind>0&&ind<10){LCD_Sprite(x,y,23,14,bla,2, 0, 1,1);}
-    else if (ind>10&&ind<20){LCD_Sprite(x,y,23,14,bla,2, 1, 1,1);}
+    if(ind>0&&ind<10){LCD_Sprite(x,y,m,q,bla,2, 0, 0,0);}
+    else if (ind>10&&ind<20){LCD_Sprite(x,y,m,q,bla,2, 1, 0,0);}
     }
 }
-
 void enemigos2 (int x,int y, int m, int q,int ind,unsigned char bla[],int* flagx, int* flag){
-  if (P2_cor_x<=x && P2_cor_x>=x-m && P2_cor_y<=y && *flagx==0){
+  if (P2_cor_x> (x-10) && P2_cor_x< (x+10) && P2_cor_y<=y && *flagx==0){
     (*flagx)=1;
     FillRect(x,y,23,14,0x00);
     FillRect(P2_cor_x+5,P2_cor_y+11,11,12,0x00);
@@ -231,8 +281,8 @@ void enemigos2 (int x,int y, int m, int q,int ind,unsigned char bla[],int* flagx
     (*flag)--;
     }
   else if ((*flagx)==0){
-    if(ind>0&&ind<10){LCD_Sprite(x,y,23,14,bla,2, 0, 1,1);}
-    else if (ind>10&&ind<20){LCD_Sprite(x,y,23,14,bla,2, 1, 1,1);}
+    if(ind>0&&ind<10){LCD_Sprite(x,y,m,q,bla,2, 0, 0,0);}
+    else if (ind>10&&ind<20){LCD_Sprite(x,y,m,q,bla,2, 1, 0,0);}
     }
 }
   
@@ -258,7 +308,7 @@ void shoot_2(unsigned char n){
     flag_2=1;
     P2_cor_x=S;}
   else if(P2_cor_y<=201 && P2_cor_y>0 && P2_cor_y>=9 && flag2==1 && flag_2==1){
-    LCD_Bitmap(P2_cor_x+5,P2_cor_y, 11,12, proyectil_2);
+    LCD_Bitmap(P2_cor_x+5,P2_cor_y, 10,11, proyectil_2);
     FillRect(P2_cor_x+5,P2_cor_y+12,11,12,0x00);
     P2_cor_y=P2_cor_y-12;}
   else if(P2_cor_y<=9){
