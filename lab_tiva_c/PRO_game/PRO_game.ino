@@ -22,35 +22,34 @@
 #define LCD_RD PE_1
 int DPINS[] = {PB_0, PB_1, PB_2, PB_3, PB_4, PB_5, PB_6, PB_7};  
 
-#define P1 PA_7 //LEFT
-#define P2 PE_3 //shoot
+#define P1 PA_7  //LEFT
+#define P2 PE_3  //shoot
 #define P3 PA_6  //RIGHT
-#define P4 PD_7
-#define P5 PD_6
-#define P6 PF_4
+#define P4 PD_7  //LEFT
+#define P5 PD_6  //shoot
+#define P6 PF_4  //RIGHT
 
 #include <SPI.h>
 #include <SD.h>
 File myFile;
 File root;
 
-
+//var de movimiento
 int L,l,W, w,S,s,F, f;
 int flg_1,flg_2;
+//VARIABLES ENEMIGOS
 int g1,g2,g3,g4,g5,g6,g7,g8,g9,g10;
 int r1,r2,r3,r4,r5,r6,r7,r8,r9,r10;
-
+//FLAGS DISPAROS
 int flag1 ,flag_1,P_cor_x,P_cor_y;
 int flag2 ,flag_2,P2_cor_x,P2_cor_y;
-
+//CONTADORES
 int cont_index; 
 int cont_ply1,cont_play2;
 int contador_J1, contador_J2;
-
 int game_mode_flag;
 int w_cont_j1;
 int w_cont_j2;
-
 int MenuFlag1;
 int MenuFlag2;
 
@@ -76,17 +75,6 @@ void FillRect(unsigned int x, unsigned int y, unsigned int w, unsigned int h, un
 void LCD_Print(String text, int x, int y, int fontSize, int color, int background);
 void LCD_Bitmap(unsigned int x, unsigned int y, unsigned int width, unsigned int height, unsigned char bitmap[]);
 void LCD_Sprite(int x, int y, int width, int height, unsigned char bitmap[],int columns, int index, char flip, char offset);
-
-
-
-
-void move_nave_1 (void);
-void enemigo (int x,int y);
-void shoot(unsigned char n);
-void PLY1  (void);
-void PLY2  (void);
-
-
 //***************************************************************************************************************************************
 // Inicialización
 //***************************************************************************************************************************************
@@ -110,26 +98,30 @@ void setup() {
  pinMode(P4, INPUT_PULLUP);
  pinMode(P5, INPUT_PULLUP);
  pinMode(P6, INPUT_PULLUP);
+//music pins to arduino
+ pinMode(PF_2, OUTPUT);//StarTrekIntro
+ pinMode(PF_3, OUTPUT);//Megalovania
+ pinMode(PE_0, OUTPUT);//Castlevania
  P_cor_y=198;
  P2_cor_y=198;
-
-  MenuFlag1 = 0;
+ MenuFlag1 = 0;
  LCD_Print(loading, 60, 100, 2, 0xFFFF,0x00);
- delay(2000); 
+ delay(5000); 
  LCD_Clear(0x00);
 }
 //***************************************************************************************************************************************
 // Loop Infinito
 //***************************************************************************************************************************************
 void loop() {
+  digitalWrite(PF_2, HIGH); 
   while(game_mode_flag==0){ 
-    //MovLogo(ContL);
     LCD_Bitmap(110,80,90,50,logo);
     delay(100);
     LCD_Print(Pl_1,120,140,1,0xffff,0x00);
     LCD_Print(Pl_2,120,170,1,0xffff,0x00); 
     int val_PB1 = digitalRead(P3);
     int val_PB2 = digitalRead(P6);
+    digitalWrite(PF_2,LOW);
     if (val_PB1==LOW){  
       MenuFlag1++;
       LCD_Print(Pl_1,120,140,1,0xffff,0x00); 
@@ -138,6 +130,7 @@ void loop() {
       LCD_Print(Pl_1,120,140,1,0xffff,0x00);
       } 
     if (MenuFlag1 == 2){
+      digitalWrite(PF_3, HIGH);
       LCD_Clear(0x00);
       game_mode_flag = 1;
       contador_J1=20;
@@ -153,6 +146,7 @@ void loop() {
       LCD_Print(Pl_2,120,170,1,0xffff,0x00); 
     }
     if ( MenuFlag2 == 2){
+      digitalWrite(PE_0, HIGH);
       LCD_Clear(0x00);  
       game_mode_flag=2;
       contador_J1=10;
@@ -197,6 +191,7 @@ void loop() {
     Enemigo1 (195,110,23,14,cont_index,enemy_c,&r6,&contador_J1);
 
     if (contador_J1==0){
+      digitalWrite(PF_3, LOW);
       game_mode_flag=0;
       MenuFlag1=0;
       LCD_Print(GO, 80, 90, 2, 0xFFFF, 0x00);
@@ -246,11 +241,13 @@ void loop() {
     Enemigo2 (206,95,23,14,cont_index,enemy_c,&r10,&contador_J2);
     
     if (contador_J1==0){
-        w_cont_j1++;
-        MenuFlag2=0;
-        game_mode_flag=0; 
-        myFile = SD.open("PL1.txt", FILE_WRITE);
+      digitalWrite(PE_0, LOW);
+      w_cont_j1++;
+      MenuFlag2=0;
+      game_mode_flag=0; 
+      myFile = SD.open("PL1.txt", FILE_WRITE);
     if (myFile) {
+      digitalWrite(PE_0, LOW);
       Serial.print("Writing to PL1.txt...");
       myFile.println(w_cont_j1);
       myFile.close();} 
@@ -287,7 +284,7 @@ void loop() {
 //***************************************************************************************************************************************
 
 void enemigos (int x,int y, int m, int q,int ind,unsigned char bla[],int* flagx, int* flag){
-  if (P2_cor_x> (x-10) && P2_cor_x< (x+10) && P_cor_y<=y && *flagx==0){
+  if (P_cor_x> (x-10) && P_cor_x< (x+10) && P_cor_y<=y && *flagx==0){
     (*flagx)=1;
     FillRect(x,y,23,14,0x00);   
     FillRect(P_cor_x+5,P_cor_y+11,11,12,0x00);
@@ -331,7 +328,10 @@ void Enemigo2 (int x,int y, int m, int q,int ind,unsigned char bla[],int* flagx,
     else if (ind>10&&ind<20){LCD_Sprite(x,y,m,q,bla,2, 1, 0,0);}
     }
 }
-  
+
+//*******************************************************************************************************************
+//FUNCION DE DISPARO
+//******************************************************************************************************************* 
 void shoot(unsigned char n){
   if (n == LOW){flag1=1;}
   else if (n == HIGH && flag_1==0 && flag1==1){
@@ -363,6 +363,9 @@ void shoot_2(unsigned char n){
     flag2=0;
     flag_2=0;}
 }
+//****************************************************************************************************************
+//FUNCION DE MOVIMIENTO NAVES
+//*****************************************************************************************************************
 void move_nave (void){
   while( L != l){
     if (L < l){
@@ -388,6 +391,7 @@ void move_nave (void){
     }
   }
 }
+
 void move_nave_1 (void){
   while( L != l){
     if (L < l){
@@ -443,7 +447,9 @@ void move_nave_2 (void){
   }
 }
 
-
+//**********************************************************************************************************************
+//FUNCIONES PUSHBUTTONS
+//**********************************************************************************************************************
 void pushb1 (unsigned char n){//debouce  
     if (n==LOW){W=1;}
     else {
@@ -475,7 +481,9 @@ void pushb4 (unsigned char n){
         s=s-9;}
         }}
 
-
+//**********************************************************************************************************************
+//FUNCIONES PRINCIPALES DE LA LCD
+//**********************************************************************************************************************
 void LCD_Init(void) {
   pinMode(LCD_RST, OUTPUT);
   pinMode(LCD_CS, OUTPUT);
