@@ -38,7 +38,7 @@ WebServer server(80);  // Object of WebServer(HTTP port, 80 is defult)
 #define input3 34
 #define input4 35
 
-//var
+//variables 
 bool var1,var2,var3,var4;
 int num_free_space;
 
@@ -48,6 +48,7 @@ int num_free_space;
 // Configuración
 //************************************************************************************************
 void setup() {
+//set de contador y variables de cambio
   num_free_space=4;
   var1=0;
   var2=0;
@@ -61,7 +62,7 @@ void setup() {
   }
   Serial.println("Try Connecting to ");
   Serial.println(ssid);
-  
+// set de out put para las leds 
   pinMode(led1 , OUTPUT);
   pinMode(led2 , OUTPUT);
   pinMode(led3 , OUTPUT);
@@ -69,7 +70,7 @@ void setup() {
   pinMode(led5 , OUTPUT);
   pinMode(led6 , OUTPUT);
   pinMode(led7 , OUTPUT);
-  
+// set para los puertos de entrada 
   pinMode(input1, INPUT);
   pinMode(input2, INPUT);
   pinMode(input3, INPUT);
@@ -101,29 +102,28 @@ void setup() {
 //************************************************************************************************
 void loop() {
   server.handleClient();
+  //read de puertos para la com de tiva a esp
   int val_P1 = digitalRead(input1);
   int val_P2 = digitalRead(input2);
   int val_P3 = digitalRead(input3);
   int val_P4 = digitalRead(input4);
+  //condicionales de funcionamiento 
   if(val_P1==1&&var1==0){num_free_space--; var1=1;}
-  else if(val_P1==0&&var1==1){num_free_space++;var1=0;}
-  
+  else if(val_P1==0&&var1==1){num_free_space++;var1=0;}  
   if(val_P2==1&&var2==0){num_free_space--;var2=1;}
   else if(val_P2==0&&var2==1){num_free_space++;var2=0;}
-  
   if(val_P3==1&&var3==0){num_free_space--;var3=1;}
   else if(val_P3==0&&var3==1){num_free_space++;var3=0;}
-  
   if(val_P4==1&&var4==0){num_free_space--;var4=1;}
   else if(val_P4==0&&var4==1){num_free_space++;var4=0;}
-  
+  //call prefavric conditions 
   num_table(num_free_space);
   handle_OnConnect();
 }
 //************************************************************************************************
 // TABLA DE DIOS
 //************************************************************************************************
-void num_table (uint8_t n){
+void num_table (uint8_t n){//tabla numerica para el 7 seg 
   switch(n){
     case 0:
       digitalWrite(led1, HIGH);//R-T
@@ -194,6 +194,15 @@ void handle_OnConnect() {server.send(200, "text/html",SendHTML(var1,var2,var3,va
   ptr += "<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\">\n";
   ptr += "<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x\" crossorigin=\"anonymous\">\n";
   ptr += "<title>Parqueo-matic</title>\n";
+  
+  ptr += "<script>\n";
+  ptr += "<!--\n";
+  ptr += "function timedRefresh(timeoutPeriod) {\n";
+  ptr += "\tsetTimeout(\"location.reload(true);\",timeoutPeriod);\n";
+  ptr += "}\n";
+  ptr += "window.onload = timedRefresh(5000);\n";
+  ptr += "</script>\n";
+  
   ptr += "</head>\n";
   ptr += "<body>\n";
   ptr += "<h1>Parqueo-Matic</h1>\n";
